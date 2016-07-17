@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="/Hotel">
+    <Resource name="jdbc/hoteldb"
+              driverClassName="com.mysql.jdbc.Driver"
+              maxActive="100"
+              maxIdle="30"
+              maxWait="10000"
+              username="root"
+              password="root"
+              type="javax.sql.DataSource"
+              url="jdbc:mysql://localhost:3306/hoteldb"
+              validationQuery="SELECT 1"
+              auth="Container"/>
+</Context>

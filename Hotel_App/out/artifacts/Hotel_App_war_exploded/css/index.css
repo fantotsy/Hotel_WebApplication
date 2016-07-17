@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+body {
+    background: #0ca3d2;
+    font-family: Verdana, "Times New Roman", Arial, sans-serif;
+}
+
+#wrapper {
+    width: 700px;
+    margin: 100px auto;
+    padding: 30px;
+}
+
+#header {
+    padding: 10px;
+    margin: 10px;
+}
+
+#body {
+    margin: 10px 100px;
+    width: 500px;
+    background: #f0f0f0;
+}
+
+.signin_data {
+    width: 460px;
+    height: 50px;
+    border: thin;
+    padding: 0 20px;
+    margin: 20px;
+    background: #f9f9f9;
+    color: #555555;
+    font-size: 20px;
+}
+
+.submit {
+    padding: 10px 30px;
+    border: none;
+    color: #555555;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background: #D8FFFF;
+}
+
+#signin_form .submit {
+    font-size: 18px;
+    margin-left: 205px;
+    margin-bottom: 20px;
+}
+
+#registration .submit {
+    width: 500px;
+    height: auto;
+    margin-left: 0px;
+    font-size: 25px;
+}
+
+#adminCheckbox {
+    font-size: 15px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+#registration {
+    border-top: 3px solid #0ca3d2;
+    background: #0ca3d2;
+}
+
+span {
+    margin-left: 130px;
+    color: #F91F1F;
+    font-size: 15px;
+}
+
+h1, h2 {
+    color: #000A39;
+    text-align: center;
+    margin: 10px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 25px;
+}
+
+h3 {
+    padding: 20px;
+    border-bottom: 3px solid #0ca3d2;
+    color: #26BDEC;
+    text-align: center;
+    font-size: 25px;
+}

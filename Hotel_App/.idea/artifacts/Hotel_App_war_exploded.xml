@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Hotel_App:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="Hotel_App/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Hotel_App" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="application" name="log4j-api-2.3" />
+          <element id="library" level="application" name="log4j-core-2.3" />
+          <element id="library" level="application" name="mysql-connector-java-5.1.35" />
+          <element id="library" level="application" name="javax.servlet.jsp.jstl-1.2.1" />
+          <element id="library" level="application" name="javax.servlet.jsp.jstl-api-1.2.1" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

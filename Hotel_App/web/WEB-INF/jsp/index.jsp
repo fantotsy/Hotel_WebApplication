@@ -15,8 +15,7 @@
     <div id="signin_wrapper">
         <h3>Вхід в особистий кабінет</h3>
         <form action="/main" method="post" id="signin_form">
-            <!--Переделать вывод ошибки (error с параметром)-->
-            <c:if test="${not empty wrongEntranceData eq 'true'}">
+            <c:if test="${error == 'wrong entrance data'}">
                 <span>Помилковий логін або пароль!</span>
             </c:if>
             <div>

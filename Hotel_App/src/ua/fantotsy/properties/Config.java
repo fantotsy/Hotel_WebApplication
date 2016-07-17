@@ -8,6 +8,11 @@ public final class Config {
     private static final String BUNDLE_NAME = "ua.fantotsy.properties.config";
     public static final String START_PAGE = "START_PAGE";
     public static final String REGISTRATION_PAGE = "REGISTRATION_PAGE";
+    public static final String MAIN_GUEST_PAGE = "MAIN_GUEST_PAGE";
+    public static final String MAIN_ADMIN_PAGE = "MAIN_ADMIN_PAGE";
+    public static final String MAIN_ADMIN_APARTMENTS_PAGE = "MAIN_ADMIN_APARTMENTS_PAGE";
+    public static final String MAIN_ADMIN_RESERVATIONS_PAGE = "MAIN_ADMIN_RESERVATIONS_PAGE";
+    public static final String MAIN_ADMIN_GUESTS_PAGE = "MAIN_ADMIN_GUESTS_PAGE";
 //    public static final String MAIN_ADMIN = "MAIN_ADMIN";
 //    public static final String MAIN_USER = "MAIN_USER";
 //    public static final String ADMIN_DELETE_INSERT = "ADMIN_DELETE_INSERT";

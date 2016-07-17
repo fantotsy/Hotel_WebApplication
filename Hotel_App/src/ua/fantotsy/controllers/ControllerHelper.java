@@ -1,7 +1,6 @@
 package ua.fantotsy.controllers;
 
-import ua.fantotsy.commands.RegistrationPageCommand;
-import ua.fantotsy.commands.StartPageCommand;
+import ua.fantotsy.commands.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -16,6 +15,13 @@ public class ControllerHelper {
     static {
         commands.put("/index", new StartPageCommand());
         commands.put("/registration", new RegistrationPageCommand());
+        commands.put("/main", new CheckSigninDataCommand());
+        commands.put("/main_guest", new GuestMainPageCommand());
+        commands.put("/main_admin", new AdminMainPageCommand());
+        commands.put("/main_admin_apartments", new ApartmentsPageCommand());
+        commands.put("/main_admin_reservations", new ReservationsPageCommand());
+        commands.put("/main_admin_guests", new GuestsPageCommand());
+        //commands.put("/main_admin", new AdminMainPageCommand());
 //        ua.fantotsy.commands.put("/main", new GetMainPageCommand());
 //        ua.fantotsy.commands.put("/main-admin", new AdminMainPageCommand());
 //        ua.fantotsy.commands.put("/main-user", new UserMainPageCommand());

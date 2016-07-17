@@ -17,6 +17,12 @@
         <servlet-name>Controller</servlet-name>
         <url-pattern>/index</url-pattern>
         <url-pattern>/registration</url-pattern>
+        <url-pattern>/main</url-pattern>
+        <url-pattern>/main_guest</url-pattern>
+        <url-pattern>/main_admin</url-pattern>
+        <url-pattern>/main_admin_apartments</url-pattern>
+        <url-pattern>/main_admin_reservations</url-pattern>
+        <url-pattern>/main_admin_guests</url-pattern>
     </servlet-mapping>
 
     <resource-ref>

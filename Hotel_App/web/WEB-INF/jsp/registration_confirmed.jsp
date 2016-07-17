@@ -12,5 +12,8 @@
 </head>
 <body>
     Поздоровляємо! Ви зареєструвалися!
+    <form action="/index">
+        <input type="submit" name="submit" value="Дякую"/>
+    </form>
 </body>
 </html>

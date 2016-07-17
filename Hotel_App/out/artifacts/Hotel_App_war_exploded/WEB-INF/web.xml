@@ -16,6 +16,7 @@
     <servlet-mapping>
         <servlet-name>Controller</servlet-name>
         <url-pattern>/index</url-pattern>
+        <url-pattern>/registration</url-pattern>
     </servlet-mapping>
 
     <resource-ref>

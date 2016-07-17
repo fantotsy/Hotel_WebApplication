@@ -1,5 +1,6 @@
 package ua.fantotsy.controllers;
 
+import ua.fantotsy.commands.RegistrationPageCommand;
 import ua.fantotsy.commands.StartPageCommand;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,8 +15,8 @@ public class ControllerHelper {
 
     static {
         commands.put("/index", new StartPageCommand());
+        commands.put("/registration", new RegistrationPageCommand());
 //        ua.fantotsy.commands.put("/main", new GetMainPageCommand());
-//        ua.fantotsy.commands.put("/registration", new GetRegistrationFormCommand());
 //        ua.fantotsy.commands.put("/main-admin", new AdminMainPageCommand());
 //        ua.fantotsy.commands.put("/main-user", new UserMainPageCommand());
 //        ua.fantotsy.commands.put("/date-chosen", new DateChosenCommand());
@@ -35,7 +36,7 @@ public class ControllerHelper {
 
     public ICommand getCommand(HttpServletRequest request) {
         String urlPath = request.getServletPath();
-        System.out.println(urlPath);
+
         if (urlPath == null) {
             return commands.get(START_PAGE);
         }

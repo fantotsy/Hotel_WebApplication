@@ -7,9 +7,9 @@ public final class Config {
     private ResourceBundle rb;
     private static final String BUNDLE_NAME = "ua.fantotsy.properties.config";
     public static final String START_PAGE = "START_PAGE";
+    public static final String REGISTRATION_PAGE = "REGISTRATION_PAGE";
 //    public static final String MAIN_ADMIN = "MAIN_ADMIN";
 //    public static final String MAIN_USER = "MAIN_USER";
-//    public static final String REGISTRATION = "REGISTRATION";
 //    public static final String ADMIN_DELETE_INSERT = "ADMIN_DELETE_INSERT";
 //    public static final String ADMIN_RESERVATIONS = "ADMIN_RESERVATIONS";
 //    public static final String ADMIN_GUESTS = "ADMIN_GUESTS";

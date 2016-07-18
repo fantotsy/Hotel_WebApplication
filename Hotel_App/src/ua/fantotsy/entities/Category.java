@@ -51,6 +51,11 @@ public class Category {
         this.apartments = apartments;
     }
 
+    public Category(String type, Integer numberOfBeds) {
+        this.type = type;
+        this.numberOfBeds = numberOfBeds;
+    }
+
     public void setApartments(Integer apartments) {
         this.apartments = apartments;
     }

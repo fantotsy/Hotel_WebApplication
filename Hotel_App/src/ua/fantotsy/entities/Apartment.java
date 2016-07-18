@@ -4,8 +4,14 @@ public class Apartment {
     private Integer apartmentId;
     private Category category;
 
+    public Apartment(Integer apartmentId, Category category) {
+        this.apartmentId = apartmentId;
+        this.category = category;
+    }
+
     public Apartment(Integer apartmentId) {
         this.apartmentId = apartmentId;
+
     }
 
     public Integer getApartmentId() {

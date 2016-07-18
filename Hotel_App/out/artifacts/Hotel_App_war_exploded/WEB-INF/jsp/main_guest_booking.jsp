@@ -23,7 +23,6 @@
 </form>
 <c:choose>
     <c:when test="${not empty listOfCategories}">
-        {${error}}
         <table>
             <tr>
                 <th>Тип</th>

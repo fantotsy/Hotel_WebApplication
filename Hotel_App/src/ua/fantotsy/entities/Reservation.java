@@ -7,7 +7,6 @@ public class Reservation {
     private String arrival;
     private String departure;
     private Integer totalPrice;
-    private Integer status;
 
     public Integer getReservationId() {
         return reservationId;
@@ -57,19 +56,19 @@ public class Reservation {
         this.totalPrice = totalPrice;
     }
 
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
     public Reservation(Guest guest, Apartment apartment, String arrival, String departure) {
         this.guest = guest;
         this.apartment = apartment;
         this.arrival = arrival;
         this.departure = departure;
+    }
+
+    public Reservation(Integer reservationId, Apartment apartment, String arrival, String departure, Integer totalPrice) {
+        this.reservationId = reservationId;
+        this.apartment = apartment;
+        this.arrival = arrival;
+        this.departure = departure;
+        this.totalPrice = totalPrice;
     }
 
     public Reservation(Guest guest, Apartment apartment, String arrival, String departure, Integer totalPrice) {
@@ -78,6 +77,7 @@ public class Reservation {
         this.arrival = arrival;
         this.departure = departure;
         this.totalPrice = totalPrice;
+
     }
 
     @Override
@@ -92,8 +92,7 @@ public class Reservation {
         if (!apartment.equals(that.apartment)) return false;
         if (!arrival.equals(that.arrival)) return false;
         if (!departure.equals(that.departure)) return false;
-        if (!totalPrice.equals(that.totalPrice)) return false;
-        return status.equals(that.status);
+        return totalPrice.equals(that.totalPrice);
 
     }
 
@@ -105,7 +104,6 @@ public class Reservation {
         result = 31 * result + arrival.hashCode();
         result = 31 * result + departure.hashCode();
         result = 31 * result + totalPrice.hashCode();
-        result = 31 * result + status.hashCode();
         return result;
     }
 
@@ -118,7 +116,6 @@ public class Reservation {
                 ", arrival=" + arrival +
                 ", departure=" + departure +
                 ", totalPrice=" + totalPrice +
-                ", status=" + status +
                 '}';
     }
 }

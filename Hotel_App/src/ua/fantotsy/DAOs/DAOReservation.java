@@ -2,6 +2,7 @@ package ua.fantotsy.DAOs;
 
 import ua.fantotsy.datasource.ConnectionSource;
 import ua.fantotsy.entities.Apartment;
+import ua.fantotsy.entities.Category;
 import ua.fantotsy.entities.Guest;
 import ua.fantotsy.entities.Reservation;
 
@@ -29,6 +30,11 @@ public class DAOReservation implements IDAOReservation {
     private static final String GET_ALL_RESERVATIONS = "SELECT apartment_id, arrival, departure, " +
             "total_price, name, last_name, phone_number, email, login FROM reservations " +
             "JOIN guests ON guests.guest_id = reservations.guest_id";
+    private static final String GET_CERTAIN_RESERVATIONS = "SELECT reservation_id, reservations.apartment_id, arrival, " +
+            "departure, total_price, T.type, T.number_of_beds FROM reservations JOIN (SELECT categories.category_id, type, " +
+            "number_of_beds, apartment_id FROM categories JOIN apartments ON categories.category_id = apartments.category_id)T " +
+            "ON reservations.apartment_id = T.apartment_id WHERE guest_id = ?";
+    private static final String DELETE_CERTAIN_RESERVATION = "DELETE FROM reservations WHERE reservation_id = ?";
 
     @Override
     public Map<Integer, Integer> getNumbersOfApartmentsOnDate(String arrival, String departure) {
@@ -70,6 +76,7 @@ public class DAOReservation implements IDAOReservation {
         return result;
     }
 
+    @Override
     public List<Reservation> getAllReservations() {
         List<Reservation> listOfReservations = new ArrayList<>();
         try (Connection connection = ConnectionSource.getInstance().getConnection();
@@ -86,5 +93,40 @@ public class DAOReservation implements IDAOReservation {
             return null;
         }
         return listOfReservations;
+    }
+
+    @Override
+    public List<Reservation> getCertainReservations(Integer guestId) {
+        List<Reservation> listOfReservations = new ArrayList<>();
+        try (Connection connection = ConnectionSource.getInstance().getConnection();
+             PreparedStatement ps = connection.prepareStatement(GET_CERTAIN_RESERVATIONS)) {
+            ps.setInt(1, guestId);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Category category = new Category(rs.getString("type"), rs.getInt("number_of_beds"));
+                Apartment apartment = new Apartment(rs.getInt("apartment_id"), category);
+                Reservation reservation = new Reservation(rs.getInt("reservation_id"), apartment, rs.getString("arrival"), rs.getString("departure"), rs.getInt("total_price"));
+                listOfReservations.add(reservation);
+            }
+            rs.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+        return listOfReservations;
+    }
+
+    @Override
+    public int deleteCertainReservation(Integer reservationId) {
+        int result = 0;
+        try (Connection connection = ConnectionSource.getInstance().getConnection();
+             PreparedStatement ps = connection.prepareStatement(DELETE_CERTAIN_RESERVATION)) {
+            ps.setInt(1, reservationId);
+            result = ps.executeUpdate();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return -1;
+        }
+        return result;
     }
 }

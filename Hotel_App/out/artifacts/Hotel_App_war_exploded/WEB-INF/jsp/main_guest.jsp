@@ -61,6 +61,7 @@
                                 <th>Кількість місць</th>
                                 <th>Заселення</th>
                                 <th>Виселення</th>
+                                <th>Вартість</th>
                                 <th></th>
                             </tr>
                             <c:forEach items="${listOfReservations}" var="reservation">
@@ -70,6 +71,7 @@
                                     <td>${reservation.apartment.category.numberOfBeds}</td>
                                     <td>${reservation.arrival}</td>
                                     <td>${reservation.departure}</td>
+                                    <td>${reservation.totalPrice}</td>
                                     <td>
                                         <form action="/main_guest" method="get">
                                             <input type="hidden" name="reservation_id" value="${reservation.reservationId}"/>

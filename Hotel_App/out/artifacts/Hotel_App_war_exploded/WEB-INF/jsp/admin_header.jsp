@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <meta http-equiv="Content-Type" type="text/html; charset=utf-8"/>
     <title>Admin header</title>
 </head>
 <body>

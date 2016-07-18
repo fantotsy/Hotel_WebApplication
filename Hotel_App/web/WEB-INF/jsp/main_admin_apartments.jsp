@@ -7,18 +7,7 @@
     <link href="css/main.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
-<div id="header">
-    <div id="">
-        <img src="../../images/admin_icon.png" alt="admin_icon" id="icon"/>
-        <h2 id="role">Адміністратор</h2>
-    </div>
-    <!--<div id="messages">Повідомлення:</div>-->
-    <div>
-        <form action="/index" method="post">
-            <input type="submit" name="logout" value="Вийти" id="logout"/>
-        </form>
-    </div>
-</div>
+<%@include file="admin_extended_header.jsp" %>
 <div id="body">
     <table>
         <tr>

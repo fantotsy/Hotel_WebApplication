@@ -7,20 +7,7 @@
     <link href="css/main.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
-<div id="header">
-    <div id="">
-        <img src="../../images/user_icon.png" alt="user_icon" id="icon"/>
-        <h2 id="role">Користувач</h2>
-    </div>
-    <div>
-        <form action="/index" method="post">
-            <input type="submit" name="logout" value="Вийти" id="logout"/>
-        </form>
-    </div>
-</div>
-<form action="/main_guest">
-    <input type="submit" name="submit" value="Повернутися"/>
-</form>
+<%@include file="guest_extended_header.jsp" %>
 <c:choose>
     <c:when test="${not empty listOfCategories}">
         <table>

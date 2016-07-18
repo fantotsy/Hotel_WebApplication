@@ -7,17 +7,7 @@
     <link href="css/main.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
-<div id="header">
-    <div id="">
-        <img src="../../images/user_icon.png" alt="user_icon" id="icon"/>
-        <h2 id="role">Користувач</h2>
-    </div>
-    <div>
-        <form action="/index" method="post">
-            <input type="submit" name="logout" value="Вийти" id="logout"/>
-        </form>
-    </div>
-</div>
+<%@include file="guest_header.jsp" %>
 <div id="body">
     <div id="order_form">
         <c:if test="${error == 'arrival is later than departure'}">

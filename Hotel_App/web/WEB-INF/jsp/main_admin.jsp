@@ -7,6 +7,7 @@
     <link href="css/main.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
+<%@include file="admin_header.jsp" %>
 <form action="/main_admin_apartments">
     <input type="submit" name="delete-insert" value="Номери"/>
 </form>

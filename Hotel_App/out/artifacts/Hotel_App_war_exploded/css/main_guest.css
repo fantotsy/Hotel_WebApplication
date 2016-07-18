@@ -1,0 +1,109 @@
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+body {
+    background: #0ca3d2;
+    color: #252525;
+}
+
+#wrapper {
+    margin: auto 150px;
+}
+
+#icon {
+    margin: auto;
+    height: 70px;
+    width: auto;
+    float: left;
+}
+
+#role {
+    float: left;
+    margin: 20px auto;
+}
+
+#logout {
+    margin-top: 15px;
+    margin-right: 30px;
+    float: right;
+}
+
+table {
+    border: 7px solid #3E3E3E;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #3E3E3E;
+    border-collapse: collapse;
+    padding: 10px;
+    height: 80px;
+    text-align: center;
+}
+
+th {
+    background: #3E3E3E;
+    color: #ffffff;
+    font: 20px/1.5 "Times New Roman", Verdana, Arial, sans-serif;
+}
+
+tr {
+    font: 18px/1.5 "Times New Roman", Verdana, Arial, sans-serif;
+}
+
+tr:nth-child(odd) {
+    background: #D8FFFF;
+}
+
+tr:nth-child(even) {
+    background: #f0f0f0;
+}
+
+header {
+    height: 70px;
+    background: #252525;
+    color: #ffffff;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#order_form {
+    width: 550px;
+    background: #f0f0f0;
+    padding: 20px 40px;
+    margin-left: -100px;
+}
+
+#order_form * {
+    margin: 10px 5px;
+}
+
+#reservations_table {
+    width: 550px;
+    margin-left: 615px;
+    margin-top: -400px;
+}
+
+#type_selector, #capacity_selector {
+    width: 250px;
+}
+
+#arrival_date, #departure_date {
+    width: 200px;
+}
+
+#order_form input[type=submit] {
+
+}
+
+#order_form {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    border-bottom: 3px solid #0ca3d2;
+}

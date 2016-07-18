@@ -9,7 +9,7 @@
     <body>
         <c:choose>
             <c:when test="${result == 'guest inserted'}">
-                <%@include file="registration_confirmed.jsp"%>
+                <%@include file="registration_confirmation.jsp"%>
             </c:when>
             <c:otherwise>
                 <%@include file="registration_form.jsp"%>

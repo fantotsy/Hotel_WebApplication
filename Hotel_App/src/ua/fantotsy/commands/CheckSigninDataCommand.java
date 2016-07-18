@@ -16,7 +16,7 @@ public class CheckSigninDataCommand implements ICommand {
     private static final String ADMIN_LOGIN = "admin";
     private static final String ADMIN_PASSWORD = Utils.encryptionMD5("admin");
     private static final String ROLE_ADMIN = "admin";
-    private static final String ROLE_USER = "user";
+    private static final String ROLE_GUEST = "guest";
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -30,7 +30,7 @@ public class CheckSigninDataCommand implements ICommand {
             // Check login and password for Admin.
             if (enteredLogin.equals(ADMIN_LOGIN) && enteredPassword.equals(ADMIN_PASSWORD)) {
                 session.setAttribute("login", ADMIN_LOGIN);
-                session.setAttribute("password", ADMIN_PASSWORD);
+                //request.setAttribute("password", ADMIN_PASSWORD);
                 session.setAttribute("role", ROLE_ADMIN);
                 request.getRequestDispatcher("/main_admin").forward(request, response);
             } else {
@@ -45,8 +45,8 @@ public class CheckSigninDataCommand implements ICommand {
                 System.out.println(guest);
                 session.setAttribute("guestInfo", guest);
                 session.setAttribute("login", enteredLogin);
-                session.setAttribute("password", enteredPassword);
-                session.setAttribute("role", ROLE_USER);
+                //request.setAttribute("password", enteredPassword);
+                session.setAttribute("role", ROLE_GUEST);
                 request.getRequestDispatcher("/main_guest").forward(request, response);
             }
         }

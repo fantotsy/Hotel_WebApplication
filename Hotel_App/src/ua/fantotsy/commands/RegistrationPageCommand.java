@@ -28,7 +28,7 @@ public class RegistrationPageCommand implements ICommand {
             String password = Utils.encryptionMD5(request.getParameter("password"));
             String phoneNumber = request.getParameter("phone");
             String email = request.getParameter("email");
-            Guest newGuest = new Guest(name, lastName, "+380" + phoneNumber, email, login, password);
+            Guest newGuest = new Guest(name, lastName, phoneNumber, email, login, password);
             String passwordConfirmation = Utils.encryptionMD5(request.getParameter("password_confirmation"));
 
             int validationResult = dataValidation(newGuest, passwordConfirmation);
@@ -41,6 +41,8 @@ public class RegistrationPageCommand implements ICommand {
                     request.setAttribute("guest_data", newGuest);
                 } else {
                     DAOFactory.getDAOGuest().insertNewGuest(newGuest);
+                    request.setAttribute("login", login);
+                    request.setAttribute("password", Utils.decryptionMD5(password));
                     request.setAttribute("result", "guest inserted");
                 }
             }

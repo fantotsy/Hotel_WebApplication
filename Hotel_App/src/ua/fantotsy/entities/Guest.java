@@ -4,7 +4,6 @@ public class Guest {
     private Integer guestId;
     private String name;
     private String lastName;
-    private String passNumber;
     private String phoneNumber;
     private String email;
     private String login;
@@ -32,14 +31,6 @@ public class Guest {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public String getPassNumber() {
-        return passNumber;
-    }
-
-    public void setPassNumber(String passNumber) {
-        this.passNumber = passNumber;
     }
 
     public String getPhoneNumber() {
@@ -80,10 +71,9 @@ public class Guest {
         this.login = login;
     }
 
-    public Guest(String name, String lastName, String passNumber, String phoneNumber, String email, String login) {
+    public Guest(String name, String lastName, String phoneNumber, String email, String login) {
         this.name = name;
         this.lastName = lastName;
-        this.passNumber = passNumber;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.login = login;
@@ -93,22 +83,20 @@ public class Guest {
 
     }
 
-    public Guest(String name, String lastName, String passNumber, String phoneNumber,
+    public Guest(String name, String lastName, String phoneNumber,
                  String email, String login, String password) {
         this.name = name;
         this.lastName = lastName;
-        this.passNumber = passNumber;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.login = login;
         this.password = password;
     }
 
-    public Guest(Integer guestId, String name, String lastName, String passNumber, String phoneNumber, String email, String login) {
+    public Guest(Integer guestId, String name, String lastName, String phoneNumber, String email, String login) {
         this.guestId = guestId;
         this.name = name;
         this.lastName = lastName;
-        this.passNumber = passNumber;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.login = login;
@@ -124,7 +112,6 @@ public class Guest {
         if (!guestId.equals(guest.guestId)) return false;
         if (!name.equals(guest.name)) return false;
         if (!lastName.equals(guest.lastName)) return false;
-        if (!passNumber.equals(guest.passNumber)) return false;
         if (!phoneNumber.equals(guest.phoneNumber)) return false;
         if (!email.equals(guest.email)) return false;
         if (!login.equals(guest.login)) return false;
@@ -136,7 +123,6 @@ public class Guest {
         int result = guestId.hashCode();
         result = 31 * result + name.hashCode();
         result = 31 * result + lastName.hashCode();
-        result = 31 * result + passNumber.hashCode();
         result = 31 * result + phoneNumber.hashCode();
         result = 31 * result + email.hashCode();
         result = 31 * result + login.hashCode();
@@ -150,7 +136,6 @@ public class Guest {
                 "guestId=" + guestId +
                 ", name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", passNumber='" + passNumber + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", email='" + email + '\'' +
                 ", login='" + login + '\'' +

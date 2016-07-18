@@ -23,15 +23,6 @@ public class ControllerHelper {
         commands.put("/main_admin_guests", new GuestsPageCommand());
         commands.put("/booking", new CheckOrderDataCommand());
         commands.put("/order_valid", new GuestBookingPageCommand());
-//        ua.fantotsy.commands.put("/main", new GetMainPageCommand());
-//        ua.fantotsy.commands.put("/main-admin", new AdminMainPageCommand());
-//        ua.fantotsy.commands.put("/main-user", new UserMainPageCommand());
-//        ua.fantotsy.commands.put("/date-chosen", new DateChosenCommand());
-//        ua.fantotsy.commands.put("/main-user-booked", new BookApartmentsCommand());
-//        ua.fantotsy.commands.put("/main-admin-action", new DeleteInsertCommand());
-//        ua.fantotsy.commands.put("/deleteinsert", new GetDeleteInsertCommand());
-//        ua.fantotsy.commands.put("/getallreservations", new GetAllReservationsCommand());
-//        ua.fantotsy.commands.put("/getguests", new GetAllGuestsCommand());
     }
 
     public static ControllerHelper getInstance() {

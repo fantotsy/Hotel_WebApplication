@@ -14,10 +14,10 @@ public class DAOGuest implements IDAOGuest {
     private static final String GET_CERTAIN_LOGIN = "SELECT login FROM guests WHERE login=?";
     private static final String GET_CERTAIN_LOGIN_AND_PASSWORD = "SELECT login, password FROM guests WHERE login=? AND password=?";
     private static final String INSERT_NEW_GUEST = "INSERT INTO guests " +
-            "(name, last_name, pass_number, phone_number, email, login, password) " +
-            "VALUES (?, ?, ?, ?, ?, ?, ?);";
+            "(name, last_name, phone_number, email, login, password) " +
+            "VALUES (?, ?, ?, ?, ?, ?)";
     private static final String GET_CERTAIN_GUEST = "SELECT * FROM guests WHERE login=?";
-    private static final String GET_ALL_GUESTS = "SELECT name, last_name, pass_number, phone_number, email, login FROM guests";
+    private static final String GET_ALL_GUESTS = "SELECT name, last_name, phone_number, email, login FROM guests";
 
     @Override
     public int containsCertainLogin(String login) {
@@ -65,11 +65,10 @@ public class DAOGuest implements IDAOGuest {
              PreparedStatement ps = connection.prepareStatement(INSERT_NEW_GUEST)) {
             ps.setString(1, guest.getName());
             ps.setString(2, guest.getLastName());
-            ps.setString(3, guest.getPassNumber());
-            ps.setString(4, guest.getPhoneNumber());
-            ps.setString(5, guest.getEmail());
-            ps.setString(6, guest.getLogin());
-            ps.setString(7, guest.getPassword());
+            ps.setString(3, guest.getPhoneNumber());
+            ps.setString(4, guest.getEmail());
+            ps.setString(5, guest.getLogin());
+            ps.setString(6, guest.getPassword());
             result = ps.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -86,7 +85,7 @@ public class DAOGuest implements IDAOGuest {
             ps.setString(1, enteredLogin);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                guest = new Guest(rs.getInt("guest_id"), rs.getString("name"), rs.getString("last_name"), rs.getString("pass_number"), rs.getString("phone_number"), rs.getString("email"), rs.getString("login"));
+                guest = new Guest(rs.getInt("guest_id"), rs.getString("name"), rs.getString("last_name"), rs.getString("phone_number"), rs.getString("email"), rs.getString("login"));
             }
             rs.close();
         } catch (SQLException ex) {
@@ -103,7 +102,7 @@ public class DAOGuest implements IDAOGuest {
              PreparedStatement ps = connection.prepareStatement(GET_ALL_GUESTS);
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
-                Guest guest = new Guest(rs.getString("name"), rs.getString("last_name"), rs.getString("pass_number"), rs.getString("phone_number"), rs.getString("email"), rs.getString("login"));
+                Guest guest = new Guest(rs.getString("name"), rs.getString("last_name"), rs.getString("phone_number"), rs.getString("email"), rs.getString("login"));
                 listOfGuests.add(guest);
             }
         } catch (SQLException ex) {

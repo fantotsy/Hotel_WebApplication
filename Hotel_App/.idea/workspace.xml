@@ -2,26 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e16aee2-7e83-43c1-ba10-4202e19dd46a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/ApartmentsPageCommand.class" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/ApartmentsPageCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/DAOs/DAOGuest.class" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/DAOs/DAOGuest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/CheckOrderDataCommand.class" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/CheckOrderDataCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/GuestBookingPageCommand.class" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/GuestBookingPageCommand.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/RegistrationPageCommand.class" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/RegistrationPageCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/StartPageCommand.class" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/StartPageCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/ApartmentsPageCommand.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/ApartmentsPageCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/controllers/ControllerHelper.class" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/controllers/ControllerHelper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/entities/Guest.class" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/entities/Guest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/DAOs/DAOGuest.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/DAOs/DAOGuest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/CheckOrderDataCommand.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/CheckOrderDataCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/GuestBookingPageCommand.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/GuestBookingPageCommand.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/RegistrationPageCommand.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/RegistrationPageCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/StartPageCommand.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/StartPageCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/controllers/ControllerHelper.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/controllers/ControllerHelper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/entities/Guest.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/entities/Guest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/jsp/main_admin_apartments.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/jsp/main_admin_apartments.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/jsp/main_admin_guests.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/jsp/main_admin_guests.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/jsp/main_guest_booking.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/jsp/main_guest_booking.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/jsp/registration_form.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/jsp/registration_form.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/commands/ApartmentsPageCommand.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/commands/ApartmentsPageCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOGuest.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOGuest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOReservation.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOReservation.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/commands/CheckOrderDataCommand.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/commands/CheckOrderDataCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/commands/StartPageCommand.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/commands/StartPageCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_apartments.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_apartments.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/commands/GuestBookingPageCommand.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/commands/GuestBookingPageCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/commands/GuestMainPageCommand.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/commands/GuestMainPageCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/commands/RegistrationPageCommand.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/commands/RegistrationPageCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/controllers/ControllerHelper.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/controllers/ControllerHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/entities/Guest.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/entities/Guest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_guests.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_guests.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/main_guest_booking.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/main_guest_booking.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/registration_form.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/registration_form.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
     </list>
     <ignored path="Hotel_App.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,18 +67,58 @@
       <file leaf-file-name="registration_form.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/registration_form.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-38.576923">
-              <caret line="69" column="16" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
+            <state vertical-scroll-proportion="-28.76923">
+              <caret line="58" column="16" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EncodingFilter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/filters/EncodingFilter.java">
+      <file leaf-file-name="main_guest.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_guest.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="3.6153846">
+              <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GuestMainPageCommand.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/commands/GuestMainPageCommand.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main_guest_booking.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_guest_booking.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.67134833">
+              <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ControllerHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/controllers/ControllerHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="24" column="68" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CheckOrderDataCommand.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/commands/CheckOrderDataCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="24" column="82" selection-start-line="24" selection-start-column="82" selection-end-line="24" selection-end-column="82" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -79,22 +126,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <file leaf-file-name="GuestBookingPageCommand.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/commands/GuestBookingPageCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.5">
-              <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="30" column="71" selection-start-line="30" selection-start-column="71" selection-end-line="30" selection-end-column="71" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RegistrationPageCommand.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/commands/RegistrationPageCommand.java">
+      <file leaf-file-name="DAOReservation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOReservation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5104712">
-              <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
-              <folding />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="26" column="70" selection-start-line="26" selection-start-column="70" selection-end-line="26" selection-end-column="70" />
+              <folding>
+                <marker date="1468852760176" expanded="true" signature="540:938" placeholder="SELECT COUNT... apartments" />
+                <marker date="1468852760176" expanded="true" signature="693:916" placeholder="SELECT apart... apartments" />
+                <marker date="1468852760176" expanded="true" signature="781:915" placeholder="SELECT apart... reservations" />
+                <marker date="1468852760176" expanded="true" signature="1011:1407" placeholder="INSERT INTO reservations... " />
+                <marker date="1468852760176" expanded="true" signature="1140:1405" placeholder="SELECT total... TIMESTAMPDIFF" />
+                <marker date="1468852760176" expanded="true" signature="1165:1403" placeholder="SELECT (SELE... " />
+                <marker date="1468852760176" expanded="true" signature="1173:1241" placeholder="SELECT TIMES... reservations" />
+                <marker date="1468852760176" expanded="true" signature="1246:1387" placeholder="SELECT price... categories" />
+                <marker date="1468852760176" expanded="true" signature="1466:1670" placeholder="SELECT apart... reservations" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -133,7 +192,6 @@
         <option value="$PROJECT_DIR$/src/properties/Config.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/entities/Apartment.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/entities/Category.java" />
-        <option value="$PROJECT_DIR$/src/ua/fantotsy/entities/Guest.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/entities/Reservation.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/utils/Utils.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/DAOs/IDAOApartment.java" />
@@ -141,8 +199,6 @@
         <option value="$PROJECT_DIR$/src/ua/fantotsy/DAOs/IDAOGuest.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/DAOs/IDAOReservation.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/datasource/DAOFactory.java" />
-        <option value="$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOReservation.java" />
-        <option value="$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOGuest.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOCategory.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOApartment.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/datasource/ConnectionSource.java" />
@@ -155,24 +211,27 @@
         <option value="$PROJECT_DIR$/src/ua/fantotsy/commands/ReservationsPageCommand.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/commands/GuestsPageCommand.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_reservations.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_guests.jsp" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/commands/AvailableApartmentsPageCommand.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_guest_order.jsp" />
-        <option value="$PROJECT_DIR$/src/ua/fantotsy/commands/GuestMainPageCommand.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/properties/config.properties" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/properties/Config.java" />
-        <option value="$PROJECT_DIR$/src/ua/fantotsy/commands/GuestBookingPageCommand.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_guest.jsp" />
-        <option value="$PROJECT_DIR$/src/ua/fantotsy/controllers/ControllerHelper.java" />
-        <option value="$PROJECT_DIR$/src/ua/fantotsy/commands/CheckOrderDataCommand.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_guest_booking.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_apartments.jsp" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/commands/ApartmentsPageCommand.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/commands/StartPageCommand.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/registration_form.jsp" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/filters/EncodingFilter.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/ua/fantotsy/entities/Guest.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_guests.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/registration_form.jsp" />
+        <option value="$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOGuest.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/commands/RegistrationPageCommand.java" />
+        <option value="$PROJECT_DIR$/src/ua/fantotsy/controllers/ControllerHelper.java" />
+        <option value="$PROJECT_DIR$/src/ua/fantotsy/commands/CheckOrderDataCommand.java" />
+        <option value="$PROJECT_DIR$/src/ua/fantotsy/commands/GuestMainPageCommand.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_guest_booking.jsp" />
+        <option value="$PROJECT_DIR$/src/ua/fantotsy/commands/GuestBookingPageCommand.java" />
+        <option value="$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOReservation.java" />
       </list>
     </option>
   </component>
@@ -269,6 +328,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hotel_App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hotel_App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jsp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -990,16 +1071,16 @@
       <option name="number" value="Default" />
       <updated>1468775883229</updated>
       <workItem from="1468775884816" duration="14651000" />
-      <workItem from="1468830084460" duration="12738000" />
+      <workItem from="1468830084460" duration="17735000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27389000" />
+    <option name="totallyTimeSpent" value="32386000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1013,7 +1094,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24962178" sideWeight="0.49346405" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24962178" sideWeight="0.49346405" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.50653595" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1092,46 +1173,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.091623">
           <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/entities/Guest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="7.0314136">
-          <caret line="158" column="5" selection-start-line="158" selection-start-column="5" selection-end-line="158" selection-end-column="5" />
           <folding>
-            <element signature="e#312#313#0" expanded="false" />
-            <element signature="e#342#343#0" expanded="false" />
-            <element signature="e#389#390#0" expanded="false" />
-            <element signature="e#427#428#0" expanded="false" />
-            <element signature="e#458#459#0" expanded="false" />
-            <element signature="e#485#486#0" expanded="false" />
-            <element signature="e#525#526#0" expanded="false" />
-            <element signature="e#557#558#0" expanded="false" />
-            <element signature="e#592#593#0" expanded="false" />
-            <element signature="e#623#624#0" expanded="false" />
-            <element signature="e#671#672#0" expanded="false" />
-            <element signature="e#711#712#0" expanded="false" />
-            <element signature="e#748#749#0" expanded="false" />
-            <element signature="e#781#782#0" expanded="false" />
-            <element signature="e#833#834#0" expanded="false" />
-            <element signature="e#877#878#0" expanded="false" />
-            <element signature="e#915#916#0" expanded="false" />
-            <element signature="e#949#950#0" expanded="false" />
-            <element signature="e#1003#1004#0" expanded="false" />
-            <element signature="e#1049#1050#0" expanded="false" />
-            <element signature="e#1081#1082#0" expanded="false" />
-            <element signature="e#1109#1110#0" expanded="false" />
-            <element signature="e#1151#1152#0" expanded="false" />
-            <element signature="e#1185#1186#0" expanded="false" />
-            <element signature="e#1217#1218#0" expanded="false" />
-            <element signature="e#1245#1246#0" expanded="false" />
-            <element signature="e#1287#1288#0" expanded="false" />
-            <element signature="e#1321#1322#0" expanded="false" />
-            <element signature="e#1356#1357#0" expanded="false" />
-            <element signature="e#1387#1388#0" expanded="false" />
-            <element signature="e#1435#1436#0" expanded="false" />
-            <element signature="e#1475#1476#0" expanded="false" />
+            <element signature="e#163#164#0" expanded="false" />
+            <element signature="e#209#210#0" expanded="false" />
+            <element signature="e#248#249#0" expanded="false" />
+            <element signature="e#282#283#0" expanded="false" />
+            <element signature="e#337#338#0" expanded="false" />
+            <element signature="e#383#384#0" expanded="false" />
+            <element signature="e#420#421#0" expanded="false" />
+            <element signature="e#451#452#0" expanded="false" />
+            <element signature="e#501#502#0" expanded="false" />
+            <element signature="e#541#542#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1140,6 +1192,36 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.55497384">
           <caret line="119" column="30" selection-start-line="119" selection-start-column="30" selection-end-line="119" selection-end-column="30" />
+          <folding>
+            <element signature="e#308#309#0" expanded="false" />
+            <element signature="e#344#345#0" expanded="false" />
+            <element signature="e#403#404#0" expanded="false" />
+            <element signature="e#453#454#0" expanded="false" />
+            <element signature="e#484#485#0" expanded="false" />
+            <element signature="e#512#513#0" expanded="false" />
+            <element signature="e#553#554#0" expanded="false" />
+            <element signature="e#587#588#0" expanded="false" />
+            <element signature="e#626#627#0" expanded="false" />
+            <element signature="e#658#659#0" expanded="false" />
+            <element signature="e#711#712#0" expanded="false" />
+            <element signature="e#753#754#0" expanded="false" />
+            <element signature="e#787#788#0" expanded="false" />
+            <element signature="e#817#818#0" expanded="false" />
+            <element signature="e#863#864#0" expanded="false" />
+            <element signature="e#901#902#0" expanded="false" />
+            <element signature="e#937#938#0" expanded="false" />
+            <element signature="e#969#970#0" expanded="false" />
+            <element signature="e#1019#1020#0" expanded="false" />
+            <element signature="e#1061#1062#0" expanded="false" />
+            <element signature="e#1099#1100#0" expanded="false" />
+            <element signature="e#1132#1133#0" expanded="false" />
+            <element signature="e#1185#1186#0" expanded="false" />
+            <element signature="e#1229#1230#0" expanded="false" />
+            <element signature="e#1263#1264#0" expanded="false" />
+            <element signature="e#1292#1293#0" expanded="false" />
+            <element signature="e#1337#1338#0" expanded="false" />
+            <element signature="e#1373#1374#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1154,13 +1236,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.40052357">
           <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/DAOs/IDAOGuest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4895288">
-          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -1198,20 +1273,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOReservation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.80104715">
-          <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOGuest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33246073">
-          <caret line="68" column="52" selection-start-line="68" selection-start-column="52" selection-end-line="68" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOCategory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33246073">
@@ -1245,6 +1306,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7329843">
           <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1296,34 +1360,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_reservations.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9044944">
-          <caret line="43" column="7" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_guests.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66853935">
-          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/properties/Config.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.66753924">
           <caret line="15" column="81" selection-start-line="15" selection-start-column="81" selection-end-line="15" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/commands/GuestMainPageCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40823328">
-          <caret line="23" column="81" selection-start-line="23" selection-start-column="81" selection-end-line="23" selection-end-column="81" />
           <folding />
         </state>
       </provider>
@@ -1352,32 +1392,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/commands/GuestBookingPageCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="45" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_guest_booking.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5730337">
-          <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/controllers/ControllerHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="68" selection-start-line="22" selection-start-column="68" selection-end-line="22" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/commands/ApartmentsPageCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1402,40 +1416,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_apartments.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26123595">
-          <caret line="16" column="28" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/commands/CheckOrderDataCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.109947644">
-          <caret line="29" column="58" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_guest.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46348315">
-          <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/registration_form.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-38.576923">
-          <caret line="69" column="16" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/javax.servlet-3.0.jar!/javax/servlet/FilterConfig.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28732395">
@@ -1444,28 +1424,161 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/filters/EncodingFilter.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_guests.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.71348315">
+          <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_reservations.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9719101">
+          <caret line="43" column="7" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_apartments.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28089887">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/DAOs/IDAOGuest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40052357">
+          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/entities/Guest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0">
+          <caret line="135" column="38" selection-start-line="135" selection-start-column="38" selection-end-line="135" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOGuest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4921466">
+          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1468848472276" expanded="true" signature="381:419" placeholder="SELECT login... guests" />
+            <marker date="1468848472276" expanded="true" signature="488:551" placeholder="SELECT login... guests" />
+            <marker date="1468848472276" expanded="true" signature="606:740" placeholder="INSERT INTO guests... " />
+            <marker date="1468848472276" expanded="true" signature="796:830" placeholder="SELECT * FRO... guests" />
+            <marker date="1468848472276" expanded="true" signature="883:945" placeholder="SELECT name,... guests" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/filters/EncodingFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42146596">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5">
-          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.37921348">
+          <caret line="42" column="21" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/registration_form.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-28.76923">
+          <caret line="58" column="16" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/commands/RegistrationPageCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5104712">
-          <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.20942408">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_guest.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.6153846">
+          <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/controllers/ControllerHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="68" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/commands/GuestMainPageCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/commands/CheckOrderDataCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="82" selection-start-line="24" selection-start-column="82" selection-end-line="24" selection-end-column="82" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/commands/GuestBookingPageCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="71" selection-start-line="30" selection-start-column="71" selection-end-line="30" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOReservation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="70" selection-start-line="26" selection-start-column="70" selection-end-line="26" selection-end-column="70" />
+          <folding>
+            <marker date="1468852760176" expanded="true" signature="540:938" placeholder="SELECT COUNT... apartments" />
+            <marker date="1468852760176" expanded="true" signature="693:916" placeholder="SELECT apart... apartments" />
+            <marker date="1468852760176" expanded="true" signature="781:915" placeholder="SELECT apart... reservations" />
+            <marker date="1468852760176" expanded="true" signature="1011:1407" placeholder="INSERT INTO reservations... " />
+            <marker date="1468852760176" expanded="true" signature="1140:1405" placeholder="SELECT total... TIMESTAMPDIFF" />
+            <marker date="1468852760176" expanded="true" signature="1165:1403" placeholder="SELECT (SELE... " />
+            <marker date="1468852760176" expanded="true" signature="1173:1241" placeholder="SELECT TIMES... reservations" />
+            <marker date="1468852760176" expanded="true" signature="1246:1387" placeholder="SELECT price... categories" />
+            <marker date="1468852760176" expanded="true" signature="1466:1670" placeholder="SELECT apart... reservations" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_guest_booking.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.67134833">
+          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
           <folding />
         </state>
       </provider>

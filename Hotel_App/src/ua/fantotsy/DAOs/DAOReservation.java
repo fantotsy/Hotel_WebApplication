@@ -24,7 +24,7 @@ public class DAOReservation implements IDAOReservation {
     private static final String INSERT_NEW_RESERVATION =
             "INSERT INTO reservations (guest_id, apartment_id, arrival, departure, total_price) " +
                     "VALUES (?, ?, ?, ?, (SELECT total_price FROM (SELECT (SELECT TIMESTAMPDIFF(DAY, ?, ?) " +
-                    "AS duration FROM reservations GROUP BY duration) * (SELECT price FROM categories JOIN apartments " +
+                    "AS duration) * (SELECT price FROM categories JOIN apartments " +
                     "ON categories.category_id = apartments.category_id WHERE apartment_id=?) AS total_price)T))";
     private static final String GET_ALL_RESERVATIONS = "SELECT apartment_id, arrival, departure, " +
             "total_price, name, last_name, phone_number, email, login FROM reservations " +

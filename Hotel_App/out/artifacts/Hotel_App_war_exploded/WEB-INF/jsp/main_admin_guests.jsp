@@ -24,7 +24,6 @@
             <th>Ім'я</th>
             <th>Прізвище</th>
             <th>Логін</th>
-            <th>Номер паспорта</th>
             <th>Номер телефону</th>
             <th>Електронна пошта</th>
         </tr>
@@ -33,7 +32,6 @@
                 <td>${guest.name}</td>
                 <td>${guest.lastName}</td>
                 <td>${guest.login}</td>
-                <td>${guest.passNumber}</td>
                 <td>${guest.phoneNumber}</td>
                 <td>${guest.email}</td>
             </tr>

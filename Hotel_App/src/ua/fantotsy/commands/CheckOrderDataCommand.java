@@ -16,6 +16,7 @@ public class CheckOrderDataCommand implements ICommand {
         HttpSession session = request.getSession(true);
         String dateChosen = (String) session.getAttribute("date_chosen");
 
+        //If guest have not made valid order
         if (dateChosen == null) {
             dateChosen = request.getParameter("date_chosen");
             session.setAttribute("date_chosen", dateChosen);

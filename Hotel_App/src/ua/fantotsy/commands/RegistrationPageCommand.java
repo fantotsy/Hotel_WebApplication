@@ -26,10 +26,9 @@ public class RegistrationPageCommand implements ICommand {
             String name = request.getParameter("name");
             String lastName = request.getParameter("surname");
             String password = Utils.encryptionMD5(request.getParameter("password"));
-            String passNumber = request.getParameter("pass");
             String phoneNumber = request.getParameter("phone");
             String email = request.getParameter("email");
-            Guest newGuest = new Guest(name, lastName, passNumber, phoneNumber, email, login, password);
+            Guest newGuest = new Guest(name, lastName, "+380" + phoneNumber, email, login, password);
             String passwordConfirmation = Utils.encryptionMD5(request.getParameter("password_confirmation"));
 
             int validationResult = dataValidation(newGuest, passwordConfirmation);

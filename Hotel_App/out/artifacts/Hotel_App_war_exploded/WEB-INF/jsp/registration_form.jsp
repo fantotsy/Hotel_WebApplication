@@ -43,31 +43,29 @@
             <p>
                 <label for="name">Ім'я</label>
             </p>
-            <input type="text" pattern="[A-Za-zА-ЯЄІЇА-Яа-яЁё]+" name="name" maxlength="20" value="${guest_data.name}" id="name" required/>
+            <input type="text" pattern="[A-Za-zА-ЯЄІЇА-Яа-яЁё]+" name="name" maxlength="20" value="${guest_data.name}"
+                   id="name" required/>
         </div>
         <div class="row">
             <p>
                 <label for="surname">Прізвище</label>
             </p>
-            <input type="text" pattern="[A-Za-zА-ЯЄІЇА-Яа-яЁё]+" name="surname" maxlength="30" value="${guest_data.lastName}" id="surname" required/>
-        </div>
-        <div class="row">
-            <p>
-                <label for="pass">Номер паспорта</label>
-            </p>
-            <input type="text" pattern="[A-Z]{2}[0-9]{6}" name="pass" maxlength="20" value="${guest_data.passNumber}" id="pass" required/>
+            <input type="text" pattern="[A-Za-zА-ЯЄІЇА-Яа-яЁё]+" name="surname" maxlength="30"
+                   value="${guest_data.lastName}" id="surname" required/>
         </div>
         <div class="row">
             <p>
                 <label for="email">Електронна пошта</label>
             </p>
-            <input type="text" pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$" name="email" maxlength="45" value="${guest_data.email}" id="email" required/>
+            <input type="text" pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
+                   name="email" maxlength="45" value="${guest_data.email}" id="email" required/>
         </div>
         <div class="row">
             <p>
                 <label for="phone">Контактний телефон</label>
             </p>
-            +380<input type="text" pattern="[0-9]{9}" name="phone" maxlength="20" value="${guest_data.phoneNumber}" id="phone" required/>
+            +380<input type="text" pattern="[0-9]{9}" name="phone" maxlength="20" value="${guest_data.phoneNumber}"
+                       id="phone" required/>
         </div>
         <br/>
         <input type="submit" name="submit" value="Зареєструватися"/>

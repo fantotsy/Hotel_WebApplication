@@ -21,7 +21,8 @@ public class ControllerHelper {
         commands.put("/main_admin_apartments", new ApartmentsPageCommand());
         commands.put("/main_admin_reservations", new ReservationsPageCommand());
         commands.put("/main_admin_guests", new GuestsPageCommand());
-        //commands.put("/main_admin", new AdminMainPageCommand());
+        commands.put("/booking", new CheckOrderDataCommand());
+        commands.put("/order_valid", new GuestBookingPageCommand());
 //        ua.fantotsy.commands.put("/main", new GetMainPageCommand());
 //        ua.fantotsy.commands.put("/main-admin", new AdminMainPageCommand());
 //        ua.fantotsy.commands.put("/main-user", new UserMainPageCommand());

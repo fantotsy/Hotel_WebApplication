@@ -30,7 +30,7 @@
                         <c:if test="${emptyOrder == 'true'}">
                             Порожнє замовлення!
                         </c:if>
-                        <form action="/main_guest_booking" method="get">
+                        <form action="/booking" method="get">
                             <input type="hidden" name="category_id" value="${category.categoryId}"/>
                             <select name="booked_numbers[]" multiple>
                                 <option value="default" selected disabled>Оберіть номери</option>

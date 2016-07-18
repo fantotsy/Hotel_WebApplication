@@ -14,7 +14,6 @@ public class CheckOrderDataCommand implements ICommand {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession(true);
-        System.out.println("Hellooo!!");
         String dateChosen = (String) session.getAttribute("date_chosen");
 
         if (dateChosen == null) {
@@ -24,7 +23,6 @@ public class CheckOrderDataCommand implements ICommand {
             String departure = request.getParameter("check-out_date");
             List<String> types = Arrays.asList(request.getParameterValues("apartment_type[]"));
             List<String> capacities = Arrays.asList(request.getParameterValues("apartment_capacity[]"));
-            System.out.println("aaa " + arrival);
             //Если дата заселения не раньше даты выселения.
             if (arrival.compareTo(departure) >= 0) {
                 request.setAttribute("error", "arrival is later than departure");

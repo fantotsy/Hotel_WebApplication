@@ -34,4 +34,18 @@
         <res-auth>Container</res-auth>
     </resource-ref>
 
+    <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>ua.fantotsy.filters.EncodingFilter</filter-class>
+        <init-param>
+            <param-name>defaultEncoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
 </web-app>

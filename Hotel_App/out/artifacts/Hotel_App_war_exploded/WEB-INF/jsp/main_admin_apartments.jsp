@@ -43,7 +43,7 @@
                             Такого номера не існує в даній категорії!
                         </c:if>
                     </c:if>
-                    <form action="/main-admin-action" method="get">
+                    <form action="/main_admin_apartments" method="get">
                         <input type="hidden" name="category_id" value="${category.categoryId}"/>
                         <input type="text" pattern="[0-9]{3}" name="apartment_number" placeholder="номер" required/>
                         <input type="submit" name="add_apartment" value="Додати" id="add_room"/>

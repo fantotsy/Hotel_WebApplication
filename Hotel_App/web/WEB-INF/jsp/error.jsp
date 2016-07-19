@@ -12,5 +12,6 @@
             <li>Авторизуйтеся;</li>
             <li>Перевірте правильність URL.</li>
         </ul>
+        <jsp:expression>exception.toString()</jsp:expression>
     </body>
 </html>

@@ -23,6 +23,9 @@ public class ControllerHelper {
         commands.put("/guests", new GuestsPageCommand());
         commands.put("/booking", new CheckOrderDataCommand());
         commands.put("/order_valid", new GuestBookingPageCommand());
+        commands.put("/error", new ErrorCommand());
+        //Exception e = new Exception();
+        //e.
     }
 
     public static ControllerHelper getInstance() {

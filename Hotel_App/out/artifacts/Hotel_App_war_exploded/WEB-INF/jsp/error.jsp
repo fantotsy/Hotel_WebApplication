@@ -8,9 +8,10 @@
     <body>
         <h1>На жаль, виникла помилка!</h1>
         <h2>Спробуйте виконати одну з наступних дій:</h2>
-        <ul>
+        <ul >
             <li>Авторизуйтеся;</li>
             <li>Перевірте правильність URL.</li>
         </ul>
+        <jsp:expression>exception.toString()</jsp:expression>
     </body>
 </html>

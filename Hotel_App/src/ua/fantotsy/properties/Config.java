@@ -21,6 +21,7 @@ public final class Config {
             instance = new Config();
             instance.rb = ResourceBundle.getBundle(BUNDLE_NAME);
         }
+
         return instance;
     }
 

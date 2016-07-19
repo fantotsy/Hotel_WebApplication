@@ -73,7 +73,7 @@
                                     <td>${reservation.departure}</td>
                                     <td>${reservation.totalPrice}</td>
                                     <td>
-                                        <form action="/main_guest" method="get">
+                                        <form action="/guest" method="get">
                                             <input type="hidden" name="reservation_id" value="${reservation.reservationId}"/>
                                             <input type="submit" name="cancel_reservation" value="Відмінити" id="book_room"/>
                                         </form>

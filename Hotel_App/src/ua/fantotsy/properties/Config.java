@@ -14,12 +14,7 @@ public final class Config {
     public static final String MAIN_ADMIN_RESERVATIONS_PAGE = "MAIN_ADMIN_RESERVATIONS_PAGE";
     public static final String MAIN_ADMIN_GUESTS_PAGE = "MAIN_ADMIN_GUESTS_PAGE";
     public static final String MAIN_GUEST_BOOKING_PAGE = "MAIN_GUEST_BOOKING_PAGE";
-//    public static final String MAIN_ADMIN = "MAIN_ADMIN";
-//    public static final String MAIN_USER = "MAIN_USER";
-//    public static final String ADMIN_DELETE_INSERT = "ADMIN_DELETE_INSERT";
-//    public static final String ADMIN_RESERVATIONS = "ADMIN_RESERVATIONS";
-//    public static final String ADMIN_GUESTS = "ADMIN_GUESTS";
-
+    public static final String ERROR_PAGE = "ERROR_PAGE";
 
     public static Config getInstance() {
         if (instance == null) {

@@ -8,13 +8,13 @@
 </head>
 <body>
 <%@include file="admin_header.jsp" %>
-<form action="/main_admin_apartments">
+<form action="/apartments">
     <input type="submit" name="delete-insert" value="Номери"/>
 </form>
-<form action="/main_admin_reservations">
+<form action="/reservations">
     <input type="submit" name="get-all-reservations" value="Резервації"/>
 </form>
-<form action="/main_admin_guests">
+<form action="/guests">
     <input type="submit" name="get-guests" value="Користувачі"/>
 </form>
 </body>

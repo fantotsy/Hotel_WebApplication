@@ -7,7 +7,7 @@
 <body>
     <%@include file="admin_header.jsp"%>
     <div>
-        <form action="/main_admin">
+        <form action="/admin">
             <input type="submit" name="submit" value="Повернутися"/>
         </form>
     </div>

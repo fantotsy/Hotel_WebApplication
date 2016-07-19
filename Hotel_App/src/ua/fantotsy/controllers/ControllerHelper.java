@@ -16,11 +16,11 @@ public class ControllerHelper {
         commands.put("/index", new StartPageCommand());
         commands.put("/registration", new RegistrationPageCommand());
         commands.put("/main", new CheckSigninDataCommand());
-        commands.put("/main_guest", new GuestMainPageCommand());
-        commands.put("/main_admin", new AdminMainPageCommand());
-        commands.put("/main_admin_apartments", new ApartmentsPageCommand());
-        commands.put("/main_admin_reservations", new ReservationsPageCommand());
-        commands.put("/main_admin_guests", new GuestsPageCommand());
+        commands.put("/guest", new GuestMainPageCommand());
+        commands.put("/admin", new AdminMainPageCommand());
+        commands.put("/apartments", new ApartmentsPageCommand());
+        commands.put("/reservations", new ReservationsPageCommand());
+        commands.put("/guests", new GuestsPageCommand());
         commands.put("/booking", new CheckOrderDataCommand());
         commands.put("/order_valid", new GuestBookingPageCommand());
     }

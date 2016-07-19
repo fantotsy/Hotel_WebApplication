@@ -18,11 +18,11 @@
         <url-pattern>/index</url-pattern>
         <url-pattern>/registration</url-pattern>
         <url-pattern>/main</url-pattern>
-        <url-pattern>/main_guest</url-pattern>
-        <url-pattern>/main_admin</url-pattern>
-        <url-pattern>/main_admin_apartments</url-pattern>
-        <url-pattern>/main_admin_reservations</url-pattern>
-        <url-pattern>/main_admin_guests</url-pattern>
+        <url-pattern>/guest</url-pattern>
+        <url-pattern>/admin</url-pattern>
+        <url-pattern>/apartments</url-pattern>
+        <url-pattern>/reservations</url-pattern>
+        <url-pattern>/guests</url-pattern>
         <url-pattern>/booking</url-pattern>
         <url-pattern>/order_valid</url-pattern>
     </servlet-mapping>
@@ -33,6 +33,16 @@
         <res-type>javax.sql.DataSource</res-type>
         <res-auth>Container</res-auth>
     </resource-ref>
+
+    <filter>
+        <filter-name>AuthFilter</filter-name>
+        <filter-class>ua.fantotsy.filters.AuthorizationFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
     <filter>
         <filter-name>EncodingFilter</filter-name>

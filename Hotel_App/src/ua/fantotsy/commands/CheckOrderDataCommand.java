@@ -22,20 +22,22 @@ public class CheckOrderDataCommand implements ICommand {
             session.setAttribute("date_chosen", dateChosen);
             String arrival = request.getParameter("check-in_date");
             String departure = request.getParameter("check-out_date");
-            List<String> types = Arrays.asList(request.getParameterValues("apartment_type[]"));
-            List<String> capacities = Arrays.asList(request.getParameterValues("apartment_capacity[]"));
+            Object typesObject = request.getParameterValues("apartment_type[]");
+            Object capacitiesObject = request.getParameterValues("apartment_capacity[]");
             //Если дата заселения не раньше даты выселения.
-            if (arrival.compareTo(departure) >= 0) {
+            if (arrival != null && departure != null && arrival.compareTo(departure) >= 0) {
                 request.setAttribute("error", "arrival is later than departure");
                 session.setAttribute("date_chosen", "false");
-                request.getRequestDispatcher("/main_guest").forward(request, response);
+                request.getRequestDispatcher("/guest").forward(request, response);
             }
-            if (types == null || capacities == null) {
+            if (typesObject == null || capacitiesObject == null) {
                 request.setAttribute("error", "empty types or capacities");
                 session.setAttribute("date_chosen", "false");
-                request.getRequestDispatcher("/main_guest").forward(request, response);
+                request.getRequestDispatcher("/guest").forward(request, response);
             }
 
+            List<String> types = Arrays.asList(request.getParameterValues("apartment_type[]"));
+            List<String> capacities = Arrays.asList(request.getParameterValues("apartment_capacity[]"));
             session.setAttribute("types", types);
             session.setAttribute("capacities", capacities);
             session.setAttribute("arrival", arrival);

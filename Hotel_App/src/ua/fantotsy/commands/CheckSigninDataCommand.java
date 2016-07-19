@@ -32,7 +32,7 @@ public class CheckSigninDataCommand implements ICommand {
                 session.setAttribute("login", ADMIN_LOGIN);
                 //request.setAttribute("password", ADMIN_PASSWORD);
                 session.setAttribute("role", ROLE_ADMIN);
-                request.getRequestDispatcher("/main_admin").forward(request, response);
+                request.getRequestDispatcher("/admin").forward(request, response);
             } else {
                 wrongEntranceData(request, response);
             }
@@ -47,7 +47,7 @@ public class CheckSigninDataCommand implements ICommand {
                 session.setAttribute("login", enteredLogin);
                 //request.setAttribute("password", enteredPassword);
                 session.setAttribute("role", ROLE_GUEST);
-                request.getRequestDispatcher("/main_guest").forward(request, response);
+                request.getRequestDispatcher("/guest").forward(request, response);
             }
         }
     }

@@ -7,7 +7,7 @@
 <body>
 <%@include file="guest_header.jsp" %>
 <div>
-    <form action="/main_guest">
+    <form action="/guest">
         <input type="submit" name="submit" value="Повернутися"/>
     </form>
 </div>

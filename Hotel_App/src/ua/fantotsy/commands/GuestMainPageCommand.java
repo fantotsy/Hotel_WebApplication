@@ -18,7 +18,7 @@ public class GuestMainPageCommand implements ICommand {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String cancelReservation = request.getParameter("reservation_id");
-        if(cancelReservation != null){
+        if (cancelReservation != null) {
             DAOFactory.getDAOReservation().deleteCertainReservation(Integer.parseInt(cancelReservation));
         }
 

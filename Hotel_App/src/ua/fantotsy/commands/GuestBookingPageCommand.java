@@ -40,6 +40,11 @@ public class GuestBookingPageCommand implements ICommand {
             }
         }
 
+        System.out.println("Params:\n");
+        System.out.println(arrival);
+        System.out.println(departure);
+        System.out.println(types);
+        System.out.println(capacities);
         List<Category> listOfCategories = DAOFactory.getDAOCategory().getAllCategoriesForUser(arrival, departure, types, capacities);
         Map<Integer, Integer> listOfApartments = DAOFactory.getDAOApartment().getAvailableApartments(arrival, departure, types, capacities);
 

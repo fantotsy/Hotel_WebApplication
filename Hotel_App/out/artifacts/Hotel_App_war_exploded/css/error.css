@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+body {
+    background: url(../images/sad_cat_error.jpg) right bottom no-repeat;
+    font-family: Verdana, "Times New Roman", Arial, sans-serif;
+}
+
+img {
+    height: 600px;
+    width: auto;
+}

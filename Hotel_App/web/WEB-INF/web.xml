@@ -26,6 +26,7 @@
         <url-pattern>/booking</url-pattern>
         <url-pattern>/order_valid</url-pattern>
         <url-pattern>/error</url-pattern>
+        <url-pattern>/set_locale</url-pattern>
     </servlet-mapping>
 
     <resource-ref>

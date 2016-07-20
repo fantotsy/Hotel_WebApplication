@@ -13,6 +13,7 @@
           <element id="library" level="application" name="mysql-connector-java-5.1.35" />
           <element id="library" level="application" name="javax.servlet.jsp.jstl-1.2.1" />
           <element id="library" level="application" name="javax.servlet.jsp.jstl-api-1.2.1" />
+          <element id="library" level="application" name="taglibs-standard-impl-1.2.1" />
         </element>
       </element>
     </root>

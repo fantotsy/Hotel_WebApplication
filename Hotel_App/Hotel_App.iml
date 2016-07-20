@@ -25,5 +25,6 @@
     <orderEntry type="library" name="mysql-connector-java-5.1.35" level="application" />
     <orderEntry type="library" name="javax.servlet.jsp.jstl-1.2.1" level="application" />
     <orderEntry type="library" name="javax.servlet.jsp.jstl-api-1.2.1" level="application" />
+    <orderEntry type="library" name="taglibs-standard-impl-1.2.1" level="application" />
   </component>
 </module>

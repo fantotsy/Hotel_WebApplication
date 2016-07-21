@@ -38,10 +38,8 @@ public class ApartmentsPageCommand implements ICommand {
             }
         }
 
-        //String[] error = (String[]) request.getAttribute("error");
         List<Category> listOfCategories = DAOFactory.getDAOCategory().getAllCategories();
 
-        //wrapper.setRequestAttribute("error", error);
         wrapper.setRequestAttribute("listOfCategories", listOfCategories);
         return Config.getInstance().getProperty(Config.MAIN_ADMIN_APARTMENTS_PAGE);
     }

@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" errorPage="error.jsp" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
 <%@ page import="java.util.*" %>
@@ -10,41 +10,39 @@
         <fmt:setLocale value="en"/>
     </c:otherwise>
 </c:choose>
-<fmt:setBundle var="messages" basename="ua.fantotsy.properties.messages"/>
+<fmt:setBundle var="index" basename="ua.fantotsy.properties.i18n.index"/>
 <html>
 
 <head>
     <meta http-equiv="Content-Type" type="text/html; charset=utf-8"/>
-
-    <title>Start Page</title>
+    <title><fmt:message key="title" bundle="${index}"/></title>
     <link href="../../css/index.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
 
-<a href="/index?language=en_US">US</a>
-<a href="/index?language=ua_UA">UA</a>
-<%--<c:if test="$"--%>
-<%--<fmt:setLocale value="${sessionScope.language}"/>--%>
-<%--<fmt:setBundle var="messages" basename="ua.fantotsy.properties.messages"/>--%>
-<fmt:message key="index" bundle="${messages}"/>
+<a href="/index?language=en_US"><img src="../../images/english_language.jpg" alt="english" class="language_image"/></a>
+<a href="/index?language=ua_UA"><img src="../../images/ukrainian_language.jpg" alt="ukrainian" class="language_image"/></a>
 
 <div id="wrapper">
     <header id="header">
-        <h1><fmt:message key="index" bundle="${messages}"/></h1>
-        <h2>${ff}Ласкаво просимо!</h2>
+        <h1><fmt:message key="header" bundle="${index}"/></h1>
+        <h2><fmt:message key="greeting" bundle="${index}"/></h2>
     </header>
     <div id="signin_wrapper">
-        <h3>Вхід в особистий кабінет</h3>
+        <h3><fmt:message key="form_header" bundle="${index}"/></h3>
         <form action="/main" method="post" id="signin_form">
             <c:if test="${error == 'wrong entrance data'}">
-                <span>Помилковий логін або пароль!</span>
+                <span><fmt:message key="login_password_error" bundle="${index}"/></span>
             </c:if>
             <div>
-                <input type="text" name="login" placeholder="Логін" value="${sessionScope.login}" class="signin_data"
-                       required/>
+                <fmt:message var="login_placeholder" key="login_placeholder" bundle="${index}"/>
+                <input type="text" name="login" placeholder="${login_placeholder}" value="${sessionScope.login}"
+                       class="signin_data" required/>
             </div>
             <div>
-                <input type="password" name="password" placeholder="Пароль" class="signin_data" required/>
+                <fmt:message var="password_placeholder" key="password_placeholder" bundle="${index}"/>
+                <input type="password" name="password" placeholder="${password_placeholder}" class="signin_data"
+                       required/>
             </div>
             <label id="adminCheckbox">
                 <c:if test="${sessionScope.role != 'admin'}">
@@ -53,12 +51,14 @@
                 <c:if test="${sessionScope.role == 'admin'}">
                     <input type="checkbox" name="isAdmin" value="true" checked>
                 </c:if>
-                Адміністратор
+                <fmt:message key="admin_checkBox" bundle="${index}"/>
             </label>
-            <input type="submit" name="signin" value="Увійти" class="submit"/>
+            <fmt:message var="signIn_button" key="signIn_button" bundle="${index}"/>
+            <input type="submit" name="signin" value="${signIn_button}" class="submit"/>
         </form>
         <form action="/registration" method="post" id="registration">
-            <input type="submit" name="register" value="Зареєструватися" class="submit"/>
+            <fmt:message var="registration_button" key="registration_button" bundle="${index}"/>
+            <input type="submit" name="register" value="${registration_button}" class="submit"/>
         </form>
     </div>
 </div>

@@ -42,6 +42,8 @@ public class AuthorizationFilter implements Filter {
         generalURIs.add("/css/main_guest.css");
         generalURIs.add("/css/error.css");
         generalURIs.add("/images/sad_cat_error.jpg");
+        generalURIs.add("/images/english_language.jpg");
+        generalURIs.add("/images/ukrainian_language.jpg");
         generalURIs.add("/favicon.ico");
     }
 

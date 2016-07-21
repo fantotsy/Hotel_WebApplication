@@ -2,7 +2,6 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" type="text/html; charset=utf-8"/>
-    <title>Guest extended header</title>
 </head>
 <body>
 <%@include file="guest_header.jsp" %>

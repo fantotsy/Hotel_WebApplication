@@ -2,7 +2,6 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" type="text/html; charset=utf-8"/>
-    <title>Admin extended header</title>
 </head>
 <body>
     <%@include file="admin_header.jsp"%>

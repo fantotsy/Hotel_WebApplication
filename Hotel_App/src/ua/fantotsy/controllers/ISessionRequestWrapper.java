@@ -11,7 +11,7 @@ public interface ISessionRequestWrapper {
 
     void extractRequestParameters(HttpServletRequest request);
 
-    void extractSessionAttributes();
+    void extractSessionAttributes(HttpServletRequest request);
 
     void setRequestAttribute(String key, Object value);
 
@@ -19,5 +19,5 @@ public interface ISessionRequestWrapper {
 
     void insertAttributes(HttpServletRequest request);
 
-    void sessionInvalidate();
+    String sessionInvalidate();
 }

@@ -41,7 +41,7 @@
                     <p>
                         <label for="name">Ім'я</label>
                     </p>
-                    <input type="text" pattern="[A-Za-zА-ЯЄІЇА-Яа-яЁё]+" name="name" maxlength="20" value="${guest_data.name}"
+                    <input type="text" pattern="[A-Za-яА-ЯяЄєІіЇїЙйЁё]+" name="name" maxlength="20" value="${guest_data.name}"
                            id="name" required/>
                 </div>
                 <div class="row">

@@ -65,7 +65,7 @@ public class DAOGuest implements IDAOGuest {
              PreparedStatement ps = connection.prepareStatement(INSERT_NEW_GUEST)) {
             ps.setString(1, guest.getName());
             ps.setString(2, guest.getLastName());
-            ps.setString(3, guest.getPhoneNumber());
+            ps.setString(3, "+380" + guest.getPhoneNumber());
             ps.setString(4, guest.getEmail());
             ps.setString(5, guest.getLogin());
             ps.setString(6, guest.getPassword());
@@ -102,7 +102,7 @@ public class DAOGuest implements IDAOGuest {
              PreparedStatement ps = connection.prepareStatement(GET_ALL_GUESTS);
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
-                Guest guest = new Guest(rs.getString("name"), rs.getString("last_name"), "+380" + rs.getString("phone_number"), rs.getString("email"), rs.getString("login"));
+                Guest guest = new Guest(rs.getString("name"), rs.getString("last_name"), rs.getString("phone_number"), rs.getString("email"), rs.getString("login"));
                 listOfGuests.add(guest);
             }
         } catch (SQLException ex) {

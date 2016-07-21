@@ -10,16 +10,14 @@ public class SessionRequestWrapper implements ISessionRequestWrapper {
     private Map<String, Object> requestAttributes;
     private Map<String, String[]> requestParameters;
     private Map<String, Object> sessionAttributes;
-    HttpSession session;
 
     public SessionRequestWrapper(HttpServletRequest request) {
         requestParameters = new HashMap<>();
         requestAttributes = new HashMap<>();
         sessionAttributes = new HashMap<>();
-        session = request.getSession(true);
 
         extractRequestParameters(request);
-        extractSessionAttributes();
+        extractSessionAttributes(request);
     }
 
     @Override
@@ -31,7 +29,8 @@ public class SessionRequestWrapper implements ISessionRequestWrapper {
     }
 
     @Override
-    public void extractSessionAttributes() {
+    public void extractSessionAttributes(HttpServletRequest request) {
+        HttpSession session = request.getSession(true);
         Enumeration<String> attributes = session.getAttributeNames();
         while (attributes.hasMoreElements()) {
             String attributeKey = attributes.nextElement();
@@ -78,6 +77,7 @@ public class SessionRequestWrapper implements ISessionRequestWrapper {
             request.setAttribute(key, value);
         }
 
+        HttpSession session = request.getSession(true);
         for (Map.Entry<String, Object> entry : sessionAttributes.entrySet()) {
             String key = entry.getKey();
             Object value = entry.getValue();
@@ -86,7 +86,7 @@ public class SessionRequestWrapper implements ISessionRequestWrapper {
     }
 
     @Override
-    public void sessionInvalidate() {
-        session.invalidate();
+    public String sessionInvalidate() {
+        return "session_invalidate";
     }
 }

@@ -1,66 +1,55 @@
-<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" errorPage="error.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
-<%@ page import="java.util.*" %>
-<c:choose>
-    <c:when test="${not empty sessionScope.language}">
-        <fmt:setLocale value="${sessionScope.language}"/>
-    </c:when>
-    <c:otherwise>
-        <fmt:setLocale value="en"/>
-    </c:otherwise>
-</c:choose>
+<%@ include file="locale.jsp" %>
 <fmt:setBundle var="index" basename="ua.fantotsy.properties.i18n.index"/>
 <html>
-
-<head>
-    <meta http-equiv="Content-Type" type="text/html; charset=utf-8"/>
-    <title><fmt:message key="title" bundle="${index}"/></title>
-    <link href="../../css/index.css" type="text/css" rel="stylesheet"/>
-</head>
-<body>
-
-<a href="/index?language=en_US"><img src="../../images/english_language.jpg" alt="english" class="language_image"/></a>
-<a href="/index?language=ua_UA"><img src="../../images/ukrainian_language.jpg" alt="ukrainian" class="language_image"/></a>
-
-<div id="wrapper">
-    <header id="header">
-        <h1><fmt:message key="header" bundle="${index}"/></h1>
-        <h2><fmt:message key="greeting" bundle="${index}"/></h2>
-    </header>
-    <div id="signin_wrapper">
-        <h3><fmt:message key="form_header" bundle="${index}"/></h3>
-        <form action="/main" method="post" id="signin_form">
-            <c:if test="${error == 'wrong entrance data'}">
-                <span><fmt:message key="login_password_error" bundle="${index}"/></span>
-            </c:if>
-            <div>
-                <fmt:message var="login_placeholder" key="login_placeholder" bundle="${index}"/>
-                <input type="text" name="login" placeholder="${login_placeholder}" value="${sessionScope.login}"
-                       class="signin_data" required/>
+    <head>
+        <meta http-equiv="Content-Type" type="text/html; charset=utf-8"/>
+        <title><fmt:message key="title" bundle="${index}"/></title>
+        <link href="../../css/index.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body>
+        <a href="/index?language=en_US"><img src="../../images/english_language.jpg" alt="english" class="language_image"/></a>
+        <a href="/index?language=ua_UA"><img src="../../images/ukrainian_language.jpg" alt="ukrainian" class="language_image"/></a>
+        <div id="wrapper">
+            <header id="header">
+                <h1><fmt:message key="header" bundle="${index}"/></h1>
+                <h2><fmt:message key="greeting" bundle="${index}"/></h2>
+            </header>
+            <div id="signin_wrapper">
+                <h3><fmt:message key="form_header" bundle="${index}"/></h3>
+                <form action="/main" method="post" id="signin_form">
+                    <c:if test="${error == 'wrong entrance data'}">
+                        <span><fmt:message key="login_password_error" bundle="${index}"/></span>
+                    </c:if>
+                    <div>
+                        <fmt:message var="login_placeholder" key="login_placeholder" bundle="${index}"/>
+                        <input type="text" name="login" placeholder="${login_placeholder}" value="${sessionScope.login}"
+                               class="signin_data" required/>
+                    </div>
+                    <div>
+                        <fmt:message var="password_placeholder" key="password_placeholder" bundle="${index}"/>
+                        <input type="password" name="password" placeholder="${password_placeholder}" class="signin_data"
+                               required/>
+                    </div>
+                    <label id="adminCheckbox">
+                        <c:if test="${sessionScope.role != 'admin'}">
+                            <input type="checkbox" name="isAdmin" value="true">
+                        </c:if>
+                        <c:if test="${sessionScope.role == 'admin'}">
+                            <input type="checkbox" name="isAdmin" value="true" checked>
+                        </c:if>
+                        <fmt:message key="admin_checkBox" bundle="${index}"/>
+                    </label>
+                    <fmt:message var="signIn_button" key="signIn_button" bundle="${index}"/>
+                    <input type="submit" name="signin" value="${signIn_button}" class="submit"/>
+                </form>
+                <form action="/registration" method="post" id="registration">
+                    <fmt:message var="registration_button" key="registration_button" bundle="${index}"/>
+                    <input type="submit" name="register" value="${registration_button}" class="submit"/>
+                </form>
             </div>
-            <div>
-                <fmt:message var="password_placeholder" key="password_placeholder" bundle="${index}"/>
-                <input type="password" name="password" placeholder="${password_placeholder}" class="signin_data"
-                       required/>
-            </div>
-            <label id="adminCheckbox">
-                <c:if test="${sessionScope.role != 'admin'}">
-                    <input type="checkbox" name="isAdmin" value="true">
-                </c:if>
-                <c:if test="${sessionScope.role == 'admin'}">
-                    <input type="checkbox" name="isAdmin" value="true" checked>
-                </c:if>
-                <fmt:message key="admin_checkBox" bundle="${index}"/>
-            </label>
-            <fmt:message var="signIn_button" key="signIn_button" bundle="${index}"/>
-            <input type="submit" name="signin" value="${signIn_button}" class="submit"/>
-        </form>
-        <form action="/registration" method="post" id="registration">
-            <fmt:message var="registration_button" key="registration_button" bundle="${index}"/>
-            <input type="submit" name="register" value="${registration_button}" class="submit"/>
-        </form>
-    </div>
-</div>
-</body>
+        </div>
+    </body>
 </html>

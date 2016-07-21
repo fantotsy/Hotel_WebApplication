@@ -1,35 +1,36 @@
 package ua.fantotsy.commands;
 
 import ua.fantotsy.controllers.ICommand;
+import ua.fantotsy.controllers.ISessionRequestWrapper;
 import ua.fantotsy.properties.Config;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Locale;
 
 public class StartPageCommand implements ICommand {
     @Override
-    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession(true);
-        if (request.getParameter("logout") != null) {
-            session.invalidate();
+    public String execute(ISessionRequestWrapper wrapper) throws ServletException, IOException {
+        if (wrapper.getRequestParameter("logout") != null) {
+            wrapper.sessionInvalidate();
         }
 
-        String languageCountry = request.getParameter("language");
+        String languageCountry = wrapper.getRequestParameter("language");
         if (languageCountry == null) {
-            if (session.getAttribute("locale") == null) {
+            if (wrapper.getSessionAttribute("locale") == null) {
                 Locale locale = Locale.ENGLISH;
                 String language = locale.getLanguage();
-                session.setAttribute("locale", locale);
-                session.setAttribute("language", language);
+                wrapper.setSessionAttribute("locale", locale);
+                wrapper.setSessionAttribute("language", language);
             }
-            request.getRequestDispatcher(Config.getInstance().getProperty(Config.START_PAGE)).forward(request, response);
         } else {
-            request.setAttribute("language", languageCountry);
-            request.getRequestDispatcher("/set_locale").forward(request, response);
+            String[] separatedLanguageCountry = languageCountry.split("_");
+            String language = separatedLanguageCountry[0];
+            String country = separatedLanguageCountry[1];
+            Locale locale = new Locale(language, country);
+            wrapper.setSessionAttribute("locale", locale);
+            wrapper.setSessionAttribute("language", language);
         }
+        return Config.getInstance().getProperty(Config.START_PAGE);
     }
 }

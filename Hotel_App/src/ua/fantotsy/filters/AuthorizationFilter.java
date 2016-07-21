@@ -42,6 +42,7 @@ public class AuthorizationFilter implements Filter {
         generalURIs.add("/css/main_guest.css");
         generalURIs.add("/css/error.css");
         generalURIs.add("/images/sad_cat_error.jpg");
+        generalURIs.add("/favicon.ico");
     }
 
     @Override
@@ -50,6 +51,7 @@ public class AuthorizationFilter implements Filter {
         if (session != null) {
             String role = (String) session.getAttribute("role");
             String uriPath = ((HttpServletRequest) request).getRequestURI();
+            System.out.println("uri: " + uriPath);
             if (guestURIs.contains(uriPath)) {
                 if (role != null && role.equals("guest")) {
                     chain.doFilter(request, response);
@@ -65,9 +67,11 @@ public class AuthorizationFilter implements Filter {
             } else if (generalURIs.contains(uriPath)) {
                 chain.doFilter(request, response);
             } else {
+                //System.out.println("general");
                 request.getRequestDispatcher(Config.getInstance().getProperty(Config.ERROR_PAGE)).forward(request, response);
             }
         } else {
+            //System.out.println("vdsvdsvgeneral");
             request.getRequestDispatcher(Config.getInstance().getProperty(Config.ERROR_PAGE)).forward(request, response);
         }
     }

@@ -24,7 +24,7 @@
 <div id="wrapper">
     <header id="header">
         <h1><fmt:message key="index" bundle="${messages}"/></h1>
-        <h2>Ласкаво просимо!</h2>
+        <h2>${ff}Ласкаво просимо!</h2>
     </header>
     <div id="signin_wrapper">
         <h3>Вхід в особистий кабінет</h3>

@@ -24,7 +24,6 @@ public class ControllerHelper {
         commands.put("/booking", new CheckOrderDataCommand());
         commands.put("/order_valid", new GuestBookingPageCommand());
         commands.put("/error", new ErrorCommand());
-        commands.put("/set_locale", new SetLocaleCommand());
     }
 
     public static ControllerHelper getInstance() {

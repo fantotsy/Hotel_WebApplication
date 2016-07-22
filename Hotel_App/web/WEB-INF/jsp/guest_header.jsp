@@ -4,9 +4,13 @@
     <meta http-equiv="Content-Type" type="text/html; charset=utf-8"/>
 </head>
 <body>
+
 <div id="">
     <img src="../../images/user_icon.png" alt="user_icon" id="icon"/>
     <h2 id="role">Користувач</h2>
+</div>
+<div id="greeting">
+    <h1>Персональна сторінка користувача ${guestInfo.login}</h1>
 </div>
 <div>
     <form action="/index" method="post">

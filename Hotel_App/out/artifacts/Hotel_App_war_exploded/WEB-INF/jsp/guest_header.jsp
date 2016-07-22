@@ -10,10 +10,11 @@
     <h2 id="role">Користувач</h2>
 </div>
 <div id="greeting">
-    <h1>Персональна сторінка користувача ${guestInfo.login}</h1>
+    <h1>Персональна сторінка користувача ${sessionScope.guestInfo.login}</h1>
 </div>
 <div>
     <form action="/index" method="post">
+        <input type="hidden" name="logout" value="true"/>
         <input type="submit" name="logout" value="Вийти" id="logout"/>
     </form>
 </div>

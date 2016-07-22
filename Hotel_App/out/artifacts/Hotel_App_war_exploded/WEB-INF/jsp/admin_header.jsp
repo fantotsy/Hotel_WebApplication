@@ -14,6 +14,7 @@
 </div>
 <div>
     <form action="/index" method="post">
+        <input type="hidden" name="logout" value="true"/>
         <input type="submit" name="logout" value="Вийти" id="logout"/>
     </form>
 </div>

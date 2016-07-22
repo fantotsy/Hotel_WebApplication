@@ -17,7 +17,7 @@
             <th>Номер телефону</th>
             <th>Електронна пошта</th>
         </tr>
-        <c:forEach items="${listOfGuests}" var="guest">
+        <c:forEach items="${requestScope.listOfGuests}" var="guest">
             <tr>
                 <td>${guest.name}</td>
                 <td>${guest.lastName}</td>

@@ -20,7 +20,7 @@
             <div id="signin_wrapper">
                 <h3><fmt:message key="form_header" bundle="${index}"/></h3>
                 <form action="/main" method="post" id="signin_form">
-                    <c:if test="${error == 'wrong entrance data'}">
+                    <c:if test="${requestScope.error == 'wrong entrance data'}">
                         <span><fmt:message key="login_password_error" bundle="${index}"/></span>
                     </c:if>
                     <div>
@@ -34,12 +34,7 @@
                                required/>
                     </div>
                     <label id="adminCheckbox">
-                        <c:if test="${sessionScope.role != 'admin'}">
-                            <input type="checkbox" name="isAdmin" value="true">
-                        </c:if>
-                        <c:if test="${sessionScope.role == 'admin'}">
-                            <input type="checkbox" name="isAdmin" value="true" checked>
-                        </c:if>
+                        <input type="checkbox" name="isAdmin" value="true">
                         <fmt:message key="admin_checkBox" bundle="${index}"/>
                     </label>
                     <fmt:message var="signIn_button" key="signIn_button" bundle="${index}"/>

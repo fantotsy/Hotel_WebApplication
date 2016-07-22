@@ -17,18 +17,18 @@
             <th>Кількість номерів</th>
             <th>Додати/Видалити</th>
         </tr>
-        <c:forEach items="${listOfCategories}" var="category">
+        <c:forEach items="${requestScope.listOfCategories}" var="category">
             <tr>
                 <td>${category.type}</td>
                 <td>${category.numberOfBeds}</td>
                 <td>${category.price}</td>
                 <td>${category.apartments}</td>
                 <td>
-                    <c:if test="${error[0] == category.categoryId}">
-                        <c:if test="${error[1] == 'current apartment exists'}">
+                    <c:if test="${requestScope.error[0] == category.categoryId}">
+                        <c:if test="${requestScope.error[1] == 'current apartment exists'}">
                             Такий номер вже існує!
                         </c:if>
-                        <c:if test="${error[1] == 'current apartment does not exist'}">
+                        <c:if test="${requestScope.error[1] == 'current apartment does not exist'}">
                             Такого номера не існує в даній категорії!
                         </c:if>
                     </c:if>

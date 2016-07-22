@@ -13,23 +13,23 @@
 <div id="wrapper">
     <div id="order_form">
         <h2>Оберіть саме ті номери, які вас цікавлять</h2>
-        <c:if test="${error == 'arrival is later than departure'}">
+        <c:if test="${requestScope.error == 'arrival is later than departure'}">
             <span id="wrong_date">Помилкові дані: дата заселення має бути раніше дати виселення!</span>
         </c:if>
-        <c:if test="${error == 'empty types or capacities'}">
+        <c:if test="${requestScope.error == 'empty types or capacities'}">
             <span id="wrong_apartment_data">Помилкові дані: тип та кількість місць мають бути заповненими!</span>
         </c:if>
         <form action="/booking" method="get">
             <input type="hidden" name="date_chosen" value="true"/>
             <select name="apartment_type[]" multiple id="type_selector">
                 <option value="default" disabled selected>Тип номера</option>
-                <c:forEach items="${listOfTypes}" var="type">
+                <c:forEach items="${requestScope.listOfTypes}" var="type">
                     <option value="${type}">${type}</option>
                 </c:forEach>
             </select>
             <select name="apartment_capacity[]" multiple id="capacity_selector">
                 <option value="default" disabled selected>Кількість місць</option>
-                <c:forEach items="${listOfCapacities}" var="capacity">
+                <c:forEach items="${requestScope.listOfCapacities}" var="capacity">
                     <option value="${capacity}">${capacity}</option>
                 </c:forEach>
             </select>
@@ -38,12 +38,14 @@
                 <div id="arrival_date">
                     Оберіть дату заселення:
                     <br/>
-                    <input type="date" name="check-in_date" max="${yearLater}" min="${today}" required/>
+                    <input type="date" name="check-in_date" max="${requestScope.yearLater}" min="${requestScope.today}"
+                           required/>
                 </div>
                 <div id="departure_date">
                     Оберіть дату виселення:
                     <br/>
-                    <input type="date" name="check-out_date" max="${yearLater}" min="${today}" required/>
+                    <input type="date" name="check-out_date" max="${requestScope.yearLater}" min="${requestScope.today}"
+                           required/>
                 </div>
             </div>
             <br/>
@@ -53,7 +55,7 @@
     <div id="reservations_table">
         <h2>Мої замовлення</h2>
         <c:choose>
-            <c:when test="${not empty listOfReservations}">
+            <c:when test="${not empty requestScope.listOfReservations}">
                 <table>
                     <tr>
                         <th>Номер</th>
@@ -64,7 +66,7 @@
                         <th>Вартість</th>
                         <th></th>
                     </tr>
-                    <c:forEach items="${listOfReservations}" var="reservation">
+                    <c:forEach items="${requestScope.listOfReservations}" var="reservation">
                         <tr>
                             <td>${reservation.apartment.apartmentId}</td>
                             <td>${reservation.apartment.category.type}</td>

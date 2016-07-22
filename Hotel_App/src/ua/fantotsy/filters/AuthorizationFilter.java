@@ -12,12 +12,14 @@ import java.util.List;
 public class AuthorizationFilter implements Filter {
     private List<String> adminURIs;
     private List<String> guestURIs;
+    private List<String> nonUserURIs;
     private List<String> generalURIs;
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
         adminURIs = new ArrayList<>();
         guestURIs = new ArrayList<>();
+        nonUserURIs = new ArrayList<>();
         generalURIs = new ArrayList<>();
 
         adminURIs.add("/admin");
@@ -31,12 +33,13 @@ public class AuthorizationFilter implements Filter {
         guestURIs.add("/order_valid");
         guestURIs.add("/images/user_icon.png");
 
-        generalURIs.add("/");
-        generalURIs.add("/index");
-        generalURIs.add("/registration");
+        nonUserURIs.add("/");
+        nonUserURIs.add("/index");
+        nonUserURIs.add("/registration");
+        nonUserURIs.add("/css/index.css");
+        nonUserURIs.add("/css/registration.css");
+
         generalURIs.add("/main");
-        generalURIs.add("/css/index.css");
-        generalURIs.add("/css/registration.css");
         generalURIs.add("/css/main_guest.css");
         generalURIs.add("/css/error.css");
         generalURIs.add("/images/sad_cat_error.jpg");
@@ -64,14 +67,18 @@ public class AuthorizationFilter implements Filter {
                 } else {
                     request.getRequestDispatcher(Config.getInstance().getProperty(Config.ERROR_PAGE)).forward(request, response);
                 }
+            } else if (nonUserURIs.contains(uriPath)) {
+                if (role == null || request.getParameter("logout").equals("true")) {
+                    chain.doFilter(request, response);
+                } else {
+                    request.getRequestDispatcher(Config.getInstance().getProperty(Config.ERROR_PAGE)).forward(request, response);
+                }
             } else if (generalURIs.contains(uriPath)) {
                 chain.doFilter(request, response);
             } else {
-                //System.out.println("general");
                 request.getRequestDispatcher(Config.getInstance().getProperty(Config.ERROR_PAGE)).forward(request, response);
             }
         } else {
-            //System.out.println("vdsvdsvgeneral");
             request.getRequestDispatcher(Config.getInstance().getProperty(Config.ERROR_PAGE)).forward(request, response);
         }
     }

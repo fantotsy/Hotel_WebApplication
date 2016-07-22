@@ -18,7 +18,7 @@
             <th>Прізвище</th>
             <th>Логін</th>
         </tr>
-        <c:forEach items="${listOfReservations}" var="reservation">
+        <c:forEach items="${requestScope.listOfReservations}" var="reservation">
             <tr>
                 <td>${reservation.apartment.apartmentId}</td>
                 <td>${reservation.arrival}</td>

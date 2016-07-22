@@ -27,6 +27,14 @@ public class CheckSigninDataCommand implements ICommand {
                 return "/guest";
             }
         }
+
+        // Check whether guest is redirected from 'registration' page.
+        String justRegistered = wrapper.getRequestParameter("just_registered");
+        if (justRegistered != null && justRegistered.equals("true")) {
+            String login = wrapper.getRequestParameter("login");
+            return setSessionData(wrapper, login);
+        }
+
         // User is not logged in. Check input data.
         String enteredLogin = wrapper.getRequestParameter("login");
         String enteredPassword = Utils.encryptionMD5(wrapper.getRequestParameter("password"));
@@ -44,10 +52,7 @@ public class CheckSigninDataCommand implements ICommand {
 
         boolean containsGuest = DAOFactory.getDAOGuest().containsCertainGuest(enteredLogin, enteredPassword);
         if (containsGuest) {
-            Guest guest = DAOFactory.getDAOGuest().getCertainGuest(enteredLogin);
-            wrapper.setSessionAttribute("guestInfo", guest);
-            wrapper.setSessionAttribute("role", ROLE_GUEST);
-            return "/guest";
+            return setSessionData(wrapper, enteredLogin);
         }
         return setErrorMessage(wrapper, "wrong entrance data");
     }
@@ -55,5 +60,12 @@ public class CheckSigninDataCommand implements ICommand {
     private String setErrorMessage(ISessionRequestWrapper wrapper, String errorMessage) {
         wrapper.setRequestAttribute("error", errorMessage);
         return Config.getInstance().getProperty(Config.START_PAGE);
+    }
+
+    private String setSessionData(ISessionRequestWrapper wrapper, String login) {
+        Guest guest = DAOFactory.getDAOGuest().getCertainGuest(login);
+        wrapper.setSessionAttribute("guestInfo", guest);
+        wrapper.setSessionAttribute("role", ROLE_GUEST);
+        return "/guest";
     }
 }

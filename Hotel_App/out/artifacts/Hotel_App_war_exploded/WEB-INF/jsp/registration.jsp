@@ -11,7 +11,7 @@
     </head>
     <body>
         <c:choose>
-            <c:when test="${result == 'guest inserted'}">
+            <c:when test="${requestScope.result == 'guest inserted'}">
                 <%@include file="registration_confirmation.jsp"%>
             </c:when>
             <c:otherwise>

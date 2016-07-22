@@ -36,7 +36,6 @@ public class RegistrationPageCommand implements ICommand {
                     //All entered data is valid.
                     DAOFactory.getDAOGuest().insertNewGuest(newGuest);
                     wrapper.setRequestAttribute("login", login);
-                    wrapper.setRequestAttribute("password", Utils.decryptionMD5(password));
                     wrapper.setRequestAttribute("result", "guest inserted");
                 }
             }

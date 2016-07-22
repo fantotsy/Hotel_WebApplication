@@ -1,11 +1,8 @@
 package ua.fantotsy.utils;
 
 import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Utils {
-    private static Map<String, String> MD5Map = new HashMap<>();
 
     public static String encryptionMD5(String password) {
         try {
@@ -18,17 +15,12 @@ public class Utils {
                     sb.append(Integer.toHexString((array[i] & 0xFF) | 0x100).substring(1, 3));
                 }
                 encryption = sb.toString();
-                MD5Map.put(encryption, password);
             }
             return encryption;
         } catch (java.security.NoSuchAlgorithmException ex) {
             ex.printStackTrace();
         }
         return null;
-    }
-
-    public static String decryptionMD5(String encryption) {
-        return MD5Map.get(encryption);
     }
 
     public static String[] getDateLimits() {

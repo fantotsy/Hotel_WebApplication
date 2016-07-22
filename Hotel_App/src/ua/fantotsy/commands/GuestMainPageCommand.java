@@ -15,11 +15,11 @@ import java.util.List;
 public class GuestMainPageCommand implements ICommand {
     @Override
     public String execute(ISessionRequestWrapper wrapper) throws ServletException, IOException {
-        String cancelReservation = wrapper.getRequestParameter("reservation_id");
-        if (cancelReservation != null) {
-            DAOFactory.getDAOReservation().deleteCertainReservation(Integer.parseInt(cancelReservation));
+        // Check whether 'Cancel' button was pressed.
+        String canceledReservationId = wrapper.getRequestParameter("reservation_id");
+        if (canceledReservationId != null) {
+            DAOFactory.getDAOReservation().deleteCertainReservation(Integer.parseInt(canceledReservationId));
         }
-
         wrapper.setSessionAttribute("date_chosen", null);
         String[] dateLimits = Utils.getDateLimits();
         List<String> listOfTypes = DAOFactory.getDAOCategory().getAllTypes();
@@ -28,7 +28,7 @@ public class GuestMainPageCommand implements ICommand {
         List<Reservation> listOfReservations = DAOFactory.getDAOReservation().getCertainReservations(certainGuest.getGuestId());
 
         wrapper.setRequestAttribute("today", dateLimits[0]);
-        wrapper.setRequestAttribute("year_later", dateLimits[1]);
+        wrapper.setRequestAttribute("yearLater", dateLimits[1]);
         wrapper.setRequestAttribute("listOfTypes", listOfTypes);
         wrapper.setRequestAttribute("listOfCapacities", listOfCapacities);
         wrapper.setRequestAttribute("listOfReservations", listOfReservations);

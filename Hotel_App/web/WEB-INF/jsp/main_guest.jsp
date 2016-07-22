@@ -38,12 +38,12 @@
                 <div id="arrival_date">
                     Оберіть дату заселення:
                     <br/>
-                    <input type="date" name="check-in_date" max="${year_later}" min="${today}" required/>
+                    <input type="date" name="check-in_date" max="${yearLater}" min="${today}" required/>
                 </div>
                 <div id="departure_date">
                     Оберіть дату виселення:
                     <br/>
-                    <input type="date" name="check-out_date" max="${year_later}" min="${today}" required/>
+                    <input type="date" name="check-out_date" max="${yearLater}" min="${today}" required/>
                 </div>
             </div>
             <br/>

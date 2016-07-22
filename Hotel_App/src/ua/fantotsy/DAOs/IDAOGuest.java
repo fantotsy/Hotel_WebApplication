@@ -5,9 +5,9 @@ import ua.fantotsy.entities.Guest;
 import java.util.List;
 
 public interface IDAOGuest {
-    int containsCertainLogin(String login);
+    Boolean containsCertainLogin(String login);
 
-    int containsCertainGuest(String login, String password);
+    Boolean containsCertainGuest(String login, String password);
 
     int insertNewGuest(Guest guest);
 

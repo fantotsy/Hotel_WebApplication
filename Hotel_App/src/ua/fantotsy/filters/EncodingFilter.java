@@ -7,7 +7,13 @@ public class EncodingFilter implements Filter {
     private FilterConfig filterConfig = null;
     private String encoding;
 
+    @Override
+    public void init(FilterConfig config) throws ServletException {
+        this.encoding = config.getInitParameter("defaultEncoding");
 
+    }
+
+    @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
         String currentEncoding = request.getCharacterEncoding();
         if (encoding != null && !encoding.equalsIgnoreCase(currentEncoding)) {
@@ -18,12 +24,7 @@ public class EncodingFilter implements Filter {
         chain.doFilter(request, response);
     }
 
-    public void init(FilterConfig config) throws ServletException {
-        this.encoding = config.getInitParameter("defaultEncoding");
-
-    }
-
+    @Override
     public void destroy() {
     }
-
 }

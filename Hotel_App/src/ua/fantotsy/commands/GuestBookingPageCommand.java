@@ -26,9 +26,10 @@ public class GuestBookingPageCommand implements ICommand {
         String[] bookedApartmentsArray = wrapper.getRequestParameters("booked_apartments[]");
         if (bookedApartmentsArray == null) {
             wrapper.setRequestAttribute("error", "apartments array is empty");
+            wrapper.setRequestAttribute("category_id", categoryId);
         } else {
-            List<String> bookedApartments = Arrays.asList(wrapper.getRequestParameters("booked_apartments[]"));
-
+            List<String> bookedApartments = Arrays.asList(bookedApartmentsArray);
+            // Insert all reservations from 'bookedApartments' in data base.
             for (String apartment : bookedApartments) {
                 Guest guest = (Guest) wrapper.getSessionAttribute("guestInfo");
                 Apartment bookedApartment = new Apartment(Integer.parseInt(apartment));
@@ -42,7 +43,6 @@ public class GuestBookingPageCommand implements ICommand {
 
         wrapper.setRequestAttribute("listOfCategories", listOfCategories);
         wrapper.setRequestAttribute("listOfApartments", listOfApartments);
-        wrapper.setRequestAttribute("category_id", categoryId);
 
         return Config.getInstance().getProperty(Config.MAIN_GUEST_BOOKING_PAGE);
     }

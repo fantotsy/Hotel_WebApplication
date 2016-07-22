@@ -12,7 +12,6 @@ import java.io.IOException;
 public class ServletController extends HttpServlet {
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ICommand command = ControllerHelper.getInstance().getCommand(request);
-        System.out.println(command);
         ISessionRequestWrapper wrapper = new SessionRequestWrapper(request);
         String viewPage = command.execute(wrapper);
         if (viewPage.equals("session_invalidate")) {

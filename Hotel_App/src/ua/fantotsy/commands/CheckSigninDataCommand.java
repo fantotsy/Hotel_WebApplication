@@ -18,41 +18,42 @@ public class CheckSigninDataCommand implements ICommand {
 
     @Override
     public String execute(ISessionRequestWrapper wrapper) throws ServletException, IOException {
+        // Check whether user already logged in (as admin or as guest).
         String role = (String) wrapper.getSessionAttribute("role");
-        if (role != null && role.equals(ROLE_ADMIN)) {
-            return "/admin";
-        } else if (role != null && role.equals(ROLE_GUEST)) {
-            return "/guest";
-        } else {
-            String enteredLogin = wrapper.getRequestParameter("login");
-            String enteredPassword = Utils.encryptionMD5(wrapper.getRequestParameter("password"));
-            String isAdmin = wrapper.getRequestParameter("isAdmin");
-
-            // Check whether CheckBox 'Admin' was checked.
-            if (isAdmin != null && isAdmin.equals("true")) {
-                // Check login and password for Admin.
-                if (enteredLogin.equals(ADMIN_LOGIN) && enteredPassword.equals(ADMIN_PASSWORD)) {
-                    wrapper.setSessionAttribute("login", ADMIN_LOGIN);
-                    wrapper.setSessionAttribute("role", ROLE_ADMIN);
-                    return "/admin";
-                } else {
-                    wrapper.setRequestAttribute("error", "wrong entrance data");
-                    return Config.getInstance().getProperty(Config.START_PAGE);
-                }
+        if (role != null) {
+            if (role.equals(ROLE_ADMIN)) {
+                return "/admin";
             } else {
-                int validationCode = DAOFactory.getDAOGuest().containsCertainGuest(enteredLogin, enteredPassword);
-                if (validationCode == 1) {
-                    wrapper.setRequestAttribute("error", "wrong entrance data");
-                    return Config.getInstance().getProperty(Config.START_PAGE);
-                } else {
-                    Guest guest = DAOFactory.getDAOGuest().getCertainGuest(enteredLogin);
-                    System.out.println(guest);
-                    wrapper.setSessionAttribute("guestInfo", guest);
-                    wrapper.setSessionAttribute("login", enteredLogin);
-                    wrapper.setSessionAttribute("role", ROLE_GUEST);
-                    return "/guest";
-                }
+                return "/guest";
             }
         }
+        // User is not logged in. Check input data.
+        String enteredLogin = wrapper.getRequestParameter("login");
+        String enteredPassword = Utils.encryptionMD5(wrapper.getRequestParameter("password"));
+        String isAdmin = wrapper.getRequestParameter("isAdmin");
+
+        // Check whether CheckBox 'Admin' was checked.
+        if (isAdmin != null && isAdmin.equals("true")) {
+            // Check login and password for Admin.
+            if (enteredLogin.equals(ADMIN_LOGIN) && enteredPassword.equals(ADMIN_PASSWORD)) {
+                wrapper.setSessionAttribute("role", ROLE_ADMIN);
+                return "/admin";
+            }
+            return setErrorMessage(wrapper, "wrong entrance data");
+        }
+
+        boolean containsGuest = DAOFactory.getDAOGuest().containsCertainGuest(enteredLogin, enteredPassword);
+        if (containsGuest) {
+            Guest guest = DAOFactory.getDAOGuest().getCertainGuest(enteredLogin);
+            wrapper.setSessionAttribute("guestInfo", guest);
+            wrapper.setSessionAttribute("role", ROLE_GUEST);
+            return "/guest";
+        }
+        return setErrorMessage(wrapper, "wrong entrance data");
+    }
+
+    private String setErrorMessage(ISessionRequestWrapper wrapper, String errorMessage) {
+        wrapper.setRequestAttribute("error", errorMessage);
+        return Config.getInstance().getProperty(Config.START_PAGE);
     }
 }

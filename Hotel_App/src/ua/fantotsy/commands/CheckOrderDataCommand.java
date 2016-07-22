@@ -11,36 +11,35 @@ import java.util.List;
 public class CheckOrderDataCommand implements ICommand {
     @Override
     public String execute(ISessionRequestWrapper wrapper) throws ServletException, IOException {
+        // Check whether guest have made valid order.
         String dateChosen = (String) wrapper.getSessionAttribute("date_chosen");
-
-        //If guest have not made valid order
         if (dateChosen == null) {
             dateChosen = wrapper.getRequestParameter("date_chosen");
-            wrapper.setSessionAttribute("date_chosen", dateChosen);
             String arrival = wrapper.getRequestParameter("check-in_date");
             String departure = wrapper.getRequestParameter("check-out_date");
-            Object typesObject = wrapper.getRequestParameters("apartment_type[]");
-            Object capacitiesObject = wrapper.getRequestParameters("apartment_capacity[]");
+            String[] typesObject = wrapper.getRequestParameters("apartment_type[]");
+            String[] capacitiesObject = wrapper.getRequestParameters("apartment_capacity[]");
 
-            if (arrival != null && departure != null && arrival.compareTo(departure) >= 0) {
-                wrapper.setRequestAttribute("error", "arrival is later than departure");
-                wrapper.setSessionAttribute("date_chosen", "false");
-                return "/guest";
+            if (arrival.compareTo(departure) >= 0) {
+                return setErrorMessage(wrapper, "arrival is later than departure");
             }
             if (typesObject == null || capacitiesObject == null) {
-                wrapper.setRequestAttribute("error", "empty types or capacities");
-                wrapper.setSessionAttribute("date_chosen", "false");
-                return "/guest";
+                return setErrorMessage(wrapper, "empty types or capacities");
             }
 
-            List<String> types = Arrays.asList(wrapper.getRequestParameters("apartment_type[]"));
-            List<String> capacities = Arrays.asList(wrapper.getRequestParameters("apartment_capacity[]"));
+            wrapper.setSessionAttribute("date_chosen", dateChosen);
+            List<String> types = Arrays.asList(typesObject);
+            List<String> capacities = Arrays.asList(capacitiesObject);
             wrapper.setSessionAttribute("types", types);
             wrapper.setSessionAttribute("capacities", capacities);
             wrapper.setSessionAttribute("arrival", arrival);
             wrapper.setSessionAttribute("departure", departure);
         }
-
         return "/order_valid";
+    }
+
+    private String setErrorMessage(ISessionRequestWrapper wrapper, String errorMessage) {
+        wrapper.setRequestAttribute("error", errorMessage);
+        return "/guest";
     }
 }

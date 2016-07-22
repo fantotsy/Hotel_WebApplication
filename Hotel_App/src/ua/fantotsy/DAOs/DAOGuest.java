@@ -20,40 +20,34 @@ public class DAOGuest implements IDAOGuest {
     private static final String GET_ALL_GUESTS = "SELECT name, last_name, phone_number, email, login FROM guests";
 
     @Override
-    public int containsCertainLogin(String login) {
-        int result = 0;
+    public Boolean containsCertainLogin(String login) {
+        Boolean result;
         try (Connection connection = ConnectionSource.getInstance().getConnection();
              PreparedStatement ps = connection.prepareStatement(GET_CERTAIN_LOGIN)) {
             ps.setString(1, login);
             ResultSet rs = ps.executeQuery();
-            boolean booleanResult = rs.next();
-            if (booleanResult) {
-                result = 1;
-            }
+            result = rs.next();
             rs.close();
         } catch (SQLException ex) {
             ex.printStackTrace();
-            return -1;
+            return null;
         }
         return result;
     }
 
     @Override
-    public int containsCertainGuest(String login, String password) {
-        int result = 1;
+    public Boolean containsCertainGuest(String login, String password) {
+        Boolean result;
         try (Connection connection = ConnectionSource.getInstance().getConnection();
              PreparedStatement ps = connection.prepareStatement(GET_CERTAIN_LOGIN_AND_PASSWORD)) {
             ps.setString(1, login);
             ps.setString(2, password);
             ResultSet rs = ps.executeQuery();
-            boolean booleanResult = rs.next();
-            if (booleanResult) {
-                result = 0;
-            }
+            result = rs.next();
             rs.close();
         } catch (SQLException ex) {
             ex.printStackTrace();
-            return -1;
+            return null;
         }
         return result;
     }

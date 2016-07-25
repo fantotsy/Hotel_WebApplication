@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" errorPage="error.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="err" uri="/WEB-INF/TLDs/errorTag.tld"%>
 <html>
 <head>
     <meta http-equiv="Content-Type" type="text/html; charset=utf-8"/>
@@ -25,8 +26,9 @@
                     <td>${category.price}</td>
                     <td>${category.apartments}</td>
                     <td>
-                        <c:if test="${requestScope.category_id == category.categoryId and requestScope.error == 'apartments array is empty'}">
-                            Порожнє замовлення!
+                        <c:if test="${requestScope.category_id == category.categoryId}">
+                            <%--The next tag prints error message if it is needed--%>
+                            <err:error errorType="${requestScope.error}" locale="${sessionScope.locale}"/>
                         </c:if>
                         <form action="/order_valid" method="get">
                             <input type="hidden" name="category_id" value="${category.categoryId}"/>

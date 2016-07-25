@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" errorPage="error.jsp" %>
+<%@ taglib prefix="err" uri="/WEB-INF/TLDs/errorTag.tld" %>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -15,9 +16,8 @@
         <div class="row">
             <p>
                 <label for="login"><fmt:message key="login_label" bundle="${registration}"/></label>
-                <c:if test="${requestScope.error == 'login exists'}">
-                    <span id="loginExists"><fmt:message key="login_error" bundle="${registration}"/></span>
-                </c:if>
+                <%--The next tag prints error message if it is needed--%>
+                <err:error errorType="${requestScope.error_login}" locale="${sessionScope.locale}"/>
             </p>
             <input type="text" name="login" maxlength="20" value="${requestScope.guest_data.login}" id="login"
                    required/>
@@ -25,9 +25,8 @@
         <div class="row">
             <p>
                 <label for="password"><fmt:message key="password_label" bundle="${registration}"/></label>
-                <c:if test="${requestScope.error == 'different password and confirmation'}">
-                    <span id="differentPasswords"><fmt:message key="password_error" bundle="${registration}"/></span>
-                </c:if>
+                <%--The next tag prints error message if it is needed--%>
+                <err:error errorType="${requestScope.error_password}" locale="${sessionScope.locale}"/>
             </p>
             <input type="password" name="password" maxlength="60" id="password" required/>
         </div>

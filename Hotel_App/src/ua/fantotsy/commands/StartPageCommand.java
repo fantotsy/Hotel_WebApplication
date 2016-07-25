@@ -12,19 +12,26 @@ public class StartPageCommand implements ICommand {
     @Override
     public String execute(ISessionRequestWrapper wrapper) throws ServletException, IOException {
         // Check whether 'logout' was pressed.
-        if (wrapper.getRequestParameter("logout") != null) {
+        System.out.println("1.Session.language is " + wrapper.getSessionAttribute("language"));
+        System.out.println("logout: " + wrapper.getRequestParameter("logout"));
+        System.out.println("1.invalidated: " + wrapper.getSessionInvalidated());
+        if (wrapper.getRequestParameter("logout") != null && !wrapper.getSessionInvalidated()) {
+            wrapper.setSessionInvalidated(true);
+            System.out.println("2.invalidated: " + wrapper.getSessionInvalidated());
             return wrapper.sessionInvalidate();
         }
-        // Set locale.
+        // Set default locale.
+        System.out.println("2.Session.language is " + wrapper.getSessionAttribute("language") + "\n");
+        if (wrapper.getSessionAttribute("language") == null) {
+            Locale locale = Locale.ENGLISH;
+            String language = locale.getLanguage();
+            wrapper.setSessionAttribute("locale", locale);
+            wrapper.setSessionAttribute("language", language);
+        }
+        System.out.println("3.Session.language is " + wrapper.getSessionAttribute("language") + "\n");
+        //Check whether locale was changed.
         String languageCountry = wrapper.getRequestParameter("language");
-        if (languageCountry == null) {
-            if (wrapper.getSessionAttribute("locale") == null) {
-                Locale locale = Locale.ENGLISH;
-                String language = locale.getLanguage();
-                wrapper.setSessionAttribute("locale", locale);
-                wrapper.setSessionAttribute("language", language);
-            }
-        } else {
+        if (languageCountry != null) {
             String[] separatedLanguageCountry = languageCountry.split("_");
             String language = separatedLanguageCountry[0];
             String country = separatedLanguageCountry[1];

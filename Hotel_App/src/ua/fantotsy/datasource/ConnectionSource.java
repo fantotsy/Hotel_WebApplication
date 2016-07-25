@@ -1,9 +1,5 @@
 package ua.fantotsy.datasource;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
@@ -12,17 +8,19 @@ import java.sql.SQLException;
 
 public class ConnectionSource {
 
-    private Context initContext;
+    private InitialContext initContext;
     private DataSource ds;
     private static ConnectionSource instance = new ConnectionSource();
-    private final Logger LOGGER = LogManager.getLogger(ConnectionSource.class.getName());
+    //private Logger logger = Logger.getLogger(ConnectionSource.class);
 
     private ConnectionSource() {
+        //DOMConfigurator.configure("log4j.xml");
+
         try {
             initContext = new InitialContext();
             ds = (DataSource) initContext.lookup("java:comp/env/jdbc/hoteldb");
         } catch (NamingException e) {
-            LOGGER.error(e);
+            //logger.error(e);
         }
     }
 
@@ -31,11 +29,13 @@ public class ConnectionSource {
     }
 
     public Connection getConnection() {
+        //logger.error("Hello, error!");
+
         Connection connection = null;
         try {
             connection = ds.getConnection();
         } catch (SQLException e) {
-            LOGGER.error(e);
+            //logger.error(e);
         }
         return connection;
     }

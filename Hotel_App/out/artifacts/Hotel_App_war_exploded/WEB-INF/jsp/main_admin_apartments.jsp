@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" errorPage="error.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="err" uri="/WEB-INF/TLDs/errorTag.tld"%>
 <html>
 <head>
     <meta http-equiv="Content-Type" type="text/html; charset=utf-8"/>
@@ -25,12 +26,8 @@
                 <td>${category.apartments}</td>
                 <td>
                     <c:if test="${requestScope.error[0] == category.categoryId}">
-                        <c:if test="${requestScope.error[1] == 'current apartment exists'}">
-                            Такий номер вже існує!
-                        </c:if>
-                        <c:if test="${requestScope.error[1] == 'current apartment does not exist'}">
-                            Такого номера не існує в даній категорії!
-                        </c:if>
+                        <%--The next tag prints error message if it is needed--%>
+                        <err:error errorType="${requestScope.error[1]}" locale="${sessionScope.locale}"/>
                     </c:if>
                     <form action="/apartments" method="get">
                         <input type="hidden" name="category_id" value="${category.categoryId}"/>

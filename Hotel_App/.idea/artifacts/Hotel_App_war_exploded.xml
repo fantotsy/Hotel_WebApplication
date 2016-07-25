@@ -6,14 +6,14 @@
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="Hotel_App" />
+          <element id="dir-copy" path="$PROJECT_DIR$/web/WEB-INF/classes" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="application" name="log4j-api-2.3" />
-          <element id="library" level="application" name="log4j-core-2.3" />
           <element id="library" level="application" name="mysql-connector-java-5.1.35" />
           <element id="library" level="application" name="javax.servlet.jsp.jstl-1.2.1" />
           <element id="library" level="application" name="javax.servlet.jsp.jstl-api-1.2.1" />
           <element id="library" level="application" name="taglibs-standard-impl-1.2.1" />
+          <element id="library" level="application" name="log4j-1.2.17" />
         </element>
       </element>
     </root>

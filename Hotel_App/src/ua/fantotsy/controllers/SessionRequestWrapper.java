@@ -10,12 +10,24 @@ public class SessionRequestWrapper implements ISessionRequestWrapper {
     private Map<String, Object> requestAttributes;
     private Map<String, String[]> requestParameters;
     private Map<String, Object> sessionAttributes;
+    private Boolean isSessionInvalidated = false;
+
+    @Override
+    public Boolean getSessionInvalidated() {
+        return isSessionInvalidated;
+    }
+
+    @Override
+    public void setSessionInvalidated(Boolean sessionInvalidated) {
+        isSessionInvalidated = sessionInvalidated;
+    }
 
     public SessionRequestWrapper(HttpServletRequest request) {
         requestParameters = new HashMap<>();
         requestAttributes = new HashMap<>();
         sessionAttributes = new HashMap<>();
 
+        isSessionInvalidated = Boolean.parseBoolean((String) request.getAttribute("isSessionInvalidated"));
         extractRequestParameters(request);
         extractSessionAttributes(request);
     }

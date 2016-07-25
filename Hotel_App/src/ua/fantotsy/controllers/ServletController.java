@@ -1,7 +1,5 @@
 package ua.fantotsy.controllers;
 
-import ua.fantotsy.properties.Config;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +15,8 @@ public class ServletController extends HttpServlet {
         if (viewPage.equals("session_invalidate")) {
             HttpSession session = request.getSession(true);
             session.invalidate();
-            viewPage = Config.getInstance().getProperty(Config.START_PAGE);
+            request.setAttribute("isSessionInvalidated", "true");
+            viewPage = "/index";
         } else {
             wrapper.insertAttributes(request);
         }

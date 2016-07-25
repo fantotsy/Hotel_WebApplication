@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" errorPage="error.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="err" uri="/WEB-INF/TLDs/errorTag.tld"%>
 <html>
 <head>
     <meta http-equiv="Content-Type" type="text/html; charset=utf-8"/>
@@ -13,12 +14,8 @@
 <div id="wrapper">
     <div id="order_form">
         <h2>Оберіть саме ті номери, які вас цікавлять</h2>
-        <c:if test="${requestScope.error == 'arrival is later than departure'}">
-            <span id="wrong_date">Помилкові дані: дата заселення має бути раніше дати виселення!</span>
-        </c:if>
-        <c:if test="${requestScope.error == 'empty types or capacities'}">
-            <span id="wrong_apartment_data">Помилкові дані: тип та кількість місць мають бути заповненими!</span>
-        </c:if>
+        <%--The next tag prints error message if it is needed--%>
+        <err:error errorType="${requestScope.error}" locale="${sessionScope.locale}"/>
         <form action="/booking" method="get">
             <input type="hidden" name="date_chosen" value="true"/>
             <select name="apartment_type[]" multiple id="type_selector">

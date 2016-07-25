@@ -21,10 +21,10 @@ public class CheckOrderDataCommand implements ICommand {
             String[] capacitiesObject = wrapper.getRequestParameters("apartment_capacity[]");
 
             if (arrival.compareTo(departure) >= 0) {
-                return setErrorMessage(wrapper, "arrival is later than departure");
+                return setErrorMessage(wrapper, "arrival_is_later_than_departure");
             }
             if (typesObject == null || capacitiesObject == null) {
-                return setErrorMessage(wrapper, "empty types or capacities");
+                return setErrorMessage(wrapper, "empty_types_or_capacities");
             }
 
             wrapper.setSessionAttribute("date_chosen", dateChosen);

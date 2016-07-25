@@ -28,10 +28,12 @@ public class RegistrationPageCommand implements ICommand {
             //Check whether 'login' exists and 'password' equals its 'confirmation'.
             boolean containsLogin = DAOFactory.getDAOGuest().containsCertainLogin(login);
             if (containsLogin) {
-                setErrorMessage(wrapper, newGuest, "login exists");
+                wrapper.setRequestAttribute("error_login", "login_exists");
+                wrapper.setRequestAttribute("guest_data", newGuest);
             } else {
                 if (!password.equals(passwordConfirmation)) {
-                    setErrorMessage(wrapper, newGuest, "different password and confirmation");
+                    wrapper.setRequestAttribute("error_password", "different_password_and_confirmation");
+                    wrapper.setRequestAttribute("guest_data", newGuest);
                 } else {
                     //All entered data is valid.
                     DAOFactory.getDAOGuest().insertNewGuest(newGuest);
@@ -41,10 +43,5 @@ public class RegistrationPageCommand implements ICommand {
             }
         }
         return Config.getInstance().getProperty(Config.REGISTRATION_PAGE);
-    }
-
-    private void setErrorMessage(ISessionRequestWrapper wrapper, Guest newGuest, String errorMessage) {
-        wrapper.setRequestAttribute("error", errorMessage);
-        wrapper.setRequestAttribute("guest_data", newGuest);
     }
 }

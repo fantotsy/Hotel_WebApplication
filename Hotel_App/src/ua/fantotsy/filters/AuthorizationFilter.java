@@ -54,7 +54,7 @@ public class AuthorizationFilter implements Filter {
         if (session != null) {
             String role = (String) session.getAttribute("role");
             String uriPath = ((HttpServletRequest) request).getRequestURI();
-            System.out.println("uri: " + uriPath);
+            //System.out.println("uri: " + uriPath);
             if (guestURIs.contains(uriPath)) {
                 if (role != null && role.equals("guest")) {
                     chain.doFilter(request, response);

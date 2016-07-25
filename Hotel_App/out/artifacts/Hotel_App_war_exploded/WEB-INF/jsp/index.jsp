@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" errorPage="error.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
+<%@ taglib prefix="err" uri="/WEB-INF/TLDs/errorTag.tld"%>
 <%@ include file="locale.jsp" %>
 <fmt:setBundle var="index" basename="ua.fantotsy.properties.i18n.index"/>
 <html>
@@ -10,6 +11,13 @@
         <link href="../../css/index.css" type="text/css" rel="stylesheet"/>
     </head>
     <body>
+    <%--{${requestScope.logout}}--%>
+        <%--<c:if test="${not empty requestScope.logout}">--%>
+            <%--YEEEEESSSSS--%>
+            <%--<jsp:forward page="index">--%>
+                <%--<jsp:param name="session_invalidated" value="true"/>--%>
+            <%--</jsp:forward>--%>
+        <%--</c:if>--%>
         <a href="/index?language=en_US"><img src="../../images/english_language.jpg" alt="english" class="language_image"/></a>
         <a href="/index?language=ua_UA"><img src="../../images/ukrainian_language.jpg" alt="ukrainian" class="language_image"/></a>
         <div id="wrapper">
@@ -20,9 +28,8 @@
             <div id="signin_wrapper">
                 <h3><fmt:message key="form_header" bundle="${index}"/></h3>
                 <form action="/main" method="post" id="signin_form">
-                    <c:if test="${requestScope.error == 'wrong entrance data'}">
-                        <span><fmt:message key="login_password_error" bundle="${index}"/></span>
-                    </c:if>
+                    <%--The next tag prints error message if it is needed--%>
+                    <err:error errorType="${requestScope.error}" locale="${sessionScope.locale}"/>
                     <div>
                         <fmt:message var="login_placeholder" key="login_placeholder" bundle="${index}"/>
                         <input type="text" name="login" placeholder="${login_placeholder}" value="${sessionScope.login}"

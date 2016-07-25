@@ -47,14 +47,14 @@ public class CheckSigninDataCommand implements ICommand {
                 wrapper.setSessionAttribute("role", ROLE_ADMIN);
                 return "/admin";
             }
-            return setErrorMessage(wrapper, "wrong entrance data");
+            return setErrorMessage(wrapper, "wrong_entrance_data");
         }
 
         boolean containsGuest = DAOFactory.getDAOGuest().containsCertainGuest(enteredLogin, enteredPassword);
         if (containsGuest) {
             return setSessionData(wrapper, enteredLogin);
         }
-        return setErrorMessage(wrapper, "wrong entrance data");
+        return setErrorMessage(wrapper, "wrong_entrance_data");
     }
 
     private String setErrorMessage(ISessionRequestWrapper wrapper, String errorMessage) {

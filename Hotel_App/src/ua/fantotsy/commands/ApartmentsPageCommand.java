@@ -26,14 +26,14 @@ public class ApartmentsPageCommand implements ICommand {
                 if (apartment == -1) {
                     DAOFactory.getDAOApartment().addApartment(apartmentNumber, Integer.parseInt(categoryId));
                 } else {
-                    wrapper.setRequestAttribute("error", new String[]{categoryId, "current apartment exists"});
+                    wrapper.setRequestAttribute("error", new String[]{categoryId, "current_apartment_exists"});
                 }
             }
             if (wrapper.getRequestParameter("remove_apartment") != null) {
                 if (apartment != -1 && mapOfApartments.get(apartmentNumber) == Integer.parseInt(categoryId)) {
                     DAOFactory.getDAOApartment().removeApartment(apartmentNumber);
                 } else {
-                    wrapper.setRequestAttribute("error", new String[]{categoryId, "current apartment does not exist"});
+                    wrapper.setRequestAttribute("error", new String[]{categoryId, "current_apartment_does_not_exist"});
                 }
             }
         }

@@ -25,7 +25,7 @@ public class GuestBookingPageCommand implements ICommand {
         List<String> capacities = (List<String>) wrapper.getSessionAttribute("capacities");
         String[] bookedApartmentsArray = wrapper.getRequestParameters("booked_apartments[]");
         if (bookedApartmentsArray == null) {
-            wrapper.setRequestAttribute("error", "apartments array is empty");
+            wrapper.setRequestAttribute("error", "apartments_array_is_empty");
             wrapper.setRequestAttribute("category_id", categoryId);
         } else {
             List<String> bookedApartments = Arrays.asList(bookedApartmentsArray);

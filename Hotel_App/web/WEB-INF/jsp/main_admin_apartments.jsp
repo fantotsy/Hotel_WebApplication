@@ -4,10 +4,11 @@
 <%@ taglib prefix="err" uri="/WEB-INF/TLDs/errorTag.tld" %>
 <%@ include file="locale.jsp" %>
 <fmt:setBundle var="main_admin" basename="ua.fantotsy.properties.i18n.main_admin"/>
+<fmt:setBundle var="apartments" basename="ua.fantotsy.properties.i18n.apartments"/>
 <html>
 <head>
     <meta http-equiv="Content-Type" type="text/html; charset=utf-8"/>
-    <title>Додати-Видалити</title>
+    <title><fmt:message key="title" bundle="${apartments}"/></title>
     <link href="../../css/admin.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
@@ -15,18 +16,19 @@
     <%@include file="admin_header.jsp" %>
 </header>
 <div>
-    <h1>Таблиця апартаментів</h1>
+    <h1><fmt:message key="header" bundle="${apartments}"/></h1>
     <form action="/admin">
-        <input type="submit" name="submit" value="Повернутися" id="back"/>
+        <fmt:message var="back_button" key="back_button" bundle="${apartments}"/>
+        <input type="submit" name="submit" value="${back_button}" id="back"/>
     </form>
 
     <table id="apartments_table">
         <tr>
-            <th>Тип</th>
-            <th>Кількість місць</th>
-            <th>Ціна (грн/ніч)</th>
-            <th>Кількість номерів</th>
-            <th>Додати/Видалити</th>
+            <th><fmt:message key="table_type_column" bundle="${apartments}"/></th>
+            <th><fmt:message key="table_capacity_column" bundle="${apartments}"/></th>
+            <th><fmt:message key="table_price_column" bundle="${apartments}"/></th>
+            <th><fmt:message key="table_apartments_amount_column" bundle="${apartments}"/></th>
+            <th><fmt:message key="table_add_delete_column" bundle="${apartments}"/></th>
         </tr>
         <c:forEach items="${requestScope.listOfCategories}" var="category">
             <tr>
@@ -41,9 +43,13 @@
                     </c:if>
                     <form action="/apartments" method="get">
                         <input type="hidden" name="category_id" value="${category.categoryId}"/>
-                        <input type="text" pattern="[0-9]{3}" name="apartment_number" placeholder="номер" required/>
-                        <input type="submit" name="add_apartment" value="Додати" id="add_room"/>
-                        <input type="submit" name="remove_apartment" value="Видалити" id="remove_room"/>
+                        <fmt:message var="apartment_placeholder" key="apartment_placeholder" bundle="${apartments}"/>
+                        <input type="text" pattern="[0-9]{3}" name="apartment_number"
+                               placeholder="${apartment_placeholder}" required/>
+                        <fmt:message var="add_button" key="add_button" bundle="${apartments}"/>
+                        <input type="submit" name="add_apartment" value="${add_button}" id="add_room"/>
+                        <fmt:message var="delete_button" key="delete_button" bundle="${apartments}"/>
+                        <input type="submit" name="remove_apartment" value="${delete_button}" id="remove_room"/>
                     </form>
                 </td>
             </tr>

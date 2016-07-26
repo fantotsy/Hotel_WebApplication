@@ -8,15 +8,16 @@
 
 <div>
     <img src="../../images/user_icon.png" alt="user_icon" id="icon"/>
-    <h2 id="role">Користувач</h2>
+    <h2 id="role"><fmt:message key="role" bundle="${main_guest}"/></h2>
 </div>
 <div id="greeting">
-    <h1>Персональна сторінка користувача ${sessionScope.guestInfo.login}</h1>
+    <h1><fmt:message key="greeting" bundle="${main_guest}"/>. Login: ${sessionScope.guestInfo.login}</h1>
 </div>
 <div>
     <form action="/index" method="post">
         <input type="hidden" name="logout" value="true"/>
-        <input type="submit" name="logout" value="Вийти" id="logout"/>
+        <fmt:message var="logout_button" key="logout_button" bundle="${main_guest}"/>
+        <input type="submit" name="logout" value="${logout_button}" id="logout"/>
     </form>
 </div>
 </body>

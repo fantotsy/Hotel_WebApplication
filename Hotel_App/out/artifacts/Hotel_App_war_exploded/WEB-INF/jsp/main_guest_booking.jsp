@@ -1,31 +1,33 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" errorPage="error.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="err" uri="/WEB-INF/TLDs/errorTag.tld"%>
+<%@ taglib prefix="err" uri="/WEB-INF/TLDs/errorTag.tld" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
 <%@ include file="locale.jsp" %>
-<fmt:setBundle var="main_admin" basename="ua.fantotsy.properties.i18n.main_admin"/>
+<fmt:setBundle var="main_guest" basename="ua.fantotsy.properties.i18n.main_guest"/>
+<fmt:setBundle var="booking" basename="ua.fantotsy.properties.i18n.booking"/>
 <html>
 <head>
     <meta http-equiv="Content-Type" type="text/html; charset=utf-8"/>
-    <title>Бронювання</title>
+    <title><fmt:message key="title" bundle="${booking}"/></title>
     <link href="../../css/guest.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
 <header>
-<%@include file="guest_header.jsp" %>
+    <%@include file="guest_header.jsp" %>
 </header>
-<h1>Доступні апартаменти</h1>
+<h1><fmt:message key="header" bundle="${booking}"/></h1>
 <form action="/guest">
-    <input type="submit" name="submit" value="Повернутися" id="back"/>
+    <fmt:message var="back_button" key="back_button" bundle="${booking}"/>
+    <input type="submit" name="submit" value="${back_button}" id="back"/>
 </form>
 <c:choose>
     <c:when test="${not empty requestScope.listOfCategories}">
         <table>
             <tr>
-                <th>Тип</th>
-                <th>Кількість місць</th>
-                <th>Ціна (грн/ніч)</th>
-                <th>Кількість номерів</th>
+                <th><fmt:message key="table_type_column" bundle="${booking}"/></th>
+                <th><fmt:message key="table_capacity_column" bundle="${booking}"/></th>
+                <th><fmt:message key="table_price_column" bundle="${booking}"/></th>
+                <th><fmt:message key="table_apartments_amount_column" bundle="${booking}"/></th>
                 <th></th>
             </tr>
             <c:forEach items="${requestScope.listOfCategories}" var="category">
@@ -42,14 +44,16 @@
                         <form action="/order_valid" method="get">
                             <input type="hidden" name="category_id" value="${category.categoryId}"/>
                             <select name="booked_apartments[]" multiple>
-                                <option value="default" selected disabled>Оберіть номери</option>
+                                <option value="default" selected disabled><fmt:message key="default_apartments_option"
+                                                                                       bundle="${booking}"/></option>
                                 <c:forEach items="${requestScope.listOfApartments}" var="apartment">
                                     <c:if test="${apartment.value == category.categoryId}">
                                         <option value="${apartment.key}">${apartment.key}</option>
                                     </c:if>
                                 </c:forEach>
                             </select>
-                            <input type="submit" name="book_room" value="Забронювати" id="book_room"/>
+                            <fmt:message var="book_button" key="book_button" bundle="${booking}"/>
+                            <input type="submit" name="book_room" value="${book_button}" id="book_room"/>
                         </form>
                     </td>
                 </tr>
@@ -57,7 +61,9 @@
         </table>
     </c:when>
     <c:otherwise>
-        Список порожній!
+        <fmt:message key="empty_table" bundle="${booking}"/>
+        <br/>
+        <fmt:message key="empty_table_advice" bundle="${booking}"/>
     </c:otherwise>
 </c:choose>
 </body>

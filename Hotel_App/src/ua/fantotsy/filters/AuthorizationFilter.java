@@ -79,9 +79,9 @@ public class AuthorizationFilter implements Filter {
                     chain.doFilter(request, response);
                 } else {
                     if (role.equals("admin")) {
-                        request.getRequestDispatcher(Config.getInstance().getProperty(Config.MAIN_ADMIN_PAGE)).forward(request, response);
+                        request.getRequestDispatcher("/admin").forward(request, response);
                     } else {
-                        request.getRequestDispatcher(Config.getInstance().getProperty(Config.MAIN_GUEST_PAGE)).forward(request, response);
+                        request.getRequestDispatcher("/guest").forward(request, response);
                     }
                 }
             } else if (generalURIs.contains(uriPath)) {

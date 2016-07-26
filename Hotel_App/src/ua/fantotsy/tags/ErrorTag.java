@@ -20,8 +20,6 @@ public class ErrorTag extends TagSupport {
 
     @Override
     public int doStartTag() throws JspException {
-        //System.out.println("errorTypeIs:" + errorType + "!");
-        //System.out.println("localeIs:" + locale + "!");
         if (errorType != null && !errorType.equals("")) {
             try {
                 String language = locale.getLanguage();

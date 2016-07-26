@@ -1,6 +1,10 @@
 package ua.fantotsy.filters;
 
+import ua.fantotsy.properties.Config;
+
 import javax.servlet.*;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -44,44 +48,46 @@ public class AuthorizationFilter implements Filter {
         generalURIs.add("/images/sad_cat_error.jpg");
         generalURIs.add("/images/english_language.jpg");
         generalURIs.add("/images/ukrainian_language.jpg");
-        guestURIs.add("/css/header.css");
+        generalURIs.add("/css/header.css");
         generalURIs.add("/favicon.ico");
     }
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-//        HttpSession session = ((HttpServletRequest) request).getSession(true);
-//        if (session != null) {
-//            String role = (String) session.getAttribute("role");
-//            String uriPath = ((HttpServletRequest) request).getRequestURI();
-//            //System.out.println("uri: " + uriPath);
-//            if (guestURIs.contains(uriPath)) {
-//                if (role != null && role.equals("guest")) {
-//                    chain.doFilter(request, response);
-//                } else {
-//                    request.getRequestDispatcher(Config.getInstance().getProperty(Config.ERROR_PAGE)).forward(request, response);
-//                }
-//            } else if (adminURIs.contains(uriPath)) {
-//                if (role != null && role.equals("admin")) {
-//                    chain.doFilter(request, response);
-//                } else {
-//                    request.getRequestDispatcher(Config.getInstance().getProperty(Config.ERROR_PAGE)).forward(request, response);
-//                }
-//            } else if (nonUserURIs.contains(uriPath)) {
-//                if (role == null || request.getParameter("logout") != null) {
-//                    chain.doFilter(request, response);
-//                } else {
-//                    request.getRequestDispatcher(Config.getInstance().getProperty(Config.ERROR_PAGE)).forward(request, response);
-//                }
-//            } else if (generalURIs.contains(uriPath)) {
-//                chain.doFilter(request, response);
-//            } else {
-//                request.getRequestDispatcher(Config.getInstance().getProperty(Config.ERROR_PAGE)).forward(request, response);
-//            }
-//        } else {
-//            request.getRequestDispatcher(Config.getInstance().getProperty(Config.ERROR_PAGE)).forward(request, response);
-//        }
-        chain.doFilter(request, response);
+        HttpSession session = ((HttpServletRequest) request).getSession(true);
+        if (session != null) {
+            String role = (String) session.getAttribute("role");
+            String uriPath = ((HttpServletRequest) request).getRequestURI();
+            if (guestURIs.contains(uriPath)) {
+                if (role != null && role.equals("guest")) {
+                    chain.doFilter(request, response);
+                } else {
+                    request.getRequestDispatcher(Config.getInstance().getProperty(Config.ERROR_PAGE)).forward(request, response);
+                }
+            } else if (adminURIs.contains(uriPath)) {
+                if (role != null && role.equals("admin")) {
+                    chain.doFilter(request, response);
+                } else {
+                    request.getRequestDispatcher(Config.getInstance().getProperty(Config.ERROR_PAGE)).forward(request, response);
+                }
+            } else if (nonUserURIs.contains(uriPath)) {
+                if (role == null || request.getParameter("logout") != null) {
+                    chain.doFilter(request, response);
+                } else {
+                    if (role.equals("admin")) {
+                        request.getRequestDispatcher(Config.getInstance().getProperty(Config.MAIN_ADMIN_PAGE)).forward(request, response);
+                    } else {
+                        request.getRequestDispatcher(Config.getInstance().getProperty(Config.MAIN_GUEST_PAGE)).forward(request, response);
+                    }
+                }
+            } else if (generalURIs.contains(uriPath)) {
+                chain.doFilter(request, response);
+            } else {
+                request.getRequestDispatcher(Config.getInstance().getProperty(Config.ERROR_PAGE)).forward(request, response);
+            }
+        } else {
+            request.getRequestDispatcher(Config.getInstance().getProperty(Config.ERROR_PAGE)).forward(request, response);
+        }
     }
 
     @Override

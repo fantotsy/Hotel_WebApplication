@@ -12,7 +12,7 @@
 <%@include file="guest_header.jsp" %>
 </header>
 <h1>Доступні апартаменти</h1>
-<form action="/admin">
+<form action="/guest">
     <input type="submit" name="submit" value="Повернутися" id="back"/>
 </form>
 <c:choose>

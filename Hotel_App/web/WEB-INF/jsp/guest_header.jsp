@@ -2,10 +2,11 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" type="text/html; charset=utf-8"/>
+    <link href="../../css/header.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
 
-<div id="">
+<div>
     <img src="../../images/user_icon.png" alt="user_icon" id="icon"/>
     <h2 id="role">Користувач</h2>
 </div>

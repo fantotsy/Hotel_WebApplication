@@ -5,10 +5,16 @@
 <head>
     <meta http-equiv="Content-Type" type="text/html; charset=utf-8"/>
     <title>Бронювання</title>
-    <link href="../../css/main.css" type="text/css" rel="stylesheet"/>
+    <link href="../../css/guest.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
-<%@include file="guest_extended_header.jsp" %>
+<header>
+<%@include file="guest_header.jsp" %>
+</header>
+<h1>Доступні апартаменти</h1>
+<form action="/admin">
+    <input type="submit" name="submit" value="Повернутися" id="back"/>
+</form>
 <c:choose>
     <c:when test="${not empty requestScope.listOfCategories}">
         <table>

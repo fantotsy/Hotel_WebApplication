@@ -5,7 +5,7 @@
 <head>
     <meta http-equiv="Content-Type" type="text/html; charset=utf-8"/>
     <title>Замовлення</title>
-    <link href="css/main_guest.css" type="text/css" rel="stylesheet"/>
+    <link href="../../css/guest.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
 <header>

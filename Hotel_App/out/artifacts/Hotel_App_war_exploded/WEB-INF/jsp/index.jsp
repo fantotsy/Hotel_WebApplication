@@ -11,13 +11,6 @@
         <link href="../../css/index.css" type="text/css" rel="stylesheet"/>
     </head>
     <body>
-    <%--{${requestScope.logout}}--%>
-        <%--<c:if test="${not empty requestScope.logout}">--%>
-            <%--YEEEEESSSSS--%>
-            <%--<jsp:forward page="index">--%>
-                <%--<jsp:param name="session_invalidated" value="true"/>--%>
-            <%--</jsp:forward>--%>
-        <%--</c:if>--%>
         <a href="/index?language=en_US"><img src="../../images/english_language.jpg" alt="english" class="language_image"/></a>
         <a href="/index?language=ua_UA"><img src="../../images/ukrainian_language.jpg" alt="ukrainian" class="language_image"/></a>
         <div id="wrapper">

@@ -1,0 +1,36 @@
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+#icon {
+     margin: auto 10px;
+     height: 70px;
+     width: auto;
+     float: left;
+ }
+
+#role {
+    float: left;
+    margin: 20px auto;
+}
+
+#logout {
+    margin-top: 10px;
+    margin-right: 20px;
+    float: right;
+    padding: 10px 30px;
+    border: none;
+    color: #555555;
+    height: 50px;
+    width: auto;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#greeting {
+    margin-top: 15px;
+    margin-left: 150px;
+    float: left;
+}

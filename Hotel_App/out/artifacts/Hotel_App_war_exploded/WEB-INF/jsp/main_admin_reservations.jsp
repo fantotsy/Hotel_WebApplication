@@ -4,12 +4,20 @@
 <head>
     <meta http-equiv="Content-Type" type="text/html; charset=utf-8"/>
     <title>Резервації</title>
-    <link href="css/main.css" type="text/css" rel="stylesheet"/>
+    <link href="../../css/admin.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
-<%@include file="admin_extended_header.jsp" %>
-<div id="body">
-    <table>
+<header>
+    <%@include file="admin_header.jsp" %>
+</header>
+
+<div>
+    <h1>Таблиця резервацій</h1>
+    <form action="/admin">
+        <input type="submit" name="submit" value="Повернутися" id="back"/>
+    </form>
+
+    <table id="reservations_table">
         <tr>
             <th>Номер</th>
             <th>Заселення</th>

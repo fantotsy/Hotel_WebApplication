@@ -3,9 +3,10 @@
 <head>
     <meta http-equiv="Content-Type" type="text/html; charset=utf-8"/>
     <title>Admin header</title>
+    <link href="../../css/header.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
-<div id="">
+<div>
     <img src="../../images/admin_icon.png" alt="admin_icon" id="icon"/>
     <h2 id="role">Адміністратор</h2>
 </div>

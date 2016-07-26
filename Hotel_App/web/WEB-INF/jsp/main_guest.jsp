@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" type="text/html; charset=utf-8"/>
-    <title>Замовлення</title>
+    <title>Головна Сторінка</title>
     <link href="../../css/guest.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
@@ -13,7 +13,7 @@
 </header>
 <div id="wrapper">
     <div id="order_form">
-        <h2>Оберіть саме ті номери, які вас цікавлять</h2>
+        <h2>Оберіть номери, які вас цікавлять</h2>
         <%--The next tag prints error message if it is needed--%>
         <err:error errorType="${requestScope.error}" locale="${sessionScope.locale}"/>
         <form action="/booking" method="get">

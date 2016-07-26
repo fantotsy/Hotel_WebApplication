@@ -1,6 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" errorPage="error.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="err" uri="/WEB-INF/TLDs/errorTag.tld"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
+<%@ include file="locale.jsp" %>
+<fmt:setBundle var="main_admin" basename="ua.fantotsy.properties.i18n.main_admin"/>
 <html>
 <head>
     <meta http-equiv="Content-Type" type="text/html; charset=utf-8"/>

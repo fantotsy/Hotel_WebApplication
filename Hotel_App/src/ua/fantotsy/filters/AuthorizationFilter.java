@@ -26,13 +26,13 @@ public class AuthorizationFilter implements Filter {
         adminURIs.add("/reservations");
         adminURIs.add("/apartments");
         adminURIs.add("/guests");
-        guestURIs.add("/css/header.css");
+        //adminURIs.add("/css/header.css");
         adminURIs.add("/images/admin_icon.png");
 
         guestURIs.add("/guest");
         guestURIs.add("/booking");
         guestURIs.add("/order_valid");
-        guestURIs.add("/css/header.css");
+        //guestURIs.add("/css/header.css");
         guestURIs.add("/images/user_icon.png");
 
         nonUserURIs.add("/");
@@ -57,17 +57,21 @@ public class AuthorizationFilter implements Filter {
         HttpSession session = ((HttpServletRequest) request).getSession(true);
         if (session != null) {
             String role = (String) session.getAttribute("role");
+            System.out.println(role);
             String uriPath = ((HttpServletRequest) request).getRequestURI();
+            System.out.println(uriPath);
             if (guestURIs.contains(uriPath)) {
                 if (role != null && role.equals("guest")) {
                     chain.doFilter(request, response);
                 } else {
+                    System.out.println("error1");
                     request.getRequestDispatcher(Config.getInstance().getProperty(Config.ERROR_PAGE)).forward(request, response);
                 }
             } else if (adminURIs.contains(uriPath)) {
                 if (role != null && role.equals("admin")) {
                     chain.doFilter(request, response);
                 } else {
+                    System.out.println("error2");
                     request.getRequestDispatcher(Config.getInstance().getProperty(Config.ERROR_PAGE)).forward(request, response);
                 }
             } else if (nonUserURIs.contains(uriPath)) {
@@ -83,9 +87,11 @@ public class AuthorizationFilter implements Filter {
             } else if (generalURIs.contains(uriPath)) {
                 chain.doFilter(request, response);
             } else {
+                System.out.println("error3");
                 request.getRequestDispatcher(Config.getInstance().getProperty(Config.ERROR_PAGE)).forward(request, response);
             }
         } else {
+            System.out.println("error4");
             request.getRequestDispatcher(Config.getInstance().getProperty(Config.ERROR_PAGE)).forward(request, response);
         }
     }

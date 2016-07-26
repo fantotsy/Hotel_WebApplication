@@ -11,8 +11,8 @@ import java.util.Locale;
 public class StartPageCommand implements ICommand {
     @Override
     public String execute(ISessionRequestWrapper wrapper) throws ServletException, IOException {
-        if(wrapper.getRequestParameter("logout") == null)
-            throw new NullPointerException();
+//        if(wrapper.getRequestParameter("logout") == null)
+//            throw new NullPointerException();
 
         // Check whether 'logout' was pressed.
         if (wrapper.getRequestParameter("logout") != null && !wrapper.getSessionInvalidated()) {

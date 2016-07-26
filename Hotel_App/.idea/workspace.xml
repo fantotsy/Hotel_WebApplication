@@ -2,12 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e16aee2-7e83-43c1-ba10-4202e19dd46a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOApartment.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOApartment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOCategory.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOCategory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOGuest.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOGuest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOReservation.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOReservation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/DAOs/IDAOReservation.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/DAOs/IDAOReservation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/utils/Utils.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/utils/Utils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/TLDs/errorTag.tld" afterPath="$PROJECT_DIR$/web/WEB-INF/TLDs/errorTag.tld" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/admin_header.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/admin_header.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/error.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/error.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/guest_header.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/guest_header.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/index.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_apartments.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_apartments.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_guests.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_guests.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_reservations.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_reservations.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/main_guest.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/main_guest.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/main_guest_booking.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/main_guest_booking.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/registration.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/registration.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/registration_form.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/registration_form.jsp" />
     </list>
     <ignored path="Hotel_App.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -66,17 +73,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/WEB-INF/TLDs/errorTag.tld" />
-        <option value="$PROJECT_DIR$/src/ua/fantotsy/commands/RegistrationPageCommand.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/registration_form.jsp" />
-        <option value="$PROJECT_DIR$/src/ua/fantotsy/controllers/ISessionRequestWrapper.java" />
-        <option value="$PROJECT_DIR$/src/ua/fantotsy/controllers/SessionRequestWrapper.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/listeners/ContainerContextClosedHandler.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/guest_extended_header.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/admin_extended_header.jsp" />
         <option value="$PROJECT_DIR$/web/css/main_admin.css" />
         <option value="$PROJECT_DIR$/web/css/main_guest.css" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/index.jsp" />
         <option value="$PROJECT_DIR$/web/css/header.css" />
         <option value="$PROJECT_DIR$/web/css/admin.css" />
         <option value="$PROJECT_DIR$/web/css/guest.css" />
@@ -85,30 +86,21 @@
         <option value="$PROJECT_DIR$/web/css/error.css" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/properties/i18n/main_admin_ua.properties" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/commands/StartPageCommand.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin.jsp" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/properties/i18n/main_admin_en.properties" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/controllers/ServletController.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/admin_header.jsp" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/properties/i18n/main_guest_ua.properties" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/guest_header.jsp" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/properties/i18n/booking_ua.properties" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/properties/i18n/booking_en.properties" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/properties/i18n/main_guest_en.properties" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_guest.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_guest_booking.jsp" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/properties/i18n/apartments_ua.properties" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/properties/i18n/apartments_en.properties" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_apartments.jsp" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/properties/i18n/reservations_ua.properties" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/properties/i18n/reservations_en.properties" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_reservations.jsp" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/properties/i18n/guests_ua.properties" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/properties/i18n/guests_en.properties" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_guests.jsp" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/properties/i18n/error_en.properties" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/properties/i18n/error_ua.properties" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/error.jsp" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/filters/AuthorizationFilter.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/utils/Utils.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/properties/SQL/sql_queries.properties" />
@@ -117,6 +109,21 @@
         <option value="$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOGuest.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOCategory.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOApartment.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/TLDs/errorTag.tld" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/error.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/admin_header.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/guest_header.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/index.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/locale.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_apartments.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_guests.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_reservations.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_guest.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_guest_booking.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/registration.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/registration_confirmation.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/registration_form.jsp" />
       </list>
     </option>
   </component>
@@ -208,15 +215,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="fantotsy" />
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hotel_App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hotel_App" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="utils" />
+              <option name="myItemId" value="web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -231,102 +248,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantotsy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tags" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hotel_App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hotel_App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantotsy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="properties" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hotel_App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hotel_App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantotsy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="properties" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SQL" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hotel_App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hotel_App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantotsy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hotel_App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hotel_App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantotsy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DAOs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -880,12 +801,12 @@
       <workItem from="1469529879625" duration="1410000" />
       <workItem from="1469531878184" duration="9326000" />
       <workItem from="1469543662593" duration="7256000" />
-      <workItem from="1469559131389" duration="7546000" />
+      <workItem from="1469559131389" duration="8043000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205250000" />
+    <option name="totallyTimeSpent" value="205747000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -948,66 +869,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/commands/CheckSigninDataCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/filters/EncodingFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/locale.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="79" selection-start-line="0" selection-start-column="74" selection-end-line="0" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/registration.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="79" selection-start-line="0" selection-start-column="74" selection-end-line="0" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/registration_confirmation.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="79" selection-start-line="0" selection-start-column="74" selection-end-line="0" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/registration_form.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5798923">
-          <caret line="19" column="64" selection-start-line="19" selection-start-column="64" selection-end-line="19" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/header.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.566879">
-          <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/admin.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18789808">
-          <caret line="128" column="4" selection-start-line="128" selection-start-column="4" selection-end-line="137" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/css/error.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18789808">
@@ -1061,14 +922,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/admin_header.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54140127">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/commands/StartPageCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.45588234">
@@ -1088,14 +941,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.12289157">
           <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/guest_header.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61182517">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -1124,30 +969,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_guest.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45501286">
-          <caret line="87" column="32" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_guest_booking.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5192802">
-          <caret line="65" column="44" selection-start-line="65" selection-start-column="44" selection-end-line="65" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_admin.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.087403595">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/properties/i18n/booking_en.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.20481928">
@@ -1160,14 +981,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.32771084">
           <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_apartments.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.043701798">
-          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -1204,22 +1017,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_reservations.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3007712">
-          <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_guests.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5244216">
-          <caret line="27" column="62" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/properties/i18n/guests_ua.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1232,14 +1029,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.20481928">
           <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/error.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6503856">
-          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -1268,14 +1057,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4807198">
-          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/tags/ErrorTag.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9012048">
@@ -1298,14 +1079,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.42146596">
           <caret line="41" column="78" selection-start-line="41" selection-start-column="78" selection-end-line="41" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/DAOs/IDAOReservation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20481928">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1346,6 +1119,158 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3686747">
           <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/DAOs/IDAOCategory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/DAOs/IDAOGuest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/DAOs/IDAOReservation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20481928">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/DAOs/IDAOApartment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16385542">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/TLDs/errorTag.tld">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0051414">
+          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/error.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0488431">
+          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/admin_header.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7377892">
+          <caret line="24" column="7" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/guest_header.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.61182517">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.655527">
+          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/locale.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.655527">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_admin.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.61182517">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_apartments.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9614396">
+          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_guests.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7866324">
+          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_reservations.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4807198">
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_guest.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.8843188">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_guest_booking.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.5784062">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/registration.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.655527">
+          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/registration_confirmation.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2622108">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/registration_form.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.437018">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
           <folding />
         </state>
       </provider>

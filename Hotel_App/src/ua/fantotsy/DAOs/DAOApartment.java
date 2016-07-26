@@ -1,6 +1,7 @@
 package ua.fantotsy.DAOs;
 
 import ua.fantotsy.datasource.ConnectionSource;
+import ua.fantotsy.utils.Utils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,22 +12,11 @@ import java.util.List;
 import java.util.Map;
 
 public class DAOApartment implements IDAOApartment {
-    private static final String GET_NUMBERS_OF_APARTMENTS_GROUPED_BY_CATEGORIES
-            = "SELECT COUNT(apartment_id) AS number_of_apartments, category_id  FROM apartments GROUP BY category_id";
-    private static final String ADD_APARTMENT = "INSERT INTO apartments (apartment_id, category_id) VALUES (?, ?)";
-    private static final String REMOVE_APARTMENT = "DELETE FROM apartments WHERE apartment_id = ?";
-    private static final String GET_AVAILABLE_APARTMENTS = "SELECT categories.category_id, apartment_id " +
-            "FROM apartments JOIN categories ON categories.category_id = apartments.category_id " +
-            "WHERE apartment_id IN (SELECT apartment_id FROM apartments WHERE apartment_id NOT IN " +
-            "(SELECT apartment_id FROM reservations WHERE(arrival <= ? AND departure >= ?) " +
-            "OR (arrival <= ? AND departure >= ?))) AND type=? AND number_of_beds=?";
-    private static final String GET_ALL_APARTMENT_NUMBERS = "SELECT apartment_id, category_id FROM apartments";
-
     @Override
     public Map<Integer, Integer> getNumbersOfApartmentsGroupedByCategories() {
         Map<Integer, Integer> quantityOfApartmentsGroupedByCategories = new HashMap<>();
         try (Connection connection = ConnectionSource.getInstance().getConnection();
-             PreparedStatement ps = connection.prepareStatement(GET_NUMBERS_OF_APARTMENTS_GROUPED_BY_CATEGORIES);
+             PreparedStatement ps = connection.prepareStatement(Utils.getSQLQuery("get_numbers_of_apartments_grouped_by_categories"));
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
                 quantityOfApartmentsGroupedByCategories.put(rs.getInt("category_id"), rs.getInt("number_of_apartments"));
@@ -42,7 +32,7 @@ public class DAOApartment implements IDAOApartment {
     public int addApartment(int apartmentNumber, int category) {
         int result = 0;
         try (Connection connection = ConnectionSource.getInstance().getConnection();
-             PreparedStatement ps = connection.prepareStatement(ADD_APARTMENT)) {
+             PreparedStatement ps = connection.prepareStatement(Utils.getSQLQuery("add_apartment"))) {
             ps.setInt(1, apartmentNumber);
             ps.setInt(2, category);
             result = ps.executeUpdate();
@@ -57,7 +47,7 @@ public class DAOApartment implements IDAOApartment {
     public int removeApartment(int apartmentNumber) {
         int result = 0;
         try (Connection connection = ConnectionSource.getInstance().getConnection();
-             PreparedStatement ps = connection.prepareStatement(REMOVE_APARTMENT)) {
+             PreparedStatement ps = connection.prepareStatement(Utils.getSQLQuery("remove_apartment"))) {
             ps.setInt(1, apartmentNumber);
             result = ps.executeUpdate();
         } catch (SQLException ex) {
@@ -71,7 +61,7 @@ public class DAOApartment implements IDAOApartment {
     public Map<Integer, Integer> getAvailableApartments(String arrival, String departure, List<String> types, List<String> capacities) {
         Map<Integer, Integer> result = new HashMap<>();
         try (Connection connection = ConnectionSource.getInstance().getConnection();
-             PreparedStatement ps = connection.prepareStatement(GET_AVAILABLE_APARTMENTS)) {
+             PreparedStatement ps = connection.prepareStatement(Utils.getSQLQuery("get_available_apartments"))) {
             ps.setString(1, arrival);
             ps.setString(2, arrival);
             ps.setString(3, departure);
@@ -101,7 +91,7 @@ public class DAOApartment implements IDAOApartment {
     public Map<Integer, Integer> getAllApartmentNumbers() {
         Map<Integer, Integer> listOfApartments = new HashMap<>();
         try (Connection connection = ConnectionSource.getInstance().getConnection();
-             PreparedStatement ps = connection.prepareStatement(GET_ALL_APARTMENT_NUMBERS);
+             PreparedStatement ps = connection.prepareStatement(Utils.getSQLQuery("get_all_apartment_numbers"));
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
                 listOfApartments.put(rs.getInt("apartment_id"), rs.getInt("category_id"));

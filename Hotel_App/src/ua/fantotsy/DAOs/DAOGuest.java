@@ -2,6 +2,7 @@ package ua.fantotsy.DAOs;
 
 import ua.fantotsy.datasource.ConnectionSource;
 import ua.fantotsy.entities.Guest;
+import ua.fantotsy.utils.Utils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,19 +12,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DAOGuest implements IDAOGuest {
-    private static final String GET_CERTAIN_LOGIN = "SELECT login FROM guests WHERE login=?";
-    private static final String GET_CERTAIN_LOGIN_AND_PASSWORD = "SELECT login, password FROM guests WHERE login=? AND password=?";
-    private static final String INSERT_NEW_GUEST = "INSERT INTO guests " +
-            "(name, last_name, phone_number, email, login, password) " +
-            "VALUES (?, ?, ?, ?, ?, ?)";
-    private static final String GET_CERTAIN_GUEST = "SELECT * FROM guests WHERE login=?";
-    private static final String GET_ALL_GUESTS = "SELECT name, last_name, phone_number, email, login FROM guests";
-
     @Override
     public Boolean containsCertainLogin(String login) {
         Boolean result;
         try (Connection connection = ConnectionSource.getInstance().getConnection();
-             PreparedStatement ps = connection.prepareStatement(GET_CERTAIN_LOGIN)) {
+             PreparedStatement ps = connection.prepareStatement(Utils.getSQLQuery("get_certain_login"))) {
             ps.setString(1, login);
             ResultSet rs = ps.executeQuery();
             result = rs.next();
@@ -39,7 +32,7 @@ public class DAOGuest implements IDAOGuest {
     public Boolean containsCertainGuest(String login, String password) {
         Boolean result;
         try (Connection connection = ConnectionSource.getInstance().getConnection();
-             PreparedStatement ps = connection.prepareStatement(GET_CERTAIN_LOGIN_AND_PASSWORD)) {
+             PreparedStatement ps = connection.prepareStatement(Utils.getSQLQuery("get_certain_login_and_password"))) {
             ps.setString(1, login);
             ps.setString(2, password);
             ResultSet rs = ps.executeQuery();
@@ -56,7 +49,7 @@ public class DAOGuest implements IDAOGuest {
     public int insertNewGuest(Guest guest) {
         int result;
         try (Connection connection = ConnectionSource.getInstance().getConnection();
-             PreparedStatement ps = connection.prepareStatement(INSERT_NEW_GUEST)) {
+             PreparedStatement ps = connection.prepareStatement(Utils.getSQLQuery("add_new_guest"))) {
             ps.setString(1, guest.getName());
             ps.setString(2, guest.getLastName());
             ps.setString(3, "+380" + guest.getPhoneNumber());
@@ -75,7 +68,7 @@ public class DAOGuest implements IDAOGuest {
     public Guest getCertainGuest(String enteredLogin) {
         Guest guest = null;
         try (Connection connection = ConnectionSource.getInstance().getConnection();
-             PreparedStatement ps = connection.prepareStatement(GET_CERTAIN_GUEST)) {
+             PreparedStatement ps = connection.prepareStatement(Utils.getSQLQuery("get_certain_guest"))) {
             ps.setString(1, enteredLogin);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
@@ -93,7 +86,7 @@ public class DAOGuest implements IDAOGuest {
     public List<Guest> getAllGuests() {
         List<Guest> listOfGuests = new ArrayList<>();
         try (Connection connection = ConnectionSource.getInstance().getConnection();
-             PreparedStatement ps = connection.prepareStatement(GET_ALL_GUESTS);
+             PreparedStatement ps = connection.prepareStatement(Utils.getSQLQuery("get_all_guests"));
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
                 Guest guest = new Guest(rs.getString("name"), rs.getString("last_name"), rs.getString("phone_number"), rs.getString("email"), rs.getString("login"));

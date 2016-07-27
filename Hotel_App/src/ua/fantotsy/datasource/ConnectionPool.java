@@ -24,12 +24,11 @@ public class ConnectionPool {
         }
     }
 
-    public static ConnectionPool getInstance() {
+    public static synchronized ConnectionPool getInstance() {
         return instance;
     }
 
     public Connection getConnection() {
-        logger.error("Errooooorrr!");
         Connection connection = null;
         try {
             connection = dataSource.getConnection();

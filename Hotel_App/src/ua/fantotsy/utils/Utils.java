@@ -1,10 +1,8 @@
 package ua.fantotsy.utils;
 
 import java.util.Calendar;
-import java.util.ResourceBundle;
 
-public class Utils {
-
+public final class Utils {
     public static String encryptionMD5(String password) {
         try {
             String encryption = null;
@@ -47,10 +45,5 @@ public class Utils {
         result[0] = today;
         result[1] = yearLater;
         return result;
-    }
-
-    public static String getSQLQuery(String queryName) {
-        ResourceBundle rb = ResourceBundle.getBundle("ua.fantotsy.properties.SQL.sql_queries");
-        return (String) rb.getObject(queryName);
     }
 }

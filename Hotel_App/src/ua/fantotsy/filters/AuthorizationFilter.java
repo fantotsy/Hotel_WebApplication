@@ -1,6 +1,7 @@
 package ua.fantotsy.filters;
 
-import ua.fantotsy.properties.Config;
+import ua.fantotsy.utils.ActionsGetter;
+import ua.fantotsy.utils.URNsGetter;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
@@ -17,37 +18,37 @@ public class AuthorizationFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        adminURIs = new ArrayList<>();
-        guestURIs = new ArrayList<>();
-        nonUserURIs = new ArrayList<>();
-        generalURIs = new ArrayList<>();
-
-        adminURIs.add("/admin");
-        adminURIs.add("/reservations");
-        adminURIs.add("/apartments");
-        adminURIs.add("/guests");
-        adminURIs.add("/images/admin_icon.png");
-
-        guestURIs.add("/guest");
-        guestURIs.add("/booking");
-        guestURIs.add("/order_valid");
-        guestURIs.add("/images/user_icon.png");
-
-        nonUserURIs.add("/");
-        nonUserURIs.add("/index");
-        nonUserURIs.add("/registration");
-        nonUserURIs.add("/css/index.css");
-        nonUserURIs.add("/css/registration.css");
-
-        generalURIs.add("/main");
-        generalURIs.add("/css/guest.css");
-        generalURIs.add("/css/admin.css");
-        generalURIs.add("/css/error.css");
-        generalURIs.add("/images/sad_cat_error.jpg");
-        generalURIs.add("/images/english_language.jpg");
-        generalURIs.add("/images/ukrainian_language.jpg");
-        generalURIs.add("/css/header.css");
-        generalURIs.add("/favicon.ico");
+        adminURIs = new ArrayList<String>() {{
+            add(ActionsGetter.getInstance().getAction(ActionsGetter.ADMIN));
+            add(ActionsGetter.getInstance().getAction(ActionsGetter.RESERVATIONS));
+            add(ActionsGetter.getInstance().getAction(ActionsGetter.APARTMENTS));
+            add(ActionsGetter.getInstance().getAction(ActionsGetter.GUESTS));
+            add(URNsGetter.getInstance().getURN(URNsGetter.ADMIN_ICON_IMG));
+        }};
+        guestURIs = new ArrayList<String>() {{
+            add(ActionsGetter.getInstance().getAction(ActionsGetter.GUEST));
+            add(ActionsGetter.getInstance().getAction(ActionsGetter.BOOKING));
+            add(ActionsGetter.getInstance().getAction(ActionsGetter.ORDER_VALID));
+            add(URNsGetter.getInstance().getURN(URNsGetter.USER_ICON_IMG));
+        }};
+        nonUserURIs = new ArrayList<String>() {{
+            add(ActionsGetter.getInstance().getAction(ActionsGetter.ROOT));
+            add(ActionsGetter.getInstance().getAction(ActionsGetter.INDEX));
+            add(ActionsGetter.getInstance().getAction(ActionsGetter.REGISTRATION));
+            add(URNsGetter.getInstance().getURN(URNsGetter.INDEX_CSS));
+            add(URNsGetter.getInstance().getURN(URNsGetter.REGISTRATION_CSS));
+        }};
+        generalURIs = new ArrayList<String>() {{
+            add(ActionsGetter.getInstance().getAction(ActionsGetter.MAIN));
+            add(URNsGetter.getInstance().getURN(URNsGetter.GUEST_CSS));
+            add(URNsGetter.getInstance().getURN(URNsGetter.ADMIN_CSS));
+            add(URNsGetter.getInstance().getURN(URNsGetter.ERROR_CSS));
+            add(URNsGetter.getInstance().getURN(URNsGetter.SAD_CAT_ERROR_IMG));
+            add(URNsGetter.getInstance().getURN(URNsGetter.ENGLISH_LANGUAGE_IMG));
+            add(URNsGetter.getInstance().getURN(URNsGetter.UKRAINIAN_LANGUAGE_IMG));
+            add(URNsGetter.getInstance().getURN(URNsGetter.HEADER_CSS));
+            add(URNsGetter.getInstance().getURN(URNsGetter.FAVICON_ICO));
+        }};
     }
 
     @Override
@@ -61,34 +62,34 @@ public class AuthorizationFilter implements Filter {
                     chain.doFilter(request, response);
                 } else {
                     System.out.println("error1");
-                    request.getRequestDispatcher(Config.getInstance().getProperty(Config.ERROR_PAGE)).forward(request, response);
+                    request.getRequestDispatcher(URNsGetter.getInstance().getURN(URNsGetter.ERROR_PAGE)).forward(request, response);
                 }
             } else if (adminURIs.contains(uriPath)) {
                 if (role != null && role.equals("admin")) {
                     chain.doFilter(request, response);
                 } else {
                     System.out.println("error2");
-                    request.getRequestDispatcher(Config.getInstance().getProperty(Config.ERROR_PAGE)).forward(request, response);
+                    request.getRequestDispatcher(URNsGetter.getInstance().getURN(URNsGetter.ERROR_PAGE)).forward(request, response);
                 }
             } else if (nonUserURIs.contains(uriPath)) {
                 if (role == null || request.getParameter("logout") != null) {
                     chain.doFilter(request, response);
                 } else {
                     if (role.equals("admin")) {
-                        request.getRequestDispatcher("/admin").forward(request, response);
+                        request.getRequestDispatcher(ActionsGetter.getInstance().getAction(ActionsGetter.ADMIN)).forward(request, response);
                     } else {
-                        request.getRequestDispatcher("/guest").forward(request, response);
+                        request.getRequestDispatcher(ActionsGetter.getInstance().getAction(ActionsGetter.GUEST)).forward(request, response);
                     }
                 }
             } else if (generalURIs.contains(uriPath)) {
                 chain.doFilter(request, response);
             } else {
                 System.out.println("error3");
-                request.getRequestDispatcher(Config.getInstance().getProperty(Config.ERROR_PAGE)).forward(request, response);
+                request.getRequestDispatcher(URNsGetter.getInstance().getURN(URNsGetter.ERROR_PAGE)).forward(request, response);
             }
         } else {
             System.out.println("error4");
-            request.getRequestDispatcher(Config.getInstance().getProperty(Config.ERROR_PAGE)).forward(request, response);
+            request.getRequestDispatcher(URNsGetter.getInstance().getURN(URNsGetter.ERROR_PAGE)).forward(request, response);
         }
     }
 

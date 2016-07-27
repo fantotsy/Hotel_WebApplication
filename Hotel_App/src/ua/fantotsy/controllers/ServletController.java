@@ -1,5 +1,7 @@
 package ua.fantotsy.controllers;
 
+import ua.fantotsy.utils.ActionsGetter;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,7 +18,7 @@ public class ServletController extends HttpServlet {
             HttpSession session = request.getSession(true);
             session.invalidate();
             request.setAttribute("isSessionInvalidated", "true");
-            viewPage = "/index";
+            viewPage = ActionsGetter.getInstance().getAction(ActionsGetter.INDEX);
         } else {
             wrapper.insertAttributes(request);
         }

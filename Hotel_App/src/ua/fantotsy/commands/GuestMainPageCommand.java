@@ -5,7 +5,7 @@ import ua.fantotsy.controllers.ISessionRequestWrapper;
 import ua.fantotsy.datasource.DAOFactory;
 import ua.fantotsy.entities.Guest;
 import ua.fantotsy.entities.Reservation;
-import ua.fantotsy.properties.Config;
+import ua.fantotsy.utils.URNsGetter;
 import ua.fantotsy.utils.Utils;
 
 import javax.servlet.ServletException;
@@ -33,6 +33,6 @@ public class GuestMainPageCommand implements ICommand {
         wrapper.setRequestAttribute("listOfCapacities", listOfCapacities);
         wrapper.setRequestAttribute("listOfReservations", listOfReservations);
 
-        return Config.getInstance().getProperty(Config.MAIN_GUEST_PAGE);
+        return URNsGetter.getInstance().getURN(URNsGetter.MAIN_GUEST_PAGE);
     }
 }

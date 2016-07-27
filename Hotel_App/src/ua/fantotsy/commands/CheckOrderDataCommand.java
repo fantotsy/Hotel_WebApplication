@@ -2,6 +2,7 @@ package ua.fantotsy.commands;
 
 import ua.fantotsy.controllers.ICommand;
 import ua.fantotsy.controllers.ISessionRequestWrapper;
+import ua.fantotsy.utils.ActionsGetter;
 
 import javax.servlet.ServletException;
 import java.io.IOException;
@@ -35,11 +36,11 @@ public class CheckOrderDataCommand implements ICommand {
             wrapper.setSessionAttribute("arrival", arrival);
             wrapper.setSessionAttribute("departure", departure);
         }
-        return "/order_valid";
+        return ActionsGetter.getInstance().getAction(ActionsGetter.ORDER_VALID);
     }
 
     private String setErrorMessage(ISessionRequestWrapper wrapper, String errorMessage) {
         wrapper.setRequestAttribute("error", errorMessage);
-        return "/guest";
+        return ActionsGetter.getInstance().getAction(ActionsGetter.GUEST);
     }
 }

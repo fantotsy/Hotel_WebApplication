@@ -4,7 +4,7 @@ import ua.fantotsy.controllers.ICommand;
 import ua.fantotsy.controllers.ISessionRequestWrapper;
 import ua.fantotsy.datasource.DAOFactory;
 import ua.fantotsy.entities.Guest;
-import ua.fantotsy.properties.Config;
+import ua.fantotsy.utils.URNsGetter;
 import ua.fantotsy.utils.Utils;
 
 import javax.servlet.ServletException;
@@ -42,6 +42,6 @@ public class RegistrationPageCommand implements ICommand {
                 }
             }
         }
-        return Config.getInstance().getProperty(Config.REGISTRATION_PAGE);
+        return URNsGetter.getInstance().getURN(URNsGetter.REGISTRATION_PAGE);
     }
 }

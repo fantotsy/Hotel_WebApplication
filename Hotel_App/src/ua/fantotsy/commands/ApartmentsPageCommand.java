@@ -4,7 +4,7 @@ import ua.fantotsy.controllers.ICommand;
 import ua.fantotsy.controllers.ISessionRequestWrapper;
 import ua.fantotsy.datasource.DAOFactory;
 import ua.fantotsy.entities.Category;
-import ua.fantotsy.properties.Config;
+import ua.fantotsy.utils.URNsGetter;
 
 import javax.servlet.ServletException;
 import java.io.IOException;
@@ -41,6 +41,6 @@ public class ApartmentsPageCommand implements ICommand {
         List<Category> listOfCategories = DAOFactory.getDAOCategory().getAllCategories();
 
         wrapper.setRequestAttribute("listOfCategories", listOfCategories);
-        return Config.getInstance().getProperty(Config.MAIN_ADMIN_APARTMENTS_PAGE);
+        return URNsGetter.getInstance().getURN(URNsGetter.MAIN_ADMIN_APARTMENTS_PAGE);
     }
 }

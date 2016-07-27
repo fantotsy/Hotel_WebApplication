@@ -4,7 +4,8 @@ import ua.fantotsy.controllers.ICommand;
 import ua.fantotsy.controllers.ISessionRequestWrapper;
 import ua.fantotsy.datasource.DAOFactory;
 import ua.fantotsy.entities.Guest;
-import ua.fantotsy.properties.Config;
+import ua.fantotsy.utils.ActionsGetter;
+import ua.fantotsy.utils.URNsGetter;
 import ua.fantotsy.utils.Utils;
 
 import javax.servlet.ServletException;
@@ -22,9 +23,9 @@ public class CheckSigninDataCommand implements ICommand {
         String role = (String) wrapper.getSessionAttribute("role");
         if (role != null) {
             if (role.equals(ROLE_ADMIN)) {
-                return "/admin";
+                return ActionsGetter.getInstance().getAction(ActionsGetter.ADMIN);
             } else {
-                return "/guest";
+                return ActionsGetter.getInstance().getAction(ActionsGetter.GUEST);
             }
         }
 
@@ -45,7 +46,7 @@ public class CheckSigninDataCommand implements ICommand {
             // Check login and password for Admin.
             if (enteredLogin.equals(ADMIN_LOGIN) && enteredPassword.equals(ADMIN_PASSWORD)) {
                 wrapper.setSessionAttribute("role", ROLE_ADMIN);
-                return "/admin";
+                return ActionsGetter.getInstance().getAction(ActionsGetter.ADMIN);
             }
             return setErrorMessage(wrapper, "wrong_entrance_data");
         }
@@ -59,13 +60,13 @@ public class CheckSigninDataCommand implements ICommand {
 
     private String setErrorMessage(ISessionRequestWrapper wrapper, String errorMessage) {
         wrapper.setRequestAttribute("error", errorMessage);
-        return Config.getInstance().getProperty(Config.START_PAGE);
+        return URNsGetter.getInstance().getURN(URNsGetter.START_PAGE);
     }
 
     private String setSessionData(ISessionRequestWrapper wrapper, String login) {
         Guest guest = DAOFactory.getDAOGuest().getCertainGuest(login);
         wrapper.setSessionAttribute("guestInfo", guest);
         wrapper.setSessionAttribute("role", ROLE_GUEST);
-        return "/guest";
+        return ActionsGetter.getInstance().getAction(ActionsGetter.GUEST);
     }
 }

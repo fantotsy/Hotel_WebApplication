@@ -1,6 +1,6 @@
 package ua.fantotsy.DAOs;
 
-import ua.fantotsy.datasource.ConnectionSource;
+import ua.fantotsy.datasource.ConnectionPool;
 import ua.fantotsy.entities.Apartment;
 import ua.fantotsy.entities.Category;
 import ua.fantotsy.entities.Guest;
@@ -18,7 +18,7 @@ public class DAOReservation implements IDAOReservation {
     @Override
     public int insertNewReservation(Reservation reservation) {
         int result;
-        try (Connection connection = ConnectionSource.getInstance().getConnection();
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
              PreparedStatement ps = connection.prepareStatement(Utils.getSQLQuery("add_new_reservation"))) {
             ps.setInt(1, reservation.getGuest().getGuestId());
             ps.setInt(2, reservation.getApartment().getApartmentId());
@@ -38,7 +38,7 @@ public class DAOReservation implements IDAOReservation {
     @Override
     public List<Reservation> getAllReservations() {
         List<Reservation> listOfReservations = new ArrayList<>();
-        try (Connection connection = ConnectionSource.getInstance().getConnection();
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
              PreparedStatement ps = connection.prepareStatement(Utils.getSQLQuery("get_all_reservations"));
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
@@ -57,7 +57,7 @@ public class DAOReservation implements IDAOReservation {
     @Override
     public List<Reservation> getCertainReservations(Integer guestId) {
         List<Reservation> listOfReservations = new ArrayList<>();
-        try (Connection connection = ConnectionSource.getInstance().getConnection();
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
              PreparedStatement ps = connection.prepareStatement(Utils.getSQLQuery("get_all_reservations_for_certain_guest"))) {
             ps.setInt(1, guestId);
             ResultSet rs = ps.executeQuery();
@@ -78,7 +78,7 @@ public class DAOReservation implements IDAOReservation {
     @Override
     public int deleteCertainReservation(Integer reservationId) {
         int result = 0;
-        try (Connection connection = ConnectionSource.getInstance().getConnection();
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
              PreparedStatement ps = connection.prepareStatement(Utils.getSQLQuery("remove_reservation"))) {
             ps.setInt(1, reservationId);
             result = ps.executeUpdate();

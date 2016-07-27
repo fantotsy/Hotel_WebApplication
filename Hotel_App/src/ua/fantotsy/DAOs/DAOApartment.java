@@ -1,6 +1,6 @@
 package ua.fantotsy.DAOs;
 
-import ua.fantotsy.datasource.ConnectionSource;
+import ua.fantotsy.datasource.ConnectionPool;
 import ua.fantotsy.utils.Utils;
 
 import java.sql.Connection;
@@ -15,7 +15,7 @@ public class DAOApartment implements IDAOApartment {
     @Override
     public Map<Integer, Integer> getNumbersOfApartmentsGroupedByCategories() {
         Map<Integer, Integer> quantityOfApartmentsGroupedByCategories = new HashMap<>();
-        try (Connection connection = ConnectionSource.getInstance().getConnection();
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
              PreparedStatement ps = connection.prepareStatement(Utils.getSQLQuery("get_numbers_of_apartments_grouped_by_categories"));
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
@@ -31,7 +31,7 @@ public class DAOApartment implements IDAOApartment {
     @Override
     public int addApartment(int apartmentNumber, int category) {
         int result = 0;
-        try (Connection connection = ConnectionSource.getInstance().getConnection();
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
              PreparedStatement ps = connection.prepareStatement(Utils.getSQLQuery("add_apartment"))) {
             ps.setInt(1, apartmentNumber);
             ps.setInt(2, category);
@@ -46,7 +46,7 @@ public class DAOApartment implements IDAOApartment {
     @Override
     public int removeApartment(int apartmentNumber) {
         int result = 0;
-        try (Connection connection = ConnectionSource.getInstance().getConnection();
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
              PreparedStatement ps = connection.prepareStatement(Utils.getSQLQuery("remove_apartment"))) {
             ps.setInt(1, apartmentNumber);
             result = ps.executeUpdate();
@@ -60,7 +60,7 @@ public class DAOApartment implements IDAOApartment {
     @Override
     public Map<Integer, Integer> getAvailableApartments(String arrival, String departure, List<String> types, List<String> capacities) {
         Map<Integer, Integer> result = new HashMap<>();
-        try (Connection connection = ConnectionSource.getInstance().getConnection();
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
              PreparedStatement ps = connection.prepareStatement(Utils.getSQLQuery("get_available_apartments"))) {
             ps.setString(1, arrival);
             ps.setString(2, arrival);
@@ -90,7 +90,7 @@ public class DAOApartment implements IDAOApartment {
     @Override
     public Map<Integer, Integer> getAllApartmentNumbers() {
         Map<Integer, Integer> listOfApartments = new HashMap<>();
-        try (Connection connection = ConnectionSource.getInstance().getConnection();
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
              PreparedStatement ps = connection.prepareStatement(Utils.getSQLQuery("get_all_apartment_numbers"));
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {

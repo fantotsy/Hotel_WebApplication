@@ -10,38 +10,36 @@
     <title><fmt:message key="title" bundle="${reservations}"/></title>
     <link href="../../css/admin.css" type="text/css" rel="stylesheet"/>
 </head>
-<body>
-<header>
-    <%@include file="admin_header.jsp" %>
-</header>
-
-<div>
-    <h1><fmt:message key="header" bundle="${reservations}"/></h1>
-    <form action="/admin">
-        <fmt:message var="back_button" key="back_button" bundle="${reservations}"/>
-        <input type="submit" name="submit" value="${back_button}" id="back"/>
-    </form>
-
-    <table id="reservations_table">
-        <tr>
-            <th><fmt:message key="table_name_column" bundle="${reservations}"/></th>
-            <th><fmt:message key="table_arrival_column" bundle="${reservations}"/></th>
-            <th><fmt:message key="table_departure_column" bundle="${reservations}"/></th>
-            <th><fmt:message key="table_name_column" bundle="${reservations}"/></th>
-            <th><fmt:message key="table_surname_column" bundle="${reservations}"/></th>
-            <th><fmt:message key="table_login_column" bundle="${reservations}"/></th>
-        </tr>
-        <c:forEach items="${requestScope.listOfReservations}" var="reservation">
-            <tr>
-                <td>${reservation.apartment.apartmentId}</td>
-                <td>${reservation.arrival}</td>
-                <td>${reservation.departure}</td>
-                <td>${reservation.guest.name}</td>
-                <td>${reservation.guest.lastName}</td>
-                <td>${reservation.guest.login}</td>
-            </tr>
-        </c:forEach>
-    </table>
-</div>
-</body>
+    <body>
+        <header>
+            <%@include file="admin_header.jsp" %>
+        </header>
+        <div>
+            <h1><fmt:message key="header" bundle="${reservations}"/></h1>
+            <form action="/admin">
+                <fmt:message var="back_button" key="back_button" bundle="${reservations}"/>
+                <input type="submit" name="submit" value="${back_button}" id="back"/>
+            </form>
+            <table id="reservations_table">
+                <tr>
+                    <th><fmt:message key="table_name_column" bundle="${reservations}"/></th>
+                    <th><fmt:message key="table_arrival_column" bundle="${reservations}"/></th>
+                    <th><fmt:message key="table_departure_column" bundle="${reservations}"/></th>
+                    <th><fmt:message key="table_name_column" bundle="${reservations}"/></th>
+                    <th><fmt:message key="table_surname_column" bundle="${reservations}"/></th>
+                    <th><fmt:message key="table_login_column" bundle="${reservations}"/></th>
+                </tr>
+                <c:forEach items="${requestScope.listOfReservations}" var="reservation">
+                    <tr>
+                        <td>${reservation.apartment.apartmentId}</td>
+                        <td>${reservation.arrival}</td>
+                        <td>${reservation.departure}</td>
+                        <td>${reservation.guest.name}</td>
+                        <td>${reservation.guest.lastName}</td>
+                        <td>${reservation.guest.login}</td>
+                    </tr>
+                </c:forEach>
+            </table>
+        </div>
+    </body>
 </html>

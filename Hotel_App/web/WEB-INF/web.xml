@@ -30,7 +30,7 @@
     </servlet-mapping>
 
     <resource-ref>
-        <description>DB Connection</description>
+        <description>MySQL DB Connection Pool</description>
         <res-ref-name>jdbc/hoteldb</res-ref-name>
         <res-type>javax.sql.DataSource</res-type>
         <res-auth>Container</res-auth>
@@ -75,4 +75,8 @@
         <location>/error</location>
     </error-page>
 
+    <context-param>
+        <param-name>log4jConfigLocaltion</param-name>
+        <param-value>WEB-INF/log4j.xml</param-value>
+    </context-param>
 </web-app>

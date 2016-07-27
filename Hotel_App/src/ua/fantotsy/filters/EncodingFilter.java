@@ -10,7 +10,6 @@ public class EncodingFilter implements Filter {
     @Override
     public void init(FilterConfig config) throws ServletException {
         this.encoding = config.getInitParameter("defaultEncoding");
-
     }
 
     @Override
@@ -20,7 +19,6 @@ public class EncodingFilter implements Filter {
             request.setCharacterEncoding(encoding);
             response.setCharacterEncoding(encoding);
         }
-
         chain.doFilter(request, response);
     }
 

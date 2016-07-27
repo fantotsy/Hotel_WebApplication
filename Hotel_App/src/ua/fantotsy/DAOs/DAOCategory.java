@@ -1,6 +1,6 @@
 package ua.fantotsy.DAOs;
 
-import ua.fantotsy.datasource.ConnectionSource;
+import ua.fantotsy.datasource.ConnectionPool;
 import ua.fantotsy.entities.Category;
 import ua.fantotsy.utils.Utils;
 
@@ -15,7 +15,7 @@ public class DAOCategory implements IDAOCategory {
     @Override
     public List<Category> getAllCategories() {
         List<Category> listOfCategories = new ArrayList<>();
-        try (Connection connection = ConnectionSource.getInstance().getConnection();
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
              PreparedStatement ps = connection.prepareStatement(Utils.getSQLQuery("get_all_categories"));
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
@@ -31,7 +31,7 @@ public class DAOCategory implements IDAOCategory {
 
     public List<Category> getAllCategoriesForUser(String arrival, String departure, List<String> types, List<String> capacities) {
         List<Category> listOfCategories = new ArrayList<>();
-        try (Connection connection = ConnectionSource.getInstance().getConnection();
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
              PreparedStatement ps = connection.prepareStatement(Utils.getSQLQuery("get_all_available_apartments_for_guest"))) {
             ps.setString(1, arrival);
             ps.setString(2, arrival);
@@ -59,7 +59,7 @@ public class DAOCategory implements IDAOCategory {
     @Override
     public List<String> getAllTypes() {
         List<String> listOfTypes = new ArrayList<>();
-        try (Connection connection = ConnectionSource.getInstance().getConnection();
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
              PreparedStatement ps = connection.prepareStatement(Utils.getSQLQuery("get_all_types"));
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
@@ -76,7 +76,7 @@ public class DAOCategory implements IDAOCategory {
     @Override
     public List<Integer> getAllCapacities() {
         List<Integer> listOfCapacities = new ArrayList<>();
-        try (Connection connection = ConnectionSource.getInstance().getConnection();
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
              PreparedStatement ps = connection.prepareStatement(Utils.getSQLQuery("get_all_capacities"));
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {

@@ -1,6 +1,6 @@
 package ua.fantotsy.DAOs;
 
-import ua.fantotsy.datasource.ConnectionSource;
+import ua.fantotsy.datasource.ConnectionPool;
 import ua.fantotsy.entities.Guest;
 import ua.fantotsy.utils.Utils;
 
@@ -15,7 +15,7 @@ public class DAOGuest implements IDAOGuest {
     @Override
     public Boolean containsCertainLogin(String login) {
         Boolean result;
-        try (Connection connection = ConnectionSource.getInstance().getConnection();
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
              PreparedStatement ps = connection.prepareStatement(Utils.getSQLQuery("get_certain_login"))) {
             ps.setString(1, login);
             ResultSet rs = ps.executeQuery();
@@ -31,7 +31,7 @@ public class DAOGuest implements IDAOGuest {
     @Override
     public Boolean containsCertainGuest(String login, String password) {
         Boolean result;
-        try (Connection connection = ConnectionSource.getInstance().getConnection();
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
              PreparedStatement ps = connection.prepareStatement(Utils.getSQLQuery("get_certain_login_and_password"))) {
             ps.setString(1, login);
             ps.setString(2, password);
@@ -48,7 +48,7 @@ public class DAOGuest implements IDAOGuest {
     @Override
     public int insertNewGuest(Guest guest) {
         int result;
-        try (Connection connection = ConnectionSource.getInstance().getConnection();
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
              PreparedStatement ps = connection.prepareStatement(Utils.getSQLQuery("add_new_guest"))) {
             ps.setString(1, guest.getName());
             ps.setString(2, guest.getLastName());
@@ -67,7 +67,7 @@ public class DAOGuest implements IDAOGuest {
     @Override
     public Guest getCertainGuest(String enteredLogin) {
         Guest guest = null;
-        try (Connection connection = ConnectionSource.getInstance().getConnection();
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
              PreparedStatement ps = connection.prepareStatement(Utils.getSQLQuery("get_certain_guest"))) {
             ps.setString(1, enteredLogin);
             ResultSet rs = ps.executeQuery();
@@ -85,7 +85,7 @@ public class DAOGuest implements IDAOGuest {
     @Override
     public List<Guest> getAllGuests() {
         List<Guest> listOfGuests = new ArrayList<>();
-        try (Connection connection = ConnectionSource.getInstance().getConnection();
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
              PreparedStatement ps = connection.prepareStatement(Utils.getSQLQuery("get_all_guests"));
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {

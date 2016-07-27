@@ -26,13 +26,11 @@ public class AuthorizationFilter implements Filter {
         adminURIs.add("/reservations");
         adminURIs.add("/apartments");
         adminURIs.add("/guests");
-        //adminURIs.add("/css/header.css");
         adminURIs.add("/images/admin_icon.png");
 
         guestURIs.add("/guest");
         guestURIs.add("/booking");
         guestURIs.add("/order_valid");
-        //guestURIs.add("/css/header.css");
         guestURIs.add("/images/user_icon.png");
 
         nonUserURIs.add("/");
@@ -57,9 +55,7 @@ public class AuthorizationFilter implements Filter {
         HttpSession session = ((HttpServletRequest) request).getSession(true);
         if (session != null) {
             String role = (String) session.getAttribute("role");
-            System.out.println(role);
             String uriPath = ((HttpServletRequest) request).getRequestURI();
-            System.out.println(uriPath);
             if (guestURIs.contains(uriPath)) {
                 if (role != null && role.equals("guest")) {
                     chain.doFilter(request, response);

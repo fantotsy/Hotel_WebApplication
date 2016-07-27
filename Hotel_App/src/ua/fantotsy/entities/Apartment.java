@@ -11,7 +11,6 @@ public class Apartment {
 
     public Apartment(Integer apartmentId) {
         this.apartmentId = apartmentId;
-
     }
 
     public Integer getApartmentId() {

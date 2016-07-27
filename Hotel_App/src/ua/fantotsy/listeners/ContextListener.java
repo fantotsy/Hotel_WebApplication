@@ -28,27 +28,27 @@ public class ContextListener implements ServletContextListener, HttpSessionListe
         DOMConfigurator.configure(fullPath);
     }
 
-    public void contextDestroyed(ServletContextEvent sce) {
+    public void contextDestroyed(ServletContextEvent event) {
 
     }
 
-    public void sessionCreated(HttpSessionEvent se) {
+    public void sessionCreated(HttpSessionEvent event) {
 
     }
 
-    public void sessionDestroyed(HttpSessionEvent se) {
+    public void sessionDestroyed(HttpSessionEvent event) {
 
     }
 
-    public void attributeAdded(HttpSessionBindingEvent sbe) {
+    public void attributeAdded(HttpSessionBindingEvent event) {
 
     }
 
-    public void attributeRemoved(HttpSessionBindingEvent sbe) {
+    public void attributeRemoved(HttpSessionBindingEvent event) {
 
     }
 
-    public void attributeReplaced(HttpSessionBindingEvent sbe) {
+    public void attributeReplaced(HttpSessionBindingEvent event) {
 
     }
 }

@@ -1,5 +1,6 @@
 package ua.fantotsy.DAOs;
 
+import org.apache.log4j.Logger;
 import ua.fantotsy.datasource.ConnectionPool;
 import ua.fantotsy.entities.Category;
 import ua.fantotsy.utils.SQLQueriesGetter;
@@ -12,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DAOCategory implements IDAOCategory {
+    private Logger logger = Logger.getLogger(DAOCategory.class.getName());
     private Connection connection = ConnectionPool.getInstance().getConnection();
 
     @Override
@@ -24,13 +26,13 @@ public class DAOCategory implements IDAOCategory {
                 listOfCategories.add(category);
             }
             connection.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            return null;
+        } catch (SQLException e) {
+            logger.error(e);
         }
         return listOfCategories;
     }
 
+    @Override
     public List<Category> getAllCategoriesForUser(String arrival, String departure, List<String> types, List<String> capacities) {
         List<Category> listOfCategories = new ArrayList<>();
         try (PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_ALL_AVAILABLE_APARTMENTS_FOR_GUEST))) {
@@ -38,7 +40,7 @@ public class DAOCategory implements IDAOCategory {
             ps.setString(2, arrival);
             ps.setString(3, departure);
             ps.setString(4, departure);
-            ResultSet rs = null;
+            ResultSet rs;
             for (String type : types) {
                 for (String capacity : capacities) {
                     ps.setString(5, type);
@@ -51,9 +53,8 @@ public class DAOCategory implements IDAOCategory {
                 }
             }
             connection.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            return null;
+        } catch (SQLException e) {
+            logger.error(e);
         }
         return listOfCategories;
     }
@@ -68,9 +69,8 @@ public class DAOCategory implements IDAOCategory {
                 listOfTypes.add(type);
             }
             connection.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            return null;
+        } catch (SQLException e) {
+            logger.error(e);
         }
         return listOfTypes;
     }
@@ -85,9 +85,8 @@ public class DAOCategory implements IDAOCategory {
                 listOfCapacities.add(capacity);
             }
             connection.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            return null;
+        } catch (SQLException e) {
+            logger.error(e);
         }
         return listOfCapacities;
     }

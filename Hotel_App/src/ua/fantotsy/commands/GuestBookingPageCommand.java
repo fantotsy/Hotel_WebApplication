@@ -1,6 +1,5 @@
 package ua.fantotsy.commands;
 
-import ua.fantotsy.controllers.ICommand;
 import ua.fantotsy.controllers.ISessionRequestWrapper;
 import ua.fantotsy.datasource.DAOFactory;
 import ua.fantotsy.entities.Apartment;

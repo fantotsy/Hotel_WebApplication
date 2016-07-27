@@ -7,11 +7,11 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ControllerHelper {
-    private static ControllerHelper instance = null;
+public class CommandGetter {
+    private static CommandGetter instance = null;
     private Map<String, ICommand> commands;
 
-    private ControllerHelper() {
+    private CommandGetter() {
         commands = new HashMap<String, ICommand>() {{
             put(ActionsGetter.getInstance().getAction(ActionsGetter.INDEX), new StartPageCommand());
             put(ActionsGetter.getInstance().getAction(ActionsGetter.REGISTRATION), new RegistrationPageCommand());
@@ -27,15 +27,15 @@ public class ControllerHelper {
         }};
     }
 
-    public static ControllerHelper getInstance() {
+    public static CommandGetter getInstance() {
         if (instance == null) {
-            instance = new ControllerHelper();
+            instance = new CommandGetter();
         }
         return instance;
     }
 
     public ICommand getCommand(HttpServletRequest request) {
-        final String START_PAGE = "/index";
+        final String START_PAGE = ActionsGetter.getInstance().getAction(ActionsGetter.INDEX);
         String urlPath = request.getServletPath();
 
         if (urlPath == null) {

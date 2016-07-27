@@ -1,23 +1,26 @@
 package ua.fantotsy.utils;
 
+import org.apache.log4j.Logger;
+
 import java.util.Calendar;
 
 public final class Utils {
     public static String encryptionMD5(String password) {
+        Logger logger = Logger.getLogger(Utils.class.getName());
         try {
             String encryption = null;
             if (password != null) {
                 java.security.MessageDigest md = java.security.MessageDigest.getInstance("MD5");
                 byte[] array = md.digest(password.getBytes());
-                StringBuffer sb = new StringBuffer();
+                StringBuffer stringBuffer = new StringBuffer();
                 for (int i = 0; i < array.length; ++i) {
-                    sb.append(Integer.toHexString((array[i] & 0xFF) | 0x100).substring(1, 3));
+                    stringBuffer.append(Integer.toHexString((array[i] & 0xFF) | 0x100).substring(1, 3));
                 }
-                encryption = sb.toString();
+                encryption = stringBuffer.toString();
             }
             return encryption;
-        } catch (java.security.NoSuchAlgorithmException ex) {
-            ex.printStackTrace();
+        } catch (java.security.NoSuchAlgorithmException e) {
+            logger.error(e);
         }
         return null;
     }

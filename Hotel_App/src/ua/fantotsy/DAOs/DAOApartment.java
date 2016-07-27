@@ -1,5 +1,6 @@
 package ua.fantotsy.DAOs;
 
+import org.apache.log4j.Logger;
 import ua.fantotsy.datasource.ConnectionPool;
 import ua.fantotsy.utils.SQLQueriesGetter;
 
@@ -12,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 public class DAOApartment implements IDAOApartment {
+    private Logger logger = Logger.getLogger(DAOApartment.class.getName());
     private Connection connection = ConnectionPool.getInstance().getConnection();
 
     @Override
@@ -23,9 +25,8 @@ public class DAOApartment implements IDAOApartment {
                 quantityOfApartmentsGroupedByCategories.put(rs.getInt("category_id"), rs.getInt("number_of_apartments"));
             }
             connection.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            return null;
+        } catch (SQLException e) {
+            logger.error(e);
         }
         return quantityOfApartmentsGroupedByCategories;
     }
@@ -38,9 +39,8 @@ public class DAOApartment implements IDAOApartment {
             ps.setInt(2, category);
             result = ps.executeUpdate();
             connection.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            return -1;
+        } catch (SQLException e) {
+            logger.error(e);
         }
         return result;
     }
@@ -52,9 +52,8 @@ public class DAOApartment implements IDAOApartment {
             ps.setInt(1, apartmentNumber);
             result = ps.executeUpdate();
             connection.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            return -1;
+        } catch (SQLException e) {
+            logger.error(e);
         }
         return result;
     }
@@ -82,9 +81,8 @@ public class DAOApartment implements IDAOApartment {
             }
             rs.close();
             connection.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            return null;
+        } catch (SQLException e) {
+            logger.error(e);
         }
         return result;
     }
@@ -98,9 +96,8 @@ public class DAOApartment implements IDAOApartment {
                 listOfApartments.put(rs.getInt("apartment_id"), rs.getInt("category_id"));
             }
             connection.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            return null;
+        } catch (SQLException e) {
+            logger.error(e);
         }
         return listOfApartments;
     }

@@ -1,5 +1,6 @@
 package ua.fantotsy.controllers;
 
+import ua.fantotsy.commands.ICommand;
 import ua.fantotsy.utils.ActionsGetter;
 
 import javax.servlet.ServletException;
@@ -11,7 +12,7 @@ import java.io.IOException;
 
 public class ServletController extends HttpServlet {
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ICommand command = ControllerHelper.getInstance().getCommand(request);
+        ICommand command = CommandGetter.getInstance().getCommand(request);
         ISessionRequestWrapper wrapper = new SessionRequestWrapper(request);
         String viewPage = command.execute(wrapper);
         if (viewPage.equals("session_invalidate")) {

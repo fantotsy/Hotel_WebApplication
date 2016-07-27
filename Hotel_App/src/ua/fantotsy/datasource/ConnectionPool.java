@@ -9,18 +9,17 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public class ConnectionPool {
+    private Logger logger = Logger.getLogger(ConnectionPool.class.getName());
     private static ConnectionPool instance = new ConnectionPool();
     private InitialContext initialContext;
     private DataSource dataSource;
-    private Logger logger = Logger.getLogger(ConnectionPool.class.getName());
 
     private ConnectionPool() {
         try {
             initialContext = new InitialContext();
             dataSource = (DataSource) initialContext.lookup("java:comp/env/jdbc/hoteldb");
-        } catch (NamingException ex) {
-            ex.printStackTrace();
-            logger.error(ex);
+        } catch (NamingException e) {
+            logger.error(e);
         }
     }
 
@@ -32,8 +31,8 @@ public class ConnectionPool {
         Connection connection = null;
         try {
             connection = dataSource.getConnection();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
+        } catch (SQLException e) {
+            logger.error(e);
         }
         return connection;
     }

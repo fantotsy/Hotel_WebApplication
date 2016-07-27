@@ -1,5 +1,6 @@
 package ua.fantotsy.DAOs;
 
+import org.apache.log4j.Logger;
 import ua.fantotsy.datasource.ConnectionPool;
 import ua.fantotsy.entities.Guest;
 import ua.fantotsy.utils.SQLQueriesGetter;
@@ -12,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DAOGuest implements IDAOGuest {
+    private Logger logger = Logger.getLogger(DAOGuest.class.getName());
     private Connection connection = ConnectionPool.getInstance().getConnection();
 
     @Override
@@ -23,8 +25,8 @@ public class DAOGuest implements IDAOGuest {
             result = rs.next();
             rs.close();
             connection.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
+        } catch (SQLException e) {
+            logger.error(e);
             return null;
         }
         return result;
@@ -32,7 +34,7 @@ public class DAOGuest implements IDAOGuest {
 
     @Override
     public Boolean containsCertainGuest(String login, String password) {
-        Boolean result;
+        Boolean result = null;
         try (PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_CERTAIN_LOGIN_AND_PASSWORD))) {
             ps.setString(1, login);
             ps.setString(2, password);
@@ -40,16 +42,15 @@ public class DAOGuest implements IDAOGuest {
             result = rs.next();
             rs.close();
             connection.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            return null;
+        } catch (SQLException e) {
+            logger.error(e);
         }
         return result;
     }
 
     @Override
     public int insertNewGuest(Guest guest) {
-        int result;
+        int result = -1;
         try (PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.ADD_NEW_GUEST))) {
             ps.setString(1, guest.getName());
             ps.setString(2, guest.getLastName());
@@ -59,9 +60,8 @@ public class DAOGuest implements IDAOGuest {
             ps.setString(6, guest.getPassword());
             result = ps.executeUpdate();
             connection.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            return -1;
+        } catch (SQLException e) {
+            logger.error(e);
         }
         return result;
     }
@@ -77,9 +77,8 @@ public class DAOGuest implements IDAOGuest {
             }
             rs.close();
             connection.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            return null;
+        } catch (SQLException e) {
+            logger.error(e);
         }
         return guest;
     }
@@ -94,9 +93,8 @@ public class DAOGuest implements IDAOGuest {
                 listOfGuests.add(guest);
             }
             connection.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            return null;
+        } catch (SQLException e) {
+            logger.error(e);
         }
         return listOfGuests;
     }

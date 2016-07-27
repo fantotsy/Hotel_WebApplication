@@ -1,5 +1,7 @@
 package ua.fantotsy.tags;
 
+import org.apache.log4j.Logger;
+
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.TagSupport;
 import java.io.IOException;
@@ -7,6 +9,7 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class ErrorTag extends TagSupport {
+    private Logger logger = Logger.getLogger(ErrorTag.class.getName());
     private String errorType;
     private Locale locale;
 
@@ -29,8 +32,9 @@ public class ErrorTag extends TagSupport {
                 String errorMessage = (String) rb.getObject(error);
 
                 pageContext.getOut().write("<span>" + errorMessage + "</span>");
-            } catch (IOException ex) {
-                throw new JspException(ex.getMessage());
+            } catch (IOException e) {
+                logger.error(e);
+                throw new JspException(e.getMessage());
             }
         }
         return SKIP_BODY;

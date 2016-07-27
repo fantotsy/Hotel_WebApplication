@@ -1,5 +1,6 @@
 package ua.fantotsy.DAOs;
 
+import org.apache.log4j.Logger;
 import ua.fantotsy.datasource.ConnectionPool;
 import ua.fantotsy.entities.Apartment;
 import ua.fantotsy.entities.Category;
@@ -15,11 +16,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DAOReservation implements IDAOReservation {
+    private Logger logger = Logger.getLogger(DAOReservation.class.getName());
     private Connection connection = ConnectionPool.getInstance().getConnection();
 
     @Override
     public int insertNewReservation(Reservation reservation) {
-        int result;
+        int result = -1;
         try (PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.ADD_NEW_RESERVATION))) {
             ps.setInt(1, reservation.getGuest().getGuestId());
             ps.setInt(2, reservation.getApartment().getApartmentId());
@@ -30,9 +32,8 @@ public class DAOReservation implements IDAOReservation {
             ps.setInt(7, reservation.getApartment().getApartmentId());
             result = ps.executeUpdate();
             connection.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            return -1;
+        } catch (SQLException e) {
+            logger.error(e);
         }
         return result;
     }
@@ -49,9 +50,8 @@ public class DAOReservation implements IDAOReservation {
                 listOfReservations.add(reservation);
             }
             connection.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            return null;
+        } catch (SQLException e) {
+            logger.error(e);
         }
         return listOfReservations;
     }
@@ -70,23 +70,21 @@ public class DAOReservation implements IDAOReservation {
             }
             rs.close();
             connection.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            return null;
+        } catch (SQLException e) {
+            logger.error(e);
         }
         return listOfReservations;
     }
 
     @Override
     public int deleteCertainReservation(Integer reservationId) {
-        int result = 0;
+        int result = -1;
         try (PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.REMOVE_RESERVATION))) {
             ps.setInt(1, reservationId);
             result = ps.executeUpdate();
             connection.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            return -1;
+        } catch (SQLException e) {
+            logger.error(e);
         }
         return result;
     }

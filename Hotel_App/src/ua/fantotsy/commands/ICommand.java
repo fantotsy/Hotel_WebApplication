@@ -1,4 +1,6 @@
-package ua.fantotsy.controllers;
+package ua.fantotsy.commands;
+
+import ua.fantotsy.controllers.ISessionRequestWrapper;
 
 import javax.servlet.ServletException;
 import java.io.IOException;

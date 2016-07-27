@@ -20,7 +20,7 @@ public class ServletController extends HttpServlet {
         } else {
             wrapper.insertAttributes(request);
         }
-        System.out.println("viewPage: " + viewPage);
+        //System.out.println("viewPage: " + viewPage);
         request.getRequestDispatcher(viewPage).forward(request, response);
     }
 

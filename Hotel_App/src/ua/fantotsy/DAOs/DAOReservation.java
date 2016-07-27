@@ -25,7 +25,7 @@ public class DAOReservation implements IDAOReservation {
             ps.setInt(2, reservation.getApartment().getApartmentId());
             ps.setString(3, reservation.getArrival());
             ps.setString(4, reservation.getDeparture());
-            ps.setString(5, reservation.getArrival(l));
+            ps.setString(5, reservation.getArrival());
             ps.setString(6, reservation.getDeparture());
             ps.setInt(7, reservation.getApartment().getApartmentId());
             result = ps.executeUpdate();

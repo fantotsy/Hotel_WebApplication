@@ -32,6 +32,12 @@ public class SessionRequestWrapper implements ISessionRequestWrapper {
         extractSessionAttributes(request);
     }
 
+    public SessionRequestWrapper(HashMap<String, String[]> requestParameters, HashMap<String, Object> sessionAttributes){
+        this.requestParameters = requestParameters;
+        this.sessionAttributes = sessionAttributes;
+        requestAttributes = new HashMap<>();
+    }
+
     @Override
     public void extractRequestParameters(HttpServletRequest request) {
         Map<String, String[]> map = request.getParameterMap();

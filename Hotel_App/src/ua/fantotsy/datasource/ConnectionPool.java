@@ -2,6 +2,7 @@ package ua.fantotsy.datasource;
 
 import org.apache.log4j.Logger;
 
+import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
@@ -11,13 +12,14 @@ import java.sql.SQLException;
 public class ConnectionPool {
     private Logger logger = Logger.getLogger(ConnectionPool.class.getName());
     private static ConnectionPool instance = new ConnectionPool();
-    private InitialContext initialContext;
+    private Context initialContext;
     private DataSource dataSource;
 
     private ConnectionPool() {
         try {
             initialContext = new InitialContext();
-            dataSource = (DataSource) initialContext.lookup("java:comp/env/jdbc/hoteldb");
+            Context webContext = (Context)initialContext.lookup("java:/comp/env");
+            dataSource = (DataSource) webContext.lookup("/jdbc/hoteldb");
         } catch (NamingException e) {
             logger.error(e);
         }

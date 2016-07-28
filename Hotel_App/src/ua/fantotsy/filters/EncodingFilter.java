@@ -3,6 +3,14 @@ package ua.fantotsy.filters;
 import javax.servlet.*;
 import java.io.IOException;
 
+/**
+ * This class is an encoding filter, which is used to set specific encoding before
+ * {@link ua.fantotsy.controllers.ServletController} starts its work.
+ *
+ * @author fantotsy
+ * @version 1.0
+ */
+
 public class EncodingFilter implements Filter {
     private FilterConfig filterConfig = null;
     private String encoding;

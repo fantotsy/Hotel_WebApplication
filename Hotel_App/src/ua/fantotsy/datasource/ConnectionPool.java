@@ -9,6 +9,13 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+/**
+ * This is a connection pool, which is used for getting the connection to data base.
+ *
+ * @author fantotsy
+ * @version 1.0
+ */
+
 public class ConnectionPool {
     private Logger logger = Logger.getLogger(ConnectionPool.class.getName());
     private static ConnectionPool instance = new ConnectionPool();
@@ -18,7 +25,7 @@ public class ConnectionPool {
     private ConnectionPool() {
         try {
             initialContext = new InitialContext();
-            Context webContext = (Context)initialContext.lookup("java:/comp/env");
+            Context webContext = (Context) initialContext.lookup("java:/comp/env");
             dataSource = (DataSource) webContext.lookup("/jdbc/hoteldb");
         } catch (NamingException e) {
             logger.error(e);

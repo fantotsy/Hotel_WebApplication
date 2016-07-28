@@ -2,6 +2,14 @@ package ua.fantotsy.utils;
 
 import java.util.ResourceBundle;
 
+/**
+ * This class consists of logic, which gets specific
+ * Uniform Resource Names (URNs) by their names.
+ *
+ * @author fantotsy
+ * @version 1.0
+ */
+
 public final class URNsGetter {
     private ResourceBundle resourceBundle;
     private static URNsGetter instance;
@@ -27,12 +35,6 @@ public final class URNsGetter {
     public static final String UKRAINIAN_LANGUAGE_IMG = "UKRAINIAN_LANGUAGE_IMG";
     public static final String USER_ICON_IMG = "USER_ICON_IMG";
     public static final String FAVICON_ICO = "FAVICON_ICO";
-
-//    public enum URNs {
-//        START_PAGE, REGISTRATION_PAGE, MAIN_GUEST_PAGE, MAIN_ADMIN_PAGE,
-//        MAIN_ADMIN_APARTMENTS_PAGE, MAIN_ADMIN_RESERVATIONS_PAGE,
-//        MAIN_ADMIN_GUESTS_PAGE, MAIN_GUEST_BOOKING_PAGE, ERROR_PAGE
-//    }
 
     public static URNsGetter getInstance() {
         if (instance == null) {

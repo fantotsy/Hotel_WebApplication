@@ -7,7 +7,21 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import java.util.Calendar;
 
+/**
+ * This class is subsidiary and contains methods, which are used
+ * in methods from other classes to ease their code.
+ *
+ * @author fantotsy
+ * @version 1.0
+ */
+
 public final class Utils {
+    /**
+     * This method encrypts specific string (password) using MD5.
+     *
+     * @param password password, which has to be encrypted.
+     * @return encryption of certain password.
+     */
     public static String encryptionMD5(String password) {
         Logger logger = Logger.getLogger(Utils.class.getName());
         try {
@@ -28,6 +42,11 @@ public final class Utils {
         return null;
     }
 
+    /**
+     * This method gets today's date and the date one year after today.
+     *
+     * @return array of two strings, which are today's date and the date one year after today.
+     */
     public static String[] getDateLimits() {
         String[] result = new String[2];
         Calendar calendar = Calendar.getInstance();
@@ -53,6 +72,15 @@ public final class Utils {
         return result;
     }
 
+    /**
+     * This method is used to set the JNDI context and data source.
+     * It is used in JUnit test classes to provide valid
+     * {@link javax.sql.DataSource} while getting connection
+     * from {@link ua.fantotsy.datasource.ConnectionPool}.
+     *
+     * @param className the name of specific class.
+     * @throws Exception
+     */
     public static void setUpClass(String className) throws Exception {
         Logger logger = Logger.getLogger(className);
         // Setup the JNDI context and the datasource
@@ -78,7 +106,6 @@ public final class Utils {
             initialContext.createSubcontext("java:/comp/env/jdbc");
 
             initialContext.bind("java:/comp/env/jdbc/hoteldb", dataSource);
-
         } catch (Exception e) {
             logger.error(e);
         }

@@ -8,6 +8,14 @@ import java.io.IOException;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
+/**
+ * This class describes the custom tag 'errorTag',
+ * which is located in 'web/WEB-INF/TLDs/'.
+ *
+ * @author fantotsy
+ * @version 1.0
+ */
+
 public class ErrorTag extends TagSupport {
     private Logger logger = Logger.getLogger(ErrorTag.class.getName());
     private String errorType;

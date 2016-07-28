@@ -2,6 +2,13 @@ package ua.fantotsy.utils;
 
 import java.util.ResourceBundle;
 
+/**
+ * This class consists of logic, which gets specific actions by their names.
+ *
+ * @author fantotsy
+ * @version 1.0
+ */
+
 public final class ActionsGetter {
     private ResourceBundle resourceBundle;
     private static ActionsGetter instance;
@@ -18,10 +25,6 @@ public final class ActionsGetter {
     public static final String BOOKING = "BOOKING";
     public static final String ORDER_VALID = "ORDER_VALID";
     public static final String ERROR = "ERROR";
-
-//    public enum Actions {
-//        INDEX, REGISTRATION, MAIN, GUEST, ADMIN, APARTMENTS, RESERVATIONS, GUESTS, BOOKING, ORDER_VALID, ERROR
-//    }
 
     public static ActionsGetter getInstance() {
         if (instance == null) {

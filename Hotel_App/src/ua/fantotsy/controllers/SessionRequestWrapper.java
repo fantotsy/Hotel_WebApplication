@@ -6,6 +6,15 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * This class is a wrapper of request and session. It includes all request parameters
+ * and session attributes, which are collected in {@link HashMap}.
+ * Also this class contains all needed methods for request and session modification.
+ *
+ * @author fantotsy
+ * @version 1.0
+ */
+
 public class SessionRequestWrapper implements ISessionRequestWrapper {
     private Map<String, Object> requestAttributes;
     private Map<String, String[]> requestParameters;
@@ -32,7 +41,7 @@ public class SessionRequestWrapper implements ISessionRequestWrapper {
         extractSessionAttributes(request);
     }
 
-    public SessionRequestWrapper(HashMap<String, String[]> requestParameters, HashMap<String, Object> sessionAttributes){
+    public SessionRequestWrapper(HashMap<String, String[]> requestParameters, HashMap<String, Object> sessionAttributes) {
         this.requestParameters = requestParameters;
         this.sessionAttributes = sessionAttributes;
         requestAttributes = new HashMap<>();

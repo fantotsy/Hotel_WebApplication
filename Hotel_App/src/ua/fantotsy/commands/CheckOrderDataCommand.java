@@ -8,10 +8,28 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Command which is created by pressing 'Search' button, which is located
+ * in 'web/WEB-INF/jsp/main_guest.jsp'. This command is subscribed for action '/booking'.
+ *
+ * @author fantotsy
+ * @version 1.0
+ */
+
 public class CheckOrderDataCommand implements ICommand {
+    /**
+     * This method checks whether user has made a valid order.
+     * Then it determines which {@link String} to return.
+     *
+     * @param wrapper request wrapper.
+     * @return string, which is used in {@link ua.fantotsy.controllers.ServletController} to
+     * define where to redirect current request and response.
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     public String execute(ISessionRequestWrapper wrapper) throws ServletException, IOException {
-        // Check whether guest have made valid order.
+        // Check whether guest has made valid order.
         String dateChosen = (String) wrapper.getSessionAttribute("date_chosen");
         if (dateChosen == null) {
             dateChosen = wrapper.getRequestParameter("date_chosen");

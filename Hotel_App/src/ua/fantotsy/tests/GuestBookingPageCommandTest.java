@@ -23,18 +23,18 @@ public class GuestBookingPageCommandTest extends Assert {
 
     private final String arrivalSession;
     private final String departureSession;
-    private final List<String> types;
-    private final List<String> capacities;
-    private final Guest guestInfo;
+    private final List<String> typesSession;
+    private final List<String> capacitiesSession;
+    private final Guest guestInfoSession;
     private final String categoryId;
     private final String[] bookedApartments;
 
-    public GuestBookingPageCommandTest(String arrivalSession, String departureSession, List<String> types, List<String> capacities, Guest guestInfo, String categoryId, String[] bookedApartments) {
+    public GuestBookingPageCommandTest(String arrivalSession, String departureSession, List<String> typesSession, List<String> capacitiesSession, Guest guestInfoSession, String categoryId, String[] bookedApartments) {
         this.arrivalSession = arrivalSession;
         this.departureSession = departureSession;
-        this.types = types;
-        this.capacities = capacities;
-        this.guestInfo = guestInfo;
+        this.typesSession = typesSession;
+        this.capacitiesSession = capacitiesSession;
+        this.guestInfoSession = guestInfoSession;
         this.categoryId = categoryId;
         this.bookedApartments = bookedApartments;
     }
@@ -48,9 +48,9 @@ public class GuestBookingPageCommandTest extends Assert {
     public void initializeHashMaps() {
         sessionAttributes.put("arrival", arrivalSession);
         sessionAttributes.put("departure", departureSession);
-        sessionAttributes.put("types", types);
-        sessionAttributes.put("capacities", capacities);
-        sessionAttributes.put("guestInfo", guestInfo);
+        sessionAttributes.put("types", typesSession);
+        sessionAttributes.put("capacities", capacitiesSession);
+        sessionAttributes.put("guestInfo", guestInfoSession);
 
         requestParameters.put("category_id", new String[]{categoryId});
         requestParameters.put("booked_apartments[]", bookedApartments);

@@ -1,7 +1,10 @@
 package ua.fantotsy.utils;
 
+import org.apache.commons.dbcp2.BasicDataSource;
 import org.apache.log4j.Logger;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
 import java.util.Calendar;
 
 public final class Utils {
@@ -48,5 +51,36 @@ public final class Utils {
         result[0] = today;
         result[1] = yearLater;
         return result;
+    }
+
+    public static void setUpClass(String className) throws Exception {
+        Logger logger = Logger.getLogger(className);
+        // Setup the JNDI context and the datasource
+        try {
+            BasicDataSource dataSource = new BasicDataSource();
+            dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+            dataSource.setMaxTotal(32);
+            dataSource.setMaxIdle(8);
+            dataSource.setMaxWaitMillis(10000);
+            dataSource.setUsername("root");
+            dataSource.setPassword("root");
+            dataSource.setUrl("jdbc:mysql://localhost:3306/hoteldb");
+            dataSource.setValidationQuery("SELECT 1");
+
+            // Configure and populate initial context
+            System.setProperty(Context.INITIAL_CONTEXT_FACTORY, "org.apache.naming.java.javaURLContextFactory");
+            System.setProperty(Context.URL_PKG_PREFIXES, "org.apache.naming");
+            Context initialContext = new InitialContext();
+
+            initialContext.createSubcontext("java:");
+            initialContext.createSubcontext("java:/comp");
+            initialContext.createSubcontext("java:/comp/env");
+            initialContext.createSubcontext("java:/comp/env/jdbc");
+
+            initialContext.bind("java:/comp/env/jdbc/hoteldb", dataSource);
+
+        } catch (Exception e) {
+            logger.error(e);
+        }
     }
 }

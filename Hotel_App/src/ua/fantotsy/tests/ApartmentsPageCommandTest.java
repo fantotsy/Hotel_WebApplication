@@ -1,6 +1,4 @@
 import junit.framework.Assert;
-import org.apache.commons.dbcp2.BasicDataSource;
-import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -9,9 +7,8 @@ import org.junit.runners.Parameterized;
 import ua.fantotsy.commands.ApartmentsPageCommand;
 import ua.fantotsy.controllers.SessionRequestWrapper;
 import ua.fantotsy.utils.URNsGetter;
+import ua.fantotsy.utils.Utils;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
 import javax.servlet.ServletException;
 import java.io.IOException;
 import java.util.Arrays;
@@ -37,34 +34,7 @@ public class ApartmentsPageCommandTest extends Assert {
 
     @BeforeClass
     public static void setUpClass() throws Exception {
-        Logger logger = Logger.getLogger(ApartmentsPageCommandTest.class.getName());
-        // Setup the JNDI context and the datasource
-        try {
-            BasicDataSource dataSource = new BasicDataSource();
-            dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-            dataSource.setMaxTotal(32);
-            dataSource.setMaxIdle(8);
-            dataSource.setMaxWaitMillis(10000);
-            dataSource.setUsername("root");
-            dataSource.setPassword("root");
-            dataSource.setUrl("jdbc:mysql://localhost:3306/hoteldb");
-            dataSource.setValidationQuery("SELECT 1");
-
-            // Configure and populate initial context
-            System.setProperty(Context.INITIAL_CONTEXT_FACTORY, "org.apache.naming.java.javaURLContextFactory");
-            System.setProperty(Context.URL_PKG_PREFIXES, "org.apache.naming");
-            Context initialContext = new InitialContext();
-
-            initialContext.createSubcontext("java:");
-            initialContext.createSubcontext("java:/comp");
-            initialContext.createSubcontext("java:/comp/env");
-            initialContext.createSubcontext("java:/comp/env/jdbc");
-
-            initialContext.bind("java:/comp/env/jdbc/hoteldb", dataSource);
-
-        } catch (Exception e) {
-            logger.error(e);
-        }
+        Utils.setUpClass(ApartmentsPageCommandTest.class.getName());
     }
 
     @Before

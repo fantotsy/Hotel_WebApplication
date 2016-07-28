@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e16aee2-7e83-43c1-ba10-4202e19dd46a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/controllers/SessionRequestWrapper.class" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/controllers/SessionRequestWrapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/controllers/SessionRequestWrapper.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/controllers/SessionRequestWrapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/datasource/ConnectionPool.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/datasource/ConnectionPool.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/Hotel_App_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/Hotel_App_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hotel_App.iml" afterPath="$PROJECT_DIR$/Hotel_App.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/controllers/SessionRequestWrapper.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/controllers/SessionRequestWrapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/datasource/ConnectionPool.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/datasource/ConnectionPool.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/tests/ApartmentsPageCommandTest.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/tests/ApartmentsPageCommandTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/utils/Utils.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/utils/Utils.java" />
     </list>
     <ignored path="Hotel_App.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,61 +39,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ConnectionPool.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/datasource/ConnectionPool.java">
+      <file leaf-file-name="DAOReservation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOReservation.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="77" />
-              <folding>
-                <element signature="e#900#901#0" expanded="true" />
-                <element signature="e#931#932#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DAOCategory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOCategory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DAOFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/datasource/DAOFactory.java">
+      <file leaf-file-name="ConnectionPool.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/datasource/ConnectionPool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding>
-                <element signature="e#269#270#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ApartmentsPageCommandTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/tests/ApartmentsPageCommandTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6757493">
-              <caret line="92" column="5" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ApartmentsPageCommand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/commands/ApartmentsPageCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.42857143">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -130,9 +83,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_reservations.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_guest.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_guest_booking.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/registration.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/registration_confirmation.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/registration_form.jsp" />
@@ -171,7 +121,6 @@
         <option value="$PROJECT_DIR$/src/ua/fantotsy/utils/LoggerGetter.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/entities/Apartment.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/tags/ErrorTag.java" />
-        <option value="$PROJECT_DIR$/src/ua/fantotsy/utils/Utils.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOApartment.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOCategory.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOGuest.java" />
@@ -180,7 +129,11 @@
         <option value="$PROJECT_DIR$/src/ua/fantotsy/tests/AdminMainPageCommandTest.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/datasource/ConnectionPool.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/controllers/SessionRequestWrapper.java" />
+        <option value="$PROJECT_DIR$/src/ua/fantotsy/utils/Utils.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/tests/ApartmentsPageCommandTest.java" />
+        <option value="$PROJECT_DIR$/src/ua/fantotsy/tests/CheckOrderDataCommandTest.java" />
+        <option value="$PROJECT_DIR$/src/ua/fantotsy/tests/CheckSigninDataCommandTest.java" />
+        <option value="$PROJECT_DIR$/src/ua/fantotsy/tests/GuestBookingPageCommandTest.java" />
       </list>
     </option>
   </component>
@@ -319,6 +272,10 @@
               <option name="myItemId" value="fantotsy" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -339,6 +296,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hotel_App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hotel_App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fantotsy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hotel_App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hotel_App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fantotsy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DAOs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -396,28 +393,7 @@
       <recent name="C:\Users\Anton\Desktop\EPAM-JAVA\Projects\Project_4\Hotel_App\web\WEB-INF\log4j" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ApartmentsPageCommandTest.testExecute">
-    <configuration default="false" name="ApartmentsPageCommandTest.testV" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="Hotel_App" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ApartmentsPageCommandTest" />
-      <option name="METHOD_NAME" value="testV" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.GuestBookingPageCommandTest.testExecute">
     <configuration default="false" name="ApartmentsPageCommandTest.testExecute" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="Hotel_App" />
@@ -447,6 +423,69 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="ApartmentsPageCommandTest" />
       <option name="METHOD_NAME" value="testExecuteAddApartment" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="CheckOrderDataCommandTest.testExecute" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="Hotel_App" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CheckOrderDataCommandTest" />
+      <option name="METHOD_NAME" value="testExecute" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="CheckSigninDataCommandTest.testExecute" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="Hotel_App" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CheckSigninDataCommandTest" />
+      <option name="METHOD_NAME" value="testExecute" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="GuestBookingPageCommandTest.testExecute" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="Hotel_App" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GuestBookingPageCommandTest" />
+      <option name="METHOD_NAME" value="testExecute" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -944,17 +983,21 @@
         </option>
       </method>
     </configuration>
-    <list size="4">
+    <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.TomcatServer" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.ApartmentsPageCommandTest.testV" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.ApartmentsPageCommandTest.testExecute" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.ApartmentsPageCommandTest.testExecuteAddApartment" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.ApartmentsPageCommandTest.testExecute" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.ApartmentsPageCommandTest.testExecuteAddApartment" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.CheckOrderDataCommandTest.testExecute" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.CheckSigninDataCommandTest.testExecute" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.GuestBookingPageCommandTest.testExecute" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.ApartmentsPageCommandTest.testExecute" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ApartmentsPageCommandTest.testExecuteAddApartment" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ApartmentsPageCommandTest.testV" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.GuestBookingPageCommandTest.testExecute" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.CheckOrderDataCommandTest.testExecute" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.CheckSigninDataCommandTest.testExecute" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ApartmentsPageCommandTest.testExecute" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.ApartmentsPageCommandTest.testExecuteAddApartment" />
       </list>
     </recent_temporary>
   </component>
@@ -992,44 +1035,44 @@
       <workItem from="1469635508352" duration="5264000" />
       <workItem from="1469646104357" duration="10830000" />
       <workItem from="1469658085123" duration="540000" />
-      <workItem from="1469691850447" duration="9687000" />
+      <workItem from="1469691850447" duration="15826000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ApartmentsPageCommandTest_testExecute - 2016.07.28 at 12h 36m 03s.xml">
-      <configuration name="ApartmentsPageCommandTest.testExecute" configurationId="JUnit" />
+    <history-entry file="CheckOrderDataCommandTest_testExecute - 2016.07.28 at 14h 57m 40s.xml">
+      <configuration name="CheckOrderDataCommandTest.testExecute" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ApartmentsPageCommandTest_testExecute - 2016.07.28 at 13h 05m 14s.xml">
-      <configuration name="ApartmentsPageCommandTest.testExecute" configurationId="JUnit" />
+    <history-entry file="CheckSigninDataCommandTest_testExecute - 2016.07.28 at 14h 53m 46s.xml">
+      <configuration name="CheckSigninDataCommandTest.testExecute" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ApartmentsPageCommandTest_testExecute - 2016.07.28 at 13h 05m 49s.xml">
-      <configuration name="ApartmentsPageCommandTest.testExecute" configurationId="JUnit" />
+    <history-entry file="CheckSigninDataCommandTest_testExecute - 2016.07.28 at 14h 57m 17s.xml">
+      <configuration name="CheckSigninDataCommandTest.testExecute" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ApartmentsPageCommandTest_testExecute - 2016.07.28 at 13h 14m 52s.xml">
-      <configuration name="ApartmentsPageCommandTest.testExecute" configurationId="JUnit" />
+    <history-entry file="GuestBookingPageCommandTest_testExecute - 2016.07.28 at 15h 09m 39s.xml">
+      <configuration name="GuestBookingPageCommandTest.testExecute" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ApartmentsPageCommandTest_testExecute - 2016.07.28 at 13h 16m 21s.xml">
-      <configuration name="ApartmentsPageCommandTest.testExecute" configurationId="JUnit" />
+    <history-entry file="GuestBookingPageCommandTest_testExecute - 2016.07.28 at 15h 12m 39s.xml">
+      <configuration name="GuestBookingPageCommandTest.testExecute" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ApartmentsPageCommandTest_testExecute - 2016.07.28 at 13h 16m 41s.xml">
-      <configuration name="ApartmentsPageCommandTest.testExecute" configurationId="JUnit" />
+    <history-entry file="GuestBookingPageCommandTest_testExecute - 2016.07.28 at 15h 13m 31s.xml">
+      <configuration name="GuestBookingPageCommandTest.testExecute" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ApartmentsPageCommandTest_testExecute - 2016.07.28 at 13h 23m 51s.xml">
-      <configuration name="ApartmentsPageCommandTest.testExecute" configurationId="JUnit" />
+    <history-entry file="GuestBookingPageCommandTest_testExecute - 2016.07.28 at 15h 14m 45s.xml">
+      <configuration name="GuestBookingPageCommandTest.testExecute" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ApartmentsPageCommandTest_testExecute - 2016.07.28 at 13h 25m 22s.xml">
-      <configuration name="ApartmentsPageCommandTest.testExecute" configurationId="JUnit" />
+    <history-entry file="GuestBookingPageCommandTest_testExecute - 2016.07.28 at 15h 21m 18s.xml">
+      <configuration name="GuestBookingPageCommandTest.testExecute" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ApartmentsPageCommandTest_testExecute - 2016.07.28 at 13h 25m 53s.xml">
-      <configuration name="ApartmentsPageCommandTest.testExecute" configurationId="JUnit" />
+    <history-entry file="GuestBookingPageCommandTest_testExecute - 2016.07.28 at 15h 21m 52s.xml">
+      <configuration name="GuestBookingPageCommandTest.testExecute" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ApartmentsPageCommandTest_testExecuteAddApartment - 2016.07.28 at 12h 48m 06s.xml">
-      <configuration name="ApartmentsPageCommandTest.testExecuteAddApartment" configurationId="JUnit" />
+    <history-entry file="GuestBookingPageCommandTest_testExecute - 2016.07.28 at 15h 22m 50s.xml">
+      <configuration name="GuestBookingPageCommandTest.testExecute" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="243141000" />
+    <option name="totallyTimeSpent" value="249280000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1041,7 +1084,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1053,7 +1096,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21895425" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3535188" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36988544" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24962178" sideWeight="0.47887325" order="0" side_tool="false" content_ui="combo" />
@@ -1101,69 +1144,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/controllers/ISessionRequestWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.18114144">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/controllers/ServletController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3315508">
-          <caret line="21" column="25" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/entities/Apartment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40052357">
-          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/entities/Guest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55497384">
-          <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/entities/Category.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04450262">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/filters/AuthorizationFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33144477">
-          <caret line="45" column="66" selection-start-line="45" selection-start-column="63" selection-end-line="45" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/filters/EncodingFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.80104715">
-          <caret line="19" column="49" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/listeners/ContextListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5078534">
-          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/utils/ActionsGetter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.60209423">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/utils/SQLQueriesGetter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36910996">
@@ -1182,27 +1162,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4895288">
           <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/utils/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46596858">
-          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOGuest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2225131">
-          <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOReservation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35602096">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1423,29 +1382,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOCategory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_66/src.zip!/java/lang/Object.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3315508">
           <caret line="505" column="26" selection-start-line="505" selection-start-column="24" selection-end-line="505" selection-end-column="26" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/datasource/DAOFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="e#269#270#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1476,9 +1417,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/datasource/DAOFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3705722">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#269#270#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOCategory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27792916">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/commands/ApartmentsPageCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.9128065">
           <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1486,24 +1445,123 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/datasource/ConnectionPool.java">
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/controllers/CommandGetter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="77" />
+        <state vertical-scroll-proportion="-0.046321526">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/utils/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.3260274">
+          <caret line="82" column="28" selection-start-line="82" selection-start-column="28" selection-end-line="82" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/commands/ErrorCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18630137">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/DAOs/IDAOGuest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5714286">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOGuest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46218488">
+          <caret line="75" column="182" selection-start-line="75" selection-start-column="22" selection-end-line="75" selection-end-column="182" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/tests/CheckOrderDataCommandTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2857143">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
-            <element signature="e#900#901#0" expanded="true" />
-            <element signature="e#931#932#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/commands/CheckOrderDataCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0952381">
+          <caret line="29" column="65" selection-start-line="29" selection-start-column="55" selection-end-line="29" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/commands/CheckSigninDataCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.6834733">
+          <caret line="65" column="8" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/tests/CheckSigninDataCommandTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3809524">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/tests/ApartmentsPageCommandTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6757493">
-          <caret line="92" column="5" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
+        <state vertical-scroll-proportion="2.3333333">
+          <caret line="56" column="9" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/tests/GuestBookingPageCommandTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.0952382">
+          <caret line="65" column="5" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOReservation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/commands/GuestBookingPageCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/datasource/ConnectionPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42857143">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

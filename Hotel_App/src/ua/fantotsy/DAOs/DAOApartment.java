@@ -12,19 +12,26 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * This class provides basic implementation of CRUD operations with the help of JDBC.
+ * All operations in this class are connected with 'apartments' table.
+ *
+ * @author fantotsy
+ * @version 1.0
+ */
+
 public class DAOApartment implements IDAOApartment {
     private Logger logger = Logger.getLogger(DAOApartment.class.getName());
-    private Connection connection = ConnectionPool.getInstance().getConnection();
 
     @Override
     public Map<Integer, Integer> getNumbersOfApartmentsGroupedByCategories() {
         Map<Integer, Integer> quantityOfApartmentsGroupedByCategories = new HashMap<>();
-        try (PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_NUMBERS_OF_APARTMENTS_GROUPED_BY_CATEGORIES));
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
+             PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_NUMBERS_OF_APARTMENTS_GROUPED_BY_CATEGORIES));
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
                 quantityOfApartmentsGroupedByCategories.put(rs.getInt("category_id"), rs.getInt("number_of_apartments"));
             }
-            connection.close();
         } catch (SQLException e) {
             logger.error(e);
         }
@@ -34,11 +41,11 @@ public class DAOApartment implements IDAOApartment {
     @Override
     public int addApartment(int apartmentNumber, int category) {
         int result = 0;
-        try (PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.ADD_APARTMENT))) {
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
+             PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.ADD_APARTMENT))) {
             ps.setInt(1, apartmentNumber);
             ps.setInt(2, category);
             result = ps.executeUpdate();
-            connection.close();
         } catch (SQLException e) {
             logger.error(e);
         }
@@ -48,10 +55,10 @@ public class DAOApartment implements IDAOApartment {
     @Override
     public int removeApartment(int apartmentNumber) {
         int result = 0;
-        try (PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.REMOVE_APARTMENT))) {
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
+             PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.REMOVE_APARTMENT))) {
             ps.setInt(1, apartmentNumber);
             result = ps.executeUpdate();
-            connection.close();
         } catch (SQLException e) {
             logger.error(e);
         }
@@ -61,7 +68,8 @@ public class DAOApartment implements IDAOApartment {
     @Override
     public Map<Integer, Integer> getAvailableApartments(String arrival, String departure, List<String> types, List<String> capacities) {
         Map<Integer, Integer> result = new HashMap<>();
-        try (PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_AVAILABLE_APARTMENTS))) {
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
+             PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_AVAILABLE_APARTMENTS))) {
             ps.setString(1, arrival);
             ps.setString(2, arrival);
             ps.setString(3, departure);
@@ -80,7 +88,6 @@ public class DAOApartment implements IDAOApartment {
                 }
             }
             rs.close();
-            connection.close();
         } catch (SQLException e) {
             logger.error(e);
         }
@@ -90,12 +97,12 @@ public class DAOApartment implements IDAOApartment {
     @Override
     public Map<Integer, Integer> getAllApartmentNumbers() {
         Map<Integer, Integer> listOfApartments = new HashMap<>();
-        try (PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_ALL_APARTMENT_NUMBERS));
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
+             PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_ALL_APARTMENT_NUMBERS));
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
                 listOfApartments.put(rs.getInt("apartment_id"), rs.getInt("category_id"));
             }
-            connection.close();
         } catch (SQLException e) {
             logger.error(e);
         }

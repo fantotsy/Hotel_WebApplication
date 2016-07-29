@@ -15,14 +15,22 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class provides basic implementation of CRUD operations with the help of JDBC.
+ * All operations in this class are connected with 'reservations' table.
+ *
+ * @author fantotsy
+ * @version 1.0
+ */
+
 public class DAOReservation implements IDAOReservation {
     private Logger logger = Logger.getLogger(DAOReservation.class.getName());
-    private Connection connection = ConnectionPool.getInstance().getConnection();
 
     @Override
     public int insertNewReservation(Reservation reservation) {
         int result = -1;
-        try (PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.ADD_NEW_RESERVATION))) {
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
+             PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.ADD_NEW_RESERVATION))) {
             ps.setInt(1, reservation.getGuest().getGuestId());
             ps.setInt(2, reservation.getApartment().getApartmentId());
             ps.setString(3, reservation.getArrival());
@@ -31,7 +39,6 @@ public class DAOReservation implements IDAOReservation {
             ps.setString(6, reservation.getDeparture());
             ps.setInt(7, reservation.getApartment().getApartmentId());
             result = ps.executeUpdate();
-            connection.close();
         } catch (SQLException e) {
             logger.error(e);
         }
@@ -41,7 +48,8 @@ public class DAOReservation implements IDAOReservation {
     @Override
     public List<Reservation> getAllReservations() {
         List<Reservation> listOfReservations = new ArrayList<>();
-        try (PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_ALL_RESERVATIONS));
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
+             PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_ALL_RESERVATIONS));
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
                 Guest guest = new Guest(rs.getString("name"), rs.getString("last_name"), rs.getString("login"));
@@ -49,7 +57,6 @@ public class DAOReservation implements IDAOReservation {
                 Reservation reservation = new Reservation(guest, apartment, rs.getString("arrival"), rs.getString("departure"), rs.getInt("total_price"));
                 listOfReservations.add(reservation);
             }
-            connection.close();
         } catch (SQLException e) {
             logger.error(e);
         }
@@ -59,7 +66,8 @@ public class DAOReservation implements IDAOReservation {
     @Override
     public List<Reservation> getCertainReservations(Integer guestId) {
         List<Reservation> listOfReservations = new ArrayList<>();
-        try (PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_ALL_RESERVATIONS_FOR_CERTAIN_GUEST))) {
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
+             PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_ALL_RESERVATIONS_FOR_CERTAIN_GUEST))) {
             ps.setInt(1, guestId);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
@@ -69,7 +77,6 @@ public class DAOReservation implements IDAOReservation {
                 listOfReservations.add(reservation);
             }
             rs.close();
-            connection.close();
         } catch (SQLException e) {
             logger.error(e);
         }
@@ -79,10 +86,10 @@ public class DAOReservation implements IDAOReservation {
     @Override
     public int deleteCertainReservation(Integer reservationId) {
         int result = -1;
-        try (PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.REMOVE_RESERVATION))) {
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
+             PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.REMOVE_RESERVATION))) {
             ps.setInt(1, reservationId);
             result = ps.executeUpdate();
-            connection.close();
         } catch (SQLException e) {
             logger.error(e);
         }

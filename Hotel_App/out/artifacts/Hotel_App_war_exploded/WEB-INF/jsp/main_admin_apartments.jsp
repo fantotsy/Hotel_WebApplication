@@ -17,7 +17,7 @@
         </header>
         <div>
             <h1><fmt:message key="header" bundle="${apartments}"/></h1>
-            <form action="/admin">
+            <form action="/admin" method="post">
                 <fmt:message var="back_button" key="back_button" bundle="${apartments}"/>
                 <input type="submit" name="submit" value="${back_button}" id="back"/>
             </form>
@@ -40,7 +40,7 @@
                                 <%--The next tag prints error message if it is needed--%>
                                 <err:error errorType="${requestScope.error[1]}" locale="${sessionScope.locale}"/>
                             </c:if>
-                            <form action="/apartments" method="get">
+                            <form action="/apartments" method="post">
                                 <input type="hidden" name="category_id" value="${category.categoryId}"/>
                                 <fmt:message var="apartment_placeholder" key="apartment_placeholder" bundle="${apartments}"/>
                                 <input type="text" pattern="[0-9]{3}" name="apartment_number"

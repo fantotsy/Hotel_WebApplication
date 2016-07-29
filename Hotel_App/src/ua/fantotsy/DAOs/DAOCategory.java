@@ -12,20 +12,27 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class provides basic implementation of CRUD operations with the help of JDBC.
+ * All operations in this class are connected with 'categories' table.
+ *
+ * @author fantotsy
+ * @version 1.0
+ */
+
 public class DAOCategory implements IDAOCategory {
     private Logger logger = Logger.getLogger(DAOCategory.class.getName());
-    private Connection connection = ConnectionPool.getInstance().getConnection();
 
     @Override
     public List<Category> getAllCategories() {
         List<Category> listOfCategories = new ArrayList<>();
-        try (PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_ALL_CATEGORIES));
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
+             PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_ALL_CATEGORIES));
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
                 Category category = new Category(rs.getInt("category_id"), rs.getString("type"), rs.getInt("number_of_beds"), rs.getInt("price"), rs.getInt("apartments"));
                 listOfCategories.add(category);
             }
-            connection.close();
         } catch (SQLException e) {
             logger.error(e);
         }
@@ -35,7 +42,8 @@ public class DAOCategory implements IDAOCategory {
     @Override
     public List<Category> getAllCategoriesForUser(String arrival, String departure, List<String> types, List<String> capacities) {
         List<Category> listOfCategories = new ArrayList<>();
-        try (PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_ALL_AVAILABLE_APARTMENTS_FOR_GUEST))) {
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
+             PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_ALL_AVAILABLE_APARTMENTS_FOR_GUEST))) {
             ps.setString(1, arrival);
             ps.setString(2, arrival);
             ps.setString(3, departure);
@@ -52,7 +60,6 @@ public class DAOCategory implements IDAOCategory {
                     }
                 }
             }
-            connection.close();
         } catch (SQLException e) {
             logger.error(e);
         }
@@ -62,13 +69,13 @@ public class DAOCategory implements IDAOCategory {
     @Override
     public List<String> getAllTypes() {
         List<String> listOfTypes = new ArrayList<>();
-        try (PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_ALL_TYPES));
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
+             PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_ALL_TYPES));
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
                 String type = rs.getString("type");
                 listOfTypes.add(type);
             }
-            connection.close();
         } catch (SQLException e) {
             logger.error(e);
         }
@@ -78,13 +85,13 @@ public class DAOCategory implements IDAOCategory {
     @Override
     public List<Integer> getAllCapacities() {
         List<Integer> listOfCapacities = new ArrayList<>();
-        try (PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_ALL_CAPACITIES));
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
+             PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_ALL_CAPACITIES));
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
                 int capacity = rs.getInt("number_of_beds");
                 listOfCapacities.add(capacity);
             }
-            connection.close();
         } catch (SQLException e) {
             logger.error(e);
         }

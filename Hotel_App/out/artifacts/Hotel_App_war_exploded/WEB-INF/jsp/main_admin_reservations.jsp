@@ -16,7 +16,7 @@
         </header>
         <div>
             <h1><fmt:message key="header" bundle="${reservations}"/></h1>
-            <form action="/admin">
+            <form action="/admin" method="post">
                 <fmt:message var="back_button" key="back_button" bundle="${reservations}"/>
                 <input type="submit" name="submit" value="${back_button}" id="back"/>
             </form>

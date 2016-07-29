@@ -7,7 +7,7 @@
     <body>
         <div id="form">
             <h1 id="form_title"><fmt:message key="form_title" bundle="${registration}"/></h1>
-            <form action="/index" id="back_button">
+            <form action="/index" method="post" id="back_button">
                 <fmt:message var="back_button" key="back_button" bundle="${registration}"/>
                 <input type="submit" name="to_start_page" value="${back_button}"/>
             </form>

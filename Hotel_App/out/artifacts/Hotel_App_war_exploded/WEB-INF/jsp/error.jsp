@@ -15,7 +15,7 @@
                 <li><fmt:message key="first_advice" bundle="${error}"/></li>
                 <li><fmt:message key="second_advice" bundle="${error}"/></li>
             </ul>
-            <form action="/index">
+            <form action="/index" method="post">
                 <fmt:message var="to_start_page_button" key="to_start_page_button" bundle="${error}"/>
                 <input type="submit" name="index" value="${to_start_page_button}" class="button"/>
             </form>

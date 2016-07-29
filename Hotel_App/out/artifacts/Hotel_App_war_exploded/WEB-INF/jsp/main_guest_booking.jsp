@@ -16,7 +16,7 @@
             <%@include file="guest_header.jsp" %>
         </header>
         <h1><fmt:message key="header" bundle="${booking}"/></h1>
-        <form action="/guest">
+        <form action="/guest" method="post">
             <fmt:message var="back_button" key="back_button" bundle="${booking}"/>
             <input type="submit" name="submit" value="${back_button}" id="back"/>
         </form>
@@ -41,7 +41,7 @@
                                     <%--The next tag prints error message if it is needed--%>
                                     <err:error errorType="${requestScope.error}" locale="${sessionScope.locale}"/>
                                 </c:if>
-                                <form action="/order_valid" method="get">
+                                <form action="/order_valid" method="post">
                                     <input type="hidden" name="category_id" value="${category.categoryId}"/>
                                     <select name="booked_apartments[]" multiple>
                                         <option value="default" selected disabled><fmt:message key="default_apartments_option"

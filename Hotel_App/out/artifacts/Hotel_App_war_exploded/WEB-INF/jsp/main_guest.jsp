@@ -18,7 +18,7 @@
                 <h2><fmt:message key="order_header" bundle="${main_guest}"/></h2>
                 <%--The next tag prints error message if it is needed--%>
                 <err:error errorType="${requestScope.error}" locale="${sessionScope.locale}"/>
-                <form action="/booking" method="get">
+                <form action="/booking" method="post">
                     <input type="hidden" name="date_chosen" value="true"/>
                     <select name="apartment_type[]" multiple id="type_selector">
                         <option value="default" disabled selected><fmt:message key="default_type_option"
@@ -77,7 +77,7 @@
                                     <td>${reservation.departure}</td>
                                     <td>${reservation.totalPrice}</td>
                                     <td>
-                                        <form action="/guest" method="get">
+                                        <form action="/guest" method="post">
                                             <input type="hidden" name="reservation_id" value="${reservation.reservationId}"/>
                                             <fmt:message var="cancel_button" key="cancel_button" bundle="${main_guest}"/>
                                             <input type="submit" name="cancel_reservation" value="${cancel_button}"

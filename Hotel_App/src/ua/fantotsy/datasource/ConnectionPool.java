@@ -10,12 +10,12 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 /**
- * This is a connection pool, which is used for getting the connection to data base.
+ * Class {@code ConnectionPool} is a connection pool, which is used
+ * for creating the pool of connections to data base.
  *
  * @author fantotsy
  * @version 1.0
  */
-
 public class ConnectionPool {
     private Logger logger = Logger.getLogger(ConnectionPool.class.getName());
     private static ConnectionPool instance = new ConnectionPool();

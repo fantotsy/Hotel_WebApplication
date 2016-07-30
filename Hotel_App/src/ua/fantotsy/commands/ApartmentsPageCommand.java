@@ -11,31 +11,25 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Command which is created by pressing 'Apartments' button, which is located
- * in 'web/WEB-INF/jsp/main_admin.jsp'. This command is subscribed for action '/apartments'.
+ * Class {@code ApartmentsPageCommand} is a command,
+ * which implements {@link ICommand} and redirects to apartments page.
  *
  * @author fantotsy
  * @version 1.0
  */
-
 public class ApartmentsPageCommand implements ICommand {
+
     /**
-     * This method checks whether user got here from 'web/WEB-INF/jsp/main_admin.jsp' or from
-     * 'web/WEB-INF/jsp/main_admin_apartments.jsp'. Then further action is determined:
-     * to redirect on 'web/WEB-INF/jsp/main_admin.jsp' or to process either 'Add' or 'Delete' button
-     * respectively.
-     * The result of pressing 'Add' button is insertion of new apartment into data base.
-     * The result of pressing 'Delete' button is extraction of existing apartment from data base.
+     * Checks whether 'Add' or 'Delete' button was pressed or
+     * some logic error occurred and appends {@code wrapper} if needed.
      *
-     * @param wrapper request wrapper.
-     * @return string, which is used in {@link ua.fantotsy.controllers.ServletController} to
-     * define where to redirect current request and response.
+     * @param wrapper session and request wrapper.
+     * @return string for redirection to another page.
      * @throws ServletException
      * @throws IOException
      */
     @Override
     public String execute(ISessionRequestWrapper wrapper) throws ServletException, IOException {
-        // Check whether 'delete' or 'add' button was pressed.
         String categoryId = wrapper.getRequestParameter("category_id");
         if (categoryId != null) {
             int apartmentNumber = Integer.parseInt(wrapper.getRequestParameter("apartment_number"));

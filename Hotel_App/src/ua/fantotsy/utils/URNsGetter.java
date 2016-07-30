@@ -3,13 +3,12 @@ package ua.fantotsy.utils;
 import java.util.ResourceBundle;
 
 /**
- * This class consists of logic, which gets specific
+ * Class {@code URNsGetter} consists of logic, which gets specific
  * Uniform Resource Names (URNs) by their names.
  *
  * @author fantotsy
  * @version 1.0
  */
-
 public final class URNsGetter {
     private ResourceBundle resourceBundle;
     private static URNsGetter instance;

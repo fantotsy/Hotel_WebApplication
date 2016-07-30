@@ -8,13 +8,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * This class is used to get commands by request.
- * Every command is subscribed for a certain action.
+ * Class {@code CommandGetter} is used to get commands by request.
+ * Every command is subscribed for a certain action used in jsp pages.
  *
  * @author fantotsy
  * @version 1.0
  */
-
 public class CommandGetter {
     private static CommandGetter instance = null;
     private Map<String, ICommand> commands;
@@ -43,7 +42,8 @@ public class CommandGetter {
     }
 
     /**
-     * This method determines which command corresponds to a specific request and returns this command.
+     * Determines which command corresponds to a
+     * specific request data and returns this command.
      *
      * @param request instance of {@link HttpServletRequest}.
      * @return command, which is instance of {@link ICommand}.

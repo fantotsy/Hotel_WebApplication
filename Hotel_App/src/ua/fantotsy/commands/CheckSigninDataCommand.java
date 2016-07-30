@@ -11,32 +11,31 @@ import javax.servlet.ServletException;
 import java.io.IOException;
 
 /**
- * Command which is created by pressing 'Sign in' button, which is located
- * in 'web/WEB-INF/jsp/index.jsp'. This command is subscribed for action '/main'.
+ * Class {@code CheckSigninDataCommand} is a command, which implements
+ * {@link ICommand} and redirects to another command or page.
  *
  * @author fantotsy
  * @version 1.0
  */
-
 public class CheckSigninDataCommand implements ICommand {
+
     private static final String ADMIN_LOGIN = "admin";
     private static final String ADMIN_PASSWORD = Utils.encryptionMD5("admin");
     private static final String ROLE_ADMIN = "admin";
     private static final String ROLE_GUEST = "guest";
 
     /**
-     * This method checked whether user is logged in. If not, the validation of login and password is made.
-     * Then method determines whether to let entrance or decline it.
+     * Checks whether user is logged in (as admin or guest).
+     * If not, the validation of login and password is made.
+     * Then {@code execute} determines whether to let entrance or not.
      *
-     * @param wrapper request wrapper.
-     * @return string, which is used in {@link ua.fantotsy.controllers.ServletController} to
-     * define where to redirect current request and response.
+     * @param wrapper session and request wrapper.
+     * @return string for redirection to another page.
      * @throws ServletException
      * @throws IOException
      */
     @Override
     public String execute(ISessionRequestWrapper wrapper) throws ServletException, IOException {
-        // Check whether user already logged in (as admin or as guest).
         String role = (String) wrapper.getSessionAttribute("role");
         if (role != null) {
             if (role.equals(ROLE_ADMIN)) {
@@ -75,28 +74,11 @@ public class CheckSigninDataCommand implements ICommand {
         return setErrorMessage(wrapper, "wrong_entrance_data");
     }
 
-    /**
-     * This method inserts an error message into request using {@link ua.fantotsy.controllers.SessionRequestWrapper}.
-     *
-     * @param wrapper request wrapper.
-     * @param errorMessage a type of message.
-     * @return string, which is used in {@link ua.fantotsy.controllers.ServletController} to
-     * define where to redirect current request and response.
-     */
     private String setErrorMessage(ISessionRequestWrapper wrapper, String errorMessage) {
         wrapper.setRequestAttribute("error", errorMessage);
         return URNsGetter.getInstance().getURN(URNsGetter.START_PAGE);
     }
 
-    /**
-     * This method creates {@link ua.fantotsy.entities.Guest} with certain login and inserts it into session.
-     * The data gets from data base with the help of {@link ua.fantotsy.DAOs.DAOGuest}.
-     *
-     * @param wrapper request wrapper.
-     * @param login guest's login.
-     * @return string, which is used in {@link ua.fantotsy.controllers.ServletController} to
-     * define where to redirect current request and response.
-     */
     private String setSessionData(ISessionRequestWrapper wrapper, String login) {
         Guest guest = DAOFactory.getDAOGuest().getCertainGuest(login);
         wrapper.setSessionAttribute("guestInfo", guest);

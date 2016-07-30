@@ -9,21 +9,21 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Command which is created by pressing 'Search' button, which is located
- * in 'web/WEB-INF/jsp/main_guest.jsp'. This command is subscribed for action '/booking'.
+ * Class {@code CheckOrderDataCommand} is a command,
+ * which implements {@link ICommand} and redirects to
+ * another command or to guest's main page.
  *
  * @author fantotsy
  * @version 1.0
  */
-
 public class CheckOrderDataCommand implements ICommand {
+
     /**
-     * This method checks whether user has made a valid order.
-     * Then it determines which {@link String} to return.
+     * Checks whether user has made a valid order and
+     * determines which string to return.
      *
-     * @param wrapper request wrapper.
-     * @return string, which is used in {@link ua.fantotsy.controllers.ServletController} to
-     * define where to redirect current request and response.
+     * @param wrapper session and request wrapper.
+     * @return string for redirection to another page.
      * @throws ServletException
      * @throws IOException
      */

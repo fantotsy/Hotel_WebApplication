@@ -3,12 +3,11 @@ package ua.fantotsy.utils;
 import java.util.ResourceBundle;
 
 /**
- * This class consists of logic, which gets specific actions by their names.
+ * Class {@code ActionsGetter} consists of logic, which gets specific actions by their names.
  *
  * @author fantotsy
  * @version 1.0
  */
-
 public final class ActionsGetter {
     private ResourceBundle resourceBundle;
     private static ActionsGetter instance;

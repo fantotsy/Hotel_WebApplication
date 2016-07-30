@@ -22,7 +22,6 @@ import java.util.List;
  * @author fantotsy
  * @version 1.0
  */
-
 public class DAOReservation implements IDAOReservation {
     private Logger logger = Logger.getLogger(DAOReservation.class.getName());
 

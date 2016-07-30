@@ -1,5 +1,11 @@
 package ua.fantotsy.entities;
 
+/**
+ * Class {@code Guest} stores information about guests.
+ *
+ * @author fantotsy
+ * @version 1.0
+ */
 public class Guest {
     private Integer guestId;
     private String name;

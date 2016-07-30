@@ -19,7 +19,6 @@ import java.util.List;
  * @author fantotsy
  * @version 1.0
  */
-
 public class DAOGuest implements IDAOGuest {
     private Logger logger = Logger.getLogger(DAOGuest.class.getName());
 

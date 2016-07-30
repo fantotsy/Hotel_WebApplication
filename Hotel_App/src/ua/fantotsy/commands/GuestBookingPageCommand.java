@@ -15,21 +15,20 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Command which is created by pressing 'Book' button, which is located
- * in 'web/WEB-INF/jsp/main_guest_booking.jsp'. This command is subscribed for action '/order_valid'.
+ * Class {@code GuestBookingPageCommand} is a command, which implements
+ * {@link ICommand} and redirects to another command or page.
  *
  * @author fantotsy
  * @version 1.0
  */
-
 public class GuestBookingPageCommand implements ICommand {
+
     /**
-     * This method checks whether order made by guest is valid.
-     * If it is valid, a new booking inserts into data base.
+     * Checks whether order made by guest is valid. In case of
+     * its validation, a new booking inserts into data base.
      *
-     * @param wrapper request wrapper.
-     * @return string, which is used in {@link ua.fantotsy.controllers.ServletController} to
-     * define where to redirect current request and response.
+     * @param wrapper session and request wrapper.
+     * @return string for redirection to another page.
      * @throws ServletException
      * @throws IOException
      */

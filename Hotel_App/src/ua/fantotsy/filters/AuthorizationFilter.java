@@ -11,13 +11,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This class is an authorization filter, which is used to prevent illegal access.
- * Also this filter prevents some senseless access, such as access of signed in user to the start page.
+ * Class {@code AuthorizationFilter} is an authorization filter, which is used
+ * to prevent illegal access. Also {@code AuthorizationFilter} prevents some
+ * senseless access, such as access of logged in user to the start page.
  *
  * @author fantotsy
  * @version 1.0
  */
-
 public class AuthorizationFilter implements Filter {
     private List<String> adminURIs;
     private List<String> guestURIs;

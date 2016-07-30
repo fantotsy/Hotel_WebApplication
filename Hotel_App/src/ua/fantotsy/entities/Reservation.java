@@ -1,5 +1,11 @@
 package ua.fantotsy.entities;
 
+/**
+ * Class {@code Reservation} stores information about reservations.
+ *
+ * @author fantotsy
+ * @version 1.0
+ */
 public class Reservation {
     private Integer reservationId;
     private Guest guest;

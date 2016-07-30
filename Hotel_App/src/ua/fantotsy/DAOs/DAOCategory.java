@@ -19,7 +19,6 @@ import java.util.List;
  * @author fantotsy
  * @version 1.0
  */
-
 public class DAOCategory implements IDAOCategory {
     private Logger logger = Logger.getLogger(DAOCategory.class.getName());
 

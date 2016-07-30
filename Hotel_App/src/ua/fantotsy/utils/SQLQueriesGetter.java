@@ -3,12 +3,11 @@ package ua.fantotsy.utils;
 import java.util.ResourceBundle;
 
 /**
- * This class consists of logic, which gets specific SQL queries by their names.
+ * Class {@code SQLQueriesGetter} consists of logic, which gets specific SQL queries by their names.
  *
  * @author fantotsy
  * @version 1.0
  */
-
 public final class SQLQueriesGetter {
     private ResourceBundle resourceBundle;
     private static SQLQueriesGetter instance;

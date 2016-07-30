@@ -12,21 +12,20 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Command which is created by pressing 'Sign in' button, which is located
- * in 'web/WEB-INF/jsp/index.jsp'. This command is subscribed for action '/guest'.
+ * Class {@code GuestMainPageCommand} is a command, which implements
+ * {@link ICommand} and redirects to guest's main page.
  *
  * @author fantotsy
  * @version 1.0
  */
-
 public class GuestMainPageCommand implements ICommand {
+
     /**
-     * This method checks whether guest has made a cancellation of existing booking.
-     * Then it determines which string to return.
+     * Checks whether guest has made a cancellation of existing booking.
+     * Then {@code execute} determines which string to return.
      *
-     * @param wrapper request wrapper.
-     * @return string, which is used in {@link ua.fantotsy.controllers.ServletController} to
-     * define where to redirect current request and response.
+     * @param wrapper session and request wrapper.
+     * @return session and request wrapper.
      * @throws ServletException
      * @throws IOException
      */

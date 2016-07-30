@@ -9,10 +9,28 @@ import ua.fantotsy.utils.Utils;
 import javax.servlet.ServletException;
 import java.io.IOException;
 
+/**
+ * Class {@code RegistrationPageCommand} is a command, which implements
+ * {@link ICommand} and redirects to registration page.
+ *
+ * @author fantotsy
+ * @version 1.0
+ */
 public class RegistrationPageCommand implements ICommand {
+
+    /**
+     * Checks whether register button was pressed.
+     * Moreover, {@code execute} checks whether
+     * registration information is valid.
+     *
+     * @param wrapper session and request wrapper.
+     * @return string for redirection to another page.
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     public String execute(ISessionRequestWrapper wrapper) throws ServletException, IOException {
-        //Check whether 'register' button was pressed.
+        // Check whether 'register' button was pressed.
         String register = wrapper.getRequestParameter("register");
         if (register != null && register.equals("pressed")) {
             String login = wrapper.getRequestParameter("login");
@@ -24,7 +42,7 @@ public class RegistrationPageCommand implements ICommand {
             Guest newGuest = new Guest(name, lastName, phoneNumber, email, login, password);
             String passwordConfirmation = Utils.encryptionMD5(wrapper.getRequestParameter("password_confirmation"));
 
-            //Check whether 'login' exists and 'password' equals its 'confirmation'.
+            // Check whether 'login' exists and 'password' equals its 'confirmation'.
             boolean containsLogin = DAOFactory.getDAOGuest().containsCertainLogin(login);
             if (containsLogin) {
                 wrapper.setRequestAttribute("error_login", "login_exists");
@@ -34,7 +52,7 @@ public class RegistrationPageCommand implements ICommand {
                     wrapper.setRequestAttribute("error_password", "different_password_and_confirmation");
                     wrapper.setRequestAttribute("guest_data", newGuest);
                 } else {
-                    //All entered data is valid.
+                    // All entered data is valid.
                     DAOFactory.getDAOGuest().insertNewGuest(newGuest);
                     wrapper.setRequestAttribute("login", login);
                     wrapper.setRequestAttribute("result", "guest inserted");

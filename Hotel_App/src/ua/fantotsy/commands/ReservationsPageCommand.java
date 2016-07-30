@@ -9,7 +9,15 @@ import javax.servlet.ServletException;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Class {@code ReservationsPageCommand} is a command, which implements
+ * {@link ICommand} and redirects to reservations page.
+ *
+ * @author fantotsy
+ * @version 1.0
+ */
 public class ReservationsPageCommand implements ICommand {
+
     @Override
     public String execute(ISessionRequestWrapper wrapper) throws ServletException, IOException {
         List<Reservation> listOfReservations = DAOFactory.getDAOReservation().getAllReservations();

@@ -11,16 +11,17 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
- * This servlet is registered on every valid action.
+ * Class {@code ServletController}, which extends {@link HttpServlet},
+ * is a only one servlet, which reacts on every action from jsp pages.
  *
  * @author fantotsy
  * @version 1.0
  */
-
 public class ServletController extends HttpServlet {
+
     /**
-     * This method gets command with the help of {@link CommandGetter}.
-     * Then it creates an instance of {@link SessionRequestWrapper}.
+     * Gets command with the help of {@link CommandGetter} and creates
+     * an instance of {@link SessionRequestWrapper}.
      * The {@link ICommand#execute(ISessionRequestWrapper)} method returns a string,
      * which is used to determine the redirection.
      *

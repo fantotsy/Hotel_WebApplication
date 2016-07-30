@@ -1,6 +1,7 @@
 package ua.fantotsy.listeners;
 
 import org.apache.log4j.xml.DOMConfigurator;
+import org.w3c.dom.Element;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
@@ -13,34 +14,33 @@ import javax.servlet.http.HttpSessionListener;
 import java.io.File;
 
 /**
- * This class implements the ServletContextListener interface.
+ * Class {@code ContextListener} implements several interfaces:
+ * {@link ServletContextListener}, {@link HttpSessionListener}
+ * and {@link HttpSessionAttributeListener}.
  *
  * @author fantotsy
  * @version 1.0
  */
-
 @WebListener("application context listener")
 public class ContextListener implements ServletContextListener, HttpSessionListener, HttpSessionAttributeListener {
 
-    // Public constructor is required by servlet specification
+    // Public constructor is required by servlet specification.
     public ContextListener() {
     }
 
     /**
-     * In this method, we read location of the log4j.xml file
-     * and construct a complete, absolute path of this file
-     * which is then passed to the static configure() method
-     * of the DOMConfigurator class. That’s way log4j is
-     * initialized with the given properties file.
+     * Reads location of the log4j.xml file and constructs a complete,
+     * absolute path of this file which is then passed to the static
+     * {@link DOMConfigurator#configure(Element)} method. That is way
+     * log4j is initialized with the given xml file.
      *
      * @param event instance of {@link ServletContextEvent}.
      */
     public void contextInitialized(ServletContextEvent event) {
-        // initialize log4j here
+        // Initialize log4j here.
         ServletContext context = event.getServletContext();
         String log4jConfigFile = context.getInitParameter("log4jConfigLocaltion");
         String fullPath = context.getRealPath("") + File.separator + log4jConfigFile;
-
         DOMConfigurator.configure(fullPath);
     }
 

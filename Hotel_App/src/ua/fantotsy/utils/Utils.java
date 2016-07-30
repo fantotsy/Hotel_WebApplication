@@ -8,16 +8,16 @@ import javax.naming.InitialContext;
 import java.util.Calendar;
 
 /**
- * This class is subsidiary and contains methods, which are used
+ * Class {@code Utils} is subsidiary and contains methods, which are used
  * in methods from other classes to ease their code.
  *
  * @author fantotsy
  * @version 1.0
  */
-
 public final class Utils {
+
     /**
-     * This method encrypts specific string (password) using MD5.
+     * Returns an encryption of specific string (password) using MD5.
      *
      * @param password password, which has to be encrypted.
      * @return encryption of certain password.
@@ -43,7 +43,7 @@ public final class Utils {
     }
 
     /**
-     * This method gets today's date and the date one year after today.
+     * Returns today's date and the date one year after today.
      *
      * @return array of two strings, which are today's date and the date one year after today.
      */
@@ -73,8 +73,8 @@ public final class Utils {
     }
 
     /**
-     * This method is used to set the JNDI context and data source.
-     * It is used in JUnit test classes to provide valid
+     * Sets the JNDI context and data source.
+     * {@code setUpClass} is used in JUnit test classes to provide valid
      * {@link javax.sql.DataSource} while getting connection
      * from {@link ua.fantotsy.datasource.ConnectionPool}.
      *

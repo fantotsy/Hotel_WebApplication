@@ -19,7 +19,6 @@ import java.util.Map;
  * @author fantotsy
  * @version 1.0
  */
-
 public class DAOApartment implements IDAOApartment {
     private Logger logger = Logger.getLogger(DAOApartment.class.getName());
 

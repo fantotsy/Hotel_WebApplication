@@ -1,5 +1,11 @@
 package ua.fantotsy.entities;
 
+/**
+ * Class {@code Category} stores information about categories.
+ *
+ * @author fantotsy
+ * @version 1.0
+ */
 public class Category {
     private Integer categoryId;
     private String type;

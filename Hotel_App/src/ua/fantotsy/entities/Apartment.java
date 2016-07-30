@@ -1,5 +1,11 @@
 package ua.fantotsy.entities;
 
+/**
+ * Class {@code Apartment} stores information about apartments.
+ *
+ * @author fantotsy
+ * @version 1.0
+ */
 public class Apartment {
     private Integer apartmentId;
     private Category category;

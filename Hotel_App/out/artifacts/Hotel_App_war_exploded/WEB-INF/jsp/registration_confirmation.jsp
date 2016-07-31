@@ -7,10 +7,10 @@
         <input type="hidden" name="login" value="${login}"/>
         <input type="hidden" name="just_registered" value="true"/>
         <fmt:message var="signIn_button" key="signIn_button" bundle="${registration}"/>
-        <button type="submit" name="sign_in" value="${signIn_button}" id="sign_in_button">Hello</button>
+        <button type="submit" name="sign_in" id="sign_in_button">${signIn_button}</button>
     </form>
     <form action="/index" method="post">
         <fmt:message var="startPage_button" key="startPage_button" bundle="${registration}"/>
-        <input type="submit" name="to_start_page" value="${startPage_button}" id="to_start_page_button"/>
+        <button type="submit" name="to_start_page" id="to_start_page_button">${startPage_button}</button>
     </form>
 </div>

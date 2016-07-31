@@ -9,7 +9,7 @@
         <link href="../../css/error.css" type="text/css" rel="stylesheet"/>
     </head>
     <body>
-        <div id="wrapper">
+        <div id="wrapper" class="clearfix">
             <h1><fmt:message key="header" bundle="${error}"/></h1>
             <div id="error_details">
                 <h3><fmt:message key="advice_header" bundle="${error}"/></h3>

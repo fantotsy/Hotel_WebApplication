@@ -11,13 +11,15 @@
         <link href="../../css/registration.css" type="text/css" rel="stylesheet"/>
     </head>
     <body>
-        <c:choose>
-            <c:when test="${requestScope.result == 'guest inserted'}">
-                <%@include file="registration_confirmation.jsp" %>
-            </c:when>
-            <c:otherwise>
-                <%@include file="registration_form.jsp" %>
-            </c:otherwise>
-        </c:choose>
+        <div id="main_wrapper">
+            <c:choose>
+                <c:when test="${requestScope.result == 'guest inserted'}">
+                    <%@include file="registration_confirmation.jsp" %>
+                </c:when>
+                <c:otherwise>
+                    <%@include file="registration_form.jsp" %>
+                </c:otherwise>
+            </c:choose>
+        </div>
     </body>
 </html>

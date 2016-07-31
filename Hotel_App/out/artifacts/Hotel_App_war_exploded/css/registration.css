@@ -50,7 +50,7 @@ button {
     cursor: pointer;
 }
 
-button:hover{
+button:hover {
     background: #D8FFFF;
 }
 
@@ -101,17 +101,27 @@ span {
 
 #sign_in_button {
     margin-top: 70px;
-    margin-left: 250px;
+    float: left;
 }
 
 #to_start_page_button {
-    margin-top: -100px;
-    margin-left: 715px;
+    margin-top: 70px;
+    float: right;
 }
 
 #sign_in_button, #to_start_page_button {
-    width: 400px;
-    height: 100px;
+    width: 45%;
+    height: 20%;
     padding: 10px;
     font-size: 35px;
+}
+
+#main_wrapper {
+    max-width: 1388px;
+    margin: auto;
+}
+
+#wrapper {
+    width: 60%;
+    margin: auto;
 }

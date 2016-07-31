@@ -37,14 +37,11 @@ public class CheckOrderDataCommand implements ICommand {
             String departure = wrapper.getRequestParameter("check-out_date");
             String[] typesArray = wrapper.getRequestParameters("apartment_type[]");
             String[] capacitiesArray = wrapper.getRequestParameters("apartment_capacity[]");
-            if(arrival == null || departure == null){
+            if ((arrival == null || departure == null) || (typesArray == null || capacitiesArray == null)) {
                 return setErrorMessage(wrapper, "empty_data");
             }
             if (arrival.compareTo(departure) >= 0) {
                 return setErrorMessage(wrapper, "arrival_is_later_than_departure");
-            }
-            if (typesArray == null || capacitiesArray == null) {
-                return setErrorMessage(wrapper, "empty_data");
             }
 
             wrapper.setSessionAttribute("date_chosen", dateChosen);

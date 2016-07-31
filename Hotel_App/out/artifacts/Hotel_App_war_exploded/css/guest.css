@@ -113,6 +113,7 @@ header {
 }
 
 #type_selector, #capacity_selector {
+    height: 16%;
     float: left;
 }
 

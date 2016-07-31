@@ -120,3 +120,8 @@ h3 {
     float: right;
     margin: 5px;
 }
+
+#main_wrapper {
+    max-width: 1388px;
+    margin: auto;
+}

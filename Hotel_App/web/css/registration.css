@@ -43,14 +43,14 @@ input[type="text"], input[type="password"] {
     border: 1px solid #b6b6b6;
 }
 
-input[type="submit"], input[type="reset"] {
+button {
     padding: 10px 30px;
     border: none;
     color: #555555;
     cursor: pointer;
 }
 
-input[type="submit"]:hover, input[type="reset"]:hover {
+button:hover{
     background: #D8FFFF;
 }
 

@@ -10,22 +10,24 @@
         <link href="../../css/admin.css" type="text/css" rel="stylesheet"/>
     </head>
     <body>
-        <header>
-            <%@include file="admin_header.jsp" %>
-        </header>
-        <div id="actions">
-            <form action="/apartments" method="post">
-                <fmt:message var="apartments_button" key="apartments_button" bundle="${main_admin}"/>
-                <input type="submit" name="delete-insert" value="${apartments_button}"/>
-            </form>
-            <form action="/reservations" method="post">
-                <fmt:message var="reservations_button" key="reservations_button" bundle="${main_admin}"/>
-                <input type="submit" name="get-all-reservations" value="${reservations_button}"/>
-            </form>
-            <form action="/guests" method="post">
-                <fmt:message var="guests_button" key="guests_button" bundle="${main_admin}"/>
-                <input type="submit" name="get-guests" value="${guests_button}"/>
-            </form>
+        <div id="main_wrapper">
+            <header>
+                <%@include file="admin_header.jsp" %>
+            </header>
+            <div id="actions">
+                <form action="/apartments" method="post">
+                    <fmt:message var="apartments_button" key="apartments_button" bundle="${main_admin}"/>
+                    <button type="submit" name="delete-insert">${apartments_button}</button>
+                </form>
+                <form action="/reservations" method="post">
+                    <fmt:message var="reservations_button" key="reservations_button" bundle="${main_admin}"/>
+                    <button type="submit" name="get-all-reservations">${reservations_button}</button>
+                </form>
+                <form action="/guests" method="post">
+                    <fmt:message var="guests_button" key="guests_button" bundle="${main_admin}"/>
+                    <button type="submit" name="get-guests">${guests_button}</button>
+                </form>
+            </div>
         </div>
     </body>
 </html>

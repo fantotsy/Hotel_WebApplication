@@ -5,13 +5,7 @@
 }
 
 body {
-    background: url(../images/sad_cat_error.jpg) right bottom no-repeat;
     font-family: Verdana, "Times New Roman", Arial, sans-serif;
-}
-
-img {
-    height: 600px;
-    width: auto;
 }
 
 h1 {
@@ -20,8 +14,7 @@ h1 {
 
 #error_details {
     margin: 40px;
-    margin-top: 100px;
-
+    float: left;
 }
 
 #error_details ul {
@@ -39,4 +32,14 @@ h1 {
     font-size: 20px;
     color: #555555;
     cursor: pointer;
+}
+
+#wrapper {
+    max-width: 1388px;
+    margin: auto;
+}
+
+#image {
+    max-width: 100%;
+    float: right;
 }

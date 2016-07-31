@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" errorPage="error.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
+<%@ taglib prefix="err" uri="/WEB-INF/TLDs/errorTag.tld" %>
 <%@ include file="locale.jsp" %>
 <fmt:setBundle var="registration" basename="ua.fantotsy.properties.i18n.registration"/>
 <html>

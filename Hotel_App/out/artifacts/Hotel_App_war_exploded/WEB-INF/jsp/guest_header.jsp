@@ -2,9 +2,6 @@
     <img src="../../images/user_icon.png" alt="user_avatar" id="avatar"/>
     <h2 id="role"><fmt:message key="role" bundle="${main_guest}"/> ${sessionScope.guestInfo.login}</h2>
 </div>
-<%--<div id="greeting">--%>
-<%--<h1><fmt:message key="greeting" bundle="${main_guest}"/>. Login: ${sessionScope.guestInfo.login}</h1>--%>
-<%--</div>--%>
 <div id="logout_wrapper">
     <form action="/index" method="post">
         <input type="hidden" name="logout" value="true"/>

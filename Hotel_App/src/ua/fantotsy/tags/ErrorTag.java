@@ -37,7 +37,7 @@ public class ErrorTag extends TagSupport {
                 ResourceBundle rb = ResourceBundle.getBundle("ua.fantotsy.properties.errors.messages");
                 String errorMessage = (String) rb.getObject(error);
 
-                pageContext.getOut().write("<span>" + errorMessage + "</span>");
+                pageContext.getOut().write("<div class=\"error\"><span>" + errorMessage + "</span></div>");
             } catch (IOException e) {
                 logger.error(e);
                 throw new JspException(e.getMessage());

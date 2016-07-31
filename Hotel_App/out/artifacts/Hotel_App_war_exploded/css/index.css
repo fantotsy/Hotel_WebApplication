@@ -11,7 +11,7 @@ body {
 
 #wrapper {
     width: 700px;
-    margin: 10px auto;
+    margin: auto;
     padding: 30px;
 }
 
@@ -50,8 +50,9 @@ body {
 
 #signin_form .submit {
     font-size: 18px;
-    margin-left: 205px;
-    margin-bottom: 20px;
+    float: right;
+    margin-right: 20px;
+    margin-bottom: 4%;
 }
 
 #registration .submit {
@@ -63,7 +64,7 @@ body {
 
 #adminCheckbox {
     font-size: 15px;
-    margin: 20px;
+    margin: 4%;
     cursor: pointer;
 }
 
@@ -73,9 +74,12 @@ body {
 }
 
 span {
-    margin-left: 130px;
     color: #F91F1F;
     font-size: 15px;
+}
+
+.error {
+    text-align: center;
 }
 
 h1, h2 {
@@ -102,7 +106,17 @@ h3 {
 
 .language_image {
     width: auto;
-    height: 20px;
-    margin-left: 10px;
-    margin-top: 10px;
+    height: 50px;
+    margin: 3px;
+}
+
+.clearfix::after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+#language {
+    float: right;
+    margin: 5px;
 }

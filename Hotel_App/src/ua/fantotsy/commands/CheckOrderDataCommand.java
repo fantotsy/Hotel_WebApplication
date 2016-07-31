@@ -35,19 +35,21 @@ public class CheckOrderDataCommand implements ICommand {
             dateChosen = wrapper.getRequestParameter("date_chosen");
             String arrival = wrapper.getRequestParameter("check-in_date");
             String departure = wrapper.getRequestParameter("check-out_date");
-            String[] typesObject = wrapper.getRequestParameters("apartment_type[]");
-            String[] capacitiesObject = wrapper.getRequestParameters("apartment_capacity[]");
-
+            String[] typesArray = wrapper.getRequestParameters("apartment_type[]");
+            String[] capacitiesArray = wrapper.getRequestParameters("apartment_capacity[]");
+            if(arrival == null || departure == null){
+                return setErrorMessage(wrapper, "empty_data");
+            }
             if (arrival.compareTo(departure) >= 0) {
                 return setErrorMessage(wrapper, "arrival_is_later_than_departure");
             }
-            if (typesObject == null || capacitiesObject == null) {
-                return setErrorMessage(wrapper, "empty_types_or_capacities");
+            if (typesArray == null || capacitiesArray == null) {
+                return setErrorMessage(wrapper, "empty_data");
             }
 
             wrapper.setSessionAttribute("date_chosen", dateChosen);
-            List<String> types = Arrays.asList(typesObject);
-            List<String> capacities = Arrays.asList(capacitiesObject);
+            List<String> types = Arrays.asList(typesArray);
+            List<String> capacities = Arrays.asList(capacitiesArray);
             wrapper.setSessionAttribute("types", types);
             wrapper.setSessionAttribute("capacities", capacities);
             wrapper.setSessionAttribute("arrival", arrival);

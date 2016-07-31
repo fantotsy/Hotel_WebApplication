@@ -9,22 +9,19 @@ body {
     color: #252525;
 }
 
-#icon {
+#avatar {
     margin: auto 10px;
     height: 70px;
     width: auto;
-    float: left;
 }
 
 #role {
-    float: left;
     margin: 20px auto;
 }
 
 #logout {
     margin-top: 10px;
     margin-right: 20px;
-    float: right;
     padding: 10px 30px;
     border: none;
     color: #555555;
@@ -34,24 +31,17 @@ body {
     cursor: pointer;
 }
 
-#greeting {
-    margin-top: 15px;
-    margin-left: 190px;
-    float: left;
-}
-
 table {
     border: 7px solid #3E3E3E;
     border-collapse: collapse;
-    margin-left: 260px;
-    margin-top: 10px;
+    margin: auto;
 }
 
-table select{
+table select {
     float: left;
 }
 
-table input[type=submit]{
+table input[type=submit] {
     width: 150px;
     height: 50px;
     margin: 10px 10px;
@@ -96,10 +86,10 @@ header {
 }
 
 #order_form {
-    width: 1000px;
+    /*width: 1000px;*/
     padding: 10px;
     background: #f0f0f0;
-    margin-left: 160px;
+    /*margin-left: 160px;*/
 }
 
 #order_form * {
@@ -132,17 +122,17 @@ header {
 }
 
 #search {
-    width: 100px;
-    height: 100px;
-    margin-top: -100px;
-    margin-left: 850px;
+    margin-top: -30px;
     font-size: 28px;
+    border-radius: 50px;
     border: none;
 }
 
-#wrapper input[type=submit] {
+#wrapper button {
     color: #555555;
     cursor: pointer;
+    float: right;
+    padding: 20px 50px;
 }
 
 #order_form {
@@ -150,18 +140,41 @@ header {
 }
 
 #back {
-    margin-top: 10px;
-    margin-right: 50px;
-    float: left;
     padding: 10px 30px;
     border: none;
     color: #555555;
-    height: 50px;
-    width: auto;
     font-size: 18px;
     cursor: pointer;
 }
 
 h1 {
     text-align: center;
+}
+
+#main_wrapper {
+    max-width: 1388px;
+    margin: auto;
+}
+
+#table_title {
+    margin: 15px;
+}
+
+.clearfix::after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+#booking_wrapper {
+    width: 860px;
+    margin: auto;
+}
+
+#booking_table {
+    width: 100%;
+}
+
+#booking_form {
+    width: 40%;
 }

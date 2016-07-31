@@ -5,15 +5,15 @@
 }
 
 #icon {
-     margin: auto 10px;
-     height: 70px;
-     width: auto;
-     float: left;
- }
+    margin: auto 10px;
+    height: 70px;
+    width: auto;
+    float: left;
+}
 
 #role {
-    float: left;
     margin: 20px auto;
+    float: right;
 }
 
 #logout {
@@ -32,5 +32,14 @@
 #greeting {
     margin-top: 15px;
     margin-left: 150px;
+    float: left;
+    font-size: 16px;
+}
+
+#logout_wrapper {
+    float: right;
+}
+
+#role_info {
     float: left;
 }

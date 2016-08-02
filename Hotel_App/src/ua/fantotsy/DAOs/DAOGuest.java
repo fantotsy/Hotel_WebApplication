@@ -20,11 +20,10 @@ import java.util.List;
  * @version 1.0
  */
 public class DAOGuest implements IDAOGuest {
-    private Logger logger = Logger.getLogger(DAOGuest.class.getName());
 
     @Override
     public Boolean containsCertainLogin(String login) {
-        Boolean result;
+        Boolean result = null;
         try (Connection connection = ConnectionPool.getInstance().getConnection();
              PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_CERTAIN_LOGIN))) {
             ps.setString(1, login);
@@ -32,8 +31,8 @@ public class DAOGuest implements IDAOGuest {
             result = rs.next();
             rs.close();
         } catch (SQLException e) {
+            Logger logger = Logger.getLogger(DAOGuest.class.getName());
             logger.error(e);
-            return null;
         }
         return result;
     }
@@ -49,6 +48,7 @@ public class DAOGuest implements IDAOGuest {
             result = rs.next();
             rs.close();
         } catch (SQLException e) {
+            Logger logger = Logger.getLogger(DAOGuest.class.getName());
             logger.error(e);
         }
         return result;
@@ -67,6 +67,7 @@ public class DAOGuest implements IDAOGuest {
             ps.setString(6, guest.getPassword());
             result = ps.executeUpdate();
         } catch (SQLException e) {
+            Logger logger = Logger.getLogger(DAOGuest.class.getName());
             logger.error(e);
         }
         return result;
@@ -84,6 +85,7 @@ public class DAOGuest implements IDAOGuest {
             }
             rs.close();
         } catch (SQLException e) {
+            Logger logger = Logger.getLogger(DAOGuest.class.getName());
             logger.error(e);
         }
         return guest;
@@ -100,6 +102,7 @@ public class DAOGuest implements IDAOGuest {
                 listOfGuests.add(guest);
             }
         } catch (SQLException e) {
+            Logger logger = Logger.getLogger(DAOGuest.class.getName());
             logger.error(e);
         }
         return listOfGuests;

@@ -20,7 +20,6 @@ import java.util.List;
  * @version 1.0
  */
 public class DAOCategory implements IDAOCategory {
-    private Logger logger = Logger.getLogger(DAOCategory.class.getName());
 
     @Override
     public List<Category> getAllCategories() {
@@ -33,6 +32,7 @@ public class DAOCategory implements IDAOCategory {
                 listOfCategories.add(category);
             }
         } catch (SQLException e) {
+            Logger logger = Logger.getLogger(DAOCategory.class.getName());
             logger.error(e);
         }
         return listOfCategories;
@@ -60,6 +60,7 @@ public class DAOCategory implements IDAOCategory {
                 }
             }
         } catch (SQLException e) {
+            Logger logger = Logger.getLogger(DAOCategory.class.getName());
             logger.error(e);
         }
         return listOfCategories;
@@ -76,6 +77,7 @@ public class DAOCategory implements IDAOCategory {
                 listOfTypes.add(type);
             }
         } catch (SQLException e) {
+            Logger logger = Logger.getLogger(DAOCategory.class.getName());
             logger.error(e);
         }
         return listOfTypes;
@@ -92,6 +94,7 @@ public class DAOCategory implements IDAOCategory {
                 listOfCapacities.add(capacity);
             }
         } catch (SQLException e) {
+            Logger logger = Logger.getLogger(DAOCategory.class.getName());
             logger.error(e);
         }
         return listOfCapacities;

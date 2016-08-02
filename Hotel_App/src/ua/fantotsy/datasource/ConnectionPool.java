@@ -17,7 +17,6 @@ import java.sql.SQLException;
  * @version 1.0
  */
 public class ConnectionPool {
-    private Logger logger = Logger.getLogger(ConnectionPool.class.getName());
     private static ConnectionPool instance = new ConnectionPool();
     private Context initialContext;
     private DataSource dataSource;
@@ -28,6 +27,7 @@ public class ConnectionPool {
             Context webContext = (Context) initialContext.lookup("java:/comp/env");
             dataSource = (DataSource) webContext.lookup("/jdbc/hoteldb");
         } catch (NamingException e) {
+            Logger logger = Logger.getLogger(ConnectionPool.class.getName());
             logger.error(e);
         }
     }
@@ -41,6 +41,7 @@ public class ConnectionPool {
         try {
             connection = dataSource.getConnection();
         } catch (SQLException e) {
+            Logger logger = Logger.getLogger(ConnectionPool.class.getName());
             logger.error(e);
         }
         return connection;

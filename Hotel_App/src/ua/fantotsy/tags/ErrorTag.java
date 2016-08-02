@@ -15,7 +15,6 @@ import java.util.ResourceBundle;
  * @version 1.0
  */
 public class ErrorTag extends TagSupport {
-    private Logger logger = Logger.getLogger(ErrorTag.class.getName());
     private String errorType;
     private Locale locale;
 
@@ -39,6 +38,7 @@ public class ErrorTag extends TagSupport {
 
                 pageContext.getOut().write("<div class=\"error\"><span>" + errorMessage + "</span></div>");
             } catch (IOException e) {
+                Logger logger = Logger.getLogger(ErrorTag.class.getName());
                 logger.error(e);
                 throw new JspException(e.getMessage());
             }

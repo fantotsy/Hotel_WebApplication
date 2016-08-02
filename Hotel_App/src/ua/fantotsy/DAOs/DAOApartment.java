@@ -20,7 +20,6 @@ import java.util.Map;
  * @version 1.0
  */
 public class DAOApartment implements IDAOApartment {
-    private Logger logger = Logger.getLogger(DAOApartment.class.getName());
 
     @Override
     public Map<Integer, Integer> getNumbersOfApartmentsGroupedByCategories() {
@@ -32,6 +31,7 @@ public class DAOApartment implements IDAOApartment {
                 quantityOfApartmentsGroupedByCategories.put(rs.getInt("category_id"), rs.getInt("number_of_apartments"));
             }
         } catch (SQLException e) {
+            Logger logger = Logger.getLogger(DAOApartment.class.getName());
             logger.error(e);
         }
         return quantityOfApartmentsGroupedByCategories;
@@ -46,6 +46,7 @@ public class DAOApartment implements IDAOApartment {
             ps.setInt(2, category);
             result = ps.executeUpdate();
         } catch (SQLException e) {
+            Logger logger = Logger.getLogger(DAOApartment.class.getName());
             logger.error(e);
         }
         return result;
@@ -59,6 +60,7 @@ public class DAOApartment implements IDAOApartment {
             ps.setInt(1, apartmentNumber);
             result = ps.executeUpdate();
         } catch (SQLException e) {
+            Logger logger = Logger.getLogger(DAOApartment.class.getName());
             logger.error(e);
         }
         return result;
@@ -88,6 +90,7 @@ public class DAOApartment implements IDAOApartment {
             }
             rs.close();
         } catch (SQLException e) {
+            Logger logger = Logger.getLogger(DAOApartment.class.getName());
             logger.error(e);
         }
         return result;
@@ -103,6 +106,7 @@ public class DAOApartment implements IDAOApartment {
                 listOfApartments.put(rs.getInt("apartment_id"), rs.getInt("category_id"));
             }
         } catch (SQLException e) {
+            Logger logger = Logger.getLogger(DAOApartment.class.getName());
             logger.error(e);
         }
         return listOfApartments;

@@ -23,7 +23,6 @@ import java.util.List;
  * @version 1.0
  */
 public class DAOReservation implements IDAOReservation {
-    private Logger logger = Logger.getLogger(DAOReservation.class.getName());
 
     @Override
     public int insertNewReservation(Reservation reservation) {
@@ -39,6 +38,7 @@ public class DAOReservation implements IDAOReservation {
             ps.setInt(7, reservation.getApartment().getApartmentId());
             result = ps.executeUpdate();
         } catch (SQLException e) {
+            Logger logger = Logger.getLogger(DAOReservation.class.getName());
             logger.error(e);
         }
         return result;
@@ -57,6 +57,7 @@ public class DAOReservation implements IDAOReservation {
                 listOfReservations.add(reservation);
             }
         } catch (SQLException e) {
+            Logger logger = Logger.getLogger(DAOReservation.class.getName());
             logger.error(e);
         }
         return listOfReservations;
@@ -77,6 +78,7 @@ public class DAOReservation implements IDAOReservation {
             }
             rs.close();
         } catch (SQLException e) {
+            Logger logger = Logger.getLogger(DAOReservation.class.getName());
             logger.error(e);
         }
         return listOfReservations;
@@ -90,6 +92,7 @@ public class DAOReservation implements IDAOReservation {
             ps.setInt(1, reservationId);
             result = ps.executeUpdate();
         } catch (SQLException e) {
+            Logger logger = Logger.getLogger(DAOReservation.class.getName());
             logger.error(e);
         }
         return result;

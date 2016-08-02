@@ -23,7 +23,6 @@ public final class Utils {
      * @return encryption of certain password.
      */
     public static String encryptionMD5(String password) {
-        Logger logger = Logger.getLogger(Utils.class.getName());
         try {
             String encryption = null;
             if (password != null) {
@@ -37,6 +36,7 @@ public final class Utils {
             }
             return encryption;
         } catch (java.security.NoSuchAlgorithmException e) {
+            Logger logger = Logger.getLogger(Utils.class.getName());
             logger.error(e);
         }
         return null;
@@ -82,7 +82,6 @@ public final class Utils {
      * @throws Exception
      */
     public static void setUpClass(String className) throws Exception {
-        Logger logger = Logger.getLogger(className);
         // Setup the JNDI context and the datasource
         try {
             BasicDataSource dataSource = new BasicDataSource();
@@ -107,6 +106,7 @@ public final class Utils {
 
             initialContext.bind("java:/comp/env/jdbc/hoteldb", dataSource);
         } catch (Exception e) {
+            Logger logger = Logger.getLogger(className);
             logger.error(e);
         }
     }

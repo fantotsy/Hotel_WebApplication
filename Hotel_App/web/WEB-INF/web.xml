@@ -60,20 +60,20 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-    <!--<error-page>-->
-        <!--<error-code>404</error-code>-->
-        <!--<location>/error</location>-->
-    <!--</error-page>-->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error</location>
+    </error-page>
 
-    <!--<error-page>-->
-        <!--<error-code>500</error-code>-->
-        <!--<location>/error</location>-->
-    <!--</error-page>-->
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error</location>
+    </error-page>
 
-    <!--<error-page>-->
-        <!--<exception-type>java.lang.Throwable</exception-type>-->
-        <!--<location>/error</location>-->
-    <!--</error-page>-->
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/error</location>
+    </error-page>
 
     <context-param>
         <param-name>log4jConfigLocaltion</param-name>

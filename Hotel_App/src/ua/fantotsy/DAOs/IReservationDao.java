@@ -4,7 +4,7 @@ import ua.fantotsy.entities.Reservation;
 
 import java.util.List;
 
-public interface IDAOReservation {
+public interface IReservationDao {
     int insertNewReservation(Reservation reservation);
 
     List<Reservation> getAllReservations();

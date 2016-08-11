@@ -3,7 +3,7 @@ package ua.fantotsy.DAOs;
 import org.apache.log4j.Logger;
 import ua.fantotsy.datasource.ConnectionPool;
 import ua.fantotsy.entities.Guest;
-import ua.fantotsy.utils.SQLQueriesGetter;
+import ua.fantotsy.utils.SqlQueriesGetter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -19,19 +19,19 @@ import java.util.List;
  * @author fantotsy
  * @version 1.0
  */
-public class DAOGuest implements IDAOGuest {
+public class GuestDao implements IGuestDao {
 
     @Override
     public Boolean containsCertainLogin(String login) {
         Boolean result = null;
         try (Connection connection = ConnectionPool.getInstance().getConnection();
-             PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_CERTAIN_LOGIN))) {
+             PreparedStatement ps = connection.prepareStatement(SqlQueriesGetter.getInstance().getSQLQuery(SqlQueriesGetter.GET_CERTAIN_LOGIN))) {
             ps.setString(1, login);
             ResultSet rs = ps.executeQuery();
             result = rs.next();
             rs.close();
         } catch (SQLException e) {
-            Logger logger = Logger.getLogger(DAOGuest.class.getName());
+            Logger logger = Logger.getLogger(GuestDao.class.getName());
             logger.error(e);
         }
         return result;
@@ -41,14 +41,14 @@ public class DAOGuest implements IDAOGuest {
     public Boolean containsCertainGuest(String login, String password) {
         Boolean result = null;
         try (Connection connection = ConnectionPool.getInstance().getConnection();
-             PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_CERTAIN_LOGIN_AND_PASSWORD))) {
+             PreparedStatement ps = connection.prepareStatement(SqlQueriesGetter.getInstance().getSQLQuery(SqlQueriesGetter.GET_CERTAIN_LOGIN_AND_PASSWORD))) {
             ps.setString(1, login);
             ps.setString(2, password);
             ResultSet rs = ps.executeQuery();
             result = rs.next();
             rs.close();
         } catch (SQLException e) {
-            Logger logger = Logger.getLogger(DAOGuest.class.getName());
+            Logger logger = Logger.getLogger(GuestDao.class.getName());
             logger.error(e);
         }
         return result;
@@ -58,7 +58,7 @@ public class DAOGuest implements IDAOGuest {
     public int insertNewGuest(Guest guest) {
         int result = -1;
         try (Connection connection = ConnectionPool.getInstance().getConnection();
-             PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.ADD_NEW_GUEST))) {
+             PreparedStatement ps = connection.prepareStatement(SqlQueriesGetter.getInstance().getSQLQuery(SqlQueriesGetter.ADD_NEW_GUEST))) {
             ps.setString(1, guest.getName());
             ps.setString(2, guest.getLastName());
             ps.setString(3, "+380" + guest.getPhoneNumber());
@@ -67,7 +67,7 @@ public class DAOGuest implements IDAOGuest {
             ps.setString(6, guest.getPassword());
             result = ps.executeUpdate();
         } catch (SQLException e) {
-            Logger logger = Logger.getLogger(DAOGuest.class.getName());
+            Logger logger = Logger.getLogger(GuestDao.class.getName());
             logger.error(e);
         }
         return result;
@@ -77,7 +77,7 @@ public class DAOGuest implements IDAOGuest {
     public Guest getCertainGuest(String enteredLogin) {
         Guest guest = null;
         try (Connection connection = ConnectionPool.getInstance().getConnection();
-             PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_CERTAIN_GUEST))) {
+             PreparedStatement ps = connection.prepareStatement(SqlQueriesGetter.getInstance().getSQLQuery(SqlQueriesGetter.GET_CERTAIN_GUEST))) {
             ps.setString(1, enteredLogin);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
@@ -85,7 +85,7 @@ public class DAOGuest implements IDAOGuest {
             }
             rs.close();
         } catch (SQLException e) {
-            Logger logger = Logger.getLogger(DAOGuest.class.getName());
+            Logger logger = Logger.getLogger(GuestDao.class.getName());
             logger.error(e);
         }
         return guest;
@@ -95,14 +95,14 @@ public class DAOGuest implements IDAOGuest {
     public List<Guest> getAllGuests() {
         List<Guest> listOfGuests = new ArrayList<>();
         try (Connection connection = ConnectionPool.getInstance().getConnection();
-             PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_ALL_GUESTS));
+             PreparedStatement ps = connection.prepareStatement(SqlQueriesGetter.getInstance().getSQLQuery(SqlQueriesGetter.GET_ALL_GUESTS));
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
                 Guest guest = new Guest(rs.getString("name"), rs.getString("last_name"), rs.getString("phone_number"), rs.getString("email"), rs.getString("login"));
                 listOfGuests.add(guest);
             }
         } catch (SQLException e) {
-            Logger logger = Logger.getLogger(DAOGuest.class.getName());
+            Logger logger = Logger.getLogger(GuestDao.class.getName());
             logger.error(e);
         }
         return listOfGuests;

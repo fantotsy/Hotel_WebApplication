@@ -1,12 +1,13 @@
 package ua.fantotsy.commands;
 
 import ua.fantotsy.controllers.ISessionRequestWrapper;
-import ua.fantotsy.datasource.DAOFactory;
+import ua.fantotsy.datasource.DaoFactory;
 import ua.fantotsy.entities.Apartment;
 import ua.fantotsy.entities.Category;
 import ua.fantotsy.entities.Guest;
 import ua.fantotsy.entities.Reservation;
-import ua.fantotsy.utils.URNsGetter;
+import ua.fantotsy.utils.UrnGetter;
+import ua.fantotsy.utils.Utils;
 
 import javax.servlet.ServletException;
 import java.io.IOException;
@@ -50,16 +51,23 @@ public class GuestBookingPageCommand implements ICommand {
                 Guest guest = (Guest) wrapper.getSessionAttribute("guestInfo");
                 Apartment bookedApartment = new Apartment(Integer.parseInt(apartment));
                 Reservation reservation = new Reservation(guest, bookedApartment, arrival, departure);
-                DAOFactory.getDAOReservation().insertNewReservation(reservation);
+                DaoFactory.getDAOReservation().insertNewReservation(reservation);
             }
         }
 
-        List<Category> listOfCategories = DAOFactory.getDAOCategory().getAllCategoriesForUser(arrival, departure, types, capacities);
-        Map<Integer, Integer> listOfApartments = DAOFactory.getDAOApartment().getAvailableApartments(arrival, departure, types, capacities);
+        List<Category> listOfCategories = DaoFactory.getDAOCategory().getAllCategoriesForUser(arrival, departure, types, capacities);
+        Map<Integer, Integer> listOfApartments = DaoFactory.getDAOApartment().getAvailableApartments(arrival, departure, types, capacities);
 
         wrapper.setRequestAttribute("listOfCategories", listOfCategories);
         wrapper.setRequestAttribute("listOfApartments", listOfApartments);
+        setAntiCsrfToken(wrapper);
 
-        return URNsGetter.getInstance().getURN(URNsGetter.MAIN_GUEST_BOOKING_PAGE);
+        return UrnGetter.getInstance().getUrn(UrnGetter.MAIN_GUEST_BOOKING_PAGE);
+    }
+
+    private void setAntiCsrfToken(ISessionRequestWrapper wrapper) {
+        String sessionId = wrapper.getSessionId();
+        String antiCsrfToken = Utils.encryptionMD5(sessionId);
+        wrapper.setRequestAttribute("antiCsrfToken", antiCsrfToken);
     }
 }

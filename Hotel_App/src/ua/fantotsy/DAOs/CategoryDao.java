@@ -3,7 +3,7 @@ package ua.fantotsy.DAOs;
 import org.apache.log4j.Logger;
 import ua.fantotsy.datasource.ConnectionPool;
 import ua.fantotsy.entities.Category;
-import ua.fantotsy.utils.SQLQueriesGetter;
+import ua.fantotsy.utils.SqlQueriesGetter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -19,20 +19,20 @@ import java.util.List;
  * @author fantotsy
  * @version 1.0
  */
-public class DAOCategory implements IDAOCategory {
+public class CategoryDao implements ICategoryDao {
 
     @Override
     public List<Category> getAllCategories() {
         List<Category> listOfCategories = new ArrayList<>();
         try (Connection connection = ConnectionPool.getInstance().getConnection();
-             PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_ALL_CATEGORIES));
+             PreparedStatement ps = connection.prepareStatement(SqlQueriesGetter.getInstance().getSQLQuery(SqlQueriesGetter.GET_ALL_CATEGORIES));
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
                 Category category = new Category(rs.getInt("category_id"), rs.getString("type"), rs.getInt("number_of_beds"), rs.getInt("price"), rs.getInt("apartments"));
                 listOfCategories.add(category);
             }
         } catch (SQLException e) {
-            Logger logger = Logger.getLogger(DAOCategory.class.getName());
+            Logger logger = Logger.getLogger(CategoryDao.class.getName());
             logger.error(e);
         }
         return listOfCategories;
@@ -42,7 +42,7 @@ public class DAOCategory implements IDAOCategory {
     public List<Category> getAllCategoriesForUser(String arrival, String departure, List<String> types, List<String> capacities) {
         List<Category> listOfCategories = new ArrayList<>();
         try (Connection connection = ConnectionPool.getInstance().getConnection();
-             PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_ALL_AVAILABLE_APARTMENTS_FOR_GUEST))) {
+             PreparedStatement ps = connection.prepareStatement(SqlQueriesGetter.getInstance().getSQLQuery(SqlQueriesGetter.GET_ALL_AVAILABLE_APARTMENTS_FOR_GUEST))) {
             ps.setString(1, arrival);
             ps.setString(2, arrival);
             ps.setString(3, departure);
@@ -60,7 +60,7 @@ public class DAOCategory implements IDAOCategory {
                 }
             }
         } catch (SQLException e) {
-            Logger logger = Logger.getLogger(DAOCategory.class.getName());
+            Logger logger = Logger.getLogger(CategoryDao.class.getName());
             logger.error(e);
         }
         return listOfCategories;
@@ -70,14 +70,14 @@ public class DAOCategory implements IDAOCategory {
     public List<String> getAllTypes() {
         List<String> listOfTypes = new ArrayList<>();
         try (Connection connection = ConnectionPool.getInstance().getConnection();
-             PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_ALL_TYPES));
+             PreparedStatement ps = connection.prepareStatement(SqlQueriesGetter.getInstance().getSQLQuery(SqlQueriesGetter.GET_ALL_TYPES));
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
                 String type = rs.getString("type");
                 listOfTypes.add(type);
             }
         } catch (SQLException e) {
-            Logger logger = Logger.getLogger(DAOCategory.class.getName());
+            Logger logger = Logger.getLogger(CategoryDao.class.getName());
             logger.error(e);
         }
         return listOfTypes;
@@ -87,14 +87,14 @@ public class DAOCategory implements IDAOCategory {
     public List<Integer> getAllCapacities() {
         List<Integer> listOfCapacities = new ArrayList<>();
         try (Connection connection = ConnectionPool.getInstance().getConnection();
-             PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_ALL_CAPACITIES));
+             PreparedStatement ps = connection.prepareStatement(SqlQueriesGetter.getInstance().getSQLQuery(SqlQueriesGetter.GET_ALL_CAPACITIES));
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
                 int capacity = rs.getInt("number_of_beds");
                 listOfCapacities.add(capacity);
             }
         } catch (SQLException e) {
-            Logger logger = Logger.getLogger(DAOCategory.class.getName());
+            Logger logger = Logger.getLogger(CategoryDao.class.getName());
             logger.error(e);
         }
         return listOfCapacities;

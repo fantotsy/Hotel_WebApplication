@@ -1,7 +1,7 @@
 package ua.fantotsy.commands;
 
 import ua.fantotsy.controllers.ISessionRequestWrapper;
-import ua.fantotsy.utils.URNsGetter;
+import ua.fantotsy.utils.UrnGetter;
 
 import javax.servlet.ServletException;
 import java.io.IOException;
@@ -51,6 +51,6 @@ public class StartPageCommand implements ICommand {
             wrapper.setSessionAttribute("locale", locale);
             wrapper.setSessionAttribute("language", language);
         }
-        return URNsGetter.getInstance().getURN(URNsGetter.START_PAGE);
+        return UrnGetter.getInstance().getUrn(UrnGetter.START_PAGE);
     }
 }

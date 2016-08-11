@@ -5,7 +5,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import ua.fantotsy.datasource.DAOFactory;
+import ua.fantotsy.datasource.DaoFactory;
 import ua.fantotsy.utils.Utils;
 
 import javax.servlet.ServletException;
@@ -43,7 +43,7 @@ public class GetAvailableApartmentsTest extends Assert {
 
     @Test
     public void testExecute() throws ServletException, IOException {
-        Map<Integer, Integer> result = DAOFactory.getDAOApartment().getAvailableApartments(arrival, departure, types, capacities);
+        Map<Integer, Integer> result = DaoFactory.getDAOApartment().getAvailableApartments(arrival, departure, types, capacities);
         assertEquals(getExpectedMap(), result);
     }
 

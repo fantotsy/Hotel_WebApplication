@@ -3,15 +3,15 @@ package ua.fantotsy.utils;
 import java.util.ResourceBundle;
 
 /**
- * Class {@code URNsGetter} consists of logic, which gets specific
+ * Class {@code UrnGetter} consists of logic, which gets specific
  * Uniform Resource Names (URNs) by their names.
  *
  * @author fantotsy
  * @version 1.0
  */
-public final class URNsGetter {
+public final class UrnGetter {
     private ResourceBundle resourceBundle;
-    private static URNsGetter instance;
+    private static UrnGetter instance;
 
     public static final String START_PAGE = "START_PAGE";
     public static final String REGISTRATION_PAGE = "REGISTRATION_PAGE";
@@ -35,15 +35,15 @@ public final class URNsGetter {
     public static final String USER_ICON_IMG = "USER_ICON_IMG";
     public static final String FAVICON_ICO = "FAVICON_ICO";
 
-    public static URNsGetter getInstance() {
+    public static UrnGetter getInstance() {
         if (instance == null) {
-            instance = new URNsGetter();
+            instance = new UrnGetter();
             instance.resourceBundle = ResourceBundle.getBundle("ua.fantotsy.properties.URN.URNs");
         }
         return instance;
     }
 
-    public String getURN(String key) {
+    public String getUrn(String key) {
         return (String) resourceBundle.getObject(key);
     }
 }

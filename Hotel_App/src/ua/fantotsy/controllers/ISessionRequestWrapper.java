@@ -3,6 +3,8 @@ package ua.fantotsy.controllers;
 import javax.servlet.http.HttpServletRequest;
 
 public interface ISessionRequestWrapper {
+    public String getSessionId();
+
     Boolean getSessionInvalidated();
 
     void setSessionInvalidated(Boolean sessionInvalidated);

@@ -1,7 +1,8 @@
 package ua.fantotsy.commands;
 
 import ua.fantotsy.controllers.ISessionRequestWrapper;
-import ua.fantotsy.utils.URNsGetter;
+import ua.fantotsy.utils.UrnGetter;
+import ua.fantotsy.utils.Utils;
 
 import javax.servlet.ServletException;
 import java.io.IOException;
@@ -17,6 +18,10 @@ public class AdminMainPageCommand implements ICommand {
 
     @Override
     public String execute(ISessionRequestWrapper wrapper) throws ServletException, IOException {
-        return URNsGetter.getInstance().getURN(URNsGetter.MAIN_ADMIN_PAGE);
+        String sessionId = wrapper.getSessionId();
+        String antiCsrfToken = Utils.encryptionMD5(sessionId);
+        wrapper.setRequestAttribute("antiCsrfToken", antiCsrfToken);
+
+        return UrnGetter.getInstance().getUrn(UrnGetter.MAIN_ADMIN_PAGE);
     }
 }

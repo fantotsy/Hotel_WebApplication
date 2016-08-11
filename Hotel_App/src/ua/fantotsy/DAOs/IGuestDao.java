@@ -4,7 +4,7 @@ import ua.fantotsy.entities.Guest;
 
 import java.util.List;
 
-public interface IDAOGuest {
+public interface IGuestDao {
     Boolean containsCertainLogin(String login);
 
     Boolean containsCertainGuest(String login, String password);

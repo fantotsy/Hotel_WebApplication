@@ -2,7 +2,111 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e16aee2-7e83-43c1-ba10-4202e19dd46a" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/DAOs/DAOApartment.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/DAOs/DAOCategory.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/DAOs/DAOGuest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/DAOs/DAOReservation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/DAOs/IDAOApartment.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/DAOs/IDAOCategory.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/DAOs/IDAOGuest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/DAOs/IDAOReservation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/utils/URNsGetter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/DAOs/DAOApartment.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/DAOs/DAOCategory.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/DAOs/DAOGuest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/DAOs/DAOReservation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/DAOs/IDAOApartment.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/DAOs/IDAOCategory.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/DAOs/IDAOGuest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/DAOs/IDAOReservation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/utils/URNsGetter.class" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOApartment.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/DAOs/ApartmentDao.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOCategory.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/DAOs/CategoryDao.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOGuest.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/DAOs/GuestDao.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOReservation.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/DAOs/ReservationDao.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ua/fantotsy/DAOs/IDAOApartment.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/DAOs/IApartmentDao.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ua/fantotsy/DAOs/IDAOCategory.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/DAOs/ICategoryDao.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ua/fantotsy/DAOs/IDAOGuest.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/DAOs/IGuestDao.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ua/fantotsy/DAOs/IDAOReservation.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/DAOs/IReservationDao.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ua/fantotsy/utils/URNsGetter.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/utils/UrnGetter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/AdminMainPageCommand.class" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/AdminMainPageCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/ApartmentsPageCommand.class" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/ApartmentsPageCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/CheckOrderDataCommand.class" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/CheckOrderDataCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/CheckSigninDataCommand.class" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/CheckSigninDataCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/ErrorCommand.class" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/ErrorCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/GuestBookingPageCommand.class" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/GuestBookingPageCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/GuestMainPageCommand.class" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/GuestMainPageCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/GuestsPageCommand.class" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/GuestsPageCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/RegistrationPageCommand.class" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/RegistrationPageCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/ReservationsPageCommand.class" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/ReservationsPageCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/StartPageCommand.class" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/StartPageCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/controllers/ISessionRequestWrapper.class" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/controllers/ISessionRequestWrapper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/controllers/SessionRequestWrapper.class" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/controllers/SessionRequestWrapper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/datasource/DAOFactory.class" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/datasource/DAOFactory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/filters/AuthorizationFilter$1.class" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/filters/AuthorizationFilter$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/filters/AuthorizationFilter$2.class" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/filters/AuthorizationFilter$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/filters/AuthorizationFilter$3.class" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/filters/AuthorizationFilter$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/filters/AuthorizationFilter$4.class" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/filters/AuthorizationFilter$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/filters/AuthorizationFilter.class" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/filters/AuthorizationFilter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/utils/SQLQueriesGetter.class" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/utils/SQLQueriesGetter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/AdminMainPageCommand.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/AdminMainPageCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/ApartmentsPageCommand.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/ApartmentsPageCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/CheckOrderDataCommand.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/CheckOrderDataCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/CheckSigninDataCommand.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/CheckSigninDataCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/ErrorCommand.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/ErrorCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/GuestBookingPageCommand.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/GuestBookingPageCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/GuestMainPageCommand.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/GuestMainPageCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/GuestsPageCommand.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/GuestsPageCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/RegistrationPageCommand.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/RegistrationPageCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/ReservationsPageCommand.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/ReservationsPageCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/StartPageCommand.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/StartPageCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/controllers/ISessionRequestWrapper.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/controllers/ISessionRequestWrapper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/controllers/SessionRequestWrapper.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/controllers/SessionRequestWrapper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/datasource/DAOFactory.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/datasource/DAOFactory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/filters/AuthorizationFilter$1.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/filters/AuthorizationFilter$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/filters/AuthorizationFilter$2.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/filters/AuthorizationFilter$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/filters/AuthorizationFilter$3.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/filters/AuthorizationFilter$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/filters/AuthorizationFilter$4.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/filters/AuthorizationFilter$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/filters/AuthorizationFilter.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/filters/AuthorizationFilter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/utils/SQLQueriesGetter.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/utils/SQLQueriesGetter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/Hotel_App/DAOs/GetAvailableApartmentsTest.class" afterPath="$PROJECT_DIR$/out/test/Hotel_App/DAOs/GetAvailableApartmentsTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/Hotel_App/commands/ApartmentsPageCommandTest.class" afterPath="$PROJECT_DIR$/out/test/Hotel_App/commands/ApartmentsPageCommandTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/Hotel_App/commands/CheckSigninDataCommandTest.class" afterPath="$PROJECT_DIR$/out/test/Hotel_App/commands/CheckSigninDataCommandTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/Hotel_App/commands/GuestBookingPageCommandTest.class" afterPath="$PROJECT_DIR$/out/test/Hotel_App/commands/GuestBookingPageCommandTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/Hotel_App/commands/GuestMainPageCommandTest.class" afterPath="$PROJECT_DIR$/out/test/Hotel_App/commands/GuestMainPageCommandTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/Hotel_App/commands/RegistrationPageCommandTest.class" afterPath="$PROJECT_DIR$/out/test/Hotel_App/commands/RegistrationPageCommandTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/Hotel_App/commands/StartPageCommandTest.class" afterPath="$PROJECT_DIR$/out/test/Hotel_App/commands/StartPageCommandTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/properties/SQL/SQLs.properties" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/properties/SQL/SQLs.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/jsp/main_guest_booking.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/jsp/main_guest_booking.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/properties/SQL/SQLs.properties" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/properties/SQL/SQLs.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/commands/AdminMainPageCommand.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/commands/AdminMainPageCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/commands/ApartmentsPageCommand.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/commands/ApartmentsPageCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/commands/CheckSigninDataCommand.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/commands/CheckSigninDataCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/commands/ErrorCommand.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/commands/ErrorCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/commands/GuestBookingPageCommand.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/commands/GuestBookingPageCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/commands/GuestMainPageCommand.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/commands/GuestMainPageCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/commands/GuestsPageCommand.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/commands/GuestsPageCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/commands/RegistrationPageCommand.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/commands/RegistrationPageCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/commands/ReservationsPageCommand.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/commands/ReservationsPageCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/commands/StartPageCommand.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/commands/StartPageCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/controllers/ISessionRequestWrapper.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/controllers/ISessionRequestWrapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/controllers/SessionRequestWrapper.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/controllers/SessionRequestWrapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/datasource/DAOFactory.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/datasource/DAOFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/filters/AuthorizationFilter.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/filters/AuthorizationFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/properties/SQL/SQLs.properties" afterPath="$PROJECT_DIR$/src/ua/fantotsy/properties/SQL/SQLs.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/tests/DAOs/GetAvailableApartmentsTest.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/tests/DAOs/GetAvailableApartmentsTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/tests/commands/ApartmentsPageCommandTest.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/tests/commands/ApartmentsPageCommandTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/tests/commands/CheckSigninDataCommandTest.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/tests/commands/CheckSigninDataCommandTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/tests/commands/GuestBookingPageCommandTest.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/tests/commands/GuestBookingPageCommandTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/tests/commands/GuestMainPageCommandTest.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/tests/commands/GuestMainPageCommandTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/tests/commands/RegistrationPageCommandTest.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/tests/commands/RegistrationPageCommandTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/tests/commands/StartPageCommandTest.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/tests/commands/StartPageCommandTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/utils/SQLQueriesGetter.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/utils/SQLQueriesGetter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_apartments.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_apartments.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/main_guest.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/main_guest.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/main_guest_booking.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/main_guest_booking.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
     </list>
@@ -39,7 +143,7 @@
     <favorites_list name="Hotel_App" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -63,18 +167,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/ua/fantotsy/commands/GuestBookingPageCommand.java" />
-        <option value="$PROJECT_DIR$/src/ua/fantotsy/commands/GuestMainPageCommand.java" />
-        <option value="$PROJECT_DIR$/src/ua/fantotsy/commands/GuestsPageCommand.java" />
-        <option value="$PROJECT_DIR$/src/ua/fantotsy/commands/RegistrationPageCommand.java" />
-        <option value="$PROJECT_DIR$/src/ua/fantotsy/commands/ReservationsPageCommand.java" />
-        <option value="$PROJECT_DIR$/src/ua/fantotsy/commands/StartPageCommand.java" />
-        <option value="$PROJECT_DIR$/src/ua/fantotsy/controllers/ServletController.java" />
-        <option value="$PROJECT_DIR$/src/ua/fantotsy/entities/Category.java" />
-        <option value="$PROJECT_DIR$/src/ua/fantotsy/entities/Apartment.java" />
-        <option value="$PROJECT_DIR$/src/ua/fantotsy/datasource/DAOFactory.java" />
-        <option value="$PROJECT_DIR$/src/ua/fantotsy/controllers/CommandGetter.java" />
-        <option value="$PROJECT_DIR$/src/ua/fantotsy/controllers/SessionRequestWrapper.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/entities/Guest.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/entities/Reservation.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/filters/EncodingFilter.java" />
@@ -93,18 +185,14 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/admin_header.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/guest_header.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/index.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_apartments.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_guests.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_reservations.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_guest.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/error.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/registration.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/registration_confirmation.jsp" />
         <option value="$PROJECT_DIR$/web/css/error.css" />
         <option value="$PROJECT_DIR$/web/css/registration.css" />
         <option value="$PROJECT_DIR$/web/css/guest.css" />
-        <option value="$PROJECT_DIR$/src/ua/fantotsy/commands/CheckOrderDataCommand.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOApartment.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOCategory.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOGuest.java" />
@@ -112,8 +200,24 @@
         <option value="$PROJECT_DIR$/src/ua/fantotsy/datasource/ConnectionPool.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/tags/ErrorTag.java" />
         <option value="$PROJECT_DIR$/src/ua/fantotsy/utils/Utils.java" />
+        <option value="$PROJECT_DIR$/src/ua/fantotsy/utils/UrnGetter.java" />
+        <option value="$PROJECT_DIR$/src/ua/fantotsy/properties/SQL/SQLs.properties" />
+        <option value="$PROJECT_DIR$/src/ua/fantotsy/datasource/DAOFactory.java" />
+        <option value="$PROJECT_DIR$/src/ua/fantotsy/controllers/ISessionRequestWrapper.java" />
+        <option value="$PROJECT_DIR$/src/ua/fantotsy/controllers/SessionRequestWrapper.java" />
+        <option value="$PROJECT_DIR$/src/ua/fantotsy/commands/CheckSigninDataCommand.java" />
+        <option value="$PROJECT_DIR$/src/ua/fantotsy/commands/ReservationsPageCommand.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_guest_booking.jsp" />
+        <option value="$PROJECT_DIR$/src/ua/fantotsy/commands/GuestBookingPageCommand.java" />
+        <option value="$PROJECT_DIR$/src/ua/fantotsy/commands/CheckOrderDataCommand.java" />
+        <option value="$PROJECT_DIR$/src/ua/fantotsy/filters/CsrfFilter.java" />
+        <option value="$PROJECT_DIR$/src/ua/fantotsy/commands/GuestMainPageCommand.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_guest.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_apartments.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/main_admin.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/ua/fantotsy/commands/AdminMainPageCommand.java" />
+        <option value="$PROJECT_DIR$/src/ua/fantotsy/commands/ApartmentsPageCommand.java" />
       </list>
     </option>
   </component>
@@ -183,7 +287,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -234,6 +337,28 @@
               <option name="myItemId" value="web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jsp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hotel_App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hotel_App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -253,8 +378,171 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hotel_App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hotel_App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fantotsy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="properties" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="URN" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hotel_App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hotel_App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fantotsy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="properties" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hotel_App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hotel_App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fantotsy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="properties" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="actions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hotel_App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hotel_App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fantotsy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="filters" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hotel_App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hotel_App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fantotsy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="datasource" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hotel_App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hotel_App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fantotsy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hotel_App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hotel_App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fantotsy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commands" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -946,6 +1234,12 @@
       <workItem from="1470124453695" duration="965000" />
       <workItem from="1470321593105" duration="19000" />
       <workItem from="1470487956959" duration="392000" />
+      <workItem from="1470565934236" duration="591000" />
+      <workItem from="1470593952126" duration="664000" />
+      <workItem from="1470760637676" duration="1912000" />
+      <workItem from="1470912457473" duration="269000" />
+      <workItem from="1470921492561" duration="4572000" />
+      <workItem from="1470941136690" duration="4533000" />
     </task>
     <servers />
   </component>
@@ -982,7 +1276,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="307258000" />
+    <option name="totallyTimeSpent" value="319799000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -994,7 +1288,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1006,7 +1300,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21767594" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36824876" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36824876" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24962178" sideWeight="0.47887325" order="0" side_tool="false" content_ui="combo" />
@@ -1054,90 +1348,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/entities/Apartment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37988827">
-          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/entities/Guest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1424581">
-          <caret line="3" column="54" selection-start-line="3" selection-start-column="54" selection-end-line="3" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/entities/Reservation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37988827">
-          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/entities/Category.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23743017">
-          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/tests/commands/ApartmentsPageCommandTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.8044692">
-          <caret line="53" column="38" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/properties/errors/messages.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66480446">
-          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/properties/URN/URNs.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47765362">
-          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/header.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/properties/i18n/main_admin_en.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/tests/DAOs/GetAvailableApartmentsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23743017">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5/web-forms.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33240223">
-          <caret line="503" column="16" selection-start-line="503" selection-start-column="16" selection-end-line="503" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.89759034">
-          <caret line="126" column="1" selection-start-line="126" selection-start-column="1" selection-end-line="126" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/css/admin.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28313252">
@@ -1166,20 +1376,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOApartment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34991422">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOCategory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3207547">
-          <caret line="21" column="50" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_66/src.zip!/java/sql/ResultSet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.62435675">
@@ -1187,31 +1383,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOGuest.java">
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/DAOs/GuestDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3207547">
           <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/DAOs/DAOReservation.java">
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/DAOs/ReservationDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3207547">
           <caret line="24" column="56" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/commands/CheckOrderDataCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82675815">
-          <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/datasource/DAOFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2915952">
-          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -1229,53 +1411,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/filters/AuthorizationFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.72041166">
-          <caret line="57" column="73" selection-start-line="57" selection-start-column="73" selection-end-line="57" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/filters/EncodingFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.787307">
-          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/datasource/ConnectionPool.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5626072">
           <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/controllers/CommandGetter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6329331">
-          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/controllers/ServletController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09605489">
-          <caret line="31" column="7" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/controllers/SessionRequestWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.7118354">
-          <caret line="18" column="70" selection-start-line="18" selection-start-column="70" selection-end-line="18" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/commands/AdminMainPageCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3207547">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1286,17 +1426,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/utils/SQLQueriesGetter.java">
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/utils/SqlQueriesGetter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.10806175">
           <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/utils/URNsGetter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0205832">
-          <caret line="35" column="59" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -1311,7 +1444,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09139785">
           <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1319,7 +1451,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7921147">
           <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="28" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1327,15 +1458,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09139785">
           <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="84" selection-start-line="0" selection-start-column="63" selection-end-line="0" selection-end-column="84" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1343,15 +1465,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21364452">
           <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_admin.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42728904">
-          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1359,15 +1472,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.1597846">
           <caret line="38" column="25" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_apartments.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.518851">
-          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1375,31 +1479,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.42728904">
           <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_guest.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30520648">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_guest_booking.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="85" selection-start-line="0" selection-start-column="85" selection-end-line="0" selection-end-column="85" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/registration.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4578097">
-          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1407,24 +1486,257 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15260324">
           <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/registration_form.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18312387">
-          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.39273927">
+          <caret line="7" column="23" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/registration.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.05610561">
+          <caret line="1" column="28" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/DAOs/ApartmentDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34991422">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/properties/SQL/SQLs.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.1396648">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/datasource/DaoFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47486034">
+          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/DAOs/CategoryDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="28" selection-start-line="34" selection-start-column="12" selection-end-line="35" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/filters/AuthorizationFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/filters/EncodingFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/controllers/ISessionRequestWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20411664">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/controllers/SessionRequestWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4373928">
+          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+          <folding>
+            <element signature="e#943#944#0" expanded="true" />
+            <element signature="e#975#976#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/commands/CheckSigninDataCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.50428814">
+          <caret line="66" column="67" selection-start-line="66" selection-start-column="67" selection-end-line="66" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/properties/URN/URNs.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49571183">
+          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/commands/ReservationsPageCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5831904">
+          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/log4j.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.5120482">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_guest_booking.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44879517">
+          <caret line="51" column="88" selection-start-line="51" selection-start-column="88" selection-end-line="51" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/commands/GuestMainPageCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="52" column="68" selection-start-line="52" selection-start-column="68" selection-end-line="52" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_guest.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48493975">
+          <caret line="84" column="76" selection-start-line="84" selection-start-column="76" selection-end-line="84" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/tests/commands/ApartmentsPageCommandTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6201117">
+          <caret line="63" column="62" selection-start-line="63" selection-start-column="62" selection-end-line="63" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/utils/UrnGetter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33240223">
+          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/controllers/ServletController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6312849">
+          <caret line="31" column="7" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.8312387">
-          <caret line="60" column="21" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.48795182">
+          <caret line="56" column="41" selection-start-line="56" selection-start-column="41" selection-end-line="56" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/properties/actions/actions.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47486034">
+          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/controllers/CommandGetter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6201117">
+          <caret line="30" column="91" selection-start-line="30" selection-start-column="91" selection-end-line="30" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/commands/CheckOrderDataCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33519554">
+          <caret line="53" column="9" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/commands/AdminMainPageCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38268158">
+          <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/commands/GuestBookingPageCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5251397">
+          <caret line="67" column="4" selection-start-line="67" selection-start-column="4" selection-end-line="71" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/commands/ApartmentsPageCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5726257">
+          <caret line="59" column="34" selection-start-line="59" selection-start-column="34" selection-end-line="59" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_admin.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2560241">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/main_admin_apartments.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30722892">
+          <caret line="46" column="119" selection-start-line="46" selection-start-column="119" selection-end-line="46" selection-end-column="119" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/fantotsy/filters/CsrfFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6815643">
+          <caret line="23" column="75" selection-start-line="23" selection-start-column="75" selection-end-line="23" selection-end-column="75" />
           <folding>
-            <marker date="1470488104145" expanded="true" signature="2163:2508" placeholder="..." />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

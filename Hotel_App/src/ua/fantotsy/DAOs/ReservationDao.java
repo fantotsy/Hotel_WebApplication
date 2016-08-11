@@ -6,7 +6,7 @@ import ua.fantotsy.entities.Apartment;
 import ua.fantotsy.entities.Category;
 import ua.fantotsy.entities.Guest;
 import ua.fantotsy.entities.Reservation;
-import ua.fantotsy.utils.SQLQueriesGetter;
+import ua.fantotsy.utils.SqlQueriesGetter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -22,13 +22,13 @@ import java.util.List;
  * @author fantotsy
  * @version 1.0
  */
-public class DAOReservation implements IDAOReservation {
+public class ReservationDao implements IReservationDao {
 
     @Override
     public int insertNewReservation(Reservation reservation) {
         int result = -1;
         try (Connection connection = ConnectionPool.getInstance().getConnection();
-             PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.ADD_NEW_RESERVATION))) {
+             PreparedStatement ps = connection.prepareStatement(SqlQueriesGetter.getInstance().getSQLQuery(SqlQueriesGetter.ADD_NEW_RESERVATION))) {
             ps.setInt(1, reservation.getGuest().getGuestId());
             ps.setInt(2, reservation.getApartment().getApartmentId());
             ps.setString(3, reservation.getArrival());
@@ -38,7 +38,7 @@ public class DAOReservation implements IDAOReservation {
             ps.setInt(7, reservation.getApartment().getApartmentId());
             result = ps.executeUpdate();
         } catch (SQLException e) {
-            Logger logger = Logger.getLogger(DAOReservation.class.getName());
+            Logger logger = Logger.getLogger(ReservationDao.class.getName());
             logger.error(e);
         }
         return result;
@@ -48,7 +48,7 @@ public class DAOReservation implements IDAOReservation {
     public List<Reservation> getAllReservations() {
         List<Reservation> listOfReservations = new ArrayList<>();
         try (Connection connection = ConnectionPool.getInstance().getConnection();
-             PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_ALL_RESERVATIONS));
+             PreparedStatement ps = connection.prepareStatement(SqlQueriesGetter.getInstance().getSQLQuery(SqlQueriesGetter.GET_ALL_RESERVATIONS));
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
                 Guest guest = new Guest(rs.getString("name"), rs.getString("last_name"), rs.getString("login"));
@@ -57,7 +57,7 @@ public class DAOReservation implements IDAOReservation {
                 listOfReservations.add(reservation);
             }
         } catch (SQLException e) {
-            Logger logger = Logger.getLogger(DAOReservation.class.getName());
+            Logger logger = Logger.getLogger(ReservationDao.class.getName());
             logger.error(e);
         }
         return listOfReservations;
@@ -67,7 +67,7 @@ public class DAOReservation implements IDAOReservation {
     public List<Reservation> getCertainReservations(Integer guestId) {
         List<Reservation> listOfReservations = new ArrayList<>();
         try (Connection connection = ConnectionPool.getInstance().getConnection();
-             PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_ALL_RESERVATIONS_FOR_CERTAIN_GUEST))) {
+             PreparedStatement ps = connection.prepareStatement(SqlQueriesGetter.getInstance().getSQLQuery(SqlQueriesGetter.GET_ALL_RESERVATIONS_FOR_CERTAIN_GUEST))) {
             ps.setInt(1, guestId);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
@@ -78,7 +78,7 @@ public class DAOReservation implements IDAOReservation {
             }
             rs.close();
         } catch (SQLException e) {
-            Logger logger = Logger.getLogger(DAOReservation.class.getName());
+            Logger logger = Logger.getLogger(ReservationDao.class.getName());
             logger.error(e);
         }
         return listOfReservations;
@@ -88,11 +88,11 @@ public class DAOReservation implements IDAOReservation {
     public int deleteCertainReservation(Integer reservationId) {
         int result = -1;
         try (Connection connection = ConnectionPool.getInstance().getConnection();
-             PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.REMOVE_RESERVATION))) {
+             PreparedStatement ps = connection.prepareStatement(SqlQueriesGetter.getInstance().getSQLQuery(SqlQueriesGetter.REMOVE_RESERVATION))) {
             ps.setInt(1, reservationId);
             result = ps.executeUpdate();
         } catch (SQLException e) {
-            Logger logger = Logger.getLogger(DAOReservation.class.getName());
+            Logger logger = Logger.getLogger(ReservationDao.class.getName());
             logger.error(e);
         }
         return result;

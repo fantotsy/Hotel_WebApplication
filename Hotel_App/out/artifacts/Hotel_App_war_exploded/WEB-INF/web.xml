@@ -47,6 +47,18 @@
     </filter-mapping>
 
     <filter>
+        <filter-name>CsrfFilter</filter-name>
+        <filter-class>ua.fantotsy.filters.CsrfFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>CsrfFilter</filter-name>
+        <url-pattern>/order_valid</url-pattern>
+        <url-pattern>/guest</url-pattern>
+        <url-pattern>/apartments</url-pattern>
+    </filter-mapping>
+
+    <filter>
         <filter-name>EncodingFilter</filter-name>
         <filter-class>ua.fantotsy.filters.EncodingFilter</filter-class>
         <init-param>

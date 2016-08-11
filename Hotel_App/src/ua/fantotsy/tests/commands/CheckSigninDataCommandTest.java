@@ -9,7 +9,7 @@ import org.junit.runners.Parameterized;
 import ua.fantotsy.commands.CheckSigninDataCommand;
 import ua.fantotsy.controllers.SessionRequestWrapper;
 import ua.fantotsy.utils.ActionsGetter;
-import ua.fantotsy.utils.URNsGetter;
+import ua.fantotsy.utils.UrnGetter;
 import ua.fantotsy.utils.Utils;
 
 import javax.servlet.ServletException;
@@ -61,9 +61,9 @@ public class CheckSigninDataCommandTest extends Assert {
                 {"guest", null, null, null, null, ActionsGetter.getInstance().getAction(ActionsGetter.GUEST)},
                 {null, "true", "user1", null, null, ActionsGetter.getInstance().getAction(ActionsGetter.GUEST)},
                 {null, null, "admin", "admin", "true", ActionsGetter.getInstance().getAction(ActionsGetter.ADMIN)},
-                {null, null, "wrong_login", "wrong_password", "true", URNsGetter.getInstance().getURN(URNsGetter.START_PAGE)},
+                {null, null, "wrong_login", "wrong_password", "true", UrnGetter.getInstance().getUrn(UrnGetter.START_PAGE)},
                 {null, null, "user1", "user1", null, ActionsGetter.getInstance().getAction(ActionsGetter.GUEST)},
-                {null, null, "wrong_login", "wrong_password", null, URNsGetter.getInstance().getURN(URNsGetter.START_PAGE)}
+                {null, null, "wrong_login", "wrong_password", null, UrnGetter.getInstance().getUrn(UrnGetter.START_PAGE)}
         });
     }
 

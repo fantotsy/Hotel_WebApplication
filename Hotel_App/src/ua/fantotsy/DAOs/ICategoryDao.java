@@ -4,7 +4,7 @@ import ua.fantotsy.entities.Category;
 
 import java.util.List;
 
-public interface IDAOCategory {
+public interface ICategoryDao {
     List<Category> getAllCategories();
 
     List<String> getAllTypes();

@@ -3,14 +3,14 @@ package ua.fantotsy.utils;
 import java.util.ResourceBundle;
 
 /**
- * Class {@code SQLQueriesGetter} consists of logic, which gets specific SQL queries by their names.
+ * Class {@code SqlQueriesGetter} consists of logic, which gets specific SQL queries by their names.
  *
  * @author fantotsy
  * @version 1.0
  */
-public final class SQLQueriesGetter {
+public final class SqlQueriesGetter {
     private ResourceBundle resourceBundle;
-    private static SQLQueriesGetter instance;
+    private static SqlQueriesGetter instance;
 
     public static final String GET_NUMBERS_OF_APARTMENTS_GROUPED_BY_CATEGORIES = "GET_NUMBERS_OF_APARTMENTS_GROUPED_BY_CATEGORIES";
     public static final String ADD_APARTMENT = "ADD_APARTMENT";
@@ -31,9 +31,9 @@ public final class SQLQueriesGetter {
     public static final String GET_ALL_RESERVATIONS_FOR_CERTAIN_GUEST = "GET_ALL_RESERVATIONS_FOR_CERTAIN_GUEST";
     public static final String REMOVE_RESERVATION = "REMOVE_RESERVATION";
 
-    public static SQLQueriesGetter getInstance() {
+    public static SqlQueriesGetter getInstance() {
         if (instance == null) {
-            instance = new SQLQueriesGetter();
+            instance = new SqlQueriesGetter();
             instance.resourceBundle = ResourceBundle.getBundle("ua.fantotsy.properties.SQL.SQLs");
         }
         return instance;

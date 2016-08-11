@@ -44,6 +44,7 @@
                                     <err:error errorType="${requestScope.error[1]}" locale="${sessionScope.locale}"/>
                                 </c:if>
                                 <form action="/apartments" method="post">
+                                    <input type="hidden" name="anti_csrf_token" value="${requestScope.antiCsrfToken}"/>
                                     <input type="hidden" name="category_id" value="${category.categoryId}"/>
                                     <fmt:message var="apartment_placeholder" key="apartment_placeholder"
                                                  bundle="${apartments}"/>

@@ -21,6 +21,12 @@ public class SessionRequestWrapper implements ISessionRequestWrapper {
     private Map<String, String[]> requestParameters;
     private Map<String, Object> sessionAttributes;
     private Boolean isSessionInvalidated = false;
+    private String sessionId;
+
+    @Override
+    public String getSessionId() {
+        return sessionId;
+    }
 
     @Override
     public Boolean getSessionInvalidated() {
@@ -37,6 +43,8 @@ public class SessionRequestWrapper implements ISessionRequestWrapper {
         requestAttributes = new HashMap<>();
         sessionAttributes = new HashMap<>();
 
+        HttpSession session = request.getSession(true);
+        sessionId = session.getId();
         isSessionInvalidated = Boolean.parseBoolean((String) request.getAttribute("isSessionInvalidated"));
         extractRequestParameters(request);
         extractSessionAttributes(request);

@@ -1,10 +1,10 @@
 package ua.fantotsy.commands;
 
 import ua.fantotsy.controllers.ISessionRequestWrapper;
-import ua.fantotsy.datasource.DAOFactory;
+import ua.fantotsy.datasource.DaoFactory;
 import ua.fantotsy.entities.Guest;
 import ua.fantotsy.utils.ActionsGetter;
-import ua.fantotsy.utils.URNsGetter;
+import ua.fantotsy.utils.UrnGetter;
 import ua.fantotsy.utils.Utils;
 
 import javax.servlet.ServletException;
@@ -67,7 +67,7 @@ public class CheckSigninDataCommand implements ICommand {
             return setErrorMessage(wrapper, "wrong_entrance_data");
         }
 
-        boolean containsGuest = DAOFactory.getDAOGuest().containsCertainGuest(enteredLogin, enteredPassword);
+        boolean containsGuest = DaoFactory.getDAOGuest().containsCertainGuest(enteredLogin, enteredPassword);
         if (containsGuest) {
             return setSessionData(wrapper, enteredLogin);
         }
@@ -76,11 +76,12 @@ public class CheckSigninDataCommand implements ICommand {
 
     private String setErrorMessage(ISessionRequestWrapper wrapper, String errorMessage) {
         wrapper.setRequestAttribute("error", errorMessage);
-        return URNsGetter.getInstance().getURN(URNsGetter.START_PAGE);
+        return UrnGetter.getInstance().getUrn(UrnGetter.START_PAGE);
     }
 
     private String setSessionData(ISessionRequestWrapper wrapper, String login) {
-        Guest guest = DAOFactory.getDAOGuest().getCertainGuest(login);
+        Guest guest = DaoFactory.getDAOGuest().getCertainGuest(login);
+
         wrapper.setSessionAttribute("guestInfo", guest);
         wrapper.setSessionAttribute("role", ROLE_GUEST);
         return ActionsGetter.getInstance().getAction(ActionsGetter.GUEST);

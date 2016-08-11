@@ -1,9 +1,9 @@
 package ua.fantotsy.commands;
 
 import ua.fantotsy.controllers.ISessionRequestWrapper;
-import ua.fantotsy.datasource.DAOFactory;
+import ua.fantotsy.datasource.DaoFactory;
 import ua.fantotsy.entities.Guest;
-import ua.fantotsy.utils.URNsGetter;
+import ua.fantotsy.utils.UrnGetter;
 import ua.fantotsy.utils.Utils;
 
 import javax.servlet.ServletException;
@@ -43,7 +43,7 @@ public class RegistrationPageCommand implements ICommand {
             String passwordConfirmation = Utils.encryptionMD5(wrapper.getRequestParameter("password_confirmation"));
 
             // Check whether 'login' exists and 'password' equals its 'confirmation'.
-            boolean containsLogin = DAOFactory.getDAOGuest().containsCertainLogin(login);
+            boolean containsLogin = DaoFactory.getDAOGuest().containsCertainLogin(login);
             if (containsLogin) {
                 wrapper.setRequestAttribute("error_login", "login_exists");
                 wrapper.setRequestAttribute("guest_data", newGuest);
@@ -53,12 +53,12 @@ public class RegistrationPageCommand implements ICommand {
                     wrapper.setRequestAttribute("guest_data", newGuest);
                 } else {
                     // All entered data is valid.
-                    DAOFactory.getDAOGuest().insertNewGuest(newGuest);
+                    DaoFactory.getDAOGuest().insertNewGuest(newGuest);
                     wrapper.setRequestAttribute("login", login);
                     wrapper.setRequestAttribute("result", "guest inserted");
                 }
             }
         }
-        return URNsGetter.getInstance().getURN(URNsGetter.REGISTRATION_PAGE);
+        return UrnGetter.getInstance().getUrn(UrnGetter.REGISTRATION_PAGE);
     }
 }

@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import ua.fantotsy.commands.RegistrationPageCommand;
 import ua.fantotsy.controllers.SessionRequestWrapper;
-import ua.fantotsy.utils.URNsGetter;
+import ua.fantotsy.utils.UrnGetter;
 import ua.fantotsy.utils.Utils;
 
 import javax.servlet.ServletException;
@@ -73,6 +73,6 @@ public class RegistrationPageCommandTest extends Assert {
         SessionRequestWrapper wrapper = new SessionRequestWrapper(requestParameters, sessionAttributes);
         RegistrationPageCommand command = new RegistrationPageCommand();
         String result = command.execute(wrapper);
-        assertEquals(URNsGetter.getInstance().getURN(URNsGetter.REGISTRATION_PAGE), result);
+        assertEquals(UrnGetter.getInstance().getUrn(UrnGetter.REGISTRATION_PAGE), result);
     }
 }

@@ -1,7 +1,7 @@
 package ua.fantotsy.filters;
 
 import ua.fantotsy.utils.ActionsGetter;
-import ua.fantotsy.utils.URNsGetter;
+import ua.fantotsy.utils.UrnGetter;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
@@ -31,31 +31,31 @@ public class AuthorizationFilter implements Filter {
             add(ActionsGetter.getInstance().getAction(ActionsGetter.RESERVATIONS));
             add(ActionsGetter.getInstance().getAction(ActionsGetter.APARTMENTS));
             add(ActionsGetter.getInstance().getAction(ActionsGetter.GUESTS));
-            add(URNsGetter.getInstance().getURN(URNsGetter.ADMIN_ICON_IMG));
+            add(UrnGetter.getInstance().getUrn(UrnGetter.ADMIN_ICON_IMG));
         }};
         guestURIs = new ArrayList<String>() {{
             add(ActionsGetter.getInstance().getAction(ActionsGetter.GUEST));
             add(ActionsGetter.getInstance().getAction(ActionsGetter.BOOKING));
             add(ActionsGetter.getInstance().getAction(ActionsGetter.ORDER_VALID));
-            add(URNsGetter.getInstance().getURN(URNsGetter.USER_ICON_IMG));
+            add(UrnGetter.getInstance().getUrn(UrnGetter.USER_ICON_IMG));
         }};
         nonUserURIs = new ArrayList<String>() {{
             add(ActionsGetter.getInstance().getAction(ActionsGetter.ROOT));
             add(ActionsGetter.getInstance().getAction(ActionsGetter.INDEX));
             add(ActionsGetter.getInstance().getAction(ActionsGetter.REGISTRATION));
-            add(URNsGetter.getInstance().getURN(URNsGetter.INDEX_CSS));
-            add(URNsGetter.getInstance().getURN(URNsGetter.REGISTRATION_CSS));
+            add(UrnGetter.getInstance().getUrn(UrnGetter.INDEX_CSS));
+            add(UrnGetter.getInstance().getUrn(UrnGetter.REGISTRATION_CSS));
         }};
         generalURIs = new ArrayList<String>() {{
             add(ActionsGetter.getInstance().getAction(ActionsGetter.MAIN));
-            add(URNsGetter.getInstance().getURN(URNsGetter.GUEST_CSS));
-            add(URNsGetter.getInstance().getURN(URNsGetter.ADMIN_CSS));
-            add(URNsGetter.getInstance().getURN(URNsGetter.ERROR_CSS));
-            add(URNsGetter.getInstance().getURN(URNsGetter.SAD_CAT_ERROR_IMG));
-            add(URNsGetter.getInstance().getURN(URNsGetter.ENGLISH_LANGUAGE_IMG));
-            add(URNsGetter.getInstance().getURN(URNsGetter.UKRAINIAN_LANGUAGE_IMG));
-            add(URNsGetter.getInstance().getURN(URNsGetter.HEADER_CSS));
-            add(URNsGetter.getInstance().getURN(URNsGetter.FAVICON_ICO));
+            add(UrnGetter.getInstance().getUrn(UrnGetter.GUEST_CSS));
+            add(UrnGetter.getInstance().getUrn(UrnGetter.ADMIN_CSS));
+            add(UrnGetter.getInstance().getUrn(UrnGetter.ERROR_CSS));
+            add(UrnGetter.getInstance().getUrn(UrnGetter.SAD_CAT_ERROR_IMG));
+            add(UrnGetter.getInstance().getUrn(UrnGetter.ENGLISH_LANGUAGE_IMG));
+            add(UrnGetter.getInstance().getUrn(UrnGetter.UKRAINIAN_LANGUAGE_IMG));
+            add(UrnGetter.getInstance().getUrn(UrnGetter.HEADER_CSS));
+            add(UrnGetter.getInstance().getUrn(UrnGetter.FAVICON_ICO));
         }};
     }
 
@@ -73,14 +73,14 @@ public class AuthorizationFilter implements Filter {
                     chain.doFilter(request, response);
                 } else {
                     System.out.println("error1");
-                    request.getRequestDispatcher(URNsGetter.getInstance().getURN(URNsGetter.ERROR_PAGE)).forward(request, response);
+                    request.getRequestDispatcher(UrnGetter.getInstance().getUrn(UrnGetter.ERROR_PAGE)).forward(request, response);
                 }
             } else if (adminURIs.contains(uriPath)) {
                 if (role != null && role.equals("admin")) {
                     chain.doFilter(request, response);
                 } else {
                     System.out.println("error2");
-                    request.getRequestDispatcher(URNsGetter.getInstance().getURN(URNsGetter.ERROR_PAGE)).forward(request, response);
+                    request.getRequestDispatcher(UrnGetter.getInstance().getUrn(UrnGetter.ERROR_PAGE)).forward(request, response);
                 }
             } else if (nonUserURIs.contains(uriPath)) {
                 if (role == null || request.getParameter("logout") != null) {
@@ -96,11 +96,11 @@ public class AuthorizationFilter implements Filter {
                 chain.doFilter(request, response);
             } else {
                 System.out.println("error3");
-                request.getRequestDispatcher(URNsGetter.getInstance().getURN(URNsGetter.ERROR_PAGE)).forward(request, response);
+                request.getRequestDispatcher(UrnGetter.getInstance().getUrn(UrnGetter.ERROR_PAGE)).forward(request, response);
             }
         } else {
             System.out.println("error4");
-            request.getRequestDispatcher(URNsGetter.getInstance().getURN(URNsGetter.ERROR_PAGE)).forward(request, response);
+            request.getRequestDispatcher(UrnGetter.getInstance().getUrn(UrnGetter.ERROR_PAGE)).forward(request, response);
         }
     }
 

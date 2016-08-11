@@ -2,7 +2,7 @@ package ua.fantotsy.DAOs;
 
 import org.apache.log4j.Logger;
 import ua.fantotsy.datasource.ConnectionPool;
-import ua.fantotsy.utils.SQLQueriesGetter;
+import ua.fantotsy.utils.SqlQueriesGetter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -19,19 +19,19 @@ import java.util.Map;
  * @author fantotsy
  * @version 1.0
  */
-public class DAOApartment implements IDAOApartment {
+public class ApartmentDao implements IApartmentDao {
 
     @Override
     public Map<Integer, Integer> getNumbersOfApartmentsGroupedByCategories() {
         Map<Integer, Integer> quantityOfApartmentsGroupedByCategories = new HashMap<>();
         try (Connection connection = ConnectionPool.getInstance().getConnection();
-             PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_NUMBERS_OF_APARTMENTS_GROUPED_BY_CATEGORIES));
+             PreparedStatement ps = connection.prepareStatement(SqlQueriesGetter.getInstance().getSQLQuery(SqlQueriesGetter.GET_NUMBERS_OF_APARTMENTS_GROUPED_BY_CATEGORIES));
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
                 quantityOfApartmentsGroupedByCategories.put(rs.getInt("category_id"), rs.getInt("number_of_apartments"));
             }
         } catch (SQLException e) {
-            Logger logger = Logger.getLogger(DAOApartment.class.getName());
+            Logger logger = Logger.getLogger(ApartmentDao.class.getName());
             logger.error(e);
         }
         return quantityOfApartmentsGroupedByCategories;
@@ -41,12 +41,12 @@ public class DAOApartment implements IDAOApartment {
     public int addApartment(int apartmentNumber, int category) {
         int result = 0;
         try (Connection connection = ConnectionPool.getInstance().getConnection();
-             PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.ADD_APARTMENT))) {
+             PreparedStatement ps = connection.prepareStatement(SqlQueriesGetter.getInstance().getSQLQuery(SqlQueriesGetter.ADD_APARTMENT))) {
             ps.setInt(1, apartmentNumber);
             ps.setInt(2, category);
             result = ps.executeUpdate();
         } catch (SQLException e) {
-            Logger logger = Logger.getLogger(DAOApartment.class.getName());
+            Logger logger = Logger.getLogger(ApartmentDao.class.getName());
             logger.error(e);
         }
         return result;
@@ -56,11 +56,11 @@ public class DAOApartment implements IDAOApartment {
     public int removeApartment(int apartmentNumber) {
         int result = 0;
         try (Connection connection = ConnectionPool.getInstance().getConnection();
-             PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.REMOVE_APARTMENT))) {
+             PreparedStatement ps = connection.prepareStatement(SqlQueriesGetter.getInstance().getSQLQuery(SqlQueriesGetter.REMOVE_APARTMENT))) {
             ps.setInt(1, apartmentNumber);
             result = ps.executeUpdate();
         } catch (SQLException e) {
-            Logger logger = Logger.getLogger(DAOApartment.class.getName());
+            Logger logger = Logger.getLogger(ApartmentDao.class.getName());
             logger.error(e);
         }
         return result;
@@ -70,7 +70,7 @@ public class DAOApartment implements IDAOApartment {
     public Map<Integer, Integer> getAvailableApartments(String arrival, String departure, List<String> types, List<String> capacities) {
         Map<Integer, Integer> result = new HashMap<>();
         try (Connection connection = ConnectionPool.getInstance().getConnection();
-             PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_AVAILABLE_APARTMENTS))) {
+             PreparedStatement ps = connection.prepareStatement(SqlQueriesGetter.getInstance().getSQLQuery(SqlQueriesGetter.GET_AVAILABLE_APARTMENTS))) {
             ps.setString(1, arrival);
             ps.setString(2, arrival);
             ps.setString(3, departure);
@@ -90,7 +90,7 @@ public class DAOApartment implements IDAOApartment {
             }
             rs.close();
         } catch (SQLException e) {
-            Logger logger = Logger.getLogger(DAOApartment.class.getName());
+            Logger logger = Logger.getLogger(ApartmentDao.class.getName());
             logger.error(e);
         }
         return result;
@@ -100,13 +100,13 @@ public class DAOApartment implements IDAOApartment {
     public Map<Integer, Integer> getAllApartmentNumbers() {
         Map<Integer, Integer> listOfApartments = new HashMap<>();
         try (Connection connection = ConnectionPool.getInstance().getConnection();
-             PreparedStatement ps = connection.prepareStatement(SQLQueriesGetter.getInstance().getSQLQuery(SQLQueriesGetter.GET_ALL_APARTMENT_NUMBERS));
+             PreparedStatement ps = connection.prepareStatement(SqlQueriesGetter.getInstance().getSQLQuery(SqlQueriesGetter.GET_ALL_APARTMENT_NUMBERS));
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
                 listOfApartments.put(rs.getInt("apartment_id"), rs.getInt("category_id"));
             }
         } catch (SQLException e) {
-            Logger logger = Logger.getLogger(DAOApartment.class.getName());
+            Logger logger = Logger.getLogger(ApartmentDao.class.getName());
             logger.error(e);
         }
         return listOfApartments;

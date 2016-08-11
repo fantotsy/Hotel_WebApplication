@@ -3,7 +3,7 @@ package ua.fantotsy.DAOs;
 import java.util.List;
 import java.util.Map;
 
-public interface IDAOApartment {
+public interface IApartmentDao {
     Map<Integer, Integer> getNumbersOfApartmentsGroupedByCategories();
 
     int addApartment(int category, int apartmentNumber);

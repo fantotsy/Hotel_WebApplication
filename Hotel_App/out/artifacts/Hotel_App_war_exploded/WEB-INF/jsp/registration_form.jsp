@@ -62,8 +62,6 @@
         </div>
         <br/>
         <fmt:message var="register_button" key="register_button" bundle="${registration}"/>
-        <button type="submit" name="submit">${register_button}</button>
-        <fmt:message var="reset_button" key="reset_button" bundle="${registration}"/>
-        <button type="reset" name="reset">${reset_button}</button>
+        <button type="submit" name="submit" id="sign_up_button">${register_button}</button>
     </form>
 </div>

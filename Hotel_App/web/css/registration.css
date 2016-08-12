@@ -34,11 +34,11 @@ p {
     margin-bottom: 5px;
 }
 
-input[type="text"], input[type="password"] {
+.row input {
     width: 380px;
     height: 30px;
     padding: 0 5px;
-    font: 15px "Time New Roman", Verdana, Arial, sans-serif;
+    font: 15px "Times New Roman", Verdana, Arial, sans-serif;
     color: #555555;;
     border: 1px solid #b6b6b6;
 }
@@ -51,24 +51,12 @@ button {
 }
 
 button:hover {
-    background: #D8FFFF;
+    background: #F8F8F8;
 }
 
 span {
     color: #F91F1F;
     font-size: 15px;
-}
-
-#loginExists {
-    margin-left: 180px;
-}
-
-#differentPasswords {
-    margin-left: 110px;
-}
-
-#emptyData {
-    margin-left: 40px;
 }
 
 #back_button {
@@ -124,4 +112,9 @@ span {
 #wrapper {
     width: 60%;
     margin: auto;
+}
+
+#sign_up_button {
+    font-size: 18px;
+    width: 100%;
 }

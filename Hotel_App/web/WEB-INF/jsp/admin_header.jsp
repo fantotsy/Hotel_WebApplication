@@ -6,6 +6,6 @@
     <form action="/index" method="post">
         <fmt:message var="logout_button_value" key="logout_button" bundle="${main_admin}"/>
         <input type="hidden" name="logout" value="true"/>
-        <input type="submit" name="logout" value="${logout_button_value}" id="logout"/>
+        <button type="submit" name="logout" id="logout">${logout_button_value}</button>
     </form>
 </div>

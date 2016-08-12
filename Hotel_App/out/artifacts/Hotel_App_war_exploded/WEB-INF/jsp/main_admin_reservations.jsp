@@ -19,7 +19,7 @@
             <div id="table_wrapper">
                 <form action="/admin" method="post">
                     <fmt:message var="back_button" key="back_button" bundle="${reservations}"/>
-                    <input type="submit" name="submit" value="${back_button}" id="back"/>
+                    <button type="submit" name="back_button" id="back">${back_button}</button>
                 </form>
                 <table id="info_table">
                     <tr>

@@ -22,7 +22,7 @@
                 <div id="back_button">
                     <form action="/guest" method="post">
                         <fmt:message var="back_button" key="back_button" bundle="${booking}"/>
-                        <button type="submit" name="submit" id="back">${back_button}</button>
+                        <button type="submit" name="back_button" id="back">${back_button}</button>
                     </form>
                 </div>
                 <c:choose>
@@ -60,7 +60,7 @@
                                                 </c:forEach>
                                             </select>
                                             <fmt:message var="book_button" key="book_button" bundle="${booking}"/>
-                                            <input type="submit" name="book_room" value="${book_button}" id="book_room"/>
+                                            <button type="submit" name="book_room" id="book_room">${book_button}</button>
                                         </form>
                                     </td>
                                 </tr>
@@ -68,9 +68,11 @@
                         </table>
                     </c:when>
                     <c:otherwise>
-                        <fmt:message key="empty_table" bundle="${booking}"/>
-                        <br/>
-                        <fmt:message key="empty_table_advice" bundle="${booking}"/>
+                        <div id="empty_table_information">
+                            <fmt:message key="empty_table" bundle="${booking}"/>
+                            <br/>
+                            <fmt:message key="empty_table_advice" bundle="${booking}"/>
+                        </div>
                     </c:otherwise>
                 </c:choose>
             </div>

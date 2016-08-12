@@ -21,7 +21,7 @@
                 <div id="back_button">
                     <form action="/admin" method="post">
                         <fmt:message var="back_button" key="back_button" bundle="${apartments}"/>
-                        <button type="submit" name="submit" id="back">${back_button}</button>
+                        <button type="submit" name="back_button" id="back">${back_button}</button>
                     </form>
                 </div>
                 <table id="info_table">
@@ -51,9 +51,9 @@
                                     <input type="text" pattern="[0-9]{3}" name="apartment_number"
                                            placeholder="${apartment_placeholder}" required/>
                                     <fmt:message var="add_button" key="add_button" bundle="${apartments}"/>
-                                    <input type="submit" name="add_apartment" value="${add_button}" id="add_room"/>
+                                    <button type="submit" name="add_apartment" id="add_room">${add_button}</button>
                                     <fmt:message var="delete_button" key="delete_button" bundle="${apartments}"/>
-                                    <input type="submit" name="remove_apartment" value="${delete_button}" id="remove_room"/>
+                                    <button type="submit" name="remove_apartment" id="remove_room">${delete_button}</button>
                                 </form>
                             </td>
                         </tr>

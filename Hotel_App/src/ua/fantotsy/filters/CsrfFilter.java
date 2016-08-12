@@ -19,18 +19,24 @@ public class CsrfFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpSession session = httpRequest.getSession(true);
-        String sessionId = session.getId();
-        String encryptedSessionId = Utils.encryptionMD5(sessionId);
-        String antiCsrfToken = httpRequest.getParameter("anti_csrf_token");
-
-        if (antiCsrfToken != null && encryptedSessionId != null && encryptedSessionId.equals(antiCsrfToken)) {
+        // In case of '/guest' URN it is needed to check whether guest came from booking page.
+        // If yes - CSRF protection is not needed.
+        String dateChosen = (String) session.getAttribute("date_chosen");
+        if (dateChosen != null) {
             chain.doFilter(request, response);
         } else {
-            Logger logger = Logger.getLogger(CsrfFilter.class.getName());
-            logger.warn("Potential CSRF detected!");
-            request.getRequestDispatcher(UrnGetter.getInstance().getUrn(UrnGetter.ERROR_PAGE)).forward(request, response);
-        }
+            String sessionId = session.getId();
+            String encryptedSessionId = Utils.encryptionMD5(sessionId);
+            String antiCsrfToken = httpRequest.getParameter("anti_csrf_token");
 
+            if (antiCsrfToken != null && encryptedSessionId != null && encryptedSessionId.equals(antiCsrfToken)) {
+                chain.doFilter(request, response);
+            } else {
+                Logger logger = Logger.getLogger(CsrfFilter.class.getName());
+                logger.warn("Potential CSRF detected!");
+                request.getRequestDispatcher(UrnGetter.getInstance().getUrn(UrnGetter.ERROR_PAGE)).forward(request, response);
+            }
+        }
     }
 
     @Override

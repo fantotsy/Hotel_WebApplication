@@ -41,7 +41,7 @@ table select {
     float: left;
 }
 
-table input[type=submit] {
+table button {
     width: 150px;
     height: 50px;
     margin: 10px 10px;
@@ -86,10 +86,8 @@ header {
 }
 
 #order_form {
-    /*width: 1000px;*/
     padding: 10px;
     background: #f0f0f0;
-    /*margin-left: 160px;*/
 }
 
 #order_form * {
@@ -102,10 +100,8 @@ header {
 }
 
 #cancel_reservation {
-    padding: 10px 10px;
+    font-size: 18px;
     border: none;
-    color: #555555;
-    cursor: pointer;
 }
 
 #wrapper {
@@ -125,7 +121,7 @@ header {
 #search {
     margin-top: -30px;
     font-size: 28px;
-    border-radius: 50px;
+    border-radius: 40px;
     border: none;
 }
 
@@ -133,7 +129,7 @@ header {
     color: #555555;
     cursor: pointer;
     float: right;
-    padding: 20px 50px;
+    padding: 15px 30px;
 }
 
 #order_form {
@@ -168,6 +164,7 @@ h1 {
 }
 
 #booking_wrapper {
+    font-size: 30px;
     width: 860px;
     margin: auto;
 }
@@ -178,4 +175,14 @@ h1 {
 
 #booking_form {
     width: 40%;
+}
+
+button:hover {
+    background: #F8F8F8;
+}
+
+#empty_table_information {
+    padding: 20px;
+    text-align: center;
+    background: #D8FFFF;
 }

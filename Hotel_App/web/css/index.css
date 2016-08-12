@@ -15,18 +15,18 @@ body {
     padding: 30px;
 }
 
-#header {
+header {
     padding: 10px;
     margin: 10px;
 }
 
-#signin_wrapper {
+#sign_in_wrapper {
     margin: 10px 100px;
     width: 500px;
     background: #f0f0f0;
 }
 
-.signin_data {
+.sign_in_data {
     width: 460px;
     height: 50px;
     border: thin;
@@ -37,25 +37,25 @@ body {
     font-size: 20px;
 }
 
-.submit {
+button {
     padding: 10px 30px;
     border: none;
     color: #555555;
     cursor: pointer;
 }
 
-.submit:hover {
-    background: #D8FFFF;
+button:hover {
+    background: #F8F8F8;
 }
 
-#signin_form .submit {
+#sign_in_form button {
     font-size: 18px;
     float: right;
     margin-right: 20px;
     margin-bottom: 4%;
 }
 
-#registration .submit {
+#registration button {
     width: 500px;
     height: auto;
     margin-left: 0px;
@@ -64,13 +64,17 @@ body {
 
 #adminCheckbox {
     font-size: 15px;
+    float: left;
     margin: 4%;
+}
+
+#adminCheckbox *{
     cursor: pointer;
 }
 
 #registration {
-    border-top: 3px solid #0ca3d2;
-    background: #0ca3d2;
+    border-top: 3px solid #0CA3D2;
+    background: #0CA3D2;
 }
 
 span {
@@ -98,7 +102,7 @@ h2 {
 
 h3 {
     padding: 20px;
-    border-bottom: 3px solid #0ca3d2;
+    border-bottom: 3px solid #0CA3D2;
     color: #26BDEC;
     text-align: center;
     font-size: 25px;

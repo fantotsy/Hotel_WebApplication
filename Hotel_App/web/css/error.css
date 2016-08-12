@@ -36,10 +36,6 @@ h1 {
 }
 
 #wrapper {
-    /*background: url(../images/sad_cat_error.jpg) right bottom;*/
-    /*background-repeat: no-repeat;*/
-    /*background-size: cover;*/
-    /*background-position: 100% 100%;*/
     max-width: 1388px;
     margin: auto;
 }

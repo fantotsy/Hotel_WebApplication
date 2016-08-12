@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2e16aee2-7e83-43c1-ba10-4202e19dd46a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Hotel_App/DAOs/GetAvailableApartmentsTest$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/Hotel_App/DAOs/GetAvailableApartmentsTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ua/fantotsy/tests/DAOs/GetAvailableApartmentsTest.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/StartPageCommand.class" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/commands/StartPageCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/StartPageCommand.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/commands/StartPageCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/jsp/registration.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/jsp/registration.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/commands/ApartmentsPageCommand.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/commands/ApartmentsPageCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/commands/CheckOrderDataCommand.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/commands/CheckOrderDataCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/commands/GuestBookingPageCommand.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/commands/GuestBookingPageCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/commands/ReservationsPageCommand.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/commands/ReservationsPageCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/commands/StartPageCommand.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/commands/StartPageCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/controllers/ServletController.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/controllers/ServletController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/filters/CsrfFilter.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/filters/CsrfFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ua/fantotsy/utils/Utils.java" afterPath="$PROJECT_DIR$/src/ua/fantotsy/utils/Utils.java" />
-    </list>
+    <list default="true" id="2e16aee2-7e83-43c1-ba10-4202e19dd46a" name="Default" comment="" />
     <ignored path="Hotel_App.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -954,7 +938,7 @@
       <workItem from="1470941136690" duration="4606000" />
       <workItem from="1470988412008" duration="16300000" />
       <workItem from="1471006067054" duration="17024000" />
-      <workItem from="1471034019255" duration="810000" />
+      <workItem from="1471034019255" duration="937000" />
     </task>
     <servers />
   </component>
@@ -991,7 +975,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="354006000" />
+    <option name="totallyTimeSpent" value="354133000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1003,7 +987,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />

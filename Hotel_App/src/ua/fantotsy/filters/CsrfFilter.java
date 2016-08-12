@@ -9,6 +9,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+/**
+ * Class {@code CsrfFilter} is a filter, which is used to prevent CSRF attacks.
+ * This defense uses token, which is certain session Id encrypted by MD5.
+ *
+ * @author fantotsy
+ * @version 1.0
+ */
 public class CsrfFilter implements Filter {
 
     @Override

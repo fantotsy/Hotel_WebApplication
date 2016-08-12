@@ -27,8 +27,6 @@ public class ServletController extends HttpServlet {
      *
      * @param request  instance of {@link HttpServletRequest}.
      * @param response instance of {@link HttpServletResponse}.
-     * @throws ServletException
-     * @throws IOException
      */
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ICommand command = CommandGetter.getInstance().getCommand(request);

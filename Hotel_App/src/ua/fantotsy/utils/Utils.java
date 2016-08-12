@@ -79,7 +79,6 @@ public final class Utils {
      * from {@link ua.fantotsy.datasource.ConnectionPool}.
      *
      * @param className the name of specific class.
-     * @throws Exception
      */
     public static void setUpClass(String className) throws Exception {
         // Setup the JNDI context and the datasource

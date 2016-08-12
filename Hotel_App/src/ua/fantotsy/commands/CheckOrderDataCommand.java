@@ -24,8 +24,6 @@ public class CheckOrderDataCommand implements ICommand {
      *
      * @param wrapper session and request wrapper.
      * @return string for redirection to another page.
-     * @throws ServletException
-     * @throws IOException
      */
     @Override
     public String execute(ISessionRequestWrapper wrapper) throws ServletException, IOException {

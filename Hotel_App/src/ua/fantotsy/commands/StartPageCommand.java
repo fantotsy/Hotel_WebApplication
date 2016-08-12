@@ -41,7 +41,7 @@ public class StartPageCommand implements ICommand {
 
     private boolean isLogoutPressed(ISessionRequestWrapper wrapper) {
         String logout = wrapper.getRequestParameter("logout");
-        boolean isSessionInvalidated = wrapper.getSessionInvalidated();
+        Boolean isSessionInvalidated = wrapper.getSessionInvalidated();
         return (logout != null && !isSessionInvalidated);
     }
 

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e16aee2-7e83-43c1-ba10-4202e19dd46a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/filters/AuthorizationFilter.class" afterPath="$PROJECT_DIR$/out/artifacts/Hotel_App_war_exploded/WEB-INF/classes/ua/fantotsy/filters/AuthorizationFilter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/filters/AuthorizationFilter.class" afterPath="$PROJECT_DIR$/out/production/Hotel_App/ua/fantotsy/filters/AuthorizationFilter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -1013,7 +1014,7 @@
       <workItem from="1470921492561" duration="4572000" />
       <workItem from="1470941136690" duration="4606000" />
       <workItem from="1470988412008" duration="16300000" />
-      <workItem from="1471006067054" duration="2800000" />
+      <workItem from="1471006067054" duration="3166000" />
     </task>
     <servers />
   </component>
@@ -1050,7 +1051,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="338972000" />
+    <option name="totallyTimeSpent" value="339338000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

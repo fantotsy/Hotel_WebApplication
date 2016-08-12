@@ -26,7 +26,7 @@ public class CommandGetter {
         commands = new HashMap<String, ICommand>() {{
             put(ActionsGetter.getInstance().getAction(ActionsGetter.INDEX), new StartPageCommand());
             put(ActionsGetter.getInstance().getAction(ActionsGetter.REGISTRATION), new RegistrationPageCommand());
-            put(ActionsGetter.getInstance().getAction(ActionsGetter.MAIN), new CheckSigninDataCommand());
+            put(ActionsGetter.getInstance().getAction(ActionsGetter.MAIN), new CheckSignInDataCommand());
             put(ActionsGetter.getInstance().getAction(ActionsGetter.GUEST), new GuestMainPageCommand());
             put(ActionsGetter.getInstance().getAction(ActionsGetter.ADMIN), new AdminMainPageCommand());
             put(ActionsGetter.getInstance().getAction(ActionsGetter.APARTMENTS), new ApartmentsPageCommand());

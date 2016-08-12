@@ -16,12 +16,17 @@ import java.io.IOException;
  */
 public class AdminMainPageCommand implements ICommand {
 
+    /**
+     * Sets into session special token for CSRF protection.
+     *
+     * @param wrapper session and request wrapper.
+     * @return string for redirection to another page.
+     */
     @Override
     public String execute(ISessionRequestWrapper wrapper) throws ServletException, IOException {
         String sessionId = wrapper.getSessionId();
         String antiCsrfToken = Utils.encryptionMD5(sessionId);
         wrapper.setRequestAttribute("antiCsrfToken", antiCsrfToken);
-
         return UrnGetter.getInstance().getUrn(UrnGetter.MAIN_ADMIN_PAGE);
     }
 }

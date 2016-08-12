@@ -31,34 +31,46 @@ public class ApartmentsPageCommand implements ICommand {
      */
     @Override
     public String execute(ISessionRequestWrapper wrapper) throws ServletException, IOException {
-        String categoryId = wrapper.getRequestParameter("category_id");
-        if (categoryId != null) {
+        if (isDeleteOrAddPressed(wrapper)) {
+            String categoryId = wrapper.getRequestParameter("category_id");
             int apartmentNumber = Integer.parseInt(wrapper.getRequestParameter("apartment_number"));
             Map<Integer, Integer> mapOfApartments = DaoFactory.getDAOApartment().getAllApartmentNumbers();
-
-            Integer apartment = mapOfApartments.getOrDefault(apartmentNumber, -1);
-            // Check which button was pressed.
-            if (wrapper.getRequestParameter("add_apartment") != null) {
-                if (apartment == -1) {
+            Integer categoryIdOfApartment = mapOfApartments.get(apartmentNumber);
+            String pressedButtonName = getPressedButtonName(wrapper);
+            if (pressedButtonName.equals("add")) {
+                if (categoryIdOfApartment == null) {
                     DaoFactory.getDAOApartment().addApartment(apartmentNumber, Integer.parseInt(categoryId));
                 } else {
                     wrapper.setRequestAttribute("error", new String[]{categoryId, "current_apartment_exists"});
                 }
             }
-            if (wrapper.getRequestParameter("remove_apartment") != null) {
-                if (apartment != -1 && mapOfApartments.get(apartmentNumber) == Integer.parseInt(categoryId)) {
+            if (pressedButtonName.equals("delete")) {
+                if (categoryIdOfApartment != null && (categoryIdOfApartment == Integer.parseInt(categoryId))) {
                     DaoFactory.getDAOApartment().removeApartment(apartmentNumber);
                 } else {
                     wrapper.setRequestAttribute("error", new String[]{categoryId, "current_apartment_does_not_exist"});
                 }
             }
         }
-
         List<Category> listOfCategories = DaoFactory.getDAOCategory().getAllCategories();
-
         wrapper.setRequestAttribute("listOfCategories", listOfCategories);
         setAntiCsrfToken(wrapper);
         return UrnGetter.getInstance().getUrn(UrnGetter.MAIN_ADMIN_APARTMENTS_PAGE);
+    }
+
+    private boolean isDeleteOrAddPressed(ISessionRequestWrapper wrapper) {
+        String categoryId = wrapper.getRequestParameter("category_id");
+        return (categoryId != null);
+    }
+
+    private String getPressedButtonName(ISessionRequestWrapper wrapper) {
+        if (wrapper.getRequestParameter("add_apartment") != null) {
+            return "add";
+        } else if (wrapper.getRequestParameter("remove_apartment") != null) {
+            return "delete";
+        } else {
+            return "none";
+        }
     }
 
     private void setAntiCsrfToken(ISessionRequestWrapper wrapper) {

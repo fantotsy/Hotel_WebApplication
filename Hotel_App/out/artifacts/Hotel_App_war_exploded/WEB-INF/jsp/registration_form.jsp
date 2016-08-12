@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" errorPage="error.jsp" %>
 <div id="form">
     <h1 id="form_title"><fmt:message key="form_title" bundle="${registration}"/></h1>
     <form action="/index" method="post" id="back_button">
@@ -28,28 +29,28 @@
                 <label for="password_confirmation"><fmt:message key="password_confirmation_label"
                                                                 bundle="${registration}"/></label>
             </p>
-            <input type="password" name="password_confirmation" maxlength="60" id="password_confirmation" required/>
+            <input type="password" name="password_confirmation" maxlength="60" id="password_confirmation"
+                   required/>
         </div>
         <div class="row">
             <p>
                 <label for="name"><fmt:message key="name_label" bundle="${registration}"/></label>
             </p>
-            <input type="text" pattern="[A-Za-zА-Яa-яЄєІіЇїЙйЁё]+" name="name" maxlength="20"
-                   value="${requestScope.guest_data.name}"
-                   id="name" required/>
+            <input type="text" pattern="[A-Za-zА-Яa-яЄєІіЇїЙйЁё']+" name="name" maxlength="20"
+                   value="${requestScope.guest_data.name}" id="name" required/>
         </div>
         <div class="row">
             <p>
                 <label for="surname"><fmt:message key="surname_label" bundle="${registration}"/></label>
             </p>
-            <input type="text" pattern="[A-Za-zА-Яa-яЄєІіЇїЙйЁё]+" name="surname" maxlength="30"
+            <input type="text" pattern="[A-Za-zА-Яa-яЄєІіЇїЙйЁё']+" name="surname" maxlength="30"
                    value="${requestScope.guest_data.lastName}" id="surname" required/>
         </div>
         <div class="row">
             <p>
                 <label for="email"><fmt:message key="email_label" bundle="${registration}"/></label>
             </p>
-            <input type="text" pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
+            <input type="text" pattern="^([A-Za-z0-9_-]+\.)*[A-Za-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
                    name="email" maxlength="45" value="${requestScope.guest_data.email}" id="email" required/>
         </div>
         <div class="row">
@@ -57,8 +58,7 @@
                 <label for="phone"><fmt:message key="phone_number_label" bundle="${registration}"/></label>
             </p>
             +380<input type="text" pattern="[0-9]{9}" name="phone" maxlength="20"
-                       value="${requestScope.guest_data.phoneNumber}"
-                       id="phone" required/>
+                       value="${requestScope.guest_data.phoneNumber}" id="phone" required/>
         </div>
         <br/>
         <fmt:message var="register_button" key="register_button" bundle="${registration}"/>

@@ -6,7 +6,7 @@
 <fmt:setBundle var="guests" basename="ua.fantotsy.properties.i18n.guests"/>
 <html>
     <head>
-        <meta http-equiv="Content-Type" type="text/html; charset=utf-8"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <title><fmt:message key="title" bundle="${guests}"/></title>
         <link href="../../css/admin.css" type="text/css" rel="stylesheet"/>
     </head>

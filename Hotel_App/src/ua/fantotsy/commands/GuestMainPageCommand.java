@@ -22,35 +22,40 @@ public class GuestMainPageCommand implements ICommand {
 
     /**
      * Checks whether guest has made a cancellation of existing booking.
+     * Also {@code execute} sets into session special token for CSRF protection.
      * Then {@code execute} determines which string to return.
      *
      * @param wrapper session and request wrapper.
      * @return session and request wrapper.
-     * @throws ServletException
-     * @throws IOException
      */
     @Override
     public String execute(ISessionRequestWrapper wrapper) throws ServletException, IOException {
-        // Check whether 'Cancel' button was pressed.
-        String canceledReservationId = wrapper.getRequestParameter("reservation_id");
-        if (canceledReservationId != null) {
+        if (isCancelPressed(wrapper)) {
+            String canceledReservationId = wrapper.getRequestParameter("reservation_id");
             DaoFactory.getDAOReservation().deleteCertainReservation(Integer.parseInt(canceledReservationId));
         }
+        setInitialPageData(wrapper);
+        setAntiCsrfToken(wrapper);
+        return UrnGetter.getInstance().getUrn(UrnGetter.MAIN_GUEST_PAGE);
+    }
+
+    private boolean isCancelPressed(ISessionRequestWrapper wrapper) {
+        String canceledReservationId = wrapper.getRequestParameter("reservation_id");
+        return (canceledReservationId != null);
+    }
+
+    private void setInitialPageData(ISessionRequestWrapper wrapper) {
         wrapper.setSessionAttribute("date_chosen", null);
         String[] dateLimits = Utils.getDateLimits();
         List<String> listOfTypes = DaoFactory.getDAOCategory().getAllTypes();
         List<Integer> listOfCapacities = DaoFactory.getDAOCategory().getAllCapacities();
         Guest certainGuest = (Guest) wrapper.getSessionAttribute("guestInfo");
         List<Reservation> listOfReservations = DaoFactory.getDAOReservation().getCertainReservations(certainGuest.getGuestId());
-
         wrapper.setRequestAttribute("today", dateLimits[0]);
         wrapper.setRequestAttribute("yearLater", dateLimits[1]);
         wrapper.setRequestAttribute("listOfTypes", listOfTypes);
         wrapper.setRequestAttribute("listOfCapacities", listOfCapacities);
         wrapper.setRequestAttribute("listOfReservations", listOfReservations);
-        setAntiCsrfToken(wrapper);
-
-        return UrnGetter.getInstance().getUrn(UrnGetter.MAIN_GUEST_PAGE);
     }
 
     private void setAntiCsrfToken(ISessionRequestWrapper wrapper) {

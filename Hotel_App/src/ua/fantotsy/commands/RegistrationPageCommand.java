@@ -25,14 +25,10 @@ public class RegistrationPageCommand implements ICommand {
      *
      * @param wrapper session and request wrapper.
      * @return string for redirection to another page.
-     * @throws ServletException
-     * @throws IOException
      */
     @Override
     public String execute(ISessionRequestWrapper wrapper) throws ServletException, IOException {
-        // Check whether 'register' button was pressed.
-        String register = wrapper.getRequestParameter("register");
-        if (register != null && register.equals("pressed")) {
+        if (isRegisterPressed(wrapper)) {
             String login = wrapper.getRequestParameter("login");
             String name = wrapper.getRequestParameter("name");
             String lastName = wrapper.getRequestParameter("surname");
@@ -41,24 +37,33 @@ public class RegistrationPageCommand implements ICommand {
             String email = wrapper.getRequestParameter("email");
             Guest newGuest = new Guest(name, lastName, phoneNumber, email, login, password);
             String passwordConfirmation = Utils.encryptionMD5(wrapper.getRequestParameter("password_confirmation"));
-
-            // Check whether 'login' exists and 'password' equals its 'confirmation'.
-            boolean containsLogin = DaoFactory.getDAOGuest().containsCertainLogin(login);
-            if (containsLogin) {
+            if (isLoginAlreadyExists(login)) {
                 wrapper.setRequestAttribute("error_login", "login_exists");
                 wrapper.setRequestAttribute("guest_data", newGuest);
             } else {
-                if (!password.equals(passwordConfirmation)) {
-                    wrapper.setRequestAttribute("error_password", "different_password_and_confirmation");
-                    wrapper.setRequestAttribute("guest_data", newGuest);
-                } else {
-                    // All entered data is valid.
+                if (isPasswordEqualsConfirmation(password, passwordConfirmation)) {
                     DaoFactory.getDAOGuest().insertNewGuest(newGuest);
                     wrapper.setRequestAttribute("login", login);
                     wrapper.setRequestAttribute("result", "guest inserted");
+                } else {
+                    wrapper.setRequestAttribute("error_password", "different_password_and_confirmation");
+                    wrapper.setRequestAttribute("guest_data", newGuest);
                 }
             }
         }
         return UrnGetter.getInstance().getUrn(UrnGetter.REGISTRATION_PAGE);
+    }
+
+    private boolean isRegisterPressed(ISessionRequestWrapper wrapper) {
+        String register = wrapper.getRequestParameter("register");
+        return (register != null && register.equals("pressed"));
+    }
+
+    private boolean isLoginAlreadyExists(String login) {
+        return DaoFactory.getDAOGuest().containsCertainLogin(login);
+    }
+
+    private boolean isPasswordEqualsConfirmation(String password, String passwordConfirmation) {
+        return (password != null && passwordConfirmation != null && password.equals(passwordConfirmation));
     }
 }

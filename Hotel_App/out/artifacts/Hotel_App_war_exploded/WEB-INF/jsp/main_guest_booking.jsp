@@ -7,7 +7,7 @@
 <fmt:setBundle var="booking" basename="ua.fantotsy.properties.i18n.booking"/>
 <html>
     <head>
-        <meta http-equiv="Content-Type" type="text/html; charset=utf-8"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <title><fmt:message key="title" bundle="${booking}"/></title>
         <link href="../../css/guest.css" type="text/css" rel="stylesheet"/>
         <link href="../../css/header.css" type="text/css" rel="stylesheet"/>
@@ -44,15 +44,18 @@
                                     <td>
                                         <c:if test="${requestScope.category_id == category.categoryId}">
                                             <%--The next tag prints error message if it is needed--%>
-                                            <err:error errorType="${requestScope.error}" locale="${sessionScope.locale}"/>
+                                            <err:error errorType="${requestScope.error}"
+                                                       locale="${sessionScope.locale}"/>
                                         </c:if>
                                         <form action="/order_valid" method="post">
-                                            <input type="hidden" name="anti_csrf_token" value="${requestScope.antiCsrfToken}"/>
+                                            <input type="hidden" name="anti_csrf_token"
+                                                   value="${requestScope.antiCsrfToken}"/>
                                             <input type="hidden" name="category_id" value="${category.categoryId}"/>
                                             <select name="booked_apartments[]" multiple>
-                                                <option value="default" selected disabled><fmt:message
-                                                        key="default_apartments_option"
-                                                        bundle="${booking}"/></option>
+                                                <option value="default" selected disabled>
+                                                    <fmt:message key="default_apartments_option"
+                                                                 bundle="${booking}"/>
+                                                </option>
                                                 <c:forEach items="${requestScope.listOfApartments}" var="apartment">
                                                     <c:if test="${apartment.value == category.categoryId}">
                                                         <option value="${apartment.key}">${apartment.key}</option>
@@ -60,7 +63,8 @@
                                                 </c:forEach>
                                             </select>
                                             <fmt:message var="book_button" key="book_button" bundle="${booking}"/>
-                                            <button type="submit" name="book_room" id="book_room">${book_button}</button>
+                                            <button type="submit" name="book_room"
+                                                    id="book_room">${book_button}</button>
                                         </form>
                                     </td>
                                 </tr>

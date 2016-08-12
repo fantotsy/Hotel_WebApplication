@@ -11,14 +11,13 @@ import javax.servlet.ServletException;
 import java.io.IOException;
 
 /**
- * Class {@code CheckSigninDataCommand} is a command, which implements
+ * Class {@code CheckSignInDataCommand} is a command, which implements
  * {@link ICommand} and redirects to another command or page.
  *
  * @author fantotsy
  * @version 1.0
  */
-public class CheckSigninDataCommand implements ICommand {
-
+public class CheckSignInDataCommand implements ICommand {
     private static final String ADMIN_LOGIN = "admin";
     private static final String ADMIN_PASSWORD = Utils.encryptionMD5("admin");
     private static final String ROLE_ADMIN = "admin";
@@ -31,8 +30,6 @@ public class CheckSigninDataCommand implements ICommand {
      *
      * @param wrapper session and request wrapper.
      * @return string for redirection to another page.
-     * @throws ServletException
-     * @throws IOException
      */
     @Override
     public String execute(ISessionRequestWrapper wrapper) throws ServletException, IOException {
@@ -43,35 +40,45 @@ public class CheckSigninDataCommand implements ICommand {
             } else {
                 return ActionsGetter.getInstance().getAction(ActionsGetter.GUEST);
             }
-        }
-
-        // Check whether guest is redirected from 'registration' page.
-        String justRegistered = wrapper.getRequestParameter("just_registered");
-        if (justRegistered != null && justRegistered.equals("true")) {
-            String login = wrapper.getRequestParameter("login");
-            return setSessionData(wrapper, login);
-        }
-
-        // User is not logged in. Check input data.
-        String enteredLogin = wrapper.getRequestParameter("login");
-        String enteredPassword = Utils.encryptionMD5(wrapper.getRequestParameter("password"));
-        String isAdmin = wrapper.getRequestParameter("isAdmin");
-
-        // Check whether CheckBox 'Admin' was checked.
-        if (isAdmin != null && isAdmin.equals("true")) {
-            // Check login and password for Admin.
-            if (enteredLogin.equals(ADMIN_LOGIN) && enteredPassword.equals(ADMIN_PASSWORD)) {
-                wrapper.setSessionAttribute("role", ROLE_ADMIN);
-                return ActionsGetter.getInstance().getAction(ActionsGetter.ADMIN);
+        } else {
+            if (isRedirectedFromRegistrationPage(wrapper)) {
+                String login = wrapper.getRequestParameter("login");
+                setSessionData(wrapper, login);
+                return ActionsGetter.getInstance().getAction(ActionsGetter.GUEST);
+            } else {
+                String enteredLogin = wrapper.getRequestParameter("login");
+                String enteredPassword = Utils.encryptionMD5(wrapper.getRequestParameter("password"));
+                String isAdmin = wrapper.getRequestParameter("isAdmin");
+                if (isAdminCheckboxChecked(isAdmin)) {
+                    if (isAdminCredentialsValid(enteredLogin, enteredPassword)) {
+                        wrapper.setSessionAttribute("role", ROLE_ADMIN);
+                        return ActionsGetter.getInstance().getAction(ActionsGetter.ADMIN);
+                    } else {
+                        return setErrorMessage(wrapper, "wrong_entrance_data");
+                    }
+                } else {
+                    if (isGuestCredentialsValid(enteredLogin, enteredPassword)) {
+                        setSessionData(wrapper, enteredLogin);
+                        return ActionsGetter.getInstance().getAction(ActionsGetter.GUEST);
+                    } else {
+                        return setErrorMessage(wrapper, "wrong_entrance_data");
+                    }
+                }
             }
-            return setErrorMessage(wrapper, "wrong_entrance_data");
         }
+    }
 
-        boolean containsGuest = DaoFactory.getDAOGuest().containsCertainGuest(enteredLogin, enteredPassword);
-        if (containsGuest) {
-            return setSessionData(wrapper, enteredLogin);
-        }
-        return setErrorMessage(wrapper, "wrong_entrance_data");
+    private boolean isRedirectedFromRegistrationPage(ISessionRequestWrapper wrapper) {
+        String justRegistered = wrapper.getRequestParameter("just_registered");
+        return (justRegistered != null && justRegistered.equals("true"));
+    }
+
+    private boolean isAdminCheckboxChecked(String isAdmin) {
+        return (isAdmin != null && isAdmin.equals("true"));
+    }
+
+    private boolean isAdminCredentialsValid(String login, String password) {
+        return (login.equals(ADMIN_LOGIN) && password.equals(ADMIN_PASSWORD));
     }
 
     private String setErrorMessage(ISessionRequestWrapper wrapper, String errorMessage) {
@@ -79,11 +86,13 @@ public class CheckSigninDataCommand implements ICommand {
         return UrnGetter.getInstance().getUrn(UrnGetter.START_PAGE);
     }
 
-    private String setSessionData(ISessionRequestWrapper wrapper, String login) {
-        Guest guest = DaoFactory.getDAOGuest().getCertainGuest(login);
+    private boolean isGuestCredentialsValid(String login, String password) {
+        return DaoFactory.getDAOGuest().containsCertainGuest(login, password);
+    }
 
+    private void setSessionData(ISessionRequestWrapper wrapper, String login) {
+        Guest guest = DaoFactory.getDAOGuest().getCertainGuest(login);
         wrapper.setSessionAttribute("guestInfo", guest);
         wrapper.setSessionAttribute("role", ROLE_GUEST);
-        return ActionsGetter.getInstance().getAction(ActionsGetter.GUEST);
     }
 }

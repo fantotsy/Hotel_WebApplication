@@ -7,7 +7,7 @@
 <fmt:setBundle var="apartments" basename="ua.fantotsy.properties.i18n.apartments"/>
 <html>
     <head>
-        <meta http-equiv="Content-Type" type="text/html; charset=utf-8"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <title><fmt:message key="title" bundle="${apartments}"/></title>
         <link href="../../css/admin.css" type="text/css" rel="stylesheet"/>
     </head>
@@ -41,10 +41,12 @@
                             <td>
                                 <c:if test="${requestScope.error[0] == category.categoryId}">
                                     <%--The next tag prints error message if it is needed--%>
-                                    <err:error errorType="${requestScope.error[1]}" locale="${sessionScope.locale}"/>
+                                    <err:error errorType="${requestScope.error[1]}"
+                                               locale="${sessionScope.locale}"/>
                                 </c:if>
                                 <form action="/apartments" method="post">
-                                    <input type="hidden" name="anti_csrf_token" value="${requestScope.antiCsrfToken}"/>
+                                    <input type="hidden" name="anti_csrf_token"
+                                           value="${requestScope.antiCsrfToken}"/>
                                     <input type="hidden" name="category_id" value="${category.categoryId}"/>
                                     <fmt:message var="apartment_placeholder" key="apartment_placeholder"
                                                  bundle="${apartments}"/>
@@ -53,7 +55,8 @@
                                     <fmt:message var="add_button" key="add_button" bundle="${apartments}"/>
                                     <button type="submit" name="add_apartment" id="add_room">${add_button}</button>
                                     <fmt:message var="delete_button" key="delete_button" bundle="${apartments}"/>
-                                    <button type="submit" name="remove_apartment" id="remove_room">${delete_button}</button>
+                                    <button type="submit" name="remove_apartment"
+                                            id="remove_room">${delete_button}</button>
                                 </form>
                             </td>
                         </tr>

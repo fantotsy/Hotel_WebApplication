@@ -4,7 +4,7 @@
 <fmt:setBundle var="error" basename="ua.fantotsy.properties.i18n.error"/>
 <html>
     <head>
-        <meta http-equiv="Content-Type" type="text/html; charset=utf-8"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <title><fmt:message key="title" bundle="${error}"/></title>
         <link href="../../css/error.css" type="text/css" rel="stylesheet"/>
     </head>

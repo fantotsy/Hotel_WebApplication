@@ -11,6 +11,14 @@
         <link href="../../css/registration.css" type="text/css" rel="stylesheet"/>
     </head>
     <body>
+        <%--<div class="row">--%>
+            <%--<p>--%>
+                <%--<label for="name"><fmt:message key="name_label" bundle="${registration}"/></label>--%>
+            <%--</p>--%>
+            <%--<input type="text" pattern="[A-Za-zА-Яa-яЄєІіЇїЙйЁё]+" name="name" maxlength="20"--%>
+                   <%--value="${requestScope.guest_data.name}" id="name" required/>--%>
+        <%--</div>--%>
+
         <div id="main_wrapper">
             <c:choose>
                 <c:when test="${requestScope.result == 'guest inserted'}">

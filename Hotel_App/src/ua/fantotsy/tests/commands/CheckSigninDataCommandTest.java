@@ -6,7 +6,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import ua.fantotsy.commands.CheckSigninDataCommand;
+import ua.fantotsy.commands.CheckSignInDataCommand;
 import ua.fantotsy.controllers.SessionRequestWrapper;
 import ua.fantotsy.utils.ActionsGetter;
 import ua.fantotsy.utils.UrnGetter;
@@ -70,7 +70,7 @@ public class CheckSigninDataCommandTest extends Assert {
     @Test
     public void testExecute() throws ServletException, IOException {
         SessionRequestWrapper wrapper = new SessionRequestWrapper(requestParameters, sessionAttributes);
-        CheckSigninDataCommand command = new CheckSigninDataCommand();
+        CheckSignInDataCommand command = new CheckSignInDataCommand();
         String result = command.execute(wrapper);
         assertEquals(viewPage, result);
     }

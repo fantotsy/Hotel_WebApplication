@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" errorPage="error.jsp" %>
 <div id="form">
     <h1 id="form_title"><fmt:message key="form_title" bundle="${registration}"/></h1>
     <form action="/index" method="post" id="back_button">
@@ -35,21 +36,21 @@
             <p>
                 <label for="name"><fmt:message key="name_label" bundle="${registration}"/></label>
             </p>
-            <input type="text" pattern="[A-Za-zА-Яa-яЄєІіЇїЙйЁё]+" name="name" maxlength="20"
+            <input type="text" pattern="[A-Za-zА-Яa-яЄєІіЇїЙйЁё']+" name="name" maxlength="20"
                    value="${requestScope.guest_data.name}" id="name" required/>
         </div>
         <div class="row">
             <p>
                 <label for="surname"><fmt:message key="surname_label" bundle="${registration}"/></label>
             </p>
-            <input type="text" pattern="[A-Za-zА-Яa-яЄєІіЇїЙйЁё]+" name="surname" maxlength="30"
+            <input type="text" pattern="[A-Za-zА-Яa-яЄєІіЇїЙйЁё']+" name="surname" maxlength="30"
                    value="${requestScope.guest_data.lastName}" id="surname" required/>
         </div>
         <div class="row">
             <p>
                 <label for="email"><fmt:message key="email_label" bundle="${registration}"/></label>
             </p>
-            <input type="text" pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
+            <input type="text" pattern="^([A-Za-z0-9_-]+\.)*[A-Za-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
                    name="email" maxlength="45" value="${requestScope.guest_data.email}" id="email" required/>
         </div>
         <div class="row">

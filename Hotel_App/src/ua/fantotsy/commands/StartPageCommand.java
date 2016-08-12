@@ -23,34 +23,51 @@ public class StartPageCommand implements ICommand {
      *
      * @param wrapper session and request wrapper.
      * @return string for redirection to another page.
-     * @throws ServletException
-     * @throws IOException
      */
     @Override
     public String execute(ISessionRequestWrapper wrapper) throws ServletException, IOException {
-        // Check whether 'logout' was pressed.
-        if (wrapper.getRequestParameter("logout") != null && !wrapper.getSessionInvalidated()) {
+        if (isLogoutPressed(wrapper)) {
             return wrapper.sessionInvalidate();
+        } else {
+            if (isLocaleAlreadyChosen(wrapper)) {
+                setDefaultLocale(wrapper);
+            }
+            if (isLoginIconPressed(wrapper)) {
+                setChosenLocale(wrapper);
+            }
+            return UrnGetter.getInstance().getUrn(UrnGetter.START_PAGE);
         }
+    }
 
-        // Set default locale.
-        if (wrapper.getSessionAttribute("language") == null) {
-            Locale locale = Locale.ENGLISH;
-            String language = locale.getLanguage();
-            wrapper.setSessionAttribute("locale", locale);
-            wrapper.setSessionAttribute("language", language);
-        }
+    private boolean isLogoutPressed(ISessionRequestWrapper wrapper) {
+        String logout = wrapper.getRequestParameter("logout");
+        boolean isSessionInvalidated = wrapper.getSessionInvalidated();
+        return (logout != null && !isSessionInvalidated);
+    }
 
-        // Check whether locale was changed.
+    private boolean isLocaleAlreadyChosen(ISessionRequestWrapper wrapper) {
+        return (wrapper.getSessionAttribute("language") == null);
+    }
+
+    private void setDefaultLocale(ISessionRequestWrapper wrapper) {
+        Locale locale = Locale.ENGLISH;
+        String language = locale.getLanguage();
+        wrapper.setSessionAttribute("locale", locale);
+        wrapper.setSessionAttribute("language", language);
+    }
+
+    private boolean isLoginIconPressed(ISessionRequestWrapper wrapper) {
         String languageCountry = wrapper.getRequestParameter("language");
-        if (languageCountry != null) {
-            String[] separatedLanguageCountry = languageCountry.split("_");
-            String language = separatedLanguageCountry[0];
-            String country = separatedLanguageCountry[1];
-            Locale locale = new Locale(language, country);
-            wrapper.setSessionAttribute("locale", locale);
-            wrapper.setSessionAttribute("language", language);
-        }
-        return UrnGetter.getInstance().getUrn(UrnGetter.START_PAGE);
+        return (languageCountry != null);
+    }
+
+    private void setChosenLocale(ISessionRequestWrapper wrapper) {
+        String languageCountry = wrapper.getRequestParameter("language");
+        String[] separatedLanguageCountry = languageCountry.split("_");
+        String language = separatedLanguageCountry[0];
+        String country = separatedLanguageCountry[1];
+        Locale locale = new Locale(language, country);
+        wrapper.setSessionAttribute("locale", locale);
+        wrapper.setSessionAttribute("language", language);
     }
 }

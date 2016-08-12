@@ -14,6 +14,29 @@ public class Reservation {
     private String departure;
     private Integer totalPrice;
 
+    public Reservation(Integer reservationId, Apartment apartment, String arrival, String departure, Integer totalPrice) {
+        this.reservationId = reservationId;
+        this.apartment = apartment;
+        this.arrival = arrival;
+        this.departure = departure;
+        this.totalPrice = totalPrice;
+    }
+
+    public Reservation(Guest guest, Apartment apartment, String arrival, String departure, Integer totalPrice) {
+        this.guest = guest;
+        this.apartment = apartment;
+        this.arrival = arrival;
+        this.departure = departure;
+        this.totalPrice = totalPrice;
+    }
+
+    public Reservation(Guest guest, Apartment apartment, String arrival, String departure) {
+        this.guest = guest;
+        this.apartment = apartment;
+        this.arrival = arrival;
+        this.departure = departure;
+    }
+
     public Integer getReservationId() {
         return reservationId;
     }
@@ -60,30 +83,6 @@ public class Reservation {
 
     public void setTotalPrice(Integer totalPrice) {
         this.totalPrice = totalPrice;
-    }
-
-    public Reservation(Guest guest, Apartment apartment, String arrival, String departure) {
-        this.guest = guest;
-        this.apartment = apartment;
-        this.arrival = arrival;
-        this.departure = departure;
-    }
-
-    public Reservation(Integer reservationId, Apartment apartment, String arrival, String departure, Integer totalPrice) {
-        this.reservationId = reservationId;
-        this.apartment = apartment;
-        this.arrival = arrival;
-        this.departure = departure;
-        this.totalPrice = totalPrice;
-    }
-
-    public Reservation(Guest guest, Apartment apartment, String arrival, String departure, Integer totalPrice) {
-        this.guest = guest;
-        this.apartment = apartment;
-        this.arrival = arrival;
-        this.departure = departure;
-        this.totalPrice = totalPrice;
-
     }
 
     @Override

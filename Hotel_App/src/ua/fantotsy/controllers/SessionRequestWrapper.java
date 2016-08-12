@@ -23,6 +23,27 @@ public class SessionRequestWrapper implements ISessionRequestWrapper {
     private Boolean isSessionInvalidated = false;
     private String sessionId;
 
+    public SessionRequestWrapper(HttpServletRequest request) {
+        requestParameters = new HashMap<>();
+        requestAttributes = new HashMap<>();
+        sessionAttributes = new HashMap<>();
+
+        HttpSession session = request.getSession(true);
+        sessionId = session.getId();
+        isSessionInvalidated = Boolean.parseBoolean((String) request.getAttribute("isSessionInvalidated"));
+        extractRequestParameters(request);
+        extractSessionAttributes(request);
+    }
+
+    /**
+     * Constructor for creating {@code SessionRequestWrapper} during JUnit testing.
+     */
+    public SessionRequestWrapper(HashMap<String, String[]> requestParameters, HashMap<String, Object> sessionAttributes) {
+        this.requestParameters = requestParameters;
+        this.sessionAttributes = sessionAttributes;
+        requestAttributes = new HashMap<>();
+    }
+
     @Override
     public String getSessionId() {
         return sessionId;
@@ -36,24 +57,6 @@ public class SessionRequestWrapper implements ISessionRequestWrapper {
     @Override
     public void setSessionInvalidated(Boolean sessionInvalidated) {
         isSessionInvalidated = sessionInvalidated;
-    }
-
-    public SessionRequestWrapper(HttpServletRequest request) {
-        requestParameters = new HashMap<>();
-        requestAttributes = new HashMap<>();
-        sessionAttributes = new HashMap<>();
-
-        HttpSession session = request.getSession(true);
-        sessionId = session.getId();
-        isSessionInvalidated = Boolean.parseBoolean((String) request.getAttribute("isSessionInvalidated"));
-        extractRequestParameters(request);
-        extractSessionAttributes(request);
-    }
-
-    public SessionRequestWrapper(HashMap<String, String[]> requestParameters, HashMap<String, Object> sessionAttributes) {
-        this.requestParameters = requestParameters;
-        this.sessionAttributes = sessionAttributes;
-        requestAttributes = new HashMap<>();
     }
 
     @Override
@@ -91,13 +94,13 @@ public class SessionRequestWrapper implements ISessionRequestWrapper {
     }
 
     @Override
-    public Object getSessionAttribute(String key) {
-        return sessionAttributes.get(key);
+    public void setRequestAttribute(String key, Object value) {
+        requestAttributes.put(key, value);
     }
 
     @Override
-    public void setRequestAttribute(String key, Object value) {
-        requestAttributes.put(key, value);
+    public Object getSessionAttribute(String key) {
+        return sessionAttributes.get(key);
     }
 
     @Override
@@ -105,6 +108,19 @@ public class SessionRequestWrapper implements ISessionRequestWrapper {
         sessionAttributes.put(key, value);
     }
 
+    /**
+     * Returns a specific string, which is used in {@link ServletController}
+     * to determine whether session was invalidated.
+     */
+    @Override
+    public String sessionInvalidate() {
+        return "session_invalidate";
+    }
+
+    /**
+     * Inserts attributes, added during command manipulations, into
+     * {@code request} before redirection in {@link ServletController}.
+     */
     @Override
     public void insertAttributes(HttpServletRequest request) {
         for (Map.Entry<String, Object> entry : requestAttributes.entrySet()) {
@@ -119,10 +135,5 @@ public class SessionRequestWrapper implements ISessionRequestWrapper {
             Object value = entry.getValue();
             session.setAttribute(key, value);
         }
-    }
-
-    @Override
-    public String sessionInvalidate() {
-        return "session_invalidate";
     }
 }

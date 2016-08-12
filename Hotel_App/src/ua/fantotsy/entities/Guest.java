@@ -15,6 +15,41 @@ public class Guest {
     private String login;
     private String password;
 
+    public Guest() {
+    }
+
+    public Guest(String name, String lastName, String phoneNumber, String email, String login, String password) {
+        this.name = name;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.login = login;
+        this.password = password;
+    }
+
+    public Guest(Integer guestId, String name, String lastName, String phoneNumber, String email, String login) {
+        this.guestId = guestId;
+        this.name = name;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.login = login;
+    }
+
+    public Guest(String name, String lastName, String phoneNumber, String email, String login) {
+        this.name = name;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.login = login;
+    }
+
+    public Guest(String name, String lastName, String login) {
+        this.name = name;
+        this.lastName = lastName;
+        this.login = login;
+    }
+
     public Integer getGuestId() {
         return guestId;
     }
@@ -69,43 +104,6 @@ public class Guest {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public Guest(String name, String lastName, String login) {
-        this.name = name;
-        this.lastName = lastName;
-        this.login = login;
-    }
-
-    public Guest(String name, String lastName, String phoneNumber, String email, String login) {
-        this.name = name;
-        this.lastName = lastName;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.login = login;
-    }
-
-    public Guest() {
-
-    }
-
-    public Guest(String name, String lastName, String phoneNumber,
-                 String email, String login, String password) {
-        this.name = name;
-        this.lastName = lastName;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.login = login;
-        this.password = password;
-    }
-
-    public Guest(Integer guestId, String name, String lastName, String phoneNumber, String email, String login) {
-        this.guestId = guestId;
-        this.name = name;
-        this.lastName = lastName;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.login = login;
     }
 
     @Override

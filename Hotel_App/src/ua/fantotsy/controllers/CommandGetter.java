@@ -1,5 +1,6 @@
 package ua.fantotsy.controllers;
 
+import org.apache.log4j.Logger;
 import ua.fantotsy.commands.*;
 import ua.fantotsy.utils.ActionsGetter;
 
@@ -18,6 +19,9 @@ public class CommandGetter {
     private static CommandGetter instance = null;
     private Map<String, ICommand> commands;
 
+    /**
+     * Constructor where {@code commands} map is initialized by pairs of action (URN) and command.
+     */
     private CommandGetter() {
         commands = new HashMap<String, ICommand>() {{
             put(ActionsGetter.getInstance().getAction(ActionsGetter.INDEX), new StartPageCommand());
@@ -58,8 +62,8 @@ public class CommandGetter {
 
         ICommand command = commands.get(urlPath);
         if (command == null) {
-            System.out.println("This command does not exist!");
-            return commands.get(START_PAGE);
+            Logger logger = Logger.getLogger(CommandGetter.class.getName());
+            logger.error("Unknown command was called!");
         }
 
         return command;

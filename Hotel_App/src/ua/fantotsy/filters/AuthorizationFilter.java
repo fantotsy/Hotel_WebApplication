@@ -65,21 +65,16 @@ public class AuthorizationFilter implements Filter {
         if (session != null) {
             String role = (String) session.getAttribute("role");
             String uriPath = ((HttpServletRequest) request).getRequestURI();
-            System.out.println(role);
-            System.out.println(uriPath);
             if (guestURIs.contains(uriPath)) {
-
                 if (role != null && role.equals("guest")) {
                     chain.doFilter(request, response);
                 } else {
-                    System.out.println("error1");
                     request.getRequestDispatcher(UrnGetter.getInstance().getUrn(UrnGetter.ERROR_PAGE)).forward(request, response);
                 }
             } else if (adminURIs.contains(uriPath)) {
                 if (role != null && role.equals("admin")) {
                     chain.doFilter(request, response);
                 } else {
-                    System.out.println("error2");
                     request.getRequestDispatcher(UrnGetter.getInstance().getUrn(UrnGetter.ERROR_PAGE)).forward(request, response);
                 }
             } else if (nonUserURIs.contains(uriPath)) {
@@ -95,11 +90,9 @@ public class AuthorizationFilter implements Filter {
             } else if (generalURIs.contains(uriPath)) {
                 chain.doFilter(request, response);
             } else {
-                System.out.println("error3");
                 request.getRequestDispatcher(UrnGetter.getInstance().getUrn(UrnGetter.ERROR_PAGE)).forward(request, response);
             }
         } else {
-            System.out.println("error4");
             request.getRequestDispatcher(UrnGetter.getInstance().getUrn(UrnGetter.ERROR_PAGE)).forward(request, response);
         }
     }

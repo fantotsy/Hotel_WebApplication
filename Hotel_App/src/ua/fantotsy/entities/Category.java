@@ -13,6 +13,19 @@ public class Category {
     private Integer price;
     private Integer apartments;
 
+    public Category(Integer categoryId, String type, Integer numberOfBeds, Integer price, Integer apartments) {
+        this.categoryId = categoryId;
+        this.type = type;
+        this.numberOfBeds = numberOfBeds;
+        this.price = price;
+        this.apartments = apartments;
+    }
+
+    public Category(String type, Integer numberOfBeds) {
+        this.type = type;
+        this.numberOfBeds = numberOfBeds;
+    }
+
     public Integer getCategoryId() {
         return categoryId;
     }
@@ -47,19 +60,6 @@ public class Category {
 
     public Integer getApartments() {
         return apartments;
-    }
-
-    public Category(Integer categoryId, String type, Integer numberOfBeds, Integer price, Integer apartments) {
-        this.categoryId = categoryId;
-        this.type = type;
-        this.numberOfBeds = numberOfBeds;
-        this.price = price;
-        this.apartments = apartments;
-    }
-
-    public Category(String type, Integer numberOfBeds) {
-        this.type = type;
-        this.numberOfBeds = numberOfBeds;
     }
 
     public void setApartments(Integer apartments) {

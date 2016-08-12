@@ -28,15 +28,15 @@
                 <label for="password_confirmation"><fmt:message key="password_confirmation_label"
                                                                 bundle="${registration}"/></label>
             </p>
-            <input type="password" name="password_confirmation" maxlength="60" id="password_confirmation" required/>
+            <input type="password" name="password_confirmation" maxlength="60" id="password_confirmation"
+                   required/>
         </div>
         <div class="row">
             <p>
                 <label for="name"><fmt:message key="name_label" bundle="${registration}"/></label>
             </p>
             <input type="text" pattern="[A-Za-zА-Яa-яЄєІіЇїЙйЁё]+" name="name" maxlength="20"
-                   value="${requestScope.guest_data.name}"
-                   id="name" required/>
+                   value="${requestScope.guest_data.name}" id="name" required/>
         </div>
         <div class="row">
             <p>
@@ -57,8 +57,7 @@
                 <label for="phone"><fmt:message key="phone_number_label" bundle="${registration}"/></label>
             </p>
             +380<input type="text" pattern="[0-9]{9}" name="phone" maxlength="20"
-                       value="${requestScope.guest_data.phoneNumber}"
-                       id="phone" required/>
+                       value="${requestScope.guest_data.phoneNumber}" id="phone" required/>
         </div>
         <br/>
         <fmt:message var="register_button" key="register_button" bundle="${registration}"/>

@@ -20,7 +20,7 @@
             <h1><fmt:message key="header" bundle="${booking}"/></h1>
             <div id="booking_wrapper">
                 <div id="back_button">
-                    <form action="/guest" method="post">
+                    <form action="/guest" method="get">
                         <fmt:message var="back_button" key="back_button" bundle="${booking}"/>
                         <button type="submit" name="back_button" id="back">${back_button}</button>
                     </form>

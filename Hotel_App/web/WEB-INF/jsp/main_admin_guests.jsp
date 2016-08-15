@@ -17,7 +17,7 @@
             </header>
             <h1><fmt:message key="header" bundle="${guests}"/></h1>
             <div id="table_wrapper">
-                <form action="/admin" method="post">
+                <form action="/admin" method="get">
                     <fmt:message var="back_button" key="back_button" bundle="${guests}"/>
                     <button type="submit" name="back_button" id="back">${back_button}</button>
                 </form>

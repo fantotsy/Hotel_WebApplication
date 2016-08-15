@@ -21,7 +21,7 @@
                     <h2><fmt:message key="order_header" bundle="${main_guest}"/></h2>
                     <%--The next tag prints error message if it is needed--%>
                     <err:error errorType="${requestScope.error}" locale="${sessionScope.locale}"/>
-                    <form action="/booking" method="post" class="clearfix">
+                    <form action="/booking" method="get" class="clearfix">
                         <input type="hidden" name="date_chosen" value="true"/>
                         <select name="apartment_type[]" multiple id="type_selector">
                             <option value="default" disabled selected><fmt:message key="default_type_option"

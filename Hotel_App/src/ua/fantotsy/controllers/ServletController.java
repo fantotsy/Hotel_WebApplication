@@ -12,7 +12,8 @@ import java.io.IOException;
 
 /**
  * Class {@code ServletController}, which extends {@link HttpServlet},
- * is a only one servlet, which reacts on every action from jsp pages.
+ * is an only one servlet, which reacts on every action from jsp pages.
+ * Also {@code ServletController} prevents double submit problem (after page refreshing).
  *
  * @author fantotsy
  * @version 1.0
@@ -27,8 +28,9 @@ public class ServletController extends HttpServlet {
      *
      * @param request  instance of {@link HttpServletRequest}.
      * @param response instance of {@link HttpServletResponse}.
+     * @return string for redirection to another page.
      */
-    private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private String processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ICommand command = CommandGetter.getInstance().getCommand(request);
         ISessionRequestWrapper wrapper = new SessionRequestWrapper(request);
         String viewPage = command.execute(wrapper);
@@ -40,16 +42,29 @@ public class ServletController extends HttpServlet {
         } else {
             wrapper.insertAttributes(request);
         }
-        request.getRequestDispatcher(viewPage).forward(request, response);
+        return viewPage;
     }
 
+    /**
+     * Processes post request and prevents double submit problem after refreshing page.
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        processRequest(request, response);
+        String viewPage = processRequest(request, response);
+        if (request.getRequestURI().equals(ActionsGetter.getInstance().getAction(ActionsGetter.ORDER_VALID))) {
+            if (request.getAttribute("category_id") != null) {
+                response.sendRedirect(request.getRequestURI() + "?category_id=" + request.getAttribute("category_id"));
+            } else {
+                response.sendRedirect(request.getRequestURI());
+            }
+        } else {
+            request.getRequestDispatcher(viewPage).forward(request, response);
+        }
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        processRequest(request, response);
+        String viewPage = processRequest(request, response);
+        request.getRequestDispatcher(viewPage).forward(request, response);
     }
 }

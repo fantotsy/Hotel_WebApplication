@@ -29,6 +29,7 @@ public class CsrfFilter implements Filter {
         // In case of '/guest' URN it is needed to check whether guest came from booking page.
         // If yes - CSRF protection is not needed.
         String dateChosen = (String) session.getAttribute("date_chosen");
+        System.out.println(dateChosen);
         if (dateChosen != null) {
             chain.doFilter(request, response);
         } else {

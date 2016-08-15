@@ -20,11 +20,11 @@
                     <fmt:message var="apartments_button" key="apartments_button" bundle="${main_admin}"/>
                     <button type="submit" name="delete-insert">${apartments_button}</button>
                 </form>
-                <form action="/reservations" method="post">
+                <form action="/reservations" method="get">
                     <fmt:message var="reservations_button" key="reservations_button" bundle="${main_admin}"/>
                     <button type="submit" name="get-all-reservations">${reservations_button}</button>
                 </form>
-                <form action="/guests" method="post">
+                <form action="/guests" method="get">
                     <fmt:message var="guests_button" key="guests_button" bundle="${main_admin}"/>
                     <button type="submit" name="get-guests">${guests_button}</button>
                 </form>

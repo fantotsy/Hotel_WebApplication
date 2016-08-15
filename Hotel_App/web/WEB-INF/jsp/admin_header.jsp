@@ -3,7 +3,7 @@
     <h2 id="role"><fmt:message key="role" bundle="${main_admin}"/></h2>
 </div>
 <div>
-    <form action="/index" method="post">
+    <form action="/index" method="get">
         <fmt:message var="logout_button_value" key="logout_button" bundle="${main_admin}"/>
         <input type="hidden" name="logout" value="true"/>
         <button type="submit" name="logout" id="logout">${logout_button_value}</button>

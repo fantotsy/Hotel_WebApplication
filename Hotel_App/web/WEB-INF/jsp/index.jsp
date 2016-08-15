@@ -45,9 +45,9 @@
                         <fmt:message var="sign_in_button" key="sign_in_button" bundle="${index}"/>
                         <button type="submit" name="sign_in">${sign_in_button}</button>
                     </form>
-                    <form action="/registration" method="post" id="registration">
+                    <form action="/registration" method="get" id="registration">
                         <fmt:message var="registration_button" key="registration_button" bundle="${index}"/>
-                        <button type="submit" name="register">${registration_button}</button>
+                        <button type="submit" name="register" value="true">${registration_button}</button>
                     </form>
                 </div>
             </div>

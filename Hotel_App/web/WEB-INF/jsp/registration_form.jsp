@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" errorPage="error.jsp" %>
 <div id="form">
     <h1 id="form_title"><fmt:message key="form_title" bundle="${registration}"/></h1>
-    <form action="/index" method="post" id="back_button">
+    <form action="/index" method="get" id="back_button">
         <fmt:message var="back_button" key="back_button" bundle="${registration}"/>
         <button type="submit" name="to_start_page">${back_button}</button>
     </form>

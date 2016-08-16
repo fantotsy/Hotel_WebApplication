@@ -55,9 +55,6 @@ public class ServletController extends HttpServlet {
             if (request.getAttribute("category_id") != null) {
                 response.sendRedirect(request.getRequestURI() + "?category_id=" + request.getAttribute("category_id"));
             } else {
-                if(request.getAttribute("anti_csrf_token") != null){
-
-                }
                 response.sendRedirect(request.getRequestURI());
             }
         } else {

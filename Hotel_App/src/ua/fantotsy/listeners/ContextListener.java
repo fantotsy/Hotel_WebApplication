@@ -39,7 +39,7 @@ public class ContextListener implements ServletContextListener, HttpSessionListe
     public void contextInitialized(ServletContextEvent event) {
         // Initialize log4j here.
         ServletContext context = event.getServletContext();
-        String log4jConfigFile = context.getInitParameter("log4jConfigLocaltion");
+        String log4jConfigFile = context.getInitParameter("log4jConfigLocation");
         String fullPath = context.getRealPath("") + File.separator + log4jConfigFile;
         DOMConfigurator.configure(fullPath);
     }

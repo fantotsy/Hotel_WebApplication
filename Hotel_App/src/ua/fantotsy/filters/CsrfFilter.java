@@ -35,7 +35,6 @@ public class CsrfFilter implements Filter {
             String sessionId = session.getId();
             String encryptedSessionId = Utils.encryptionMD5(sessionId);
             String antiCsrfToken = httpRequest.getParameter("anti_csrf_token");
-
             if (antiCsrfToken != null && encryptedSessionId != null && encryptedSessionId.equals(antiCsrfToken)) {
                 chain.doFilter(request, response);
             } else {

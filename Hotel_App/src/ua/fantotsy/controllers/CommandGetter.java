@@ -38,7 +38,7 @@ public class CommandGetter {
         }};
     }
 
-    public static CommandGetter getInstance() {
+    public static synchronized CommandGetter getInstance() {
         if (instance == null) {
             instance = new CommandGetter();
         }

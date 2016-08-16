@@ -9,8 +9,8 @@ import java.util.ResourceBundle;
  * @version 1.0
  */
 public final class SqlQueriesGetter {
-    private ResourceBundle resourceBundle;
     private static SqlQueriesGetter instance;
+    private ResourceBundle resourceBundle;
 
     public static final String GET_NUMBERS_OF_APARTMENTS_GROUPED_BY_CATEGORIES = "GET_NUMBERS_OF_APARTMENTS_GROUPED_BY_CATEGORIES";
     public static final String ADD_APARTMENT = "ADD_APARTMENT";
@@ -31,7 +31,7 @@ public final class SqlQueriesGetter {
     public static final String GET_ALL_RESERVATIONS_FOR_CERTAIN_GUEST = "GET_ALL_RESERVATIONS_FOR_CERTAIN_GUEST";
     public static final String REMOVE_RESERVATION = "REMOVE_RESERVATION";
 
-    public static SqlQueriesGetter getInstance() {
+    public static synchronized SqlQueriesGetter getInstance() {
         if (instance == null) {
             instance = new SqlQueriesGetter();
             instance.resourceBundle = ResourceBundle.getBundle("ua.fantotsy.properties.SQL.SQLs");

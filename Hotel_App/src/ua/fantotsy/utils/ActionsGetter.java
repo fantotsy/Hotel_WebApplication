@@ -9,8 +9,8 @@ import java.util.ResourceBundle;
  * @version 1.0
  */
 public final class ActionsGetter {
-    private ResourceBundle resourceBundle;
     private static ActionsGetter instance;
+    private ResourceBundle resourceBundle;
 
     public static final String ROOT = "ROOT";
     public static final String INDEX = "INDEX";
@@ -25,7 +25,7 @@ public final class ActionsGetter {
     public static final String ORDER_VALID = "ORDER_VALID";
     public static final String ERROR = "ERROR";
 
-    public static ActionsGetter getInstance() {
+    public static synchronized ActionsGetter getInstance() {
         if (instance == null) {
             instance = new ActionsGetter();
             instance.resourceBundle = ResourceBundle.getBundle("ua.fantotsy.properties.actions.actions");

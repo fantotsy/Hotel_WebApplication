@@ -10,8 +10,8 @@ import java.util.ResourceBundle;
  * @version 1.0
  */
 public final class UrlGetter {
-    private ResourceBundle resourceBundle;
     private static UrlGetter instance;
+    private ResourceBundle resourceBundle;
 
     public static final String START_PAGE = "START_PAGE";
     public static final String REGISTRATION_PAGE = "REGISTRATION_PAGE";
@@ -35,7 +35,7 @@ public final class UrlGetter {
     public static final String USER_ICON_IMG = "USER_ICON_IMG";
     public static final String FAVICON_ICO = "FAVICON_ICO";
 
-    public static UrlGetter getInstance() {
+    public static synchronized UrlGetter getInstance() {
         if (instance == null) {
             instance = new UrlGetter();
             instance.resourceBundle = ResourceBundle.getBundle("ua.fantotsy.properties.URL.URLs");

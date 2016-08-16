@@ -1,0 +1,126 @@
+Creating tables:
+---------------------------------------------------------------------
+CREATE TABLE `hoteldb`.`categories` (
+
+`category_id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+
+`type` VARCHAR(6) NOT NULL,
+
+`number_of_beds` INT(11) UNSIGNED NOT NULL,
+
+`price` INT(11) UNSIGNED NOT NULL,
+
+PRIMARY KEY (`category_id`),
+
+UNIQUE INDEX `category_UNIQUE` (`type` ASC, `number_of_beds` ASC))
+ENGINE = InnoDB
+
+DEFAULT CHARACTER SET = utf8;
+
+CREATE TABLE `hoteldb`.`apartments` (
+
+`apartment_id` INT(11) UNSIGNED NOT NULL,
+
+`category_id` INT(11) UNSIGNED NOT NULL,
+
+PRIMARY KEY (`apartment_id`),
+
+INDEX `categories_FK_idx` (`category_id` ASC),
+CONSTRAINT `categories_FK`
+    FOREIGN KEY (`category_id`)
+
+REFERENCES `hoteldb`.`categories` (`category_id`)
+
+ON DELETE CASCADE
+
+ON UPDATE CASCADE)
+
+ENGINE = InnoDB
+
+DEFAULT CHARACTER SET = utf8;
+
+CREATE TABLE `hoteldb`.`guests` (
+
+`guest_id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+
+`name` VARCHAR(20) NOT NULL,
+
+`last_name` VARCHAR(30) NOT NULL,
+
+`phone_number` VARCHAR(20) NOT NULL,
+
+`email` VARCHAR(45) NOT NULL,
+
+`login` VARCHAR(20) NOT NULL,
+
+`password` VARCHAR(32) NOT NULL,
+
+PRIMARY KEY (`guest_id`),
+
+UNIQUE INDEX `login_UNIQUE` (`login` ASC))
+
+ENGINE = InnoDB
+
+DEFAULT CHARACTER SET = utf8;
+
+CREATE TABLE `testdb`.`reservations` (
+
+`reservation_id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+
+`guest_id` INT(11) UNSIGNED NOT NULL,
+
+`apartment_id` INT(11) UNSIGNED NOT NULL,
+
+`arrival` DATE NOT NULL,
+
+`departure` DATE NOT NULL,
+
+`total_price` INT(11) UNSIGNED NOT NULL,
+
+PRIMARY KEY (`reservation_id`),
+
+INDEX `apartments_FK_idx` (`apartment_id` ASC),
+
+INDEX `guests_FK_idx` (`guest_id` ASC),
+
+CONSTRAINT `apartments_FK`
+
+FOREIGN KEY (`apartment_id`)
+
+REFERENCES `testdb`.`apartments` (`apartment_id`)
+
+ON DELETE CASCADE
+
+ON UPDATE CASCADE,
+
+CONSTRAINT `guests_FK`
+
+FOREIGN KEY (`guest_id`)
+
+REFERENCES `testdb`.`guests` (`guest_id`)
+
+ON DELETE CASCADE
+
+ON UPDATE CASCADE)
+
+ENGINE = InnoDB
+
+DEFAULT CHARACTER SET = utf8;
+----------------------------------------------------------------------------------
+Inserting categories:
+----------------------------------------------------------------------------------
+INSERT INTO categories (type, number_of_beds, price) VALUES ('simple', 1, 1000);
+
+INSERT INTO categories (type, number_of_beds, price) VALUES ('simple', 2, 2000);
+
+INSERT INTO categories (type, number_of_beds, price) VALUES ('simple', 3, 3000);
+
+INSERT INTO categories (type, number_of_beds, price) VALUES ('simple', 4, 4000);
+
+INSERT INTO categories (type, number_of_beds, price) VALUES ('lux', 1, 5000);
+
+INSERT INTO categories (type, number_of_beds, price) VALUES ('lux', 2, 6000);
+
+INSERT INTO categories (type, number_of_beds, price) VALUES ('lux', 3, 7000);
+
+INSERT INTO categories (type, number_of_beds, price) VALUES ('lux', 4, 8000);

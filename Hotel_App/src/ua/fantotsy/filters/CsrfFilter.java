@@ -38,9 +38,13 @@ public class CsrfFilter implements Filter {
             if (antiCsrfToken != null && encryptedSessionId != null && encryptedSessionId.equals(antiCsrfToken)) {
                 chain.doFilter(request, response);
             } else {
-                Logger logger = Logger.getLogger(CsrfFilter.class.getName());
-                logger.warn("Potential CSRF detected!");
-                request.getRequestDispatcher(UrlGetter.getInstance().getUrl(UrlGetter.ERROR_PAGE)).forward(request, response);
+                if (httpRequest.getParameter("reservation_id") == null || httpRequest.getParameter("category_id") == null) {
+                    chain.doFilter(request, response);
+                } else {
+                    Logger logger = Logger.getLogger(CsrfFilter.class.getName());
+                    logger.warn("Potential CSRF detected!");
+                    request.getRequestDispatcher(UrlGetter.getInstance().getUrl(UrlGetter.ERROR_PAGE)).forward(request, response);
+                }
             }
         }
     }

@@ -10,8 +10,7 @@
 
     <appender name="file" class="org.apache.log4j.RollingFileAppender">
         <param name="Encoding" value="UTF-8"/>
-        <param name="file"
-               value="${catalina.home}/logs/HotelAppLog.log"/>
+        <param name="file" value="${catalina.home}/logs/HotelAppLog.log"/>
         <param name="append" value="true"/>
         <param name="maxFileSize" value="10KB"/>
         <param name="maxBackupIndex" value="5"/>

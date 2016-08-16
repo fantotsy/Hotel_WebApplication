@@ -38,7 +38,7 @@ public final class UrlGetter {
     public static UrlGetter getInstance() {
         if (instance == null) {
             instance = new UrlGetter();
-            instance.resourceBundle = ResourceBundle.getBundle("ua.fantotsy.properties.URL.URNs");
+            instance.resourceBundle = ResourceBundle.getBundle("ua.fantotsy.properties.URL.URLs");
         }
         return instance;
     }

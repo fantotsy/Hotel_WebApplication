@@ -3,7 +3,7 @@ package ua.fantotsy.commands;
 import ua.fantotsy.controllers.ISessionRequestWrapper;
 import ua.fantotsy.datasource.DaoFactory;
 import ua.fantotsy.entities.Reservation;
-import ua.fantotsy.utils.UrnGetter;
+import ua.fantotsy.utils.UrlGetter;
 
 import javax.servlet.ServletException;
 import java.io.IOException;
@@ -22,6 +22,6 @@ public class ReservationsPageCommand implements ICommand {
     public String execute(ISessionRequestWrapper wrapper) throws ServletException, IOException {
         List<Reservation> listOfReservations = DaoFactory.getDAOReservation().getAllReservations();
         wrapper.setRequestAttribute("listOfReservations", listOfReservations);
-        return UrnGetter.getInstance().getUrn(UrnGetter.MAIN_ADMIN_RESERVATIONS_PAGE);
+        return UrlGetter.getInstance().getUrl(UrlGetter.MAIN_ADMIN_RESERVATIONS_PAGE);
     }
 }

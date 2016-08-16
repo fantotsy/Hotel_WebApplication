@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import ua.fantotsy.commands.StartPageCommand;
 import ua.fantotsy.controllers.SessionRequestWrapper;
-import ua.fantotsy.utils.UrnGetter;
+import ua.fantotsy.utils.UrlGetter;
 import ua.fantotsy.utils.Utils;
 
 import javax.servlet.ServletException;
@@ -52,13 +52,13 @@ public class StartPageCommandTest extends Assert {
     @Parameterized.Parameters
     public static List<Object[]> data() {
         return Arrays.asList(new Object[][]{
-                {null, null, null, false, UrnGetter.getInstance().getUrn(UrnGetter.START_PAGE)},
-                {null, null, null, null, UrnGetter.getInstance().getUrn(UrnGetter.START_PAGE)},
-                {"ua", null, null, null, UrnGetter.getInstance().getUrn(UrnGetter.START_PAGE)},
-                {"en", null, null, null, UrnGetter.getInstance().getUrn(UrnGetter.START_PAGE)},
-                {null, null, "ua_UA", null, UrnGetter.getInstance().getUrn(UrnGetter.START_PAGE)},
-                {null, null, "en_US", false, UrnGetter.getInstance().getUrn(UrnGetter.START_PAGE)},
-                {null, null, null, true, UrnGetter.getInstance().getUrn(UrnGetter.START_PAGE)},
+                {null, null, null, false, UrlGetter.getInstance().getUrl(UrlGetter.START_PAGE)},
+                {null, null, null, null, UrlGetter.getInstance().getUrl(UrlGetter.START_PAGE)},
+                {"ua", null, null, null, UrlGetter.getInstance().getUrl(UrlGetter.START_PAGE)},
+                {"en", null, null, null, UrlGetter.getInstance().getUrl(UrlGetter.START_PAGE)},
+                {null, null, "ua_UA", null, UrlGetter.getInstance().getUrl(UrlGetter.START_PAGE)},
+                {null, null, "en_US", false, UrlGetter.getInstance().getUrl(UrlGetter.START_PAGE)},
+                {null, null, null, true, UrlGetter.getInstance().getUrl(UrlGetter.START_PAGE)},
                 {null, "true", null, false, "session_invalidate"}
 
         });

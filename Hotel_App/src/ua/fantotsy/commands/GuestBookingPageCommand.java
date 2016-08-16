@@ -6,7 +6,7 @@ import ua.fantotsy.entities.Apartment;
 import ua.fantotsy.entities.Category;
 import ua.fantotsy.entities.Guest;
 import ua.fantotsy.entities.Reservation;
-import ua.fantotsy.utils.UrnGetter;
+import ua.fantotsy.utils.UrlGetter;
 
 import javax.servlet.ServletException;
 import java.io.IOException;
@@ -58,6 +58,6 @@ public class GuestBookingPageCommand implements ICommand {
         wrapper.setRequestAttribute("listOfCategories", listOfCategories);
         wrapper.setRequestAttribute("listOfApartments", listOfApartments);
 
-        return UrnGetter.getInstance().getUrn(UrnGetter.MAIN_GUEST_BOOKING_PAGE);
+        return UrlGetter.getInstance().getUrl(UrlGetter.MAIN_GUEST_BOOKING_PAGE);
     }
 }

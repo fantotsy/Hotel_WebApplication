@@ -1,7 +1,7 @@
 package ua.fantotsy.filters;
 
 import org.apache.log4j.Logger;
-import ua.fantotsy.utils.UrnGetter;
+import ua.fantotsy.utils.UrlGetter;
 import ua.fantotsy.utils.Utils;
 
 import javax.servlet.*;
@@ -26,7 +26,7 @@ public class CsrfFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpSession session = httpRequest.getSession(true);
-        // In case of '/guest' URN it is needed to check whether guest came from booking page.
+        // In case of '/guest' URL it is needed to check whether guest came from booking page.
         // If yes - CSRF protection is not needed.
         String dateChosen = (String) session.getAttribute("date_chosen");
         if (dateChosen != null) {
@@ -41,7 +41,7 @@ public class CsrfFilter implements Filter {
             } else {
                 Logger logger = Logger.getLogger(CsrfFilter.class.getName());
                 logger.warn("Potential CSRF detected!");
-                request.getRequestDispatcher(UrnGetter.getInstance().getUrn(UrnGetter.ERROR_PAGE)).forward(request, response);
+                request.getRequestDispatcher(UrlGetter.getInstance().getUrl(UrlGetter.ERROR_PAGE)).forward(request, response);
             }
         }
     }

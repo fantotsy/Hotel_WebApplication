@@ -3,7 +3,7 @@ package ua.fantotsy.commands;
 import ua.fantotsy.controllers.ISessionRequestWrapper;
 import ua.fantotsy.datasource.DaoFactory;
 import ua.fantotsy.entities.Category;
-import ua.fantotsy.utils.UrnGetter;
+import ua.fantotsy.utils.UrlGetter;
 
 import javax.servlet.ServletException;
 import java.io.IOException;
@@ -51,7 +51,7 @@ public class ApartmentsPageCommand implements ICommand {
         }
         List<Category> listOfCategories = DaoFactory.getDAOCategory().getAllCategories();
         wrapper.setRequestAttribute("listOfCategories", listOfCategories);
-        return UrnGetter.getInstance().getUrn(UrnGetter.MAIN_ADMIN_APARTMENTS_PAGE);
+        return UrlGetter.getInstance().getUrl(UrlGetter.MAIN_ADMIN_APARTMENTS_PAGE);
     }
 
     private boolean isDeleteOrAddPressed(ISessionRequestWrapper wrapper) {

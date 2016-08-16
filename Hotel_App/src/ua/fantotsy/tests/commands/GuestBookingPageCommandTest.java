@@ -9,7 +9,7 @@ import org.junit.runners.Parameterized;
 import ua.fantotsy.commands.GuestBookingPageCommand;
 import ua.fantotsy.controllers.SessionRequestWrapper;
 import ua.fantotsy.entities.Guest;
-import ua.fantotsy.utils.UrnGetter;
+import ua.fantotsy.utils.UrlGetter;
 import ua.fantotsy.utils.Utils;
 
 import javax.servlet.ServletException;
@@ -72,6 +72,6 @@ public class GuestBookingPageCommandTest extends Assert {
         SessionRequestWrapper wrapper = new SessionRequestWrapper(requestParameters, sessionAttributes);
         GuestBookingPageCommand command = new GuestBookingPageCommand();
         String result = command.execute(wrapper);
-        assertEquals(UrnGetter.getInstance().getUrn(UrnGetter.MAIN_GUEST_BOOKING_PAGE), result);
+        assertEquals(UrlGetter.getInstance().getUrl(UrlGetter.MAIN_GUEST_BOOKING_PAGE), result);
     }
 }

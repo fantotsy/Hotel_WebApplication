@@ -4,7 +4,7 @@ import ua.fantotsy.controllers.ISessionRequestWrapper;
 import ua.fantotsy.datasource.DaoFactory;
 import ua.fantotsy.entities.Guest;
 import ua.fantotsy.utils.ActionsGetter;
-import ua.fantotsy.utils.UrnGetter;
+import ua.fantotsy.utils.UrlGetter;
 import ua.fantotsy.utils.Utils;
 
 import javax.servlet.ServletException;
@@ -84,7 +84,7 @@ public class CheckSignInDataCommand implements ICommand {
 
     private String setErrorMessage(ISessionRequestWrapper wrapper, String errorMessage) {
         wrapper.setRequestAttribute("error", errorMessage);
-        return UrnGetter.getInstance().getUrn(UrnGetter.START_PAGE);
+        return UrlGetter.getInstance().getUrl(UrlGetter.START_PAGE);
     }
 
     private boolean isGuestCredentialsValid(String login, String password) {

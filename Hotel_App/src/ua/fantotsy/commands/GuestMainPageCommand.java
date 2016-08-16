@@ -4,7 +4,7 @@ import ua.fantotsy.controllers.ISessionRequestWrapper;
 import ua.fantotsy.datasource.DaoFactory;
 import ua.fantotsy.entities.Guest;
 import ua.fantotsy.entities.Reservation;
-import ua.fantotsy.utils.UrnGetter;
+import ua.fantotsy.utils.UrlGetter;
 import ua.fantotsy.utils.Utils;
 
 import javax.servlet.ServletException;
@@ -35,7 +35,7 @@ public class GuestMainPageCommand implements ICommand {
             DaoFactory.getDAOReservation().deleteCertainReservation(Integer.parseInt(canceledReservationId));
         }
         setInitialPageData(wrapper);
-        return UrnGetter.getInstance().getUrn(UrnGetter.MAIN_GUEST_PAGE);
+        return UrlGetter.getInstance().getUrl(UrlGetter.MAIN_GUEST_PAGE);
     }
 
     private boolean isCancelPressed(ISessionRequestWrapper wrapper) {

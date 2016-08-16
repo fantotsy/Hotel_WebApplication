@@ -1,7 +1,7 @@
 package ua.fantotsy.commands;
 
 import ua.fantotsy.controllers.ISessionRequestWrapper;
-import ua.fantotsy.utils.UrnGetter;
+import ua.fantotsy.utils.UrlGetter;
 
 import javax.servlet.ServletException;
 import java.io.IOException;
@@ -35,7 +35,7 @@ public class StartPageCommand implements ICommand {
             if (isLoginIconPressed(wrapper)) {
                 setChosenLocale(wrapper);
             }
-            return UrnGetter.getInstance().getUrn(UrnGetter.START_PAGE);
+            return UrlGetter.getInstance().getUrl(UrlGetter.START_PAGE);
         }
     }
 

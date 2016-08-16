@@ -20,7 +20,7 @@ public class CommandGetter {
     private Map<String, ICommand> commands;
 
     /**
-     * Constructor where {@code commands} map is initialized by pairs of action (URN) and command.
+     * Constructor where {@code commands} map is initialized by pairs of action (URL) and command.
      */
     private CommandGetter() {
         commands = new HashMap<String, ICommand>() {{

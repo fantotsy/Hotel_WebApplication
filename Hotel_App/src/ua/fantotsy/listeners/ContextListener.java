@@ -24,10 +24,6 @@ import java.io.File;
 @WebListener("application context listener")
 public class ContextListener implements ServletContextListener, HttpSessionListener, HttpSessionAttributeListener {
 
-    // Public constructor is required by servlet specification.
-    public ContextListener() {
-    }
-
     /**
      * Reads location of the log4j.xml file and constructs a complete,
      * absolute path of this file which is then passed to the static
@@ -36,34 +32,40 @@ public class ContextListener implements ServletContextListener, HttpSessionListe
      *
      * @param event instance of {@link ServletContextEvent}.
      */
+    @Override
     public void contextInitialized(ServletContextEvent event) {
-        // Initialize log4j here.
         ServletContext context = event.getServletContext();
         String log4jConfigFile = context.getInitParameter("log4jConfigLocation");
-        String fullPath = context.getRealPath("") + File.separator + log4jConfigFile;
+        String fullPath = context.getRealPath("/") + File.separator + log4jConfigFile;
         DOMConfigurator.configure(fullPath);
     }
 
+    @Override
     public void contextDestroyed(ServletContextEvent event) {
 
     }
 
+    @Override
     public void sessionCreated(HttpSessionEvent event) {
 
     }
 
+    @Override
     public void sessionDestroyed(HttpSessionEvent event) {
 
     }
 
+    @Override
     public void attributeAdded(HttpSessionBindingEvent event) {
 
     }
 
+    @Override
     public void attributeRemoved(HttpSessionBindingEvent event) {
 
     }
 
+    @Override
     public void attributeReplaced(HttpSessionBindingEvent event) {
 
     }

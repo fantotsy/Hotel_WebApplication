@@ -88,7 +88,7 @@
     </error-page>
 
     <context-param>
-        <param-name>log4jConfigLocaltion</param-name>
+        <param-name>log4jConfigLocation</param-name>
         <param-value>WEB-INF/log4j.xml</param-value>
     </context-param>
 

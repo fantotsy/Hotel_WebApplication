@@ -63,7 +63,7 @@ public class SessionRequestWrapper implements ISessionRequestWrapper {
     public void extractRequestParameters(HttpServletRequest request) {
         Map<String, String[]> map = request.getParameterMap();
         if (map != null) {
-            requestParameters.putAll(request.getParameterMap());
+            requestParameters.putAll(map);
         }
     }
 
@@ -128,7 +128,6 @@ public class SessionRequestWrapper implements ISessionRequestWrapper {
             Object value = entry.getValue();
             request.setAttribute(key, value);
         }
-
         HttpSession session = request.getSession(true);
         for (Map.Entry<String, Object> entry : sessionAttributes.entrySet()) {
             String key = entry.getKey();

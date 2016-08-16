@@ -55,17 +55,14 @@ public class CommandGetter {
     public ICommand getCommand(HttpServletRequest request) {
         final String START_PAGE = ActionsGetter.getInstance().getAction(ActionsGetter.INDEX);
         String urlPath = request.getServletPath();
-
         if (urlPath == null) {
             return commands.get(START_PAGE);
         }
-
         ICommand command = commands.get(urlPath);
         if (command == null) {
             Logger logger = Logger.getLogger(CommandGetter.class.getName());
             logger.error("Unknown command was called!");
         }
-
         return command;
     }
 }

@@ -16,7 +16,7 @@ import java.sql.SQLException;
  * @author fantotsy
  * @version 1.0
  */
-public class ConnectionPool {
+public final class ConnectionPool {
     private static ConnectionPool instance;
     private DataSource dataSource;
 

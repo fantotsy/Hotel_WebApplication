@@ -46,7 +46,7 @@
                                 </c:if>
                                 <form action="/apartments" method="post">
                                     <input type="hidden" name="anti_csrf_token"
-                                           value="${requestScope.antiCsrfToken}"/>
+                                           value="${sessionScope.antiCsrfToken}"/>
                                     <input type="hidden" name="category_id" value="${category.categoryId}"/>
                                     <fmt:message var="apartment_placeholder" key="apartment_placeholder"
                                                  bundle="${apartments}"/>

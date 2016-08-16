@@ -7,7 +7,6 @@ import ua.fantotsy.entities.Category;
 import ua.fantotsy.entities.Guest;
 import ua.fantotsy.entities.Reservation;
 import ua.fantotsy.utils.UrnGetter;
-import ua.fantotsy.utils.Utils;
 
 import javax.servlet.ServletException;
 import java.io.IOException;
@@ -58,14 +57,7 @@ public class GuestBookingPageCommand implements ICommand {
 
         wrapper.setRequestAttribute("listOfCategories", listOfCategories);
         wrapper.setRequestAttribute("listOfApartments", listOfApartments);
-        setAntiCsrfToken(wrapper);
 
         return UrnGetter.getInstance().getUrn(UrnGetter.MAIN_GUEST_BOOKING_PAGE);
-    }
-
-    private void setAntiCsrfToken(ISessionRequestWrapper wrapper) {
-        String sessionId = wrapper.getSessionId();
-        String antiCsrfToken = Utils.encryptionMD5(sessionId);
-        wrapper.setRequestAttribute("antiCsrfToken", antiCsrfToken);
     }
 }

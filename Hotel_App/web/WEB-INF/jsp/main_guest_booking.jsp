@@ -49,7 +49,7 @@
                                         </c:if>
                                         <form action="/order_valid" method="post">
                                             <input type="hidden" name="anti_csrf_token"
-                                                   value="${requestScope.antiCsrfToken}"/>
+                                                   value="${sessionScope.antiCsrfToken}"/>
                                             <input type="hidden" name="category_id" value="${category.categoryId}"/>
                                             <select name="booked_apartments[]" multiple>
                                                 <option value="default" selected disabled>

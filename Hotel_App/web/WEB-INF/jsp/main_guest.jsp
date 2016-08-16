@@ -81,7 +81,7 @@
                                         <td>
                                             <form action="/guest" method="post">
                                                 <input type="hidden" name="anti_csrf_token"
-                                                       value="${requestScope.antiCsrfToken}"/>
+                                                       value="${sessionScope.antiCsrfToken}"/>
                                                 <input type="hidden" name="reservation_id"
                                                        value="${reservation.reservationId}"/>
                                                 <fmt:message var="cancel_button" key="cancel_button"

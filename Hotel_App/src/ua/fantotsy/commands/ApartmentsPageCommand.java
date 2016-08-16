@@ -4,7 +4,6 @@ import ua.fantotsy.controllers.ISessionRequestWrapper;
 import ua.fantotsy.datasource.DaoFactory;
 import ua.fantotsy.entities.Category;
 import ua.fantotsy.utils.UrnGetter;
-import ua.fantotsy.utils.Utils;
 
 import javax.servlet.ServletException;
 import java.io.IOException;
@@ -52,7 +51,6 @@ public class ApartmentsPageCommand implements ICommand {
         }
         List<Category> listOfCategories = DaoFactory.getDAOCategory().getAllCategories();
         wrapper.setRequestAttribute("listOfCategories", listOfCategories);
-        setAntiCsrfToken(wrapper);
         return UrnGetter.getInstance().getUrn(UrnGetter.MAIN_ADMIN_APARTMENTS_PAGE);
     }
 
@@ -69,11 +67,5 @@ public class ApartmentsPageCommand implements ICommand {
         } else {
             return "none";
         }
-    }
-
-    private void setAntiCsrfToken(ISessionRequestWrapper wrapper) {
-        String sessionId = wrapper.getSessionId();
-        String antiCsrfToken = Utils.encryptionMD5(sessionId);
-        wrapper.setRequestAttribute("antiCsrfToken", antiCsrfToken);
     }
 }

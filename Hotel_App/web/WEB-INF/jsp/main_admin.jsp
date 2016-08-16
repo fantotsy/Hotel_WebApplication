@@ -16,7 +16,7 @@
             </header>
             <div id="actions">
                 <form action="/apartments" method="post">
-                    <input type="hidden" name="anti_csrf_token" value="${requestScope.antiCsrfToken}"/>
+                    <input type="hidden" name="anti_csrf_token" value="${sessionScope.antiCsrfToken}"/>
                     <fmt:message var="apartments_button" key="apartments_button" bundle="${main_admin}"/>
                     <button type="submit" name="delete-insert">${apartments_button}</button>
                 </form>

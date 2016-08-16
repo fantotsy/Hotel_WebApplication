@@ -17,15 +17,14 @@ import java.sql.SQLException;
  * @version 1.0
  */
 public class ConnectionPool {
-    private static ConnectionPool instance = new ConnectionPool();
-    private Context initialContext;
+    private static ConnectionPool instance;
     private DataSource dataSource;
 
     private ConnectionPool() {
         try {
-            initialContext = new InitialContext();
-            Context webContext = (Context) initialContext.lookup("java:/comp/env");
-            dataSource = (DataSource) webContext.lookup("/jdbc/hoteldb");
+            Context context = new InitialContext();
+            Context envContext = (Context) context.lookup("java:/comp/env");
+            dataSource = (DataSource) envContext.lookup("/jdbc/hoteldb");
         } catch (NamingException e) {
             Logger logger = Logger.getLogger(ConnectionPool.class.getName());
             logger.error(e);
@@ -33,6 +32,9 @@ public class ConnectionPool {
     }
 
     public static synchronized ConnectionPool getInstance() {
+        if(instance == null){
+            instance = new ConnectionPool();
+        }
         return instance;
     }
 

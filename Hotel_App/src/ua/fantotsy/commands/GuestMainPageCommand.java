@@ -35,7 +35,6 @@ public class GuestMainPageCommand implements ICommand {
             DaoFactory.getDAOReservation().deleteCertainReservation(Integer.parseInt(canceledReservationId));
         }
         setInitialPageData(wrapper);
-        setAntiCsrfToken(wrapper);
         return UrnGetter.getInstance().getUrn(UrnGetter.MAIN_GUEST_PAGE);
     }
 
@@ -56,11 +55,5 @@ public class GuestMainPageCommand implements ICommand {
         wrapper.setRequestAttribute("listOfTypes", listOfTypes);
         wrapper.setRequestAttribute("listOfCapacities", listOfCapacities);
         wrapper.setRequestAttribute("listOfReservations", listOfReservations);
-    }
-
-    private void setAntiCsrfToken(ISessionRequestWrapper wrapper) {
-        String sessionId = wrapper.getSessionId();
-        String antiCsrfToken = Utils.encryptionMD5(sessionId);
-        wrapper.setRequestAttribute("antiCsrfToken", antiCsrfToken);
     }
 }

@@ -52,6 +52,7 @@ public class CheckSignInDataCommand implements ICommand {
                 if (isAdminCheckboxChecked(isAdmin)) {
                     if (isAdminCredentialsValid(enteredLogin, enteredPassword)) {
                         wrapper.setSessionAttribute("role", ROLE_ADMIN);
+                        setAntiCsrfToken(wrapper);
                         return ActionsGetter.getInstance().getAction(ActionsGetter.ADMIN);
                     } else {
                         return setErrorMessage(wrapper, "wrong_entrance_data");
@@ -94,5 +95,12 @@ public class CheckSignInDataCommand implements ICommand {
         Guest guest = DaoFactory.getDAOGuest().getCertainGuest(login);
         wrapper.setSessionAttribute("guestInfo", guest);
         wrapper.setSessionAttribute("role", ROLE_GUEST);
+        setAntiCsrfToken(wrapper);
+    }
+
+    private void setAntiCsrfToken(ISessionRequestWrapper wrapper){
+        String sessionId = wrapper.getSessionId();
+        String antiCsrfToken = Utils.encryptionMD5(sessionId);
+        wrapper.setSessionAttribute("antiCsrfToken", antiCsrfToken);
     }
 }

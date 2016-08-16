@@ -75,11 +75,13 @@ public class ApartmentDao implements IApartmentDao {
             ps.setString(2, arrival);
             ps.setString(3, departure);
             ps.setString(4, departure);
+            ps.setString(5, arrival);
+            ps.setString(6, departure);
             ResultSet rs = null;
             for (String type : types) {
                 for (String capacity : capacities) {
-                    ps.setString(5, type);
-                    ps.setString(6, capacity);
+                    ps.setString(7, type);
+                    ps.setString(8, capacity);
                     rs = ps.executeQuery();
                     while (rs.next()) {
                         int apartment = rs.getInt("apartment_id");

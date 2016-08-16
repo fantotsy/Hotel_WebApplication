@@ -29,7 +29,7 @@ public class StartPageCommand implements ICommand {
         if (isLogoutPressed(wrapper)) {
             return wrapper.sessionInvalidate();
         } else {
-            if (isLocaleAlreadyChosen(wrapper)) {
+            if (!isLocaleAlreadyChosen(wrapper)) {
                 setDefaultLocale(wrapper);
             }
             if (isLoginIconPressed(wrapper)) {
@@ -46,7 +46,7 @@ public class StartPageCommand implements ICommand {
     }
 
     private boolean isLocaleAlreadyChosen(ISessionRequestWrapper wrapper) {
-        return (wrapper.getSessionAttribute("language") == null);
+        return (wrapper.getSessionAttribute("language") != null);
     }
 
     private void setDefaultLocale(ISessionRequestWrapper wrapper) {

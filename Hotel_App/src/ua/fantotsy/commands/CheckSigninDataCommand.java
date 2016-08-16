@@ -55,14 +55,16 @@ public class CheckSignInDataCommand implements ICommand {
                         setAntiCsrfToken(wrapper);
                         return ActionsGetter.getInstance().getAction(ActionsGetter.ADMIN);
                     } else {
-                        return setErrorMessage(wrapper, "wrong_entrance_data");
+                        setErrorMessage(wrapper, "wrong_entrance_data");
+                        return UrlGetter.getInstance().getUrl(UrlGetter.START_PAGE);
                     }
                 } else {
                     if (isGuestCredentialsValid(enteredLogin, enteredPassword)) {
                         setSessionData(wrapper, enteredLogin);
                         return ActionsGetter.getInstance().getAction(ActionsGetter.GUEST);
                     } else {
-                        return setErrorMessage(wrapper, "wrong_entrance_data");
+                        setErrorMessage(wrapper, "wrong_entrance_data");
+                        return UrlGetter.getInstance().getUrl(UrlGetter.START_PAGE);
                     }
                 }
             }
@@ -82,9 +84,8 @@ public class CheckSignInDataCommand implements ICommand {
         return (login.equals(ADMIN_LOGIN) && password.equals(ADMIN_PASSWORD));
     }
 
-    private String setErrorMessage(ISessionRequestWrapper wrapper, String errorMessage) {
+    private void setErrorMessage(ISessionRequestWrapper wrapper, String errorMessage) {
         wrapper.setRequestAttribute("error", errorMessage);
-        return UrlGetter.getInstance().getUrl(UrlGetter.START_PAGE);
     }
 
     private boolean isGuestCredentialsValid(String login, String password) {

@@ -35,13 +35,14 @@ public class RegistrationPageCommand implements ICommand {
             String password = Utils.encryptionMD5(wrapper.getRequestParameter("password"));
             String phoneNumber = wrapper.getRequestParameter("phone");
             String email = wrapper.getRequestParameter("email");
-            Guest newGuest = new Guest(name, lastName, phoneNumber, email, login, password);
+            Guest newGuest = new Guest(name, lastName, phoneNumber, email, login);
             String passwordConfirmation = Utils.encryptionMD5(wrapper.getRequestParameter("password_confirmation"));
             if (isLoginAlreadyExists(login)) {
                 wrapper.setRequestAttribute("error_login", "login_exists");
                 wrapper.setRequestAttribute("guest_data", newGuest);
             } else {
                 if (isPasswordEqualsConfirmation(password, passwordConfirmation)) {
+                    newGuest.setPassword(password);
                     DaoFactory.getDAOGuest().insertNewGuest(newGuest);
                     wrapper.setRequestAttribute("login", login);
                     wrapper.setRequestAttribute("result", "guest inserted");

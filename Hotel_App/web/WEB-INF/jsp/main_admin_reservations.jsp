@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" errorPage="error.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
+<%@ taglib prefix="err" uri="/WEB-INF/TLDs/errorTag.tld" %>
 <%@ include file="locale.jsp" %>
 <fmt:setBundle var="main_admin" basename="ua.fantotsy.properties.i18n.main_admin"/>
 <fmt:setBundle var="reservations" basename="ua.fantotsy.properties.i18n.reservations"/>
@@ -23,12 +24,13 @@
                 </form>
                 <table id="info_table">
                     <tr>
-                        <th><fmt:message key="table_name_column" bundle="${reservations}"/></th>
+                        <th><fmt:message key="table_apartment_column" bundle="${reservations}"/></th>
                         <th><fmt:message key="table_arrival_column" bundle="${reservations}"/></th>
                         <th><fmt:message key="table_departure_column" bundle="${reservations}"/></th>
                         <th><fmt:message key="table_name_column" bundle="${reservations}"/></th>
                         <th><fmt:message key="table_surname_column" bundle="${reservations}"/></th>
                         <th><fmt:message key="table_login_column" bundle="${reservations}"/></th>
+                        <th></th>
                     </tr>
                     <c:forEach items="${requestScope.listOfReservations}" var="reservation">
                         <tr>
@@ -38,6 +40,33 @@
                             <td>${reservation.guest.name}</td>
                             <td>${reservation.guest.lastName}</td>
                             <td>${reservation.guest.login}</td>
+                            <td>
+                                <c:if test="${requestScope.error[0] == reservation.reservationId}">
+                                    <%--The next tag prints error message if it is needed--%>
+                                    <err:error errorType="${requestScope.error[1]}"
+                                               locale="${sessionScope.locale}"/>
+                                </c:if>
+                                <form action="/reservations" method="post">
+                                    <input type="hidden" name="anti_csrf_token"
+                                           value="${sessionScope.antiCsrfToken}"/>
+                                    <input type="hidden" name="reservation_id" value="${reservation.reservationId}"/>
+                                    <input type="hidden" name="apartment_id" value="${reservation.apartment.apartmentId}"/>
+                                    <div id="dates">
+                                        <div id="arrival_date">
+                                            <br/>
+                                            <input type="date" name="check-in_date" max="${requestScope.yearLater}"
+                                                   min="${requestScope.today}" required/>
+                                        </div>
+                                        <div id="departure_date">
+                                            <br/>
+                                            <input type="date" name="check-out_date" max="${requestScope.yearLater}"
+                                                   min="${requestScope.today}" required/>
+                                        </div>
+                                    </div>
+                                    <button type="submit" name="add_apartment" id="add_room">Update</button>
+                                </form>
+
+                            </td>
                         </tr>
                     </c:forEach>
                 </table>

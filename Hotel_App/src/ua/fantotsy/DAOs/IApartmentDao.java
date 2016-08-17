@@ -13,4 +13,6 @@ public interface IApartmentDao {
     Map<Integer, Integer> getAvailableApartments(String arrival, String departure, List<String> types, List<String> capacities);
 
     Map<Integer, Integer> getAllApartmentNumbers();
+
+    Map<Integer, Integer> getAvailableApartmentsOnDate(String arrival, String departure);
 }

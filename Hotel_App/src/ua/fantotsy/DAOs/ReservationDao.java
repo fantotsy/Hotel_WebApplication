@@ -53,7 +53,7 @@ public class ReservationDao implements IReservationDao {
             while (rs.next()) {
                 Guest guest = new Guest(rs.getString("name"), rs.getString("last_name"), rs.getString("login"));
                 Apartment apartment = new Apartment(rs.getInt("apartment_id"));
-                Reservation reservation = new Reservation(guest, apartment, rs.getString("arrival"), rs.getString("departure"), rs.getInt("total_price"));
+                Reservation reservation = new Reservation(rs.getInt("reservation_id"), guest, apartment, rs.getString("arrival"), rs.getString("departure"), rs.getInt("total_price"));
                 listOfReservations.add(reservation);
             }
         } catch (SQLException e) {
@@ -96,5 +96,18 @@ public class ReservationDao implements IReservationDao {
             logger.error(e);
         }
         return result;
+    }
+
+    public void updateReservation(Integer reservation, String arrival, String departure){
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
+             PreparedStatement ps = connection.prepareStatement(SqlQueriesGetter.getInstance().getSQLQuery(SqlQueriesGetter.UPDATE_RESERVATION))) {
+            ps.setString(1, arrival);
+            ps.setString(2, departure);
+            ps.setInt(3, reservation);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            Logger logger = Logger.getLogger(ReservationDao.class.getName());
+            logger.error(e);
+        }
     }
 }

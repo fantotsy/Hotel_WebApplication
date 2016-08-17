@@ -113,4 +113,28 @@ public class ApartmentDao implements IApartmentDao {
         }
         return listOfApartments;
     }
+
+    public Map<Integer, Integer> getAvailableApartmentsOnDate(String arrival, String departure) {
+        Map<Integer, Integer> result = new HashMap<>();
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
+             PreparedStatement ps = connection.prepareStatement(SqlQueriesGetter.getInstance().getSQLQuery(SqlQueriesGetter.GET_AVAILABLE_APARTMENTS_ON_DATE))) {
+            ps.setString(1, arrival);
+            ps.setString(2, arrival);
+            ps.setString(3, departure);
+            ps.setString(4, departure);
+            ps.setString(5, arrival);
+            ps.setString(6, departure);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                int apartment = rs.getInt("apartment_id");
+                int category = rs.getInt("category_id");
+                result.put(apartment, category);
+            }
+            rs.close();
+        } catch (SQLException e) {
+            Logger logger = Logger.getLogger(ApartmentDao.class.getName());
+            logger.error(e);
+        }
+        return result;
+    }
 }

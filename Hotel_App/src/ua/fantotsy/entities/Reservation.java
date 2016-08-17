@@ -14,6 +14,15 @@ public class Reservation {
     private String departure;
     private Integer totalPrice;
 
+    public Reservation(Integer reservationId, Guest guest, Apartment apartment, String arrival, String departure, Integer totalPrice) {
+        this.guest = guest;
+        this.reservationId = reservationId;
+        this.apartment = apartment;
+        this.arrival = arrival;
+        this.departure = departure;
+        this.totalPrice = totalPrice;
+    }
+
     public Reservation(Integer reservationId, Apartment apartment, String arrival, String departure, Integer totalPrice) {
         this.reservationId = reservationId;
         this.apartment = apartment;

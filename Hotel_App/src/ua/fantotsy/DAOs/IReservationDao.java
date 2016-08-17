@@ -12,4 +12,6 @@ public interface IReservationDao {
     List<Reservation> getCertainReservations(Integer guestId);
 
     int deleteCertainReservation(Integer reservationId);
+
+    void updateReservation(Integer apartment, String arrival, String departure);
 }

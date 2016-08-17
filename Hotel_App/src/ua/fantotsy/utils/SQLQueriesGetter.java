@@ -30,6 +30,8 @@ public final class SqlQueriesGetter {
     public static final String GET_ALL_RESERVATIONS = "GET_ALL_RESERVATIONS";
     public static final String GET_ALL_RESERVATIONS_FOR_CERTAIN_GUEST = "GET_ALL_RESERVATIONS_FOR_CERTAIN_GUEST";
     public static final String REMOVE_RESERVATION = "REMOVE_RESERVATION";
+    public static final String GET_AVAILABLE_APARTMENTS_ON_DATE = "GET_AVAILABLE_APARTMENTS_ON_DATE";
+    public static final String UPDATE_RESERVATION = "UPDATE_RESERVATION";
 
     public static synchronized SqlQueriesGetter getInstance() {
         if (instance == null) {

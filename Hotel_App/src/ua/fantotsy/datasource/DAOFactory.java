@@ -10,20 +10,24 @@ import ua.fantotsy.DAOs.*;
  * @version 1.0
  */
 public class DaoFactory {
+    private static IApartmentDao apartmentDaoInstance = new ApartmentDao();
+    private static ICategoryDao categoryDaoInstance = new CategoryDao();
+    private static IGuestDao guestDaoInstance = new GuestDao();
+    private static IReservationDao reservationDaoInstance = new ReservationDao();
 
     public static IApartmentDao getDAOApartment() {
-        return new ApartmentDao();
+        return apartmentDaoInstance;
     }
 
     public static ICategoryDao getDAOCategory() {
-        return new CategoryDao();
+        return categoryDaoInstance;
     }
 
     public static IGuestDao getDAOGuest() {
-        return new GuestDao();
+        return guestDaoInstance;
     }
 
     public static IReservationDao getDAOReservation() {
-        return new ReservationDao();
+        return reservationDaoInstance;
     }
 }

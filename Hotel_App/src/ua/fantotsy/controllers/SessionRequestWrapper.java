@@ -69,7 +69,7 @@ public class SessionRequestWrapper implements ISessionRequestWrapper {
 
     @Override
     public void extractSessionAttributes(HttpServletRequest request) {
-        HttpSession session = request.getSession(true);
+        HttpSession session = request.getSession();
         Enumeration<String> attributes = session.getAttributeNames();
         while (attributes.hasMoreElements()) {
             String attributeKey = attributes.nextElement();
@@ -128,7 +128,7 @@ public class SessionRequestWrapper implements ISessionRequestWrapper {
             Object value = entry.getValue();
             request.setAttribute(key, value);
         }
-        HttpSession session = request.getSession(true);
+        HttpSession session = request.getSession();
         for (Map.Entry<String, Object> entry : sessionAttributes.entrySet()) {
             String key = entry.getKey();
             Object value = entry.getValue();

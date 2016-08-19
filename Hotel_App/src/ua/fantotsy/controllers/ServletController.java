@@ -35,7 +35,7 @@ public class ServletController extends HttpServlet {
         ISessionRequestWrapper wrapper = new SessionRequestWrapper(request);
         String viewPage = command.execute(wrapper);
         if (viewPage.equals("session_invalidate")) {
-            HttpSession session = request.getSession(true);
+            HttpSession session = request.getSession();
             session.invalidate();
             request.setAttribute("isSessionInvalidated", "true");
             viewPage = ActionsGetter.getInstance().getAction(ActionsGetter.INDEX);
